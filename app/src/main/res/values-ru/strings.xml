@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="charging_animation">Анимация Зарядки</string>
+    <string name="recommended">Рекомендованные</string>
+    <string name="give_permissions_for_the_application_work_properly">Дайте разрешение для правильной работы приложения</string>
+    <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_application">Разрешите отображение поверх других приложений. Это необходимо для правильной работы приложения</string>
+    <string name="allow">Дайте разрешение</string>
+    <string name="setting_instructions">Инструкции по настройке</string>
+    <string name="if_your_device_does_not_have_this_permission_you_can_ignore_it">Если важе устройство не поддерживает эти разрешения, игнорируйте их</string>
+    <string name="more_information">Подробнее</string>
+    <string name="lock_screen_display_instructions">Инструкции для отображения на экране блокировки</string>
+    <string name="notifications">Уведомления</string>
+    <string name="flash">Вспышка</string>
+    <string name="vibration">Вибрация</string>
+    <string name="sound">Звук</string>
+    <string name="share">Поделиться</string>
+    <string name="rate_us">Оцените нас</string>
+    <string name="privacy_policy">Политика конфиденциальности</string>
+    <string name="working_in_background">Работа в фоновом режиме</string>
+    <string name="your_device_is_fully_charged">Ваше устройство полностью заряжено</string>
+    <string name="show_on_unlocked_screen">Показывать на экране блокировки</string>
+
+    <string name="instruction_short">Информация о приложении > Разрешения > Разрешить отображение на экране блокировки/уведомления на экране блокировки</string>
+    <string name="instruction_long">Включите отображение на экране блокировки, чтобы устройство могло нормально отображать анимацию зарядки, когда экран заблокирован. Но путь до настроек различается на разных устройствах. Пожалуйста, обратитесь к следующим настройкам\n\nMeizu: Настройки -> Приложения -> Charging Animation -> Разрешения -> Показывать на экране блокировки/Уведомления на экране блокировки\n\nXiaomi: Настройки -> Приложения -> разрешения -> Разрешения -> Charging Animation -> Показывать на экране блокировки\n\nOPPO: Настройки -> Приложения -> Charging Animation -> Управление уведомлениями -> Отображать на экране блокировки\n\nVIVO : i Manager -> Управление программным обеспечением -> Управление разрешениями -> Отображение на экране блокировки -> Charging Animation -> Нажмите, чтобы открыть</string>
+
+</resources>
