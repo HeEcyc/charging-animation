@@ -6,6 +6,7 @@ dependencyResolutionManagement {
         maven { url "https://jitpack.io" }
         maven { url "https://maven.google.com" }
         mavenCentral()
+        maven { url 'https://android-sdk.is.com/' }
     }
 }
 rootProject.name = "TestChargingAnimation"
