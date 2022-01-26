@@ -6,6 +6,7 @@ import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import android.content.IntentFilter
 import android.graphics.PixelFormat
 import android.os.Build
+import android.provider.Settings
 import android.view.Gravity
 import android.view.WindowManager
 import com.charginging.animationation.base.BaseBroadcastReceiver
@@ -57,9 +58,11 @@ class UsbReceiver : BaseBroadcastReceiver() {
         )
         params.gravity = Gravity.CENTER
 
-        val view = AnimationHolderView(context)
-        ClosableWindows.add(view)
-        windowManager.addView(view, params)
+        if (Settings.canDrawOverlays(context)) {
+            val view = AnimationHolderView(context)
+            ClosableWindows.add(view)
+            windowManager.addView(view, params)
+        }
     }
 
 }

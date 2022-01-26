@@ -49,18 +49,6 @@
 
         <service android:name="com.charginging.animationation.repository.background.display.ForegroundService"/>
 
-        <receiver
-            android:name="com.charginging.animationation.repository.background.boot.BootCompletedReceiver"
-            android:exported="true"
-            android:enabled="true">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
-                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED"/>
-            </intent-filter>
-        </receiver>
-
     </application>
 
 </manifest>

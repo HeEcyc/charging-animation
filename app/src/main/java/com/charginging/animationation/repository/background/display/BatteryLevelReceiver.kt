@@ -20,6 +20,7 @@ import com.charginging.animationation.repository.preferences.Preferences
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import java.lang.Exception
 
 class BatteryLevelReceiver : BaseBroadcastReceiver() {
 
@@ -67,9 +68,11 @@ class BatteryLevelReceiver : BaseBroadcastReceiver() {
         val cm = context.getSystemService(CameraManager::class.java)
         val cameraId = cm.cameraIdList.first()
         GlobalScope.launch {
-            cm.setTorchMode(cameraId, true)
-            delay(1000)
-            cm.setTorchMode(cameraId, false)
+            try {
+                cm.setTorchMode(cameraId, true)
+                delay(1000)
+                cm.setTorchMode(cameraId, false)
+            } catch (e: Exception) {}
         }
     }
 

@@ -46,7 +46,12 @@ class ForegroundService : Service() {
     private fun initForeground() {
         val pendingIntent: PendingIntent =
             Intent(App.instance, MainActivity::class.java).let { notificationIntent ->
-                PendingIntent.getActivity(App.instance, 0, notificationIntent, 0)
+                PendingIntent.getActivity(
+                    App.instance,
+                    0,
+                    notificationIntent,
+                    PendingIntent.FLAG_IMMUTABLE
+                )
             }
         val notification = NotificationFactory.newNotification(
             R.mipmap.ic_launcher,
