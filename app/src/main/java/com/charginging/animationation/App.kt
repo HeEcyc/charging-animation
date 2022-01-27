@@ -27,6 +27,7 @@ class App : Application() {
                 .withStatisticsSending(true)
                 .build()
         YandexMetrica.activate(applicationContext, appMetricaConfig)
+        YandexMetrica.enableActivityAutoTracking(this)
     }
 
     private fun isFirstActivationAsUpdate(): Boolean {
