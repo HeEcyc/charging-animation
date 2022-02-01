@@ -21,20 +21,12 @@ class App : Application() {
     private fun activateAppMetrica() {
         val appMetricaConfig: YandexMetricaConfig =
             YandexMetricaConfig.newConfigBuilder(APP_METRICA_API_KEY)
-                .handleFirstActivationAsUpdate(isFirstActivationAsUpdate())
                 .withLocationTracking(true)
                 .withLogs()
                 .withStatisticsSending(true)
                 .build()
         YandexMetrica.activate(applicationContext, appMetricaConfig)
         YandexMetrica.enableActivityAutoTracking(this)
-    }
-
-    private fun isFirstActivationAsUpdate(): Boolean {
-        // Implement logic to detect whether the app is opening for the first time.
-        // For example, you can check for files (settings, databases, and so on),
-        // which the app creates on its first launch.
-        return Settings.canDrawOverlays(this)
     }
 
 }
