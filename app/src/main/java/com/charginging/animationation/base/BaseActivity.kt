@@ -11,16 +11,12 @@ import androidx.core.app.ShareCompat
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.charginging.animationation.BR
-import com.charginging.animationation.BuildConfig
 import com.charginging.animationation.utils.APP_LINK
 import com.charginging.animationation.utils.IRON_SOURCE_APP_KEY
-import com.charginging.animationation.utils.UNITY_GAME_ID
 import com.ironsource.mediationsdk.IronSource
-import com.unity3d.ads.IUnityAdsInitializationListener
-import com.unity3d.ads.UnityAds
 
 abstract class BaseActivity<TViewModel : BaseViewModel, TBinding : ViewDataBinding>(
-) : AppCompatActivity(), IUnityAdsInitializationListener {
+) : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
@@ -40,7 +36,6 @@ abstract class BaseActivity<TViewModel : BaseViewModel, TBinding : ViewDataBindi
         super.onCreate(savedInstanceState)
         IronSource.setMetaData("is_child_directed","false")
         IronSource.init(this, IRON_SOURCE_APP_KEY)
-        UnityAds.initialize(applicationContext, UNITY_GAME_ID, !BuildConfig.DEBUG, this)
         StrictMode.setVmPolicy(StrictMode.VmPolicy.Builder().build())
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         binding = DataBindingUtil.setContentView(this, provideLayoutId())
@@ -90,9 +85,5 @@ abstract class BaseActivity<TViewModel : BaseViewModel, TBinding : ViewDataBindi
             .createChooserIntent()
             .let(::startActivity)
     }
-
-    override fun onInitializationComplete() {}
-
-    override fun onInitializationFailed(p0: UnityAds.UnityAdsInitializationError?, p1: String?) {}
 
 }
