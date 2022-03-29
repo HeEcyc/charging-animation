@@ -5,7 +5,7 @@
         <import type="android.view.View"/>
         <variable
             name="item"
-            type="com.charginging.animationation.model.AnimationItem" />
+            type="com.ioscharginging.iosanimationation.model.AnimationItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"

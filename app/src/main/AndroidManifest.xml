@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.charginging.animationation">
+    package="com.ioscharginging.iosanimationation">
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.ACTION_MANAGE_OVERLAY_PERMISSION" />
@@ -15,7 +15,7 @@
     <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
 
     <application
-        android:name="com.charginging.animationation.App"
+        android:name="com.ioscharginging.iosanimationation.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -67,7 +67,7 @@
 
 
         <activity
-            android:name="com.charginging.animationation.ui.main.MainActivity"
+            android:name="com.ioscharginging.iosanimationation.ui.main.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
@@ -79,7 +79,7 @@
         </activity>
 
         <activity
-            android:name="com.charginging.animationation.ui.animation.ChargingAnimationActivity"
+            android:name="com.ioscharginging.iosanimationation.ui.animation.ChargingAnimationActivity"
             android:exported="true"
             android:noHistory="true"
             android:screenOrientation="portrait"
@@ -87,12 +87,12 @@
             tools:ignore="LockedOrientationActivity"/>
 
         <activity
-            android:name="com.charginging.animationation.ui.settings.SettingsActivity"
+            android:name="com.ioscharginging.iosanimationation.ui.settings.SettingsActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
 
-        <service android:name="com.charginging.animationation.repository.background.display.ForegroundService"/>
+        <service android:name="com.ioscharginging.iosanimationation.repository.background.display.ForegroundService"/>
 
 <!--        <receiver-->
 <!--            android:name=".utils.hiding.HidingBroadcast"-->

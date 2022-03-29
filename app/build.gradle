@@ -24,7 +24,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.charginging.animationation"
+        applicationId "com.ioscharginging.iosanimationation"
         minSdk 23
         targetSdk 31
         versionCode 1
