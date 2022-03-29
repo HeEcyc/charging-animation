@@ -29,7 +29,10 @@ enum class AnimationItem(
 
     val isSelected: ObservableBoolean by lazy { ObservableBoolean(Preferences.selectedAnimation == this) }
 
-    val sticksToStart get() = ordinal % 2 == 0
+    companion object {
+        val valuesPopular = values().take(3)
+        val valuesOther = values().takeLast(5)
+    }
 
     fun inflateAnimationView(context: Context): View = animationBindingClass
         .getMethod(
