@@ -19,5 +19,17 @@
 
     <string name="instruction_short">Em Informações do aplicativo > Permissões > Permitir exibição na tela de bloqueio/notificação da tela de bloqueio</string>
     <string name="instruction_long">Ative a tela de bloqueio, para que o dispositivo possa exibir a animação de carregamento normalmente quando a tela está bloqueada, mas os caminhos de configuração de vários dispositivos são diferentes, consulte as seguintes configurações\n\nCaminho de configuração Meizu: Configurações -> Aplicativos -> Animação de carregamento -> Permissões -> Mostrar tela de bloqueio/notificação de tela de bloqueio\n\nCaminho de configuração do Xiaomi: configuração -> Aplicativos -> permissões -> Permissões -> Animação de carregamento -> Mostrar tela de bloqueio\n\nCaminho de configuração de OPPO : Configurações -> Aplicativos -> Animação de Carregamento -> Gerenciamento de Notificação -> Exibir na tela de bloqueio\n\nCaminho de configuração do VIVO: i Manager -> Gerenciamento de Software -> Gerenciamento de Permissões -> Tela de Bloqueio -> Animação de Carregamento -> Marcar para abrir</string>
+    <string name="apply">Aplicar</string>
+    <string name="settings">Configurações</string>
+    <string name="popular">Popular</string>
+    <string name="other">De outros</string>
+    <string name="get_permissions">Obter permissões</string>
+    <string name="allow_display_over_other_apps">Permitir exibição sobre outros aplicativos</string>
+    <string name="not_now">Agora não</string>
+    <string name="ok">OK</string>
+    <string name="main">Principal</string>
+    <string name="social">Social</string>
+    <string name="interesting_fact">Fato interessante</string>
+    <string name="you_can_swipe_to_see_more_pictures">Você pode deslizar para ver mais fotos</string>
 
 </resources>

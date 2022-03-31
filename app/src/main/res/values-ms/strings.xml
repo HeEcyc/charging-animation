@@ -19,4 +19,16 @@
 
     <string name="instruction_short">Dalam Maklumat Apl > Kebenaran > Benarkan Tunjukkan pada skrin Kunci/Pemberitahuan skrin kunci</string>
     <string name="instruction_long">Hidupkan paparan skrin kunci, supaya peranti boleh memaparkan animasi pengecasan seperti biasa apabila skrin dikunci, tetapi laluan tetapan pelbagai peranti berbeza, sila rujuk tetapan berikut\n\nLaluan tetapan Meizu: Tetapan -> Apl -> Animasi Mengecas -> Kebenaran -> Tunjukkan pada skrin Kunci/Pemberitahuan skrin kunci\n\nLaluan tetapan Xiaomi: tetapan -> Apl -> kebenaran -> Kebenaran -> Animasi Pengecasan -> Tunjukkan pada skrin Kunci\n\nLaluan tetapan OPPO : Tetapan -> Apl -> Animasi Pengecasan -> Pengurusan Pemberitahuan -> Paparan pada skrin kunci\n\nLaluan tetapan VIVO: i Pengurus -> Pengurusan Perisian -> Pengurusan Kebenaran -> Paparan Skrin Kunci -> Animasi Pengecasan -> Semak ke buka</string>
+    <string name="apply">Mohon</string>
+    <string name="settings">tetapan</string>
+    <string name="popular">Popular</string>
+    <string name="other">Lain-lain</string>
+    <string name="get_permissions">Dapatkan kebenaran</string>
+    <string name="allow_display_over_other_apps">Benarkan paparan di atas apl lain</string>
+    <string name="not_now">Bukan sekarang</string>
+    <string name="ok">okey</string>
+    <string name="main">Utama</string>
+    <string name="social">sosial</string>
+    <string name="interesting_fact">Fakta menarik</string>
+    <string name="you_can_swipe_to_see_more_pictures">Anda boleh leret untuk melihat lebih banyak gambar</string>
 </resources>

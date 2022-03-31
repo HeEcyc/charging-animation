@@ -19,5 +19,17 @@
 
     <string name="instruction_short">Sa App Info > Pahintulot > Payagan ang Ipakita sa Lock screen/Lock screen notification</string>
     <string name="instruction_long">I-on ang lock screen display, para maipakita ng device ang charging animation nang normal kapag naka-lock ang screen, ngunit iba ang setting path ng iba\'t ibang device, mangyaring sumangguni sa mga sumusunod na setting\n\nMeizu setting path: Mga Setting -> Apps -> Charging Animation -> Pahintulot -> Ipakita sa Lock screen/Lock screen notification\n\nXiaomi setting path: setting -> Apps -> permissions -> Pahintulot -> Charging Animation -> Ipakita sa Lock screen\n\nOPPO setting path : Mga Setting -> Apps -> Charging Animation -> Notification Management -> Display sa lock screen\n\nVIVO setting path: i Manager -> Software Management -> Permissions Management -> Lock Screen Display -> Charging Animation -> Lagyan ng check sa bukas</string>
+    <string name="apply">Mag-apply</string>
+    <string name="settings">Mga setting</string>
+    <string name="popular">Sikat</string>
+    <string name="other">Iba pa</string>
+    <string name="get_permissions">Kumuha ng mga pahintulot</string>
+    <string name="allow_display_over_other_apps">Payagan ang pagpapakita sa iba pang mga app</string>
+    <string name="not_now">Hindi ngayon</string>
+    <string name="ok">OK</string>
+    <string name="main">Pangunahing</string>
+    <string name="social">Sosyal</string>
+    <string name="interesting_fact">Kawili-wiling katotohanan</string>
+    <string name="you_can_swipe_to_see_more_pictures">Maaari kang mag-swipe upang makakita ng higit pang mga larawan</string>
 
 </resources>

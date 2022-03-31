@@ -19,5 +19,17 @@
 
     <string name="instruction_short">ใน ข้อมูลแอป > สิทธิ์ > อนุญาตให้แสดงบนหน้าจอล็อก/การแจ้งเตือนหน้าจอล็อก</string>
     <string name="instruction_long">เปิดหน้าจอล็อกเพื่อให้อุปกรณ์สามารถแสดงภาพเคลื่อนไหวการชาร์จได้ตามปกติเมื่อหน้าจอล็อกอยู่ แต่เส้นทางการตั้งค่าของอุปกรณ์ต่างๆ จะแตกต่างกัน โปรดดูการตั้งค่าต่อไปนี้\n\nเส้นทางการตั้งค่า Meizu: การตั้งค่า -> แอป -> แอนิเมชั่นการชาร์จ -> สิทธิ์ -> แสดงบนหน้าจอล็อค/การแจ้งเตือนหน้าจอล็อก\n\nเส้นทางการตั้งค่า Xiaomi: การตั้งค่า -> แอป -> สิทธิ์ -> สิทธิ์ -> แอนิเมชั่นการชาร์จ -> แสดงบนหน้าจอล็อค\n\nเส้นทางการตั้งค่า OPPO : การตั้งค่า -> แอป -> แอนิเมชั่นการชาร์จ -> การจัดการการแจ้งเตือน -> แสดงบนหน้าจอล็อค\n\nเส้นทางการตั้งค่า VIVO: i Manager -> การจัดการซอฟต์แวร์ -> การจัดการสิทธิ์ -> การแสดงหน้าจอล็อก -> แอนิเมชั่นการชาร์จ -> ทำเครื่องหมายที่ เปิด</string>
+    <string name="apply">นำมาใช้</string>
+    <string name="settings">การตั้งค่า</string>
+    <string name="popular">เป็นที่นิยม</string>
+    <string name="other">อื่น</string>
+    <string name="get_permissions">รับสิทธิ์</string>
+    <string name="allow_display_over_other_apps">อนุญาตให้แสดงทับแอปอื่นๆ</string>
+    <string name="not_now">ไม่ใช่ตอนนี้</string>
+    <string name="ok">ตกลง</string>
+    <string name="main">หลัก</string>
+    <string name="social">ทางสังคม</string>
+    <string name="interesting_fact">ความจริงที่น่าสนใจ</string>
+    <string name="you_can_swipe_to_see_more_pictures">สามารถเลื่อนดูภาพเพิ่มเติมได้</string>
 
 </resources>

@@ -19,5 +19,17 @@
 
     <string name="instruction_short">Trong Thông tin ứng dụng > Quyền > Cho phép Hiển thị trên màn hình khóa/Thông báo trên màn hình khóa</string>
     <string name="instruction_long">Bật hiển thị màn hình khóa để thiết bị có thể hiển thị hoạt ảnh sạc bình thường khi màn hình bị khóa, nhưng đường dẫn cài đặt của các thiết bị khác nhau, vui lòng tham khảo cài đặt sau\n\nĐường dẫn cài đặt của Meizu: Cài đặt -> Ứng dụng -> Hoạt ảnh đang sạc -> Quyền -> Hiển thị trên Màn hình khóa/Thông báo trên màn hình khóa\n\nĐường dẫn cài đặt Xiaomi: cài đặt -> Ứng dụng -> quyền -> Quyền -> Hoạt ảnh sạc -> Hiển thị trên Màn hình khóa\n\nĐường dẫn cài đặtOPPO : Cài đặt -> Ứng dụng -> Hoạt ảnh sạc -> Quản lý thông báo -> Hiển thị trên màn hình khóa\n\nVIVO đường dẫn cài đặt: i Trình quản lý -> Quản lý phần mềm -> Quản lý quyền -> Hiển thị màn hình khóa -> Hoạt ảnh sạc -> Chọn để mở</string>
+    <string name="apply">Áp dụng</string>
+    <string name="settings">Cài đặt</string>
+    <string name="popular">Phổ biến</string>
+    <string name="other">Khác</string>
+    <string name="get_permissions">Nhận quyền</string>
+    <string name="allow_display_over_other_apps">Cho phép hiển thị trên các ứng dụng khác</string>
+    <string name="not_now">Không phải bây giờ</string>
+    <string name="ok">VÂNG</string>
+    <string name="main">Chủ yếu</string>
+    <string name="social">Xã hội</string>
+    <string name="interesting_fact">Sự thật thú vị</string>
+    <string name="you_can_swipe_to_see_more_pictures">Bạn có thể vuốt để xem thêm hình ảnh</string>
 
 </resources>
