@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="charging_animation">Animação de carregamento</string>
-    <string name="recommended">Recomendado</string>
-    <string name="give_permissions_for_the_application_work_properly">Dê permissões para que o aplicativo funcione corretamente</string>
-    <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_application">Permitir exibição sobre outros aplicativos. Isso é necessário para a aplicação de trabalho correta</string>
     <string name="allow">Permitir</string>
     <string name="setting_instructions">Instruções de configuração</string>
     <string name="if_your_device_does_not_have_this_permission_you_can_ignore_it">Se o seu dispositivo não tiver essa permissão, você pode ignorá-la</string>

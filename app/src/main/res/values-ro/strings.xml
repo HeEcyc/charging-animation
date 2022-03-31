@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="charging_animation">Animație de încărcare</string>
-    <string name="recommended">Recomandat</string>
-    <string name="give_permissions_for_the_application_work_properly">Oferiți permisiuni pentru ca aplicația să funcționeze corect</string>
-    <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_application">Permite afișarea peste alte aplicații. Acest lucru este necesar pentru aplicarea corectă a lucrărilor</string>
     <string name="allow">Permite</string>
     <string name="setting_instructions">Instrucțiuni de setare</string>
     <string name="if_your_device_does_not_have_this_permission_you_can_ignore_it">Dacă dispozitivul dvs. nu are această permisiune, o puteți ignora</string>

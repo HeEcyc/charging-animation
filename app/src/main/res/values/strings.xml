@@ -1,9 +1,6 @@
 <resources>
     <string name="app_name" translatable="false">IOS Charging Animation</string>
     <string name="charging_animation">Charging Animation</string>
-    <string name="recommended">Recommended</string>
-    <string name="give_permissions_for_the_application_work_properly">Give permissions for the application work properly</string>
-    <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_application">Allow showing over other apps. This is necessary for correct work application</string>
     <string name="allow">Allow</string>
     <string name="setting_instructions">Setting instructions</string>
     <string name="if_your_device_does_not_have_this_permission_you_can_ignore_it">If your device does not have this permission, you can ignore it</string>

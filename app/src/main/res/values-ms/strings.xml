@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="charging_animation">Animasi Mengecas</string>
-    <string name="recommended">Disyorkan</string>
-    <string name="give_permissions_for_the_application_work_properly">Beri kebenaran untuk aplikasi berfungsi dengan betul</string>
-    <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_application">Benarkan dipaparkan di atas apl lain. Ini adalah perlu untuk permohonan kerja yang betul</string>
     <string name="allow">benarkan</string>
     <string name="setting_instructions">Menetapkan arahan</string>
     <string name="if_your_device_does_not_have_this_permission_you_can_ignore_it">Jika peranti anda tidak mempunyai kebenaran ini, anda boleh mengabaikannya</string>

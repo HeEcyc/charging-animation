@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="charging_animation">ការបញ្ចូលថាមពលចលនា</string>
-    <string name="recommended">បានណែនាំ</string>
-    <string name="give_permissions_for_the_application_work_properly">ផ្តល់ការអនុញ្ញាតសម្រាប់កម្មវិធីដំណើរការត្រឹមត្រូវ។</string>
-    <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_application">អនុញ្ញាតឱ្យបង្ហាញលើកម្មវិធីផ្សេងទៀត។ នេះគឺចាំបាច់សម្រាប់ការអនុវត្តការងារត្រឹមត្រូវ។</string>
     <string name="allow">អនុញ្ញាត</string>
     <string name="setting_instructions">ការកំណត់ការណែនាំ</string>
     <string name="if_your_device_does_not_have_this_permission_you_can_ignore_it">ប្រសិនបើឧបករណ៍របស់អ្នកមិនមានការអនុញ្ញាតនេះទេ អ្នកអាចមិនអើពើវាបាន</string>

@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="charging_animation">แอนิเมชั่นการชาร์จ</string>
-    <string name="recommended">ที่แนะนำ</string>
-    <string name="give_permissions_for_the_application_work_properly">ให้สิทธิ์สำหรับแอปพลิเคชันทำงานอย่างถูกต้อง</string>
-    <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_application">อนุญาตให้แสดงทับแอปอื่นๆ นี่เป็นสิ่งจำเป็นสำหรับการสมัครงานที่ถูกต้อง</string>
     <string name="allow">อนุญาต</string>
     <string name="setting_instructions">คำแนะนำในการตั้งค่า</string>
     <string name="if_your_device_does_not_have_this_permission_you_can_ignore_it">หากอุปกรณ์ของคุณไม่ได้รับอนุญาต คุณสามารถเพิกเฉยได้</string>

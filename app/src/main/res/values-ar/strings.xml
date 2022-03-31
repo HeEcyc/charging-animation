@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="charging_animation">شحن الرسوم المتحركة</string>
-    <string name="recommended">موصى به</string>
-    <string name="give_permissions_for_the_application_work_properly">منح أذونات للتطبيق يعمل بشكل صحيح</string>
-    <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_application">السماح بالظهور فوق التطبيقات الأخرى. هذا ضروري لتطبيق العمل الصحيح</string>
     <string name="allow">السماح</string>
     <string name="setting_instructions">تعليمات الإعداد</string>
     <string name="if_your_device_does_not_have_this_permission_you_can_ignore_it">إذا لم يكن لدى جهازك هذا الإذن ، فيمكنك تجاهله</string>
