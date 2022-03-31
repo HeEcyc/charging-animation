@@ -11,8 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#DED7FF">
-        
+        android:background="#3490DC">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -21,52 +20,36 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintDimensionRatio="360:616">
-            
-            <androidx.appcompat.widget.AppCompatImageView
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/progress"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="338:553.33"
-                app:layout_constraintWidth_percent="0.93888"
-                android:src="@drawable/a1i1"/>
-
-            <Space
-                android:id="@+id/batteryAnimationAnchor"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintDimensionRatio="360:110"/>
-
-            <com.airbnb.lottie.LottieAnimationView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                app:layout_constraintTop_toBottomOf="@id/batteryAnimationAnchor"
-                app:layout_constraintBottom_toBottomOf="@id/batteryAnimationAnchor"
                 app:layout_constraintDimensionRatio="1:1"
-                app:lottie_rawRes="@raw/a1battery"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true"/>
+                app:layout_constraintWidth_percent="0.65"
+                app:layout_constraintVertical_bias="0.16"
+                app:lottie_rawRes="@raw/a1progress"
+                progress="@{blHolder.batteryLevel}"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="50:24"
-                app:layout_constraintWidth_percent="0.13888"
-                app:layout_constraintVertical_bias="0.0625"
+                app:layout_constraintTop_toTopOf="@id/progress"
+                app:layout_constraintBottom_toBottomOf="@id/progress"
+                app:layout_constraintStart_toStartOf="@id/progress"
+                app:layout_constraintEnd_toEndOf="@id/progress"
+                app:layout_constraintDimensionRatio="72:40"
+                app:layout_constraintWidth_percent="0.3"
                 android:gravity="center"
                 app:autoSizeTextType="uniform"
-                app:autoSizeMaxTextSize="100sp"
+                app:autoSizeMaxTextSize="40sp"
                 app:autoSizeMinTextSize="1sp"
-                android:textColor="#371A45"
-                android:fontFamily="@font/roboto_regular"
-                android:textStyle="bold"
+                android:textColor="#0BDBFF"
+                android:fontFamily="@font/cookie_regular"
                 android:text="@{blHolder.batteryLevel}"/>
 
             <com.airbnb.lottie.LottieAnimationView
@@ -74,12 +57,11 @@
                 android:layout_height="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
-                app:lottie_rawRes="@raw/a1astronaut"
+                app:lottie_rawRes="@raw/a1poo"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"/>
             
         </androidx.constraintlayout.widget.ConstraintLayout>
-        
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

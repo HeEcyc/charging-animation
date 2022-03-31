@@ -11,82 +11,80 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#41A545">
-        
+        android:background="#FCFFF7">
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/duckAnimationAnchorHorizontal"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintDimensionRatio="360:616">
+            app:layout_constraintDimensionRatio="360:616"
+            android:clipChildren="false">
 
             <com.airbnb.lottie.LottieAnimationView
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintWidth_percent="0.6"
-                app:layout_constraintVertical_bias="0.55"
-                app:lottie_rawRes="@raw/a3battery"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true"/>
-
-            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/progress"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="90:51"
-                app:layout_constraintWidth_percent="0.25"
-                app:layout_constraintVertical_bias="0.425"
-                android:gravity="center"
-                app:autoSizeTextType="uniform"
-                app:autoSizeMaxTextSize="100sp"
-                app:autoSizeMinTextSize="1sp"
-                android:textColor="#FEFFFE"
-                android:fontFamily="@font/ma_shan_zheng_regular"
-                android:textStyle="bold"
-                android:text="@{blHolder.batteryLevel}"/>
-            
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintWidth_percent="0.541666"
+                app:layout_constraintVertical_bias="0.088235"
+                app:lottie_rawRes="@raw/a3progress"
+                progress="@{blHolder.batteryLevel}"/>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            app:layout_constraintStart_toStartOf="@id/duckAnimationAnchorHorizontal"
-            app:layout_constraintEnd_toEndOf="@id/duckAnimationAnchorHorizontal">
-
-            <Space
-                android:id="@+id/duckAnimationAnchorVertical"
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@id/progress"
+                app:layout_constraintBottom_toBottomOf="@id/progress"
+                app:layout_constraintStart_toStartOf="@id/progress"
+                app:layout_constraintEnd_toEndOf="@id/progress"
+                app:layout_constraintDimensionRatio="104:40"
+                app:layout_constraintWidth_percent="0.2888"
+                android:gravity="center"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMaxTextSize="40sp"
+                app:autoSizeMinTextSize="1sp"
+                android:textColor="#00AF2F"
+                android:fontFamily="@font/dubai_bold"
+                android:text="@{blHolder.batteryLevel}"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintWidth_percent="0.7143"
-                app:layout_constraintDimensionRatio="1:0.07"/>
+                app:layout_constraintDimensionRatio="231.84:170.13"
+                app:layout_constraintWidth_percent="0.644"
+                app:layout_constraintVertical_bias="0.504394833"
+                android:src="@drawable/a3stars"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/marker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.31" />
 
             <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintBottom_toBottomOf="@id/duckAnimationAnchorVertical"
+                app:layout_constraintTop_toTopOf="@id/marker"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintWidth_percent="0.7143"
-                app:lottie_rawRes="@raw/a3duck"
+                app:layout_constraintWidth_percent="1.5"
+                app:lottie_rawRes="@raw/a3dog"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-        
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

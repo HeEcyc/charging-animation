@@ -11,8 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFFFF">
-        
+        android:background="#0ACAFF">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -22,6 +21,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintDimensionRatio="360:616">
 
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:lottie_rawRes="@raw/a6panda"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"/>
+
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -29,41 +37,18 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="205:110"
-                app:layout_constraintWidth_percent="0.569444"
-                app:layout_constraintVertical_bias="0.03"
+                app:layout_constraintDimensionRatio="180:80"
+                app:layout_constraintWidth_percent="0.5"
+                app:layout_constraintVertical_bias="0.889"
                 android:gravity="center"
                 app:autoSizeTextType="uniform"
-                app:autoSizeMaxTextSize="100sp"
+                app:autoSizeMaxTextSize="80sp"
                 app:autoSizeMinTextSize="1sp"
-                android:textColor="#6F1D1B"
-                android:fontFamily="@font/fahkwang_bold"
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/dangrek_regular"
                 android:text="@{blHolder.batteryLevel}"/>
-
-            <Space
-                android:id="@+id/monkeyAnimationAnchor"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintTop_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="1:0.125"
-                app:layout_constraintWidth_percent="1.51"/>
-
-            <com.airbnb.lottie.LottieAnimationView
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintBottom_toBottomOf="@id/monkeyAnimationAnchor"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintWidth_percent="1.51"
-                app:lottie_rawRes="@raw/a6monkey"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true"/>
             
         </androidx.constraintlayout.widget.ConstraintLayout>
-        
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
