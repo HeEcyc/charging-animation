@@ -9,7 +9,9 @@ import com.ioscharginging.iosanimationation.R
 import com.ioscharginging.iosanimationation.base.BaseActivity
 import com.ioscharginging.iosanimationation.databinding.MainActivityBinding
 import com.ioscharginging.iosanimationation.repository.background.display.ForegroundService
+import com.ioscharginging.iosanimationation.repository.preferences.Preferences
 import com.ioscharginging.iosanimationation.ui.custom.ItemDecorationWithEnds
+import com.ioscharginging.iosanimationation.ui.guid.GuidDialog
 import com.ioscharginging.iosanimationation.ui.permission.PermissionDialog
 import com.ioscharginging.iosanimationation.ui.settings.SettingsActivity
 import com.ioscharginging.iosanimationation.utils.IRON_SOURCE_APP_KEY
@@ -37,6 +39,8 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
 //        AlarmBroadcast.startAlarm(this)
         if (ForegroundService.instance === null)
             startService(Intent(this, ForegroundService::class.java))
+        if (!Preferences.wasLaunchedBefore)
+            GuidDialog().show(supportFragmentManager, null)
         if (!Settings.canDrawOverlays(this))
             PermissionDialog().show(supportFragmentManager, null)
 
