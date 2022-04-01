@@ -4,16 +4,16 @@
 
     <data>
         <import type="android.view.View"/>
-        <import type="com.ioscharginging.iosanimationation.ui.custom.ScalableCardView.ScaleType"/>
+        <import type="com.happy.charger.ui.custom.ScalableCardView.ScaleType"/>
         <variable
             name="item"
-            type="com.ioscharginging.iosanimationation.ui.adapters.AnimationAdapter.AnimationViewModel" />
+            type="com.happy.charger.ui.adapters.AnimationAdapter.AnimationViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent">
-        <com.ioscharginging.iosanimationation.ui.custom.ScalableCardView
+        <com.happy.charger.ui.custom.ScalableCardView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@{item.isSelected ? @color/animationItemStrokeColorSelected : @color/animationItemStrokeColor}">
-                <com.ioscharginging.iosanimationation.ui.custom.ScalableCardView
+                <com.happy.charger.ui.custom.ScalableCardView
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     app:layout_constraintTop_toTopOf="parent"
@@ -46,9 +46,9 @@
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
                         android:background="@android:color/white"/>
-                </com.ioscharginging.iosanimationation.ui.custom.ScalableCardView>
+                </com.happy.charger.ui.custom.ScalableCardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.ioscharginging.iosanimationation.ui.custom.ScalableCardView>
+        </com.happy.charger.ui.custom.ScalableCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

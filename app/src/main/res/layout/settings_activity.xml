@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.ioscharginging.iosanimationation.ui.settings.SettingsViewModel" />
+            type="com.happy.charger.ui.settings.SettingsViewModel" />
     </data>
 
     <androidx.appcompat.widget.LinearLayoutCompat

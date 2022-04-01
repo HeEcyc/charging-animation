@@ -2,10 +2,10 @@
 <layout>
 
     <data>
-        <import type="com.ioscharginging.iosanimationation.ui.custom.ScalableCardView.ScaleType"/>
+        <import type="com.happy.charger.ui.custom.ScalableCardView.ScaleType"/>
     </data>
 
-    <com.ioscharginging.iosanimationation.ui.custom.ScalableCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    <com.happy.charger.ui.custom.ScalableCardView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
@@ -106,6 +106,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
-    </com.ioscharginging.iosanimationation.ui.custom.ScalableCardView>
+    </com.happy.charger.ui.custom.ScalableCardView>
 
 </layout>

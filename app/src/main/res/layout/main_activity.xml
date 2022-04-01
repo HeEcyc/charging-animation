@@ -5,10 +5,10 @@
 
     <data>
         <import type="android.view.View"/>
-        <import type="com.ioscharginging.iosanimationation.ui.custom.ScalableCardView.ScaleType"/>
+        <import type="com.happy.charger.ui.custom.ScalableCardView.ScaleType"/>
         <variable
             name="viewModel"
-            type="com.ioscharginging.iosanimationation.ui.main.MainViewModel" />
+            type="com.happy.charger.ui.main.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.motion.widget.MotionLayout
@@ -88,7 +88,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintDimensionRatio="360:344">
-                <com.ioscharginging.iosanimationation.ui.custom.ScalableCardView
+                <com.happy.charger.ui.custom.ScalableCardView
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     app:layout_constraintTop_toTopOf="parent"
@@ -105,7 +105,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="#C7C7CC">
-                        <com.ioscharginging.iosanimationation.ui.custom.ScalableCardView
+                        <com.happy.charger.ui.custom.ScalableCardView
                             android:layout_width="0dp"
                             android:layout_height="0dp"
                             app:layout_constraintTop_toTopOf="parent"
@@ -124,9 +124,9 @@
                                 android:layout_height="match_parent"
                                 android:background="@android:color/white"
                                 android:scaleType="centerCrop"/>
-                        </com.ioscharginging.iosanimationation.ui.custom.ScalableCardView>
+                        </com.happy.charger.ui.custom.ScalableCardView>
                     </androidx.constraintlayout.widget.ConstraintLayout>
-                </com.ioscharginging.iosanimationation.ui.custom.ScalableCardView>
+                </com.happy.charger.ui.custom.ScalableCardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
