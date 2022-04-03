@@ -12,12 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/white">
+        android:background="#F3FDEE">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#EBF8F8F8">
+            android:layout_height="wrap_content">
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -28,8 +27,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#EBF8F8F8">
+            android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/buttonBack"
@@ -40,7 +38,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintWidth_percent="0.1333"
-                android:src="@drawable/ic_back_blue"/>
+                android:src="@drawable/ic_back"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="0dp"
@@ -56,7 +54,7 @@
                 app:autoSizeMaxTextSize="17sp"
                 app:autoSizeMinTextSize="1sp"
                 android:textColor="#0A0A0B"
-                android:fontFamily="@font/sf_pro_display_semibold"
+                android:fontFamily="@font/circe_bold"
                 android:text="@string/settings"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -89,7 +87,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#EFEFF4">
+                    android:background="#FFFFFF">
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
@@ -132,7 +130,6 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#EBFFFFFF"
                     android:onClick="@{(_) -> viewModel.onTurnOnOffClick()}">
                     <Space
                         android:layout_width="match_parent"
@@ -154,7 +151,7 @@
                         app:autoSizeTextType="uniform"
                         app:autoSizeMaxTextSize="17sp"
                         app:autoSizeMinTextSize="1sp"
-                        android:textColor="#0A0A0B"
+                        android:textColor="#006D1F"
                         android:fontFamily="@font/sf_pro_display_regular"
                         android:text="@string/show_on_unlocked_screen"/>
 
@@ -191,7 +188,6 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#EBFFFFFF"
                     android:onClick="@{(_) -> viewModel.onNotificationsClick()}">
                     <Space
                         android:layout_width="match_parent"
@@ -213,7 +209,7 @@
                         app:autoSizeTextType="uniform"
                         app:autoSizeMaxTextSize="17sp"
                         app:autoSizeMinTextSize="1sp"
-                        android:textColor="#0A0A0B"
+                        android:textColor="#006D1F"
                         android:fontFamily="@font/sf_pro_display_regular"
                         android:text="@string/notifications"/>
 
@@ -250,7 +246,6 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#EBFFFFFF"
                     android:onClick="@{(_) -> viewModel.onFlashClick()}">
                     <Space
                         android:layout_width="match_parent"
@@ -272,7 +267,7 @@
                         app:autoSizeTextType="uniform"
                         app:autoSizeMaxTextSize="17sp"
                         app:autoSizeMinTextSize="1sp"
-                        android:textColor="#0A0A0B"
+                        android:textColor="#006D1F"
                         android:fontFamily="@font/sf_pro_display_regular"
                         android:text="@string/flash"/>
 
@@ -309,7 +304,6 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#EBFFFFFF"
                     android:onClick="@{(_) -> viewModel.onVibrationClick()}">
                     <Space
                         android:layout_width="match_parent"
@@ -331,7 +325,7 @@
                         app:autoSizeTextType="uniform"
                         app:autoSizeMaxTextSize="17sp"
                         app:autoSizeMinTextSize="1sp"
-                        android:textColor="#0A0A0B"
+                        android:textColor="#006D1F"
                         android:fontFamily="@font/sf_pro_display_regular"
                         android:text="@string/vibration"/>
 
@@ -368,7 +362,6 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#EBFFFFFF"
                     android:onClick="@{(_) -> viewModel.onSoundClick()}">
                     <Space
                         android:layout_width="match_parent"
@@ -390,7 +383,7 @@
                         app:autoSizeTextType="uniform"
                         app:autoSizeMaxTextSize="17sp"
                         app:autoSizeMinTextSize="1sp"
-                        android:textColor="#0A0A0B"
+                        android:textColor="#006D1F"
                         android:fontFamily="@font/sf_pro_display_regular"
                         android:text="@string/sound"/>
 
@@ -425,7 +418,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#EFEFF4">
+                    android:background="#FFFFFF">
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
@@ -468,8 +461,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/buttonShare"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#EBFFFFFF">
+                    android:layout_height="wrap_content">
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
@@ -490,7 +482,7 @@
                         app:autoSizeTextType="uniform"
                         app:autoSizeMaxTextSize="17sp"
                         app:autoSizeMinTextSize="1sp"
-                        android:textColor="#0A0A0B"
+                        android:textColor="#006D1F"
                         android:fontFamily="@font/sf_pro_display_regular"
                         android:text="@string/share"/>
 
@@ -524,8 +516,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/buttonRateUs"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#EBFFFFFF">
+                    android:layout_height="wrap_content">
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
@@ -546,7 +537,7 @@
                         app:autoSizeTextType="uniform"
                         app:autoSizeMaxTextSize="17sp"
                         app:autoSizeMinTextSize="1sp"
-                        android:textColor="#0A0A0B"
+                        android:textColor="#006D1F"
                         android:fontFamily="@font/sf_pro_display_regular"
                         android:text="@string/rate_us"/>
 
@@ -580,8 +571,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/buttonPrivacyPolicy"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#EBFFFFFF">
+                    android:layout_height="wrap_content">
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
@@ -602,7 +592,7 @@
                         app:autoSizeTextType="uniform"
                         app:autoSizeMaxTextSize="17sp"
                         app:autoSizeMinTextSize="1sp"
-                        android:textColor="#0A0A0B"
+                        android:textColor="#006D1F"
                         android:fontFamily="@font/sf_pro_display_regular"
                         android:text="@string/privacy_policy"/>
 

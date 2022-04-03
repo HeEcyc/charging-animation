@@ -22,7 +22,7 @@ import android.view.animation.AccelerateInterpolator;
 
 public class SwitchView extends View {
 
-    private final int DEFAULT_COLOR_ON = 0xff53d769;
+    private final int DEFAULT_COLOR_ON = 0xff00AF1E;
     private final int DEFAULT_COLOR_OFF = 0xffe3e3e3;
 
     private int colorOn = DEFAULT_COLOR_ON;
@@ -229,7 +229,8 @@ public class SwitchView extends View {
         // draw background
         paint.setStyle(Style.FILL);
         paint.setColor(isChecked ? colorOn : colorOff);
-        canvas.drawPath(sPath, paint);
+//        canvas.drawPath(sPath, paint);
+        canvas.drawRect(sLeft, sTop, sRight, sBottom, paint);
 
         sAnim = sAnim - 0.1f > 0 ? sAnim - 0.1f : 0;
         bAnim = bAnim - 0.1f > 0 ? bAnim - 0.1f : 0;
@@ -242,7 +243,7 @@ public class SwitchView extends View {
         canvas.save();
         canvas.scale(scale, scale, sCenterX + scaleOffset, sCenterY);
         paint.setColor(0xFFC7C7CC);
-        canvas.drawPath(sPath, paint);
+//        canvas.drawPath(sPath, paint);
         canvas.restore();
         // draw center bar
         canvas.save();
@@ -253,20 +254,22 @@ public class SwitchView extends View {
         paint.setStyle(Style.FILL);
         paint.setColor(0xff333333);
         paint.setShader(shadowGradient);
-        canvas.drawPath(bPath, paint);
+//        canvas.drawPath(bPath, paint);
         paint.setShader(null);
         canvas.translate(0, -shadowHeight);
 
         canvas.scale(0.98f, 0.98f, bWidth / 2, bWidth / 2);
         paint.setStyle(Style.FILL);
-        paint.setColor(0xffffffff);
-        canvas.drawPath(bPath, paint);
+        paint.setColor(0xffF3FDEE);
+//        canvas.drawPath(bPath, paint);
+        canvas.drawRect(bRectF, paint);
 
         paint.setStyle(Style.STROKE);
         paint.setStrokeWidth(bStrokeWidth * 0.5f);
 
         paint.setColor(isChecked ? colorOn : colorOff);
-        canvas.drawPath(bPath, paint);
+//        canvas.drawPath(bPath, paint);
+        canvas.drawRect(bRectF, paint);
 
         canvas.restore();
 
