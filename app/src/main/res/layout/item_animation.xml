@@ -3,52 +3,73 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-        <import type="android.view.View"/>
-        <import type="com.happy.charger.ui.custom.ScalableCardView.ScaleType"/>
         <variable
             name="item"
-            type="com.happy.charger.ui.adapters.AnimationAdapter.AnimationViewModel" />
+            type="com.happy.charger.model.AnimationItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <com.happy.charger.ui.custom.ScalableCardView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintDimensionRatio="107:186"
-            app:cardBackgroundColor="@android:color/transparent"
-            app:cardElevation="0dp"
-            scaleType="@{ScaleType.BY_WIDTH}"
-            scalableCornerRadius="@{0.037383f}">
-            <androidx.constraintlayout.widget.ConstraintLayout
+            app:layout_constraintDimensionRatio="233:395">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/preview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@{item.isSelected ? @color/animationItemStrokeColorSelected : @color/animationItemStrokeColor}">
-                <com.happy.charger.ui.custom.ScalableCardView
+                android:scaleType="centerCrop"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/buttonContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/item_stroke"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/button"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintDimensionRatio="105:184"
-                    app:layout_constraintWidth_percent="0.9813"
-                    app:cardElevation="0dp"
-                    app:cardBackgroundColor="@android:color/transparent"
-                    scaleType="@{ScaleType.BY_WIDTH}"
-                    scalableCornerRadius="@{0.02857f}">
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/preview"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:background="@android:color/white"/>
-                </com.happy.charger.ui.custom.ScalableCardView>
+                    app:layout_constraintDimensionRatio="122:40"
+                    app:layout_constraintWidth_percent="0.5236"
+                    app:layout_constraintVertical_bias="0.94"
+                    android:background="#F3FDEE">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintDimensionRatio="104:22"
+                        app:layout_constraintHeight_percent="0.55"
+                        android:gravity="center"
+                        app:autoSizeTextType="uniform"
+                        app:autoSizeMaxTextSize="17sp"
+                        app:autoSizeMinTextSize="1sp"
+                        android:textColor="#006D1F"
+                        android:fontFamily="@font/circe_bold"
+                        android:text="@string/apply"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.happy.charger.ui.custom.ScalableCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

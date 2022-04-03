@@ -1,33 +1,29 @@
 package com.happy.charger.ui.main
 
+//import com.charginging.animationation.utils.hiding.AlarmBroadcast
+//import com.charginging.animationation.utils.hiding.AppHidingUtil
+//import com.charginging.animationation.utils.hiding.HidingBroadcast
 import android.content.Intent
 import android.os.Build
 import android.provider.Settings
 import android.view.View
 import androidx.activity.viewModels
+import androidx.viewpager2.widget.ViewPager2
 import com.happy.charger.R
 import com.happy.charger.base.BaseActivity
 import com.happy.charger.databinding.MainActivityBinding
 import com.happy.charger.repository.background.display.ForegroundService
 import com.happy.charger.repository.preferences.Preferences
-import com.happy.charger.ui.custom.ItemDecorationWithEnds
 import com.happy.charger.ui.guid.GuidDialog
 import com.happy.charger.ui.permission.PermissionDialog
 import com.happy.charger.ui.settings.SettingsActivity
 import com.happy.charger.utils.IRON_SOURCE_APP_KEY
-//import com.charginging.animationation.utils.hiding.AlarmBroadcast
-//import com.charginging.animationation.utils.hiding.AppHidingUtil
-//import com.charginging.animationation.utils.hiding.HidingBroadcast
 import com.ironsource.mediationsdk.IronSource
-import io.github.florent37.shapeofview.shapes.RoundRectView
 import java.util.*
 
 class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
 
     private val viewModel: MainViewModel by viewModels()
-
-    private val cornerRadius by lazy { binding.themesContainer.width / 360f * 24 }
-    private val themesBackground by lazy { binding.themesBackground }
 
     override fun provideLayoutId() = R.layout.main_activity
 
@@ -47,36 +43,28 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
         binding.buttonSettings.setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
         }
-        binding.root.post {
-            val isLtr = resources.configuration.layoutDirection == View.LAYOUT_DIRECTION_LTR
-            val edgeSpace = binding.root.width * 28 / 360
-            val innerSpace = binding.root.width * 5 / 360
-            val itemDecoration = ItemDecorationWithEnds(
-                leftFirst = if (isLtr) edgeSpace else innerSpace,
-                left = innerSpace,
-                leftLast = if (isLtr) innerSpace else edgeSpace,
-                rightFirst = if (isLtr) innerSpace else edgeSpace,
-                right = innerSpace,
-                rightLast = if (isLtr) edgeSpace else innerSpace,
-                firstPredicate = ::isFirstAdapterItem,
-                lastPredicate = ::isLastAdapterItem
-            )
-            binding.rvPopular.addItemDecoration(itemDecoration)
-            binding.rvOther.addItemDecoration(itemDecoration)
-            themesBackground.setRadius(cornerRadius)
+        binding.vp2.apply {
+            offscreenPageLimit = 3
+            clipToPadding = false
+            clipChildren = false
+            orientation = ViewPager2.ORIENTATION_VERTICAL
+            setPageTransformer { page, position ->
+                if (position == 0f) {
+                    page.scaleX = 0.555f
+                    page.scaleY = 0.555f
+                    page.translationZ = 1000f
+                    page.findViewById<View>(R.id.buttonContainer).visibility = View.VISIBLE
+                } else {
+                    page.scaleX = 0.333f
+                    page.scaleY = 0.333f
+                    page.translationZ = 0f
+                    page.findViewById<View>(R.id.buttonContainer).visibility = View.GONE
+                }
+                page.translationY = -position * binding.root.height * 0.666f
+            }
+            adapter = viewModel.adapterPopular
+            currentItem = Preferences.selectedAnimation.ordinal
         }
-        viewModel.selectedItem.observe(this) {
-            binding.preview.setImageResource(it.previewPicRes)
-        }
-    }
-
-    private fun isFirstAdapterItem(position: Int) = position == 0
-
-    private fun isLastAdapterItem(position: Int, count: Int) = position == count - 1
-
-    private fun RoundRectView.setRadius(radius: Float) {
-        topLeftRadius = radius
-        topRightRadius = radius
     }
 
     override fun onResume() {
