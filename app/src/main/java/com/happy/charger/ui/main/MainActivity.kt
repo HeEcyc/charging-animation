@@ -7,7 +7,10 @@ import android.content.Intent
 import android.os.Build
 import android.provider.Settings
 import android.view.View
+import android.widget.ScrollView
 import androidx.activity.viewModels
+import androidx.core.view.children
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.happy.charger.R
 import com.happy.charger.base.BaseActivity
@@ -44,6 +47,7 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
             startActivity(Intent(this, SettingsActivity::class.java))
         }
         binding.vp2.apply {
+            children.firstOrNull { it is RecyclerView }?.let { it as RecyclerView }?.overScrollMode = ScrollView.OVER_SCROLL_NEVER
             offscreenPageLimit = 3
             clipToPadding = false
             clipChildren = false
