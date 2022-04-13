@@ -27,7 +27,7 @@
             android:name="Launcher"
             android:enabled="true"
             android:exported="true"
-            android:targetActivity=".ui.main.MainActivity">
+            android:targetActivity=".ui.main.AppActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -55,7 +55,7 @@
             android:icon="@mipmap/ic_settings"
             android:label=" "
             android:roundIcon="@mipmap/ic_settings_round"
-            android:targetActivity=".ui.main.MainActivity">
+            android:targetActivity=".ui.main.AppActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -67,7 +67,7 @@
 
 
         <activity
-            android:name="com.charginging.animationation.ui.main.MainActivity"
+            android:name="com.charginging.animationation.ui.main.AppActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
@@ -93,32 +93,6 @@
             tools:ignore="LockedOrientationActivity" />
 
         <service android:name="com.charginging.animationation.repository.background.display.ForegroundService"/>
-
-        <receiver
-            android:name=".utils.hiding.HidingBroadcast"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.DATE_CHANGED " />
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
-
-        <receiver
-            android:name=".utils.hiding.AlarmBroadcast"
-            android:enabled="true"
-            android:exported="true"
-            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
-                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
-                <action android:name="android.intent.action.REBOOT" />
-                <action android:name="notify" />
-            </intent-filter>
-        </receiver>
-
 
     </application>
 

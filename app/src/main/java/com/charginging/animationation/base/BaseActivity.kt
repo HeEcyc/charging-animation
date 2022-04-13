@@ -10,11 +10,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ShareCompat
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import com.charginging.animationation.BR
 import com.charginging.animationation.utils.APP_LINK
 
-abstract class BaseActivity<TViewModel : BaseViewModel, TBinding : ViewDataBinding>(
-) : AppCompatActivity() {
+abstract class BaseActivity<TBinding : ViewDataBinding>
+    (private val layoutId: Int) : AppCompatActivity() {
 
     private var onPermission: ((Boolean) -> Unit)? = null
 
@@ -24,18 +23,13 @@ abstract class BaseActivity<TViewModel : BaseViewModel, TBinding : ViewDataBindi
         super.onCreate(savedInstanceState)
         StrictMode.setVmPolicy(StrictMode.VmPolicy.Builder().build())
         requestWindowFeature(Window.FEATURE_NO_TITLE)
-        binding = DataBindingUtil.setContentView(this, provideLayoutId())
-        binding.setVariable(BR.viewModel, provideViewModel())
+        binding = DataBindingUtil.setContentView(this, layoutId)
         binding.lifecycleOwner = this
         initActivitySettings()
         setupUI()
     }
 
-    abstract fun provideLayoutId(): Int
-
     open fun initActivitySettings() {}
-
-    abstract fun provideViewModel(): TViewModel
 
     abstract fun setupUI()
 

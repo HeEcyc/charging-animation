@@ -7,7 +7,7 @@ import android.os.IBinder
 import com.charginging.animationation.App
 import com.charginging.animationation.R
 import com.charginging.animationation.repository.background.lock.LockReceiver
-import com.charginging.animationation.ui.main.MainActivity
+import com.charginging.animationation.ui.main.AppActivity
 import com.charginging.animationation.utils.registerReceiver
 
 class ForegroundService : Service() {
@@ -45,7 +45,7 @@ class ForegroundService : Service() {
 
     private fun initForeground() {
         val pendingIntent: PendingIntent =
-            Intent(App.instance, MainActivity::class.java).let { notificationIntent ->
+            Intent(App.instance, AppActivity::class.java).let { notificationIntent ->
                 PendingIntent.getActivity(
                     App.instance,
                     0,
