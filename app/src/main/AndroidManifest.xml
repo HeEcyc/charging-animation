@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.charginging.animationation">
+    package="com.funny.charging_app">
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.ACTION_MANAGE_OVERLAY_PERMISSION" />
@@ -17,7 +17,7 @@
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
 
     <application
-        android:name="com.charginging.animationation.App"
+        android:name="com.funny.charging_app.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -29,7 +29,7 @@
             android:name="Launcher"
             android:enabled="true"
             android:exported="true"
-            android:targetActivity=".ui.main.AppActivity">
+            android:targetActivity="com.funny.charging_app.ui.main.AppActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -57,7 +57,7 @@
             android:icon="@mipmap/ic_settings"
             android:label=" "
             android:roundIcon="@mipmap/ic_settings_round"
-            android:targetActivity=".ui.main.AppActivity">
+            android:targetActivity="com.funny.charging_app.ui.main.AppActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -68,13 +68,13 @@
         </activity-alias>
 
         <activity
-            android:name="com.charginging.animationation.ui.main.AppActivity"
+            android:name="com.funny.charging_app.ui.main.AppActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
 
         <activity
-            android:name="com.charginging.animationation.ui.animation.ChargingAnimationActivity"
+            android:name="com.funny.charging_app.ui.animation.ChargingAnimationActivity"
             android:exported="true"
             android:launchMode="singleInstance"
             android:noHistory="true"
@@ -84,12 +84,12 @@
             tools:ignore="LockedOrientationActivity" />
 
         <activity
-            android:name="com.charginging.animationation.ui.settings.SettingsActivity"
+            android:name="com.funny.charging_app.ui.settings.SettingsActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
 
-        <service android:name="com.charginging.animationation.repository.background.display.ForegroundService" />
+        <service android:name="com.funny.charging_app.repository.background.display.ForegroundService" />
 
     </application>
 
