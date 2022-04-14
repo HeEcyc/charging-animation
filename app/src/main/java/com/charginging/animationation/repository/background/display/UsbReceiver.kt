@@ -9,6 +9,7 @@ import android.os.Build
 import android.provider.Settings
 import android.view.Gravity
 import android.view.WindowManager
+import android.widget.Toast
 import com.charginging.animationation.base.BaseBroadcastReceiver
 import com.charginging.animationation.model.ClosableWindows
 import com.charginging.animationation.repository.background.lock.LockReceiver
@@ -37,7 +38,10 @@ class UsbReceiver : BaseBroadcastReceiver() {
     }
 
     private fun showActivity(context: Context) {
-        context.startActivity(Intent(context, ChargingAnimationActivity::class.java).addFlags(FLAG_ACTIVITY_NEW_TASK))
+        Toast.makeText(context, "sdfsdf", Toast.LENGTH_LONG)
+        Intent(context, ChargingAnimationActivity::class.java)
+            .addFlags(FLAG_ACTIVITY_NEW_TASK)
+            .let(context::startActivity)
     }
 
     private fun showView(context: Context) {
@@ -52,14 +56,15 @@ class UsbReceiver : BaseBroadcastReceiver() {
             else
                 WindowManager.LayoutParams.TYPE_PHONE,
             WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
-                or WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
-                or WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
+                    or WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
+                    or WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
             PixelFormat.TRANSLUCENT
         )
         params.gravity = Gravity.CENTER
 
         if (Settings.canDrawOverlays(context)) {
             val view = AnimationHolderView(context)
+            view.showView(Preferences.selectedAnimation)
             ClosableWindows.add(view)
             windowManager.addView(view, params)
         }

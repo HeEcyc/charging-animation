@@ -43,6 +43,7 @@
             app:icvp_scroll_duration="500" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/applyButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

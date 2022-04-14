@@ -5,18 +5,21 @@ import android.net.Uri
 import android.provider.Settings
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
+import com.charginging.animationation.App
 import com.charginging.animationation.R
 import com.charginging.animationation.base.BaseDialog
 import com.charginging.animationation.databinding.PermissionDialogBinding
 
 class PermissionDialog : BaseDialog<PermissionDialogBinding>(R.layout.permission_dialog) {
 
-    private val overlayPermissionLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-        if (Settings.canDrawOverlays(requireContext())) {
-            binding.layoutPermission.root.visibility = View.GONE
-            binding.layoutInstruction.root.visibility = View.VISIBLE
+    private val overlayPermissionLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            if (Settings.canDrawOverlays(requireContext())) {
+                App.instance.startForegroundService()
+                binding.layoutPermission.root.visibility = View.GONE
+                binding.layoutInstruction.root.visibility = View.VISIBLE
+            }
         }
-    }
 
     override fun setupUI() {
         isCancelable = false

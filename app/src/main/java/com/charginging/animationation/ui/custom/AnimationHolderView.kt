@@ -17,14 +17,14 @@ class AnimationHolderView @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr), ClosableWindow {
-
+    var isPreview = false
 
     init {
         layoutParams = ViewGroup.LayoutParams(
             ViewGroup.LayoutParams.MATCH_PARENT,
             ViewGroup.LayoutParams.MATCH_PARENT
         )
-        setOnClickListener { ClosableWindows.close(this) }
+        setOnClickListener { if (!isPreview) ClosableWindows.close(this) }
     }
 
     fun showView(animationItem: AnimationItem, isStopOnStart: Boolean = false) {
@@ -44,9 +44,9 @@ class AnimationHolderView @JvmOverloads constructor(
 
     private fun playAnimation(viewGroup: ViewGroup) {
         viewGroup.forEach {
-            Log.d("12345", "enter")
-            if (it is LottieAnimationView) it.playAnimation()
-            else if (it is ViewGroup) playAnimation(it)
+            if (it is LottieAnimationView) {
+                if (!it.isAnimating) it.playAnimation()
+            } else if (it is ViewGroup) playAnimation(it)
         }
     }
 

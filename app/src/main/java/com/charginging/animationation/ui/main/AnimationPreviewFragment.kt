@@ -25,6 +25,7 @@ class AnimationPreviewFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         with(view.findViewById<AnimationHolderView>(R.id.holder)) {
+            isPreview = true
             showView(requireArguments().getSerializable(ANIMATION_ITEM) as AnimationItem, true)
         }
     }

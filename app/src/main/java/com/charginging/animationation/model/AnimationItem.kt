@@ -38,9 +38,7 @@ enum class AnimationItem(
         )
         .invoke(null, LayoutInflater.from(context), null, false)
         .let { it as ViewDataBinding }
-        .apply {
-            setVariable(BR.blHolder, BatteryLevelHolder())
-        }
+        .apply { setVariable(BR.blHolder, BatteryLevelHolder()) }
         .root
 
     class BatteryLevelHolder {
