@@ -6,11 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.charginging.animationation.R
 import com.charginging.animationation.model.AnimationItem
 import com.charginging.animationation.ui.custom.AnimationHolderView
 
 class AnimationPreviewFragment : Fragment() {
+
+    private val appViewModel: AppActivity.AppViewModel by activityViewModels()
 
     companion object {
         private const val ANIMATION_ITEM = "animation_item"
@@ -24,10 +27,12 @@ class AnimationPreviewFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val animationItem = requireArguments().getSerializable(ANIMATION_ITEM) as AnimationItem
         with(view.findViewById<AnimationHolderView>(R.id.holder)) {
             isPreview = true
-            showView(requireArguments().getSerializable(ANIMATION_ITEM) as AnimationItem, true)
+            showView(animationItem, true)
         }
+        appViewModel.batteryLevel.observe(viewLifecycleOwner) { animationItem.setBatteryLevel(it) }
     }
 
     fun startAnimation() {

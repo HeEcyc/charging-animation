@@ -28,7 +28,7 @@ enum class AnimationItem(
     A8(R.mipmap.preview_8, A8Binding::class.java);
 
     val isSelected: ObservableBoolean by lazy { ObservableBoolean(Preferences.selectedAnimation == this) }
-
+    val batteryLevelHolder = BatteryLevelHolder()
     fun inflateAnimationView(context: Context): View = animationBindingClass
         .getMethod(
             "inflate",
@@ -38,11 +38,15 @@ enum class AnimationItem(
         )
         .invoke(null, LayoutInflater.from(context), null, false)
         .let { it as ViewDataBinding }
-        .apply { setVariable(BR.blHolder, BatteryLevelHolder()) }
+        .apply { setVariable(BR.blHolder, batteryLevelHolder) }
         .root
 
     class BatteryLevelHolder {
         val batteryLevel: ObservableField<String> = BatteryLevelReceiver.batteryLevel
+    }
+
+    fun setBatteryLevel(text: String) {
+        batteryLevelHolder.batteryLevel.set(text)
     }
 
 }

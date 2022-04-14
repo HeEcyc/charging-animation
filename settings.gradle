@@ -9,5 +9,5 @@ dependencyResolutionManagement {
         maven { url 'https://android-sdk.is.com/' }
     }
 }
-rootProject.name = "TestChargingAnimation"
+rootProject.name = "Funny charging"
 include ':app'

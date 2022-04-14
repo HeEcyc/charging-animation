@@ -8,6 +8,7 @@ import android.view.WindowManager
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.forEach
 import com.airbnb.lottie.LottieAnimationView
+import com.charginging.animationation.BR
 import com.charginging.animationation.model.AnimationItem
 import com.charginging.animationation.model.ClosableWindow
 import com.charginging.animationation.model.ClosableWindows

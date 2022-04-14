@@ -7,15 +7,17 @@ import android.content.IntentFilter
 import android.graphics.PixelFormat
 import android.os.Build
 import android.provider.Settings
+import android.view.ContextThemeWrapper
 import android.view.Gravity
 import android.view.WindowManager
-import android.widget.Toast
+import com.charginging.animationation.R
 import com.charginging.animationation.base.BaseBroadcastReceiver
 import com.charginging.animationation.model.ClosableWindows
 import com.charginging.animationation.repository.background.lock.LockReceiver
 import com.charginging.animationation.repository.preferences.Preferences
 import com.charginging.animationation.ui.animation.ChargingAnimationActivity
 import com.charginging.animationation.ui.custom.AnimationHolderView
+
 
 class UsbReceiver : BaseBroadcastReceiver() {
 
@@ -38,7 +40,6 @@ class UsbReceiver : BaseBroadcastReceiver() {
     }
 
     private fun showActivity(context: Context) {
-        Toast.makeText(context, "sdfsdf", Toast.LENGTH_LONG)
         Intent(context, ChargingAnimationActivity::class.java)
             .addFlags(FLAG_ACTIVITY_NEW_TASK)
             .let(context::startActivity)
@@ -51,10 +52,8 @@ class UsbReceiver : BaseBroadcastReceiver() {
         val params = WindowManager.LayoutParams(
             WindowManager.LayoutParams.MATCH_PARENT,
             WindowManager.LayoutParams.MATCH_PARENT,
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
-                WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
-            else
-                WindowManager.LayoutParams.TYPE_PHONE,
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
+            else WindowManager.LayoutParams.TYPE_PHONE,
             WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
                     or WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
                     or WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
@@ -63,10 +62,12 @@ class UsbReceiver : BaseBroadcastReceiver() {
         params.gravity = Gravity.CENTER
 
         if (Settings.canDrawOverlays(context)) {
-            val view = AnimationHolderView(context)
-            view.showView(Preferences.selectedAnimation)
-            ClosableWindows.add(view)
-            windowManager.addView(view, params)
+            val themeWrapper = ContextThemeWrapper(context, R.style.Theme_ChargingAnimation)
+            AnimationHolderView(themeWrapper).apply {
+                showView(Preferences.selectedAnimation)
+                ClosableWindows.add(this)
+                windowManager.addView(this, params)
+            }
         }
     }
 
