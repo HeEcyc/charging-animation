@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="charging_animation">Animație de încărcare</string>
+    <string name="recommended">Recomandat</string>
+    <string name="give_permissions_for_the_application_work_properly">Oferiți permisiuni pentru ca aplicația să funcționeze corect</string>
+    <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_application">Permite afișarea peste alte aplicații. Acest lucru este necesar pentru aplicarea corectă a lucrărilor</string>
     <string name="allow">Permite</string>
     <string name="setting_instructions">Instrucțiuni de setare</string>
     <string name="if_your_device_does_not_have_this_permission_you_can_ignore_it">Dacă dispozitivul dvs. nu are această permisiune, o puteți ignora</string>
@@ -19,17 +22,5 @@
 
     <string name="instruction_short">În Informații despre aplicație > Permisiuni > Permiteți afișarea pe ecranul de blocare/notificarea ecranului de blocare</string>
     <string name="instruction_long">Porniți afișarea ecranului de blocare, astfel încât dispozitivul să poată afișa animația de încărcare în mod normal când ecranul este blocat, dar căile de setare ale diferitelor dispozitive sunt diferite, vă rugăm să consultați următoarele setări\n\nCale de setare Meizu: Setări -> Aplicații -> Animație de încărcare -> Permisiuni -> Afișează pe ecranul de blocare/Notificare pe ecranul de blocare\n\nCale setare Xiaomi: setare -> Aplicații -> permisiuni -> Permisiuni -> Animație de încărcare -> Afișează pe ecranul de blocare\n\nCale de setare OPPO : Setări -> Aplicații -> Animație de încărcare -> Gestionare notificări -> Afișare pe ecranul de blocare\n\nCale setare VIVO: i Manager -> Gestionare software -> Gestionare permisiuni -> Afișare ecran de blocare -> Animație de încărcare -> Verificați pentru deschis</string>
-    <string name="apply">aplica</string>
-    <string name="settings">Setări</string>
-    <string name="popular">Popular</string>
-    <string name="other">Alte</string>
-    <string name="get_permissions">Obțineți permisiuni</string>
-    <string name="allow_display_over_other_apps">Permite afișarea peste alte aplicații</string>
-    <string name="not_now">Nu acum</string>
-    <string name="ok">Bine</string>
-    <string name="main">Principal</string>
-    <string name="social">Social</string>
-    <string name="interesting_fact">Fapt interesant</string>
-    <string name="you_can_swipe_to_see_more_pictures">Puteți glisa pentru a vedea mai multe imagini</string>
 
 </resources>

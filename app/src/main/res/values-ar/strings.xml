@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="charging_animation">شحن الرسوم المتحركة</string>
+    <string name="recommended">موصى به</string>
+    <string name="give_permissions_for_the_application_work_properly">منح أذونات للتطبيق يعمل بشكل صحيح</string>
+    <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_application">السماح بالظهور فوق التطبيقات الأخرى. هذا ضروري لتطبيق العمل الصحيح</string>
     <string name="allow">السماح</string>
     <string name="setting_instructions">تعليمات الإعداد</string>
     <string name="if_your_device_does_not_have_this_permission_you_can_ignore_it">إذا لم يكن لدى جهازك هذا الإذن ، فيمكنك تجاهله</string>
@@ -19,16 +22,4 @@
 
     <string name="instruction_short">في معلومات التطبيق> الأذونات> السماح بالعرض على شاشة القفل / إشعار شاشة القفل</string>
     <string name="instruction_long">قم بتشغيل شاشة شاشة القفل ، بحيث يمكن للجهاز عرض الرسوم المتحركة للشحن بشكل طبيعي عندما تكون الشاشة مقفلة ، ولكن مسارات الإعداد للأجهزة المختلفة مختلفة ، يرجى الرجوع إلى الإعدادات التالية \n\n مسار إعداد Meizu: الإعدادات -> التطبيقات -> الرسوم المتحركة للشحن -> الأذونات -> إظهار على شاشة القفل / إخطار شاشة القفل \n\n مسار إعداد Xiaomi: الإعداد -> التطبيقات -> الأذونات -> الأذونات -> الرسوم المتحركة للشحن -> إظهار على شاشة القفل \n\n مسار إعداد OPPO : الإعدادات -> التطبيقات -> الرسوم المتحركة للشحن -> إدارة الإشعارات -> العرض على شاشة القفل \n\n مسار إعداد VIVO: i Manager -> إدارة البرامج -> إدارة الأذونات -> شاشة قفل الشاشة -> رسوم متحركة للشحن -> تحقق من افتح</string>
-    <string name="settings">إعدادات</string>
-    <string name="popular">جمع</string>
-    <string name="other">آخر</string>
-    <string name="get_permissions">احصل على أذونات</string>
-    <string name="allow_display_over_other_apps">السماح بالعرض فوق التطبيقات الأخرى</string>
-    <string name="not_now">ليس الان</string>
-    <string name="ok">نعم</string>
-    <string name="main">رئيسي</string>
-    <string name="social">اجتماعي</string>
-    <string name="interesting_fact">حقيقة مثيرة للاهتمام</string>
-    <string name="you_can_swipe_to_see_more_pictures">يمكنك التمرير لرؤية المزيد من الصور</string>
-    <string name="apply">تطبيق</string>
 </resources>

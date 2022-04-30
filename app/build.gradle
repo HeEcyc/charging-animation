@@ -65,10 +65,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     // UI
-    implementation 'com.github.sshadkany:Android_neumorphic:1.2.0'
     implementation 'com.airbnb.android:lottie:4.2.2'
-    implementation("io.github.florent37:shapeofview:1.4.7")
-    implementation(project(':iosSwitch'))
 
     implementation 'androidx.activity:activity-ktx:1.4.0'
 

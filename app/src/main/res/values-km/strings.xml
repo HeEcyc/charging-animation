@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="charging_animation">ការបញ្ចូលថាមពលចលនា</string>
+    <string name="recommended">បានណែនាំ</string>
+    <string name="give_permissions_for_the_application_work_properly">ផ្តល់ការអនុញ្ញាតសម្រាប់កម្មវិធីដំណើរការត្រឹមត្រូវ។</string>
+    <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_application">អនុញ្ញាតឱ្យបង្ហាញលើកម្មវិធីផ្សេងទៀត។ នេះគឺចាំបាច់សម្រាប់ការអនុវត្តការងារត្រឹមត្រូវ។</string>
     <string name="allow">អនុញ្ញាត</string>
     <string name="setting_instructions">ការកំណត់ការណែនាំ</string>
     <string name="if_your_device_does_not_have_this_permission_you_can_ignore_it">ប្រសិនបើឧបករណ៍របស់អ្នកមិនមានការអនុញ្ញាតនេះទេ អ្នកអាចមិនអើពើវាបាន</string>
@@ -19,16 +22,4 @@
 
     <string name="instruction_short">នៅក្នុងព័ត៌មានកម្មវិធី > ការអនុញ្ញាត > អនុញ្ញាតឱ្យបង្ហាញនៅលើអេក្រង់ចាក់សោ/ការជូនដំណឹងអេក្រង់ចាក់សោ</string>
     <string name="instruction_long">បើកអេក្រង់ចាក់សោ ដើម្បីឱ្យឧបករណ៍អាចបង្ហាញចលនាសាកថ្មបានជាធម្មតា នៅពេលអេក្រង់ចាក់សោ ប៉ុន្តែផ្លូវនៃការកំណត់របស់ឧបករណ៍ផ្សេងៗគឺខុសគ្នា សូមយោងទៅការកំណត់ខាងក្រោម\n\nផ្លូវកំណត់ Meizu៖ ការកំណត់ -> កម្មវិធី -> ចលនាសាកថ្ម -> ការអនុញ្ញាត -> បង្ហាញនៅលើអេក្រង់ចាក់សោ/ការជូនដំណឹងអេក្រង់ចាក់សោ\n\nផ្លូវកំណត់ Xiaomi៖ ការកំណត់ -> កម្មវិធី -> ការអនុញ្ញាត -> ការអនុញ្ញាត -> ចលនាសាកថ្ម -> បង្ហាញនៅលើអេក្រង់ចាក់សោ\n\nផ្លូវកំណត់ OPPO ៖ ការកំណត់ -> កម្មវិធី -> ចលនាសាកថ្ម -> ការគ្រប់គ្រងការជូនដំណឹង -> បង្ហាញនៅលើអេក្រង់ចាក់សោ\n\nVIVO ផ្លូវកំណត់៖ i Manager -> Software Management -> Permissions Management -> Lock Screen Display -> Charging Animation -> ពិនិត្យទៅកាន់ បើក</string>
-    <string name="apply">អនុវត្ត</string>
-    <string name="settings">ការកំណត់</string>
-    <string name="popular">ពេញនិយម</string>
-    <string name="other">ផ្សេងទៀត</string>
-    <string name="get_permissions">ទទួលបានការអនុញ្ញាត</string>
-    <string name="allow_display_over_other_apps">អនុញ្ញាតឱ្យបង្ហាញនៅលើកម្មវិធីផ្សេងទៀត។</string>
-    <string name="not_now">មិនមែន​ឥឡូវ​ទេ</string>
-    <string name="ok">យល់ព្រម</string>
-    <string name="main">មេ</string>
-    <string name="social">សង្គម</string>
-    <string name="interesting_fact">ការពិតគួរឱ្យចាប់អារម្មណ៍</string>
-    <string name="you_can_swipe_to_see_more_pictures">អ្នកអាចអូសដើម្បីមើលរូបភាពច្រើនទៀត</string>
 </resources>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.smooth.battery.ui.custom.ScalableCardView.ScaleType"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="360:777">
+
+            <com.smooth.battery.ui.custom.ScalableCardView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="284:512"
+                app:layout_constraintWidth_percent="0.788888888"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardElevation="0dp"
+                scaleType="@{ScaleType.BY_WIDTH}"
+                scalableCornerRadius="@{0.07f}">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFFFFF">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintDimensionRatio="66:56"
+                        app:layout_constraintWidth_percent="0.23239"
+                        app:layout_constraintVertical_bias="0.065789"
+                        app:layout_constraintHorizontal_bias="0.1697"
+                        android:src="@drawable/permission_decor_dots"/>
+
+                    <include
+                        android:id="@+id/layout_permission"
+                        layout="@layout/permission_dialog_permission"/>
+
+                    <include
+                        android:id="@+id/layout_instruction"
+                        layout="@layout/permission_dialog_instruction"
+                        android:visibility="gone"/>
+
+                    <include
+                        android:id="@+id/layout_info"
+                        layout="@layout/permission_dialog_info"
+                        android:visibility="gone"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/buttonClose"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintWidth_percent="0.08098"
+                        app:layout_constraintHorizontal_bias="0.94636"
+                        app:layout_constraintVertical_bias="0.0286"
+                        android:src="@drawable/ic_close"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.smooth.battery.ui.custom.ScalableCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
