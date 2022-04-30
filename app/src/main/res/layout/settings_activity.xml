@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.happy.charger.ui.settings.SettingsViewModel" />
+            type="com.smooth.battery.ui.settings.SettingsViewModel" />
     </data>
 
     <androidx.appcompat.widget.LinearLayoutCompat

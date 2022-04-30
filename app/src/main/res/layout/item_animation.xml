@@ -5,7 +5,7 @@
     <data>
         <variable
             name="item"
-            type="com.happy.charger.model.AnimationItem" />
+            type="com.smooth.battery.model.AnimationItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
