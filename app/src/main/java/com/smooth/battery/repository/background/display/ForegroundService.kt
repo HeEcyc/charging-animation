@@ -7,7 +7,7 @@ import android.os.IBinder
 import com.smooth.battery.App
 import com.smooth.battery.R
 import com.smooth.battery.repository.background.lock.LockReceiver
-//import com.smooth.battery.ui.main.MainActivity
+import com.smooth.battery.ui.main.MainActivity
 import com.smooth.battery.utils.registerReceiver
 
 class ForegroundService : Service() {
@@ -44,22 +44,22 @@ class ForegroundService : Service() {
     }
 
     private fun initForeground() {
-//        val pendingIntent: PendingIntent =
-//            Intent(App.instance, MainActivity::class.java).let { notificationIntent ->
-//                PendingIntent.getActivity(
-//                    App.instance,
-//                    0,
-//                    notificationIntent,
-//                    PendingIntent.FLAG_IMMUTABLE
-//                )
-//            }
-//        val notification = NotificationFactory.newNotification(
-//            R.mipmap.ic_launcher,
-//            getString(R.string.charging_animation),
-//            getString(R.string.working_in_background),
-//            pendingIntent
-//        )
-//        startForeground(1, notification)todo
+        val pendingIntent: PendingIntent =
+            Intent(App.instance, MainActivity::class.java).let { notificationIntent ->
+                PendingIntent.getActivity(
+                    App.instance,
+                    0,
+                    notificationIntent,
+                    PendingIntent.FLAG_IMMUTABLE
+                )
+            }
+        val notification = NotificationFactory.newNotification(
+            R.mipmap.ic_launcher,
+            getString(R.string.charging_animation),
+            getString(R.string.working_in_background),
+            pendingIntent
+        )
+        startForeground(1, notification)
     }
 
     override fun onDestroy() {
