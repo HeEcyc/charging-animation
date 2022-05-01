@@ -12,6 +12,7 @@ import com.smooth.battery.databinding.MainActivityBinding
 import com.smooth.battery.repository.background.display.ForegroundService
 import com.smooth.battery.ui.home.HomeFragment
 import com.smooth.battery.ui.onboarding.OnboardingActivity
+import com.smooth.battery.ui.settings.SettingsFragment
 import com.smooth.battery.utils.IRON_SOURCE_APP_KEY
 import java.util.*
 
@@ -39,7 +40,7 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
             supportFragmentManager.commit { replace(R.id.fragmentContainer, HomeFragment()) }
         }
         viewModel.showSettings.observe(this) {
-            //todo
+            supportFragmentManager.commit { replace(R.id.fragmentContainer, SettingsFragment()) }
         }
     }
 
