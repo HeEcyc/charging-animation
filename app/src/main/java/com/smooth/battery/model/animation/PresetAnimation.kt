@@ -1,22 +1,19 @@
-package com.smooth.battery.model
+package com.smooth.battery.model.animation
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.ObservableBoolean
-import androidx.databinding.ObservableField
 import androidx.databinding.ViewDataBinding
 import com.smooth.battery.BR
 import com.smooth.battery.R
 import com.smooth.battery.databinding.*
 import com.smooth.battery.repository.background.display.BatteryLevelReceiver
-import com.smooth.battery.repository.preferences.Preferences
 
-enum class AnimationItem(
+enum class PresetAnimation(
     val previewPicRes: Int,
     private val animationBindingClass: Class<out ViewDataBinding>
-) {
+) : Animation {
 
     A1(R.mipmap.preview_1, A1Binding::class.java),
     A2(R.mipmap.preview_2, A2Binding::class.java),
@@ -27,9 +24,7 @@ enum class AnimationItem(
     A7(R.mipmap.preview_7, A7Binding::class.java),
     A8(R.mipmap.preview_8, A8Binding::class.java);
 
-    val isSelected: ObservableBoolean by lazy { ObservableBoolean(Preferences.selectedAnimation == this) }
-
-    fun inflateAnimationView(context: Context): View = animationBindingClass
+    override fun inflateAnimationView(context: Context): View = animationBindingClass
         .getMethod(
             "inflate",
             LayoutInflater::class.java,
@@ -39,12 +34,10 @@ enum class AnimationItem(
         .invoke(null, LayoutInflater.from(context), null, false)
         .let { it as ViewDataBinding }
         .apply {
-            setVariable(BR.blHolder, BatteryLevelHolder())
+            setVariable(BR.blHolder, BatteryLevelReceiver.BatteryLevelHolder())
         }
         .root
 
-    class BatteryLevelHolder {
-        val batteryLevel: ObservableField<String> = BatteryLevelReceiver.batteryLevel
-    }
+    override fun getPrefString(): String = name
 
 }

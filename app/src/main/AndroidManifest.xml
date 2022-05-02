@@ -14,6 +14,11 @@
 
     <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
     <application
         android:name="com.smooth.battery.App"
         android:allowBackup="true"
@@ -86,14 +91,14 @@
             android:showOnLockScreen="true"
             tools:ignore="LockedOrientationActivity"/>
 
-<!--        todo<activity-->
-<!--            android:name="com.smooth.battery.ui.settings.SettingsActivity"-->
-<!--            android:exported="true"-->
-<!--            android:screenOrientation="portrait"-->
-<!--            tools:ignore="LockedOrientationActivity" />-->
-
         <activity
             android:name=".ui.onboarding.OnboardingActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+
+        <activity
+            android:name=".ui.preview.PreviewActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />

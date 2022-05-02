@@ -14,16 +14,19 @@ class MainViewModel : BaseViewModel() {
     val selectedFragment = ObservableField(HOME)
 
     fun onAnimationClick() {
+        if (selectedFragment.get() == ANIMATION) return
         selectedFragment.set(ANIMATION)
         showAnimation.postValue(Unit)
     }
 
     fun onHomeClick() {
+        if (selectedFragment.get() == HOME) return
         selectedFragment.set(HOME)
         showHome.postValue(Unit)
     }
 
     fun onSettingsClick() {
+        if (selectedFragment.get() == SETTINGS) return
         selectedFragment.set(SETTINGS)
         showSettings.postValue(Unit)
     }

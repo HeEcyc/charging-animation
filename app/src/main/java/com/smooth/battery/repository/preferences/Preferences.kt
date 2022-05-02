@@ -2,7 +2,7 @@ package com.smooth.battery.repository.preferences
 
 import android.content.Context
 import com.smooth.battery.App
-import com.smooth.battery.model.AnimationItem
+import com.smooth.battery.model.animation.Animation
 
 object Preferences {
 
@@ -16,12 +16,9 @@ object Preferences {
     private const val KEY_SOUND_IS_ON = "ca_sound_is_on"
     private const val KEY_WAS_LAUNCHED_BEFORE = "ca_was_launched_before"
 
-    var selectedAnimation: AnimationItem
-        get() = AnimationItem.valueOf(prefs.getString(KEY_SELECTED_ANIMATION, null) ?: AnimationItem.values().first().name)
-        set(value) {
-            AnimationItem.values().forEach { it.isSelected.set(it == value) }
-            prefs.edit().putString(KEY_SELECTED_ANIMATION, value.name).apply()
-        }
+    var selectedAnimation: Animation
+        get() = Animation.valueOf(prefs.getString(KEY_SELECTED_ANIMATION, null))
+        set(value) = prefs.edit().putString(KEY_SELECTED_ANIMATION, value.getPrefString()).apply()
 
     var showWhenUnlocked: Boolean
         get() = prefs.getBoolean(KEY_SHOW_WHEN_UNLOCKED, true)

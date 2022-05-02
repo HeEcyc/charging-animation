@@ -23,5 +23,8 @@
     <string name="instruction_short">In the App Info > Permissions > Allow Show on Lock screen/Lock screen notification</string>
     <string name="instruction_long">Turn on the lock screen display, so that the device can display the charging animation normally when the screen is locked, but the setting paths of various devices are different, please refer to the following settings\n\nMeizu setting path: Settings -> Apps -> Charging Animation -> Permissions -> Show on Lock screen/Lock screen notification\n\nXiaomi setting path: setting -> Apps -> permissions -> Permissions -> Charging Animation -> Show on Lock screen\n\nOPPO setting path: Settings -> Apps -> Charging Animation -> Notification Management -> Display on the lock screen\n\nVIVO setting path: i Manager -> Software Management -> Permissions Management -> Lock Screen Display -> Charging Animation -> Check to open</string>
     <string name="let_s_start">Let\'s start!</string>
+    <string name="animation">Animation</string>
+    <string name="choose_image">Choose image</string>
+    <string name="apply">Apply</string>
 
 </resources>
