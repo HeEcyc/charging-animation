@@ -19,5 +19,9 @@
 
     <string name="instruction_short">În Informații despre aplicație > Permisiuni > Permiteți afișarea pe ecranul de blocare/notificarea ecranului de blocare</string>
     <string name="instruction_long">Porniți afișarea ecranului de blocare, astfel încât dispozitivul să poată afișa animația de încărcare în mod normal când ecranul este blocat, dar căile de setare ale diferitelor dispozitive sunt diferite, vă rugăm să consultați următoarele setări\n\nCale de setare Meizu: Setări -> Aplicații -> Animație de încărcare -> Permisiuni -> Afișează pe ecranul de blocare/Notificare pe ecranul de blocare\n\nCale setare Xiaomi: setare -> Aplicații -> permisiuni -> Permisiuni -> Animație de încărcare -> Afișează pe ecranul de blocare\n\nCale de setare OPPO : Setări -> Aplicații -> Animație de încărcare -> Gestionare notificări -> Afișare pe ecranul de blocare\n\nCale setare VIVO: i Manager -> Gestionare software -> Gestionare permisiuni -> Afișare ecran de blocare -> Animație de încărcare -> Verificați pentru deschis</string>
+    <string name="let_s_start">Să începem!</string>
+    <string name="animation">Animaţie</string>
+    <string name="choose_image">Alege imaginea</string>
+    <string name="apply">aplica</string>
 
 </resources>

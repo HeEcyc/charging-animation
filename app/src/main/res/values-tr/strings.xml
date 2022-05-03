@@ -19,5 +19,9 @@
 
     <string name="instruction_short">Uygulama Bilgisi > İzinler > Kilitli Ekranda Gösterime İzin Ver/Kilit ekranı bildiriminde</string>
     <string name="instruction_long">Ekran kilitliyken cihazın şarj animasyonunu normal şekilde gösterebilmesi için kilit ekranı görüntüsünü açın, ancak çeşitli cihazların ayar yolları farklıdır, lütfen aşağıdaki ayarlara bakın\n\nMeizu ayar yolu: Ayarlar -> Uygulamalar -> Şarj Etme Animasyonu -> İzinler -> Kilit ekranında göster/Kilit ekranı bildiriminde göster\n\nXiaomi ayar yolu: ayar -> Uygulamalar -> izinler -> İzinler -> Şarj Etme Animasyonu -> Kilit ekranında göster\n\nOPPO ayar yolu : Ayarlar -> Uygulamalar -> Şarj Etme Animasyonu -> Bildirim Yönetimi -> Kilit ekranında göster\n\nVIVO ayar yolu: i Yönetici -> Yazılım Yönetimi -> İzin Yönetimi -> Ekranı Kilitle -> Şarj Etme Animasyonu -> Kontrol Et açık</string>
+    <string name="let_s_start">Hadi başlayalım!</string>
+    <string name="animation">Animasyon</string>
+    <string name="choose_image">Resim seç</string>
+    <string name="apply">Uygulamak</string>
 
 </resources>
