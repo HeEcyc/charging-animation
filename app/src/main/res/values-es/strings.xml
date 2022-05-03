@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="charging_animation">Animación de carga</string>
-    <string name="recommended">Recomendado</string>
     <string name="give_permissions_for_the_application_work_properly">Dar permisos para que la aplicación funcione correctamente</string>
     <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_application">Permitir que se muestre sobre otras aplicaciones. Esto es necesario para una correcta aplicación laboral.</string>
     <string name="allow">Permitir</string>
-    <string name="setting_instructions">Instrucciones de configuración</string>
     <string name="if_your_device_does_not_have_this_permission_you_can_ignore_it">Si su dispositivo no tiene este permiso, puede ignorarlo</string>
     <string name="more_information">Más información</string>
     <string name="lock_screen_display_instructions">Instrucciones de visualización de la pantalla de bloqueo</string>
@@ -18,7 +16,6 @@
     <string name="privacy_policy">Política de privacidad</string>
     <string name="working_in_background">Trabajan en segundo plano</string>
     <string name="your_device_is_fully_charged">Tu dispositivo está completamente cargado</string>
-    <string name="show_on_unlocked_screen">Mostrar en pantalla desbloqueada</string>
 
     <string name="instruction_short">En la información de la aplicación > Permisos > Permitir mostrar en la pantalla de bloqueo/notificación de la pantalla de bloqueo</string>
     <string name="instruction_long">Encienda la pantalla de bloqueo, para que el dispositivo pueda mostrar la animación de carga normalmente cuando la pantalla está bloqueada, pero las rutas de configuración de varios dispositivos son diferentes, consulte la siguiente configuración\n\nRuta de configuración de Meizu: Configuración -> Aplicaciones -> Animación de carga -> Permisos -> Mostrar en la pantalla de bloqueo/Notificación de la pantalla de bloqueo\n\nRuta de configuración de Xiaomi: configuración -> Aplicaciones -> permisos -> Permisos -> Animación de carga -> Mostrar en la pantalla de bloqueo\n\nRuta de configuración de OPPO : Configuración -> Aplicaciones -> Animación de carga -> Administración de notificaciones -> Mostrar en la pantalla de bloqueo\n\nRuta de configuración de VIVO: i Manager -> Administración de software -> Administración de permisos -> Pantalla de bloqueo de pantalla -> Animación de carga -> Verificar abierto</string>
