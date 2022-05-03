@@ -15,14 +15,17 @@ enum class PresetAnimation(
     private val animationBindingClass: Class<out ViewDataBinding>
 ) : Animation {
 
-    A1(R.mipmap.preview_1, A1Binding::class.java),
-    A2(R.mipmap.preview_2, A2Binding::class.java),
-    A3(R.mipmap.preview_3, A3Binding::class.java),
-    A4(R.mipmap.preview_4, A4Binding::class.java),
-    A5(R.mipmap.preview_5, A5Binding::class.java),
-    A6(R.mipmap.preview_6, A6Binding::class.java),
-    A7(R.mipmap.preview_7, A7Binding::class.java),
-    A8(R.mipmap.preview_8, A8Binding::class.java);
+    A01(R.mipmap.preview_01, A01Binding::class.java),
+    A02(R.mipmap.preview_02, A02Binding::class.java),
+    A03(R.mipmap.preview_03, A03Binding::class.java),
+    A04(R.mipmap.preview_04, A04Binding::class.java),
+    A05(R.mipmap.preview_05, A05Binding::class.java),
+    A06(R.mipmap.preview_06, A06Binding::class.java),
+    A07(R.mipmap.preview_07, A07Binding::class.java),
+    A08(R.mipmap.preview_08, A08Binding::class.java),
+    A09(R.mipmap.preview_09, A09Binding::class.java),
+    A10(R.mipmap.preview_10, A10Binding::class.java),
+    A11(R.mipmap.preview_11, A11Binding::class.java);
 
     override fun inflateAnimationView(context: Context): View = animationBindingClass
         .getMethod(
