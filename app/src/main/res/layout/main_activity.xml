@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.charginging.animationation.ui.main.MainViewModel" />
+            type="com.bubble.charging.ui.main.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

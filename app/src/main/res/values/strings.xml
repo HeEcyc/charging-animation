@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Charging Animation</string>
+    <string name="app_name" translatable="false">Bubble Charge</string>
     <string name="charging_animation">Charging Animation</string>
     <string name="recommended">Recommended</string>
     <string name="give_permissions_for_the_application_work_properly">Give permissions for the application work properly</string>

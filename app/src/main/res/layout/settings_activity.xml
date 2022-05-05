@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.charginging.animationation.ui.settings.SettingsViewModel" />
+            type="com.bubble.charging.ui.settings.SettingsViewModel" />
     </data>
 
     <ScrollView
