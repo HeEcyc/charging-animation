@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.bubble.charging.ui.custom.ScalableCardView.ScaleType"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="360:777">
+
+            <com.bubble.charging.ui.custom.ScalableCardView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="331:597"
+                app:layout_constraintWidth_percent="0.9194444"
+                app:layout_constraintVertical_bias="0.26111"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@android:color/transparent"
+                scaleType="@{ScaleType.BY_WIDTH}"
+                scalableCornerRadius="@{0.0302f}">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/animationContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/buttonClose"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintWidth_percent="0.099"
+                        app:layout_constraintVertical_bias="0.0212766"
+                        app:layout_constraintHorizontal_bias="0.95973"
+                        android:src="@mipmap/ic_close"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.bubble.charging.ui.custom.ScalableCardView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/buttonApply"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="240:49"
+                app:layout_constraintWidth_percent="0.666666"
+                app:layout_constraintVertical_bias="0.93543"
+                android:background="@drawable/blue_button_bg">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintDimensionRatio="191:22"
+                    app:layout_constraintHeight_percent="0.448979"
+                    android:gravity="center"
+                    app:autoSizeTextType="uniform"
+                    app:autoSizeMaxTextSize="20sp"
+                    app:autoSizeMinTextSize="1sp"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/apply"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

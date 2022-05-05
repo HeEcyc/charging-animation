@@ -19,11 +19,7 @@ class PermissionDialog : BaseDialog<PermissionDialogBinding>(R.layout.permission
     }
 
     override fun setupUI() {
-        isCancelable = false
-        initListeners()
-    }
-
-    private fun initListeners() {
+        binding.layoutPermission.buttonClose.setOnClickListener { dismiss() }
         binding.layoutPermission.buttonAllow.setOnClickListener { askOverlayPermission() }
         binding.layoutInstruction.buttonClose.setOnClickListener { dismiss() }
         binding.layoutInstruction.buttonMoreInfo.setOnClickListener {
