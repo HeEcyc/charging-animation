@@ -4,7 +4,6 @@ import androidx.activity.viewModels
 import com.bubble.charging.R
 import com.bubble.charging.base.BaseActivity
 import com.bubble.charging.databinding.SettingsActivityBinding
-import com.bubble.charging.utils.APP_LINK
 
 class SettingsActivity : BaseActivity<SettingsViewModel, SettingsActivityBinding>() {
 
@@ -16,9 +15,6 @@ class SettingsActivity : BaseActivity<SettingsViewModel, SettingsActivityBinding
 
     override fun setupUI() {
         binding.buttonBack.setOnClickListener { finish() }
-        binding.buttonShare.setOnClickListener { showSharedIntent() }
-        binding.buttonRateUs.setOnClickListener { openLink(APP_LINK) }
-        binding.buttonPrivacyPolicy.setOnClickListener { openLink(APP_LINK) }
     }
 
 }
