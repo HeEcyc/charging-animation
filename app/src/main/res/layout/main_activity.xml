@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.happy.charger.ui.main.MainViewModel" />
+            type="com.funny.charging_app.ui.main.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
