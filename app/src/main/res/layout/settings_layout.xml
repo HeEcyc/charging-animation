@@ -15,8 +15,10 @@
         android:background="#10383636"
         app:layoutDescription="@xml/motion_scene"
         app:motionProgress="1"
+        android:visibility="gone"
         xmlns:tools="http://schemas.android.com/tools"
-        tools:motionProgress="0">
+        tools:motionProgress="0"
+        tools:visibility="visible">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/container"

@@ -65,7 +65,7 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
             viewModel.onItemClick(viewModel.adapterPopular.getData()[binding.vp2.currentItem])
         }
         binding.buttonSettings.setOnClickListener {
-            binding.settingsLayout.root.visibility = View.VISIBLE
+            binding.settingsLayout.motionLayout.visibility = View.VISIBLE
             animateMotionProgress(1f, 0f)
         }
         binding.settingsLayout.buttonBack.setOnClickListener {

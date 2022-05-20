@@ -118,8 +118,7 @@
         <include
             android:id="@+id/settingsLayout"
             layout="@layout/settings_layout"
-            bind:viewModel="@{viewModel}"
-            android:visibility="gone"/>
+            bind:viewModel="@{viewModel}"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
