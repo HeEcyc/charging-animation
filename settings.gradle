@@ -11,4 +11,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "TestChargingAnimation"
 include ':app'
-include ':iosSwitch'

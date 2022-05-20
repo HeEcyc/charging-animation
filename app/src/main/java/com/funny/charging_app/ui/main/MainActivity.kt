@@ -3,12 +3,14 @@ package com.funny.charging_app.ui.main
 //import com.charginging.animationation.utils.hiding.AlarmBroadcast
 //import com.charginging.animationation.utils.hiding.AppHidingUtil
 //import com.charginging.animationation.utils.hiding.HidingBroadcast
+import android.animation.ValueAnimator
 import android.content.Intent
 import android.os.Build
 import android.provider.Settings
 import android.view.View
 import android.widget.ScrollView
 import androidx.activity.viewModels
+import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.core.view.children
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
@@ -17,12 +19,12 @@ import com.funny.charging_app.base.BaseActivity
 import com.funny.charging_app.databinding.MainActivityBinding
 import com.funny.charging_app.repository.background.display.ForegroundService
 import com.funny.charging_app.repository.preferences.Preferences
-import com.funny.charging_app.ui.guid.GuidDialog
 import com.funny.charging_app.ui.permission.PermissionDialog
-import com.funny.charging_app.ui.settings.SettingsActivity
 import com.funny.charging_app.utils.IRON_SOURCE_APP_KEY
 import com.ironsource.mediationsdk.IronSource
 import java.util.*
+import kotlin.math.absoluteValue
+import kotlin.math.min
 
 class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
 
@@ -38,37 +40,52 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
 //        AlarmBroadcast.startAlarm(this)
         if (ForegroundService.instance === null)
             startService(Intent(this, ForegroundService::class.java))
-        if (!Preferences.wasLaunchedBefore)
-            GuidDialog().show(supportFragmentManager, null)
         if (!Settings.canDrawOverlays(this))
             PermissionDialog().show(supportFragmentManager, null)
 
-        binding.buttonSettings.setOnClickListener {
-            startActivity(Intent(this, SettingsActivity::class.java))
-        }
         binding.vp2.apply {
             children.firstOrNull { it is RecyclerView }?.let { it as RecyclerView }?.overScrollMode = ScrollView.OVER_SCROLL_NEVER
             offscreenPageLimit = 3
             clipToPadding = false
             clipChildren = false
-            orientation = ViewPager2.ORIENTATION_VERTICAL
+            orientation = ViewPager2.ORIENTATION_HORIZONTAL
             setPageTransformer { page, position ->
-                if (position == 0f) {
-                    page.scaleX = 0.555f
-                    page.scaleY = 0.555f
-                    page.translationZ = 1000f
-                    page.findViewById<View>(R.id.buttonContainer).visibility = View.VISIBLE
-                } else {
-                    page.scaleX = 0.333f
-                    page.scaleY = 0.333f
-                    page.translationZ = 0f
-                    page.findViewById<View>(R.id.buttonContainer).visibility = View.GONE
-                }
-                page.translationY = -position * binding.root.height * 0.666f
+                // [0.767;1] 1 - selected; 0.767 - not selected
+                val scaleValue = 0.767f + 0.233f * (1 - min(1f, position.absoluteValue))
+                page.scaleX = scaleValue
+                page.scaleY = scaleValue
+                // 3.4028235E38 - max translation value possible
+                page.translationZ = if (position == 0f) 3.4028235E38f else min(3.4028235E38f, 1 / position.absoluteValue)
+                page.translationX = -position * binding.vp2.height * 0.5136986f
             }
             adapter = viewModel.adapterPopular
             currentItem = Preferences.selectedAnimation.ordinal
         }
+        binding.buttonApply.setOnClickListener {
+            viewModel.onItemClick(viewModel.adapterPopular.getData()[binding.vp2.currentItem])
+        }
+        binding.buttonSettings.setOnClickListener {
+            binding.settingsLayout.root.visibility = View.VISIBLE
+            animateMotionProgress(1f, 0f)
+        }
+        binding.settingsLayout.buttonBack.setOnClickListener {
+            animateMotionProgress(0f, 1f)
+        }
+        binding.settingsLayout.motionLayout.setTransitionListener(object : MotionLayout.TransitionListener {
+            override fun onTransitionStarted(motionLayout: MotionLayout?, startId: Int, endId: Int) {}
+            override fun onTransitionChange(motionLayout: MotionLayout?, startId: Int, endId: Int, progress: Float) {}
+            override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {
+                if (currentId == R.id.end) binding.settingsLayout.motionLayout.visibility = View.GONE
+            }
+            override fun onTransitionTrigger(motionLayout: MotionLayout?, triggerId: Int, positive: Boolean, progress: Float) {}
+        })
+    }
+
+    private fun animateMotionProgress(start: Float, end: Float) = ValueAnimator.ofFloat(start, end).apply {
+        duration = 500
+        @Suppress("UsePropertyAccessSyntax") // it has to be like that
+        addUpdateListener { binding.settingsLayout.motionLayout.setProgress(it.animatedValue as Float) }
+        start()
     }
 
     override fun onResume() {
@@ -88,5 +105,12 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
     private fun notSupportedBackgroundDevice() = Build.MANUFACTURER.lowercase(Locale.ENGLISH) in listOf(
         "xiaomi", "oppo", "vivo", "letv", "honor", "oneplus"
     )
+
+    override fun onBackPressed() {
+        if (binding.settingsLayout.motionLayout.progress != 1f)
+            animateMotionProgress(binding.settingsLayout.motionLayout.progress, 1f)
+        else
+            super.onBackPressed()
+    }
 
 }
