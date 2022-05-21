@@ -4,14 +4,12 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableField
 import androidx.databinding.ViewDataBinding
 import com.funny.charging_app.BR
 import com.funny.charging_app.R
 import com.funny.charging_app.databinding.*
 import com.funny.charging_app.repository.background.display.BatteryLevelReceiver
-import com.funny.charging_app.repository.preferences.Preferences
 
 enum class AnimationItem(
     val previewPicRes: Int,
@@ -25,9 +23,8 @@ enum class AnimationItem(
     A5(R.mipmap.preview_5, A5Binding::class.java),
     A6(R.mipmap.preview_6, A6Binding::class.java),
     A7(R.mipmap.preview_7, A7Binding::class.java),
-    A8(R.mipmap.preview_8, A8Binding::class.java);
-
-    val isSelected: ObservableBoolean by lazy { ObservableBoolean(Preferences.selectedAnimation == this) }
+    A8(R.mipmap.preview_8, A8Binding::class.java),
+    A9(R.mipmap.preview_9, A9Binding::class.java);
 
     fun inflateAnimationView(context: Context): View = animationBindingClass
         .getMethod(

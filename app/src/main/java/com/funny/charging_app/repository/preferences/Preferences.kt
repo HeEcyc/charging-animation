@@ -18,7 +18,6 @@ object Preferences {
     var selectedAnimation: AnimationItem
         get() = AnimationItem.valueOf(prefs.getString(KEY_SELECTED_ANIMATION, null) ?: AnimationItem.values().first().name)
         set(value) {
-            AnimationItem.values().forEach { it.isSelected.set(it == value) }
             prefs.edit().putString(KEY_SELECTED_ANIMATION, value.name).apply()
         }
 

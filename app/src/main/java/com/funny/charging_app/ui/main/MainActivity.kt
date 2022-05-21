@@ -43,6 +43,10 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
         if (!Settings.canDrawOverlays(this))
             PermissionDialog().show(supportFragmentManager, null)
 
+        binding.buttonSettings.setOnClickListener {
+            binding.settingsLayout.motionLayout.visibility = View.VISIBLE
+            animateMotionProgress(1f, 0f)
+        }
         binding.vp2.apply {
             children.firstOrNull { it is RecyclerView }?.let { it as RecyclerView }?.overScrollMode = ScrollView.OVER_SCROLL_NEVER
             offscreenPageLimit = 3
@@ -63,10 +67,6 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
         }
         binding.buttonApply.setOnClickListener {
             viewModel.onItemClick(viewModel.adapterPopular.getData()[binding.vp2.currentItem])
-        }
-        binding.buttonSettings.setOnClickListener {
-            binding.settingsLayout.motionLayout.visibility = View.VISIBLE
-            animateMotionProgress(1f, 0f)
         }
         binding.settingsLayout.buttonBack.setOnClickListener {
             animateMotionProgress(0f, 1f)
