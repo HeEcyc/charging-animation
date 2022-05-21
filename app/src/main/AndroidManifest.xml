@@ -86,12 +86,6 @@
             android:showOnLockScreen="true"
             tools:ignore="LockedOrientationActivity"/>
 
-        <activity
-            android:name="com.funny.charging_app.ui.settings.SettingsActivity"
-            android:exported="true"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
-
         <service android:name="com.funny.charging_app.repository.background.display.ForegroundService"/>
 
 <!--        <receiver-->
