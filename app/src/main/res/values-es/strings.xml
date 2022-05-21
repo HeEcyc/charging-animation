@@ -31,4 +31,7 @@
     <string name="social">Social</string>
     <string name="interesting_fact">Hecho interesante</string>
     <string name="you_can_swipe_to_see_more_pictures">Puedes deslizar para ver más fotos</string>
+    <string name="give_permissions_so_that_the_application_can_work_properly">Dar permisos para que la aplicación pueda funcionar correctamente</string>
+    <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_of_the_application">Permitir que se muestre sobre otras aplicaciones. Esto es necesario para el correcto funcionamiento de la aplicación.</string>
+    <string name="give_permission">Dar permiso</string>
 </resources>

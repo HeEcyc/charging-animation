@@ -31,5 +31,8 @@
     <string name="social">ทางสังคม</string>
     <string name="interesting_fact">ความจริงที่น่าสนใจ</string>
     <string name="you_can_swipe_to_see_more_pictures">สามารถเลื่อนดูภาพเพิ่มเติมได้</string>
+    <string name="give_permissions_so_that_the_application_can_work_properly">ให้สิทธิ์เพื่อให้แอปพลิเคชันสามารถทำงานได้อย่างถูกต้อง</string>
+    <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_of_the_application">อนุญาตให้แสดงทับแอปอื่นๆ นี่เป็นสิ่งจำเป็นสำหรับการทำงานที่ถูกต้องของแอปพลิเคชัน</string>
+    <string name="give_permission">อนุญาต</string>
 
 </resources>

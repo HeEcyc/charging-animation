@@ -31,5 +31,8 @@
     <string name="social">Социальные</string>
     <string name="interesting_fact">Интресный факт</string>
     <string name="you_can_swipe_to_see_more_pictures">Вы можете свайпать, чтобы увидеть больше</string>
+    <string name="give_permissions_so_that_the_application_can_work_properly">Дайте разрешения, чтобы приложение могло работать правильно</string>
+    <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_of_the_application">Разрешить отображение поверх других приложений. Это необходимо для корректной работы приложения</string>
+    <string name="give_permission">Дайте разрешение</string>
 
 </resources>
