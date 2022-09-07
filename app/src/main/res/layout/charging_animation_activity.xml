@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.smooth.battery.ui.custom.AnimationHolderView
+<com.rocket.charge.ui.custom.AnimationHolderView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/root"
     android:layout_width="match_parent"

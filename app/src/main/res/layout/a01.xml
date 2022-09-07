@@ -6,7 +6,7 @@
     <data>
         <variable
             name="blHolder"
-            type="com.smooth.battery.repository.background.display.BatteryLevelReceiver.BatteryLevelHolder" />
+            type="com.rocket.charge.repository.background.display.BatteryLevelReceiver.BatteryLevelHolder" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -50,7 +50,7 @@
                 app:lottie_progress="1"
                 app:lottie_rawRes="@raw/a01stars" />
 
-            <com.smooth.battery.ui.custom.GradientTextView
+            <com.rocket.charge.ui.custom.GradientTextView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:fontFamily="@font/source_sans_3_bold"

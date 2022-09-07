@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="com.smooth.battery.ui.custom.ScalableCardView.ScaleType"/>
+        <import type="com.rocket.charge.ui.custom.ScalableCardView.ScaleType"/>
         <variable
             name="viewModel"
-            type="com.smooth.battery.ui.home.HomeViewModel" />
+            type="com.rocket.charge.ui.home.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,7 +22,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintDimensionRatio="360:711">
 
-            <com.smooth.battery.ui.custom.ScalableCardView
+            <com.rocket.charge.ui.custom.ScalableCardView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintTop_toTopOf="parent"
@@ -47,7 +47,7 @@
                         app:lottie_loop="true"
                         app:lottie_autoPlay="true"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
-            </com.smooth.battery.ui.custom.ScalableCardView>
+            </com.rocket.charge.ui.custom.ScalableCardView>
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"

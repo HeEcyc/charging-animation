@@ -3,16 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="com.smooth.battery.ui.custom.ScalableCardView.ScaleType"/>
+        <import type="com.rocket.charge.ui.custom.ScalableCardView.ScaleType"/>
         <variable
             name="item"
-            type="com.smooth.battery.model.animation.Animation" />
+            type="com.rocket.charge.model.animation.Animation" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <com.smooth.battery.ui.custom.ScalableCardView
+        <com.rocket.charge.ui.custom.ScalableCardView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="parent"
@@ -27,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"/>
-        </com.smooth.battery.ui.custom.ScalableCardView>
+        </com.rocket.charge.ui.custom.ScalableCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

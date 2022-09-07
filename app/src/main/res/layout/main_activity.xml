@@ -4,10 +4,10 @@
 
     <data>
         <import type="android.view.View"/>
-        <import type="com.smooth.battery.ui.main.MainViewModel.MainFragment"/>
+        <import type="com.rocket.charge.ui.main.MainViewModel.MainFragment"/>
         <variable
             name="viewModel"
-            type="com.smooth.battery.ui.main.MainViewModel" />
+            type="com.rocket.charge.ui.main.MainViewModel" />
     </data>
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:name="com.smooth.battery.ui.home.HomeFragment"/>
+            android:name="com.rocket.charge.ui.home.HomeFragment"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

@@ -5,10 +5,10 @@
 
     <data>
         <import type="android.view.View"/>
-        <import type="com.smooth.battery.ui.animations.AnimationViewModel.Tab"/>
+        <import type="com.rocket.charge.ui.animations.AnimationViewModel.Tab"/>
         <variable
             name="viewModel"
-            type="com.smooth.battery.ui.animations.AnimationViewModel" />
+            type="com.rocket.charge.ui.animations.AnimationViewModel" />
     </data>
 
     <androidx.appcompat.widget.LinearLayoutCompat

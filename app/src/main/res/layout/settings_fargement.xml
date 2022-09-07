@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.smooth.battery.ui.settings.SettingsViewModel" />
+            type="com.rocket.charge.ui.settings.SettingsViewModel" />
     </data>
 
     <ScrollView
