@@ -11,36 +11,33 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FEFAE0">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/center"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintDimensionRatio="360:371"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintVertical_bias="0"
-            android:src="@drawable/onboarding_decor_top"/>
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.477477477"/>
+        android:background="#FEFEFE"
+        android:clipChildren="false">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintTop_toTopOf="@id/decor_bottom"
-            app:layout_constraintBottom_toBottomOf="@id/decor_bottom"
-            app:layout_constraintStart_toStartOf="@id/decor_bottom"
-            app:layout_constraintEnd_toEndOf="@id/decor_bottom">
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/buttonStart"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="360:777"
+            android:clipChildren="false">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="590:1016"
+                app:layout_constraintWidth_percent="1.6388888888"
+                app:layout_constraintVertical_bias="0.4979"
+                app:layout_constraintHorizontal_bias="0.313"
+                android:src="@drawable/app_bg"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintTop_toTopOf="parent"
@@ -48,43 +45,85 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintWidth_percent="0.491666666"
-                android:background="@drawable/round_red_button"
-                app:layout_constraintVertical_bias="0.76855"
-                app:layout_constraintHorizontal_bias="0.284153">
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintDimensionRatio="149:22"
-                    app:layout_constraintWidth_percent="0.8418"
-                    android:gravity="center"
-                    app:autoSizeTextType="uniform"
-                    app:autoSizeMaxTextSize="20sp"
-                    app:autoSizeMinTextSize="1sp"
-                    android:textColor="#FFFFFF"
-                    android:fontFamily="@font/roboto_bold"
-                    android:lines="1"
-                    android:textAllCaps="true"
-                    android:text="@string/let_s_start"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                app:layout_constraintWidth_percent="0.6366111"
+                app:layout_constraintHorizontal_bias="0.79498"
+                app:layout_constraintVertical_bias="0.00365"
+                android:src="@mipmap/img_rocket"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/marker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.256"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/marker"
+                app:layout_constraintEnd_toEndOf="@id/marker"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintWidth_percent="1.4514"
+                app:layout_constraintVertical_bias="0.975"
+                android:src="@mipmap/img_battery"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="329:271"
+                app:layout_constraintWidth_percent="0.91388888888"
+                app:layout_constraintVertical_bias="0.44"
+                android:src="@drawable/onboarding_text"/>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/decor_bottom"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@id/center"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintDimensionRatio="360:406"
-            app:layout_constraintHorizontal_bias="1"
-            app:layout_constraintVertical_bias="1"
-            android:src="@drawable/onboarding_decor_bottom"/>
+            app:layout_constraintDimensionRatio="360:777"
+            app:layout_constraintHorizontal_bias="1">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/buttonStart"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="179:220"
+                app:layout_constraintWidth_percent="0.497222"
+                app:layout_constraintVertical_bias="0.9497307"
+                android:src="@mipmap/button_start"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@id/buttonStart"
+                app:layout_constraintBottom_toBottomOf="@id/buttonStart"
+                app:layout_constraintStart_toStartOf="@id/buttonStart"
+                app:layout_constraintEnd_toEndOf="@id/buttonStart"
+                app:layout_constraintDimensionRatio="117:22"
+                app:layout_constraintWidth_percent="0.325"
+                app:layout_constraintVertical_bias="0.474747"
+                app:layout_constraintHorizontal_bias="0.66129"
+                android:gravity="start|top"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMaxTextSize="20sp"
+                app:autoSizeMinTextSize="1sp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/rubik_bold"
+                android:text="@string/start_now"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -34,17 +34,35 @@ class PreviewActivity : BaseActivity<PreviewViewModel, PreviewActivityBinding>()
             onBackPressed()
             return
         }
-        binding.animationHost.addView(
+        binding.animationHost1.addView(
+            animation.inflateAnimationView(this),
+            ConstraintLayout.LayoutParams.MATCH_PARENT,
+            ConstraintLayout.LayoutParams.MATCH_PARENT
+        )
+        binding.animationHost2.addView(
             animation.inflateAnimationView(this),
             ConstraintLayout.LayoutParams.MATCH_PARENT,
             ConstraintLayout.LayoutParams.MATCH_PARENT
         )
         binding.buttonBack.setOnClickListener { onBackPressed() }
-        binding.buttonHide.setOnClickListener { binding.buttons.visibility = View.GONE }
-        binding.root.setOnClickListener { binding.buttons.visibility = View.VISIBLE }
+        binding.buttonHide.setOnClickListener {
+            binding.buttonBack.visibility = View.GONE
+            binding.buttonHide.visibility = View.GONE
+            binding.buttonShow.visibility = View.VISIBLE
+            binding.animationHost2.visibility = View.VISIBLE
+        }
+        binding.root.setOnClickListener {
+            binding.buttonBack.visibility = View.VISIBLE
+            binding.buttonHide.visibility = View.VISIBLE
+            binding.buttonShow.visibility = View.GONE
+            binding.animationHost2.visibility = View.GONE
+        }
         binding.buttonApply.setOnClickListener {
             Preferences.selectedAnimation = animation
-            onBackPressed()
+            AppliedDialog().apply {
+                onButtonClick = this@PreviewActivity::finish
+                show(supportFragmentManager, null)
+            }
         }
     }
 

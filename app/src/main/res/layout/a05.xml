@@ -11,13 +11,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFFFF">
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/a05gradient"/>
-
+        android:background="#637399"
+        android:clipChildren="false">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/container"
             android:layout_width="0dp"
@@ -29,63 +24,44 @@
             app:layout_constraintDimensionRatio="360:800"
             android:clipChildren="false">
 
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/marker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_percent="0.23625"
+                android:orientation="horizontal"/>
+
             <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="2:1"
+                app:layout_constraintBottom_toBottomOf="@id/marker"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0"
-                app:layout_constraintWidth_percent="2.05"
+                app:layout_constraintTop_toTopOf="@id/marker"
+                app:layout_constraintWidth_percent="1.488888888"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
-                app:lottie_rawRes="@raw/a05circles"
+                app:lottie_rawRes="@raw/a05space"
                 app:lottie_clipToCompositionBounds="false"/>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="146:50"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHeight_percent="0.0625"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.786"
-                android:gravity="center"
-                app:autoSizeTextType="uniform"
-                app:autoSizeMaxTextSize="48sp"
-                app:autoSizeMinTextSize="1sp"
-                android:textColor="#FFFFFF"
-                android:fontFamily="@font/orbitron_medium"
-                android:text="@{blHolder.batteryLevel}"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintTop_toTopOf="@id/container"
-            app:layout_constraintBottom_toBottomOf="@id/container">
             <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.503"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                app:layout_constraintHeight_percent="0.9"
-                app:lottie_rawRes="@raw/a05shapes"
-                app:lottie_loop="true"
+                app:layout_constraintVertical_bias="1.0"
+                app:layout_constraintWidth_percent="1.488888888"
                 app:lottie_autoPlay="true"
-                app:lottie_clipToCompositionBounds="false"/>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                app:lottie_clipToCompositionBounds="false"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/a05alien" />
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

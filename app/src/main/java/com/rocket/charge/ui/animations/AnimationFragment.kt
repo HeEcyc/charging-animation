@@ -15,23 +15,25 @@ class AnimationFragment : BaseFragment<AnimationViewModel, AnimationFragmentBind
 
     override fun setupUI() {
         binding.root.post {
-            val spaceVertical = binding.root.width / 360 * 5
-            val spaceInner = binding.root.width / 360 * 5
-            val spaceOuter = binding.root.width / 360 * 14
+            val spaceInner = binding.root.width / 360 * 10
+            val spaceOuter = binding.root.width / 360 * 30
             val isLTR = binding.root.layoutDirection == View.LAYOUT_DIRECTION_LTR
-            val decoration = ItemDecorationWithEnds(
-                topFirst = spaceVertical,
-                top = spaceVertical,
-                topLast = spaceVertical,
-                bottomFirst = spaceVertical,
-                bottom = spaceVertical,
-                bottomLast = spaceVertical,
+            var decoration = ItemDecorationWithEnds(
                 leftFirst = if (isLTR) spaceOuter else spaceInner,
                 leftLast = if (isLTR) spaceInner else spaceOuter,
                 rightFirst = if (isLTR) spaceInner else spaceOuter,
                 rightLast = if (isLTR) spaceOuter else spaceInner,
                 firstPredicate = { pos -> pos % 2 == 0 },
                 lastPredicate = { pos, _ -> pos % 2 == 1 }
+            )
+            binding.recyclerAnimation.addItemDecoration(decoration)
+            binding.recyclerImage.addItemDecoration(decoration)
+            val spaceVertical = binding.root.width / 360 * 20
+            val spaceVerticaLast = binding.root.width / 360 * 150
+            decoration = ItemDecorationWithEnds(
+                bottom = spaceVertical,
+                bottomLast = spaceVerticaLast,
+                lastPredicate = { pos, count -> if (count % 2 == 0) pos == count - 1 || pos == count - 2 else pos == count - 1 }
             )
             binding.recyclerAnimation.addItemDecoration(decoration)
             binding.recyclerImage.addItemDecoration(decoration)

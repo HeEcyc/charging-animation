@@ -12,7 +12,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFFFF">
+        android:background="#99D1EBE0"
+        android:clipChildren="false">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -20,21 +21,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintDimensionRatio="360:800">
-
-            <com.airbnb.lottie.LottieAnimationView
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.49"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.227"
-                app:layout_constraintWidth_percent="0.85"
-                app:lottie_autoPlay="true"
-                app:lottie_rawRes="@raw/a01star" />
+            app:layout_constraintDimensionRatio="360:800"
+            android:clipChildren="false">
 
             <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="0dp"
@@ -44,29 +32,30 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.856"
-                app:layout_constraintWidth_percent="0.7"
+                app:layout_constraintVertical_bias="0.7451923"
+                app:layout_constraintWidth_percent="1.6444"
                 app:lottie_autoPlay="true"
-                app:lottie_progress="1"
-                app:lottie_rawRes="@raw/a01stars" />
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/a01alien" />
 
-            <com.rocket.charge.ui.custom.GradientTextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:fontFamily="@font/source_sans_3_bold"
+                android:fontFamily="@font/chakra_petch_bold"
                 android:gravity="center"
                 android:lines="1"
                 android:text="@{blHolder.batteryLevel}"
-                app:autoSizeMaxTextSize="48sp"
+                android:textColor="#3D4693"
+                app:autoSizeMaxTextSize="100sp"
                 app:autoSizeMinTextSize="1sp"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="118:50"
+                app:layout_constraintDimensionRatio="259:103"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHeight_percent="0.06435"
+                app:layout_constraintWidth_percent="0.7194444"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.866" />
+                app:layout_constraintVertical_bias="0.1865" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -297,8 +297,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="app_bg" />
-                            <entry key="sourceFile" value="C:\Users\Nikita\Downloads\animation catalog.svg" />
+                            <entry key="outputName" value="ic_sound" />
+                            <entry key="sourceFile" value="C:\Users\Nikita\Downloads\sound-button-svgrepo-com 1.svg" />
                           </map>
                         </option>
                       </PersistentState>
