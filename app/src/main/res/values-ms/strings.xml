@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="charging_animation">Animasi Mengecas</string>
-    <string name="give_permissions_for_the_application_work_properly">Beri kebenaran untuk aplikasi berfungsi dengan betul</string>
     <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_application">Benarkan dipaparkan di atas apl lain. Ini adalah perlu untuk permohonan kerja yang betul</string>
     <string name="allow">benarkan</string>
     <string name="if_your_device_does_not_have_this_permission_you_can_ignore_it">Jika peranti anda tidak mempunyai kebenaran ini, anda boleh mengabaikannya</string>
@@ -11,16 +10,11 @@
     <string name="flash">Kilat</string>
     <string name="vibration">Getaran</string>
     <string name="sound">Bunyi</string>
-    <string name="share">Kongsi</string>
-    <string name="rate_us">Nilaikan kami</string>
-    <string name="privacy_policy">Dasar Privasi</string>
     <string name="working_in_background">Bekerja di latar belakang</string>
     <string name="your_device_is_fully_charged">Peranti anda dicas sepenuhnya</string>
 
     <string name="instruction_short">Dalam Maklumat Apl > Kebenaran > Benarkan Tunjukkan pada skrin Kunci/Pemberitahuan skrin kunci</string>
     <string name="instruction_long">Hidupkan paparan skrin kunci, supaya peranti boleh memaparkan animasi pengecasan seperti biasa apabila skrin dikunci, tetapi laluan tetapan pelbagai peranti berbeza, sila rujuk tetapan berikut\n\nLaluan tetapan Meizu: Tetapan -> Apl -> Animasi Mengecas -> Kebenaran -> Tunjukkan pada skrin Kunci/Pemberitahuan skrin kunci\n\nLaluan tetapan Xiaomi: tetapan -> Apl -> kebenaran -> Kebenaran -> Animasi Pengecasan -> Tunjukkan pada skrin Kunci\n\nLaluan tetapan OPPO : Tetapan -> Apl -> Animasi Pengecasan -> Pengurusan Pemberitahuan -> Paparan pada skrin kunci\n\nLaluan tetapan VIVO: i Pengurus -> Pengurusan Perisian -> Pengurusan Kebenaran -> Paparan Skrin Kunci -> Animasi Pengecasan -> Semak ke buka</string>
-    <string name="let_s_start">Mari mulakan!</string>
     <string name="animation">Animasi</string>
-    <string name="choose_image">Pilih imej</string>
     <string name="apply">Mohon</string>
 </resources>

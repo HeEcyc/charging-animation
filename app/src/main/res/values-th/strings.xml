@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="charging_animation">แอนิเมชั่นการชาร์จ</string>
-    <string name="give_permissions_for_the_application_work_properly">ให้สิทธิ์สำหรับแอปพลิเคชันทำงานอย่างถูกต้อง</string>
     <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_application">อนุญาตให้แสดงทับแอปอื่นๆ นี่เป็นสิ่งจำเป็นสำหรับการสมัครงานที่ถูกต้อง</string>
     <string name="allow">อนุญาต</string>
     <string name="if_your_device_does_not_have_this_permission_you_can_ignore_it">หากอุปกรณ์ของคุณไม่ได้รับอนุญาต คุณสามารถเพิกเฉยได้</string>
@@ -11,17 +10,12 @@
     <string name="flash">แฟลช</string>
     <string name="vibration">การสั่นสะเทือน</string>
     <string name="sound">เสียง</string>
-    <string name="share">แบ่งปัน</string>
-    <string name="rate_us">ให้คะแนนเรา</string>
-    <string name="privacy_policy">นโยบายความเป็นส่วนตัว</string>
     <string name="working_in_background">ทำงานในพื้นหลัง</string>
     <string name="your_device_is_fully_charged">อุปกรณ์ของคุณชาร์จเต็มแล้ว</string>
 
     <string name="instruction_short">ใน ข้อมูลแอป > สิทธิ์ > อนุญาตให้แสดงบนหน้าจอล็อก/การแจ้งเตือนหน้าจอล็อก</string>
     <string name="instruction_long">เปิดหน้าจอล็อกเพื่อให้อุปกรณ์สามารถแสดงภาพเคลื่อนไหวการชาร์จได้ตามปกติเมื่อหน้าจอล็อกอยู่ แต่เส้นทางการตั้งค่าของอุปกรณ์ต่างๆ จะแตกต่างกัน โปรดดูการตั้งค่าต่อไปนี้\n\nเส้นทางการตั้งค่า Meizu: การตั้งค่า -> แอป -> แอนิเมชั่นการชาร์จ -> สิทธิ์ -> แสดงบนหน้าจอล็อค/การแจ้งเตือนหน้าจอล็อก\n\nเส้นทางการตั้งค่า Xiaomi: การตั้งค่า -> แอป -> สิทธิ์ -> สิทธิ์ -> แอนิเมชั่นการชาร์จ -> แสดงบนหน้าจอล็อค\n\nเส้นทางการตั้งค่า OPPO : การตั้งค่า -> แอป -> แอนิเมชั่นการชาร์จ -> การจัดการการแจ้งเตือน -> แสดงบนหน้าจอล็อค\n\nเส้นทางการตั้งค่า VIVO: i Manager -> การจัดการซอฟต์แวร์ -> การจัดการสิทธิ์ -> การแสดงหน้าจอล็อก -> แอนิเมชั่นการชาร์จ -> ทำเครื่องหมายที่ เปิด</string>
-    <string name="let_s_start">เริ่มกันเลย!</string>
     <string name="animation">แอนิเมชั่น</string>
-    <string name="choose_image">เลือกภาพ</string>
     <string name="apply">นำมาใช้</string>
 
 </resources>

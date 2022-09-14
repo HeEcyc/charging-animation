@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name" translatable="false">Rocket charge</string>
     <string name="charging_animation">Charging Animation</string>
-    <string name="give_permissions_for_the_application_work_properly">Give permissions so that the application can work properly</string>
     <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_application">Allow showing over other apps. This is necessary for correct work of the application</string>
     <string name="allow">Allow</string>
     <string name="if_your_device_does_not_have_this_permission_you_can_ignore_it">If your device does not have this permission, you can ignore it</string>
@@ -11,17 +10,12 @@
     <string name="flash">Flash</string>
     <string name="vibration">Vibration</string>
     <string name="sound">Sound</string>
-    <string name="share">Share</string>
-    <string name="rate_us">Rate us</string>
-    <string name="privacy_policy">Privacy Policy</string>
     <string name="working_in_background">Working in background</string>
     <string name="your_device_is_fully_charged">Your device is fully charged</string>
 
     <string name="instruction_short">In the App Info > Permissions > Allow Show on Lock screen/Lock screen notification</string>
     <string name="instruction_long">Turn on the lock screen display, so that the device can display the charging animation normally when the screen is locked, but the setting paths of various devices are different, please refer to the following settings\n\nMeizu setting path: Settings -> Apps -> Charging Animation -> Permissions -> Show on Lock screen/Lock screen notification\n\nXiaomi setting path: setting -> Apps -> permissions -> Permissions -> Charging Animation -> Show on Lock screen\n\nOPPO setting path: Settings -> Apps -> Charging Animation -> Notification Management -> Display on the lock screen\n\nVIVO setting path: i Manager -> Software Management -> Permissions Management -> Lock Screen Display -> Charging Animation -> Check to open</string>
-    <string name="let_s_start">Let\'s start!</string>
     <string name="animation">Animation</string>
-    <string name="choose_image">Choose image</string>
     <string name="apply">Apply</string>
     <string name="start_now">Start now</string>
     <string name="enable_charging_animation">Enable charging animation</string>
