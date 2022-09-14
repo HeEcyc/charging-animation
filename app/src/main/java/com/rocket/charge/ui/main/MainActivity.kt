@@ -125,8 +125,8 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
 //            HidingBroadcast.startAlarm(this)todo
     }
 
-    private fun notSupportedBackgroundDevice() = Build.MANUFACTURER.lowercase(Locale.ENGLISH) in listOf(
-        "xiaomi", "oppo", "vivo", "letv", "honor", "oneplus"
-    )
+//    private fun notSupportedBackgroundDevice() = Build.MANUFACTURER.lowercase(Locale.ENGLISH) in listOf(
+//        "xiaomi", "oppo", "vivo", "letv", "honor", "oneplus"
+//    )
 
 }

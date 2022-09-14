@@ -13,8 +13,7 @@ import androidx.databinding.ViewDataBinding
 import com.rocket.charge.BR
 import com.rocket.charge.utils.APP_LINK
 
-abstract class BaseActivity<TViewModel : BaseViewModel, TBinding : ViewDataBinding>(
-) : AppCompatActivity() {
+abstract class BaseActivity<TViewModel : BaseViewModel, TBinding : ViewDataBinding> : AppCompatActivity() {
 
     private var onPermission: ((Boolean) -> Unit)? = null
 
