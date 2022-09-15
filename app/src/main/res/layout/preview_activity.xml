@@ -5,8 +5,8 @@
     <data>
         <variable
             name="viewModel"
-            type="com.rocket.charge.ui.preview.PreviewViewModel" />
-        <import type="com.rocket.charge.ui.custom.ScalableCardView.ScaleType"/>
+            type="com.urbanlife.lifeurban.ui.preview.PreviewViewModel" />
+        <import type="com.urbanlife.lifeurban.ui.custom.ScalableCardView.ScaleType"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -46,7 +46,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintDimensionRatio="360:777">
-            <com.rocket.charge.ui.custom.ScalableCardView
+            <com.urbanlife.lifeurban.ui.custom.ScalableCardView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintTop_toTopOf="parent"
@@ -99,7 +99,7 @@
                         android:text="@string/apply"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
-            </com.rocket.charge.ui.custom.ScalableCardView>
+            </com.urbanlife.lifeurban.ui.custom.ScalableCardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout

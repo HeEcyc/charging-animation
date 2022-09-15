@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="com.rocket.charge.ui.custom.ScalableCardView.ScaleType"/>
+        <import type="com.urbanlife.lifeurban.ui.custom.ScalableCardView.ScaleType"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,7 +18,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintDimensionRatio="360:777">
 
-            <com.rocket.charge.ui.custom.ScalableCardView
+            <com.urbanlife.lifeurban.ui.custom.ScalableCardView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
@@ -75,7 +75,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
-            </com.rocket.charge.ui.custom.ScalableCardView>
+            </com.urbanlife.lifeurban.ui.custom.ScalableCardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

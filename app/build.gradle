@@ -2,8 +2,8 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'com.google.gms.google-services'
-    id 'com.google.firebase.crashlytics'
+//    id 'com.google.gms.google-services'todo
+//    id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -24,7 +24,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.rocket.charge"
+        applicationId "com.urbanlife.lifeurban"
         minSdk 23
         targetSdk 31
         versionCode 1
