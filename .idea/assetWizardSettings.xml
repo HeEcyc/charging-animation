@@ -297,8 +297,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_sound" />
-                            <entry key="sourceFile" value="C:\Users\Nikita\Downloads\sound-button-svgrepo-com 1.svg" />
+                            <entry key="outputName" value="onboarding_text" />
+                            <entry key="sourceFile" value="C:\Users\Nikita\Downloads\result.svg" />
                           </map>
                         </option>
                       </PersistentState>

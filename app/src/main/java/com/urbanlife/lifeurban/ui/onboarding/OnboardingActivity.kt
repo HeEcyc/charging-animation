@@ -1,5 +1,6 @@
 package com.urbanlife.lifeurban.ui.onboarding
 
+import android.annotation.SuppressLint
 import androidx.activity.viewModels
 import com.urbanlife.lifeurban.R
 import com.urbanlife.lifeurban.base.BaseActivity
@@ -14,9 +15,11 @@ class OnboardingActivity : BaseActivity<OnboardingViewModel, OnboardingActivityB
 
     override fun provideViewModel() = viewModel
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun setupUI() {
-        binding.buttonStart.setOnClickListener {
+        binding.root.setOnTouchListener { _, _ ->
             PermissionDialog().show(supportFragmentManager, null)
+            true
         }
     }
 
