@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#C9B9F6"
+        android:background="#E4F0F9"
         android:clipChildren="false">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
@@ -30,29 +30,24 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="360:387.63"
-                app:layout_constraintVertical_bias="0.3322259"
-                app:lottie_rawRes="@raw/a06girl"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintWidth_percent="0.8527777777"
+                app:layout_constraintVertical_bias="0.9"
+                app:lottie_rawRes="@raw/a06battery"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"/>
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="261:102"
-                app:layout_constraintWidth_percent="0.725"
-                app:layout_constraintVertical_bias="0.8452722"
-                android:gravity="center"
-                app:autoSizeTextType="uniform"
-                app:autoSizeMaxTextSize="100sp"
-                app:autoSizeMinTextSize="1sp"
-                android:textColor="#220F5A"
-                android:fontFamily="@font/alata_regular"
-                android:text="@{blHolder.batteryLevel}"/>
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintWidth_percent="1.6111"
+                app:lottie_rawRes="@raw/a06wrestler"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,7 +11,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/a02gradient">
+        android:background="#6BA9EF"
+        android:clipChildren="false">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -23,20 +24,16 @@
             android:clipChildren="false">
 
             <com.airbnb.lottie.LottieAnimationView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintTop_toTopOf="parent"
-                app:lottie_autoPlay="true"
-                app:lottie_rawRes="@raw/a02hi"/>
-
-            <com.airbnb.lottie.LottieAnimationView
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="1.415"
                 app:layout_constraintDimensionRatio="1:1"
-                app:lottie_rawRes="@raw/a02loop"
+                app:layout_constraintVertical_bias="0.35"
+                app:lottie_rawRes="@raw/a02octopus"
                 app:lottie_loop="true"
                 app:lottie_autoPlay="true"/>
 
@@ -47,15 +44,15 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="164:72"
-                app:layout_constraintWidth_percent="0.455555"
-                app:layout_constraintVertical_bias="0.9162"
+                app:layout_constraintDimensionRatio="253:102"
+                app:layout_constraintWidth_percent="0.7027777777"
+                app:layout_constraintVertical_bias="0.82"
                 android:gravity="center"
                 app:autoSizeTextType="uniform"
-                app:autoSizeMaxTextSize="70sp"
+                app:autoSizeMaxTextSize="7100sp"
                 app:autoSizeMinTextSize="1sp"
-                android:textColor="#131313"
-                android:fontFamily="@font/permanent_marker_regular"
+                android:textColor="#2E3478"
+                android:fontFamily="@font/combo_regular"
                 android:text="@{blHolder.batteryLevel}"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

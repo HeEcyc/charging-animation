@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#EEA1A1"
+        android:background="#7F7F7F"
         android:clipChildren="false">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
@@ -31,11 +31,11 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.1778656"
-                app:layout_constraintWidth_percent="1.5194444"
+                app:layout_constraintVertical_bias="0.38992"
+                app:layout_constraintWidth_percent="1.425"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
-                app:lottie_rawRes="@raw/a09donut" />
+                app:lottie_rawRes="@raw/a09coffee" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="0dp"
@@ -44,15 +44,15 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="247:102"
-                app:layout_constraintWidth_percent="0.686111"
-                app:layout_constraintVertical_bias="0.87"
+                app:layout_constraintDimensionRatio="229:102"
+                app:layout_constraintWidth_percent="0.636111"
+                app:layout_constraintVertical_bias="0.8553"
                 android:gravity="center"
                 app:autoSizeTextType="uniform"
                 app:autoSizeMaxTextSize="100sp"
                 app:autoSizeMinTextSize="1sp"
-                android:textColor="#43006D"
-                android:fontFamily="@font/fredoka_one_regular"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/mr_dafoe_regular"
                 android:text="@{blHolder.batteryLevel}"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
