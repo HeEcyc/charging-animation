@@ -5,7 +5,6 @@
     <string name="allow">Permite</string>
     <string name="if_your_device_does_not_have_this_permission_you_can_ignore_it">Dacă dispozitivul dvs. nu are această permisiune, o puteți ignora</string>
     <string name="more_information">Mai multe informatii</string>
-    <string name="lock_screen_display_instructions">Instrucțiuni de afișare a ecranului de blocare</string>
     <string name="notifications">Notificări</string>
     <string name="flash">Flash</string>
     <string name="vibration">Vibrație</string>
@@ -13,16 +12,12 @@
     <string name="working_in_background">Lucrând în fundal</string>
     <string name="your_device_is_fully_charged">Dispozitivul dvs. este încărcat complet</string>
 
-    <string name="instruction_short">În Informații despre aplicație > Permisiuni > Permiteți afișarea pe ecranul de blocare/notificarea ecranului de blocare</string>
     <string name="instruction_long">Porniți afișarea ecranului de blocare, astfel încât dispozitivul să poată afișa animația de încărcare în mod normal când ecranul este blocat, dar căile de setare ale diferitelor dispozitive sunt diferite, vă rugăm să consultați următoarele setări\n\nCale de setare Meizu: Setări -> Aplicații -> Animație de încărcare -> Permisiuni -> Afișează pe ecranul de blocare/Notificare pe ecranul de blocare\n\nCale setare Xiaomi: setare -> Aplicații -> permisiuni -> Permisiuni -> Animație de încărcare -> Afișează pe ecranul de blocare\n\nCale de setare OPPO : Setări -> Aplicații -> Animație de încărcare -> Gestionare notificări -> Afișare pe ecranul de blocare\n\nCale setare VIVO: i Manager -> Gestionare software -> Gestionare permisiuni -> Afișare ecran de blocare -> Animație de încărcare -> Verificați pentru deschis</string>
     <string name="animation">Animaţie</string>
     <string name="apply">aplica</string>
-    <string name="start_now">Începe acum</string>
     <string name="enable_charging_animation">Activați animația de încărcare</string>
     <string name="your_image">Imaginea ta</string>
-    <string name="animation_applied">Animație aplicată</string>
     <string name="ok">O.K</string>
-    <string name="settings">Setări</string>
     <string name="share">Acțiune</string>
     <string name="rate_us">Ne evalua</string>
     <string name="privacy_policy">Politica de Confidențialitate</string>

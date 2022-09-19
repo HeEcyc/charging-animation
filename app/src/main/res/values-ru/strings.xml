@@ -5,7 +5,6 @@
     <string name="allow">Дайте разрешение</string>
     <string name="if_your_device_does_not_have_this_permission_you_can_ignore_it">Если важе устройство не поддерживает эти разрешения, игнорируйте их</string>
     <string name="more_information">Подробнее</string>
-    <string name="lock_screen_display_instructions">Инструкции для отображения на экране блокировки</string>
     <string name="notifications">Уведомления</string>
     <string name="flash">Вспышка</string>
     <string name="vibration">Вибрация</string>
@@ -13,16 +12,12 @@
     <string name="working_in_background">Работа в фоновом режиме</string>
     <string name="your_device_is_fully_charged">Ваше устройство полностью заряжено</string>
 
-    <string name="instruction_short">Информация о приложении > Разрешения > Разрешить отображение на экране блокировки/уведомления на экране блокировки</string>
     <string name="instruction_long">Включите отображение на экране блокировки, чтобы устройство могло нормально отображать анимацию зарядки, когда экран заблокирован. Но путь до настроек различается на разных устройствах. Пожалуйста, обратитесь к следующим настройкам\n\nMeizu: Настройки -> Приложения -> Charging Animation -> Разрешения -> Показывать на экране блокировки/Уведомления на экране блокировки\n\nXiaomi: Настройки -> Приложения -> разрешения -> Разрешения -> Charging Animation -> Показывать на экране блокировки\n\nOPPO: Настройки -> Приложения -> Charging Animation -> Управление уведомлениями -> Отображать на экране блокировки\n\nVIVO : i Manager -> Управление программным обеспечением -> Управление разрешениями -> Отображение на экране блокировки -> Charging Animation -> Нажмите, чтобы открыть</string>
     <string name="animation">Анимация</string>
     <string name="apply">Применить</string>
-    <string name="start_now">Начать</string>
     <string name="enable_charging_animation">Включить анимацию зарядки</string>
     <string name="your_image">Ваша картинка</string>
-    <string name="animation_applied">Анимация применена</string>
     <string name="ok">Ок</string>
-    <string name="settings">Настройки</string>
     <string name="share">Поделиться</string>
     <string name="rate_us">Оцените нас</string>
     <string name="privacy_policy">Политика конфиденциальности</string>
