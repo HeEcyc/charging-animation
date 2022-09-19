@@ -1,6 +1,7 @@
 package com.urbanlife.lifeurban.utils
 
 import android.content.Context
+import android.view.View
 import androidx.databinding.Observable
 import com.urbanlife.lifeurban.base.BaseBroadcastReceiver
 
@@ -14,3 +15,5 @@ fun Observable.addOnPropertyChangedCallback(
 
 fun Context.registerReceiver(bbr: BaseBroadcastReceiver) =
     registerReceiver(bbr, bbr.provideIntentFilter())
+
+fun View.setOnClickListener(action: () -> Unit) = setOnClickListener { action() }

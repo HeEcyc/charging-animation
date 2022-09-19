@@ -23,5 +23,8 @@
     <string name="animation_applied">Inilapat ang animation</string>
     <string name="ok">Ok</string>
     <string name="settings">Mga setting</string>
+    <string name="share">Ibahagi</string>
+    <string name="rate_us">I-rate kami</string>
+    <string name="privacy_policy">Patakaran sa privacy</string>
 
 </resources>

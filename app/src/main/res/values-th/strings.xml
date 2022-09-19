@@ -23,5 +23,8 @@
     <string name="animation_applied">ใช้แอนิเมชั่น</string>
     <string name="ok">ตกลง</string>
     <string name="settings">การตั้งค่า</string>
+    <string name="share">แบ่งปัน</string>
+    <string name="rate_us">ให้คะแนนเรา</string>
+    <string name="privacy_policy">นโยบายความเป็นส่วนตัว</string>
 
 </resources>

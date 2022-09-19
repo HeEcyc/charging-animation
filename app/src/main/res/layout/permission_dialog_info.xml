@@ -10,37 +10,24 @@
             android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="281:657"
+            app:layout_constraintDimensionRatio="303:655"
             android:orientation="vertical">
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="50"/>
+                android:layout_weight="60"/>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="96">
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintDimensionRatio="229:96"
-                    android:gravity="center"
-                    app:autoSizeTextType="uniform"
-                    app:autoSizeMaxTextSize="24sp"
-                    app:autoSizeMinTextSize="1sp"
-                    android:textColor="#09248F"
-                    android:fontFamily="@font/rubik_bold"
-                    android:text="@string/lock_screen_display_instructions"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_weight="75"
+                android:src="@mipmap/permission_info_text"/>
 
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="511"
+                android:layout_weight="520"
                 android:scrollbars="none"
                 android:overScrollMode="never">
                 <androidx.appcompat.widget.LinearLayoutCompat
@@ -56,7 +43,7 @@
                             android:layout_height="0dp"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintDimensionRatio="281:30"/>
+                            app:layout_constraintDimensionRatio="303:30"/>
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -69,11 +56,11 @@
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintWidth_percent="0.7935943"
+                            app:layout_constraintWidth_percent="0.887788778877"
                             android:gravity="start"
                             android:textSize="20sp"
-                            android:textColor="#09248F"
-                            android:fontFamily="@font/rubik_regular"
+                            android:textColor="#FFFFFF"
+                            android:fontFamily="@font/oswald_regular"
                             android:text="@string/instruction_long"/>
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -85,7 +72,7 @@
                             android:layout_height="0dp"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintDimensionRatio="281:30"/>
+                            app:layout_constraintDimensionRatio="303:30"/>
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </androidx.appcompat.widget.LinearLayoutCompat>

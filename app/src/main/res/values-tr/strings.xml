@@ -23,5 +23,8 @@
     <string name="animation_applied">Animasyon uygulandı</string>
     <string name="ok">Tamam</string>
     <string name="settings">Ayarlar</string>
+    <string name="share">Paylaşmak</string>
+    <string name="rate_us">Bizi değerlendirin</string>
+    <string name="privacy_policy">Gizlilik Politikası</string>
 
 </resources>

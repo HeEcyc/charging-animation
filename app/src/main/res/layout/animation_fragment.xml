@@ -11,276 +11,667 @@
             type="com.urbanlife.lifeurban.ui.animations.AnimationViewModel" />
     </data>
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:clipChildren="false"
+        android:background="#21251F">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="360:777"
+            android:clipChildren="false">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="360:295"
-                android:orientation="vertical">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="130">
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/buttonBack"
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintDimensionRatio="1:1"
-                        app:layout_constraintWidth_percent="0.1527777777"
-                        app:layout_constraintVertical_bias="0.666666"
-                        app:layout_constraintHorizontal_bias="0.04248366"
-                        android:src="@mipmap/ic_back"/>
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintDimensionRatio="200:35"
-                        app:layout_constraintWidth_percent="0.55555"
-                        app:layout_constraintVertical_bias="0.621"
-                        android:gravity="center"
-                        app:autoSizeTextType="uniform"
-                        app:autoSizeMaxTextSize="30sp"
-                        app:autoSizeMinTextSize="1sp"
-                        android:textColor="#09248F"
-                        android:fontFamily="@font/rubik_bold"
-                        android:text="@string/animation"/>
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="69">
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:onClick="@{(_) -> viewModel.onTurnOnOffClick()}"
-                        android:visibility="@{viewModel.isAppOn ? View.GONE : View.VISIBLE}">
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintDimensionRatio="180:44"
-                            app:layout_constraintWidth_percent="0.5"
-                            app:layout_constraintHorizontal_bias="0.227777777"
-                            android:gravity="center_vertical|start"
-                            app:autoSizeTextType="uniform"
-                            app:autoSizeMaxTextSize="20sp"
-                            app:autoSizeMinTextSize="1sp"
-                            android:textColor="#09248F"
-                            android:fontFamily="@font/rubik_bold"
-                            android:text="@string/enable_charging_animation"/>
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintDimensionRatio="51:69"
-                            app:layout_constraintHorizontal_bias="0.847896"
-                            android:src="@mipmap/img_lamp"/>
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="26"/>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="70"
-                    android:orientation="horizontal">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:onClick="@{(_) -> viewModel.onAnimationTabClick()}">
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintDimensionRatio="180:22"
-                            android:gravity="center"
-                            app:autoSizeTextType="uniform"
-                            app:autoSizeMaxTextSize="20sp"
-                            app:autoSizeMinTextSize="1sp"
-                            android:textColor="#FF5F2D"
-                            android:fontFamily="@font/rubik_regular"
-                            android:text="@string/animation"
-                            android:visibility="@{viewModel.selectedTab == Tab.ANIMATION ? View.GONE : View.VISIBLE}"/>
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintDimensionRatio="69.05:70"
-                            android:src="@drawable/ic_rocket"
-                            android:visibility="@{viewModel.selectedTab == Tab.ANIMATION ? View.VISIBLE : View.GONE}"/>
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintDimensionRatio="180:30"
-                            android:gravity="center"
-                            app:autoSizeTextType="uniform"
-                            app:autoSizeMaxTextSize="24sp"
-                            app:autoSizeMinTextSize="1sp"
-                            android:textColor="#FF5F2D"
-                            android:fontFamily="@font/rubik_bold"
-                            android:text="@string/animation"
-                            android:visibility="@{viewModel.selectedTab == Tab.ANIMATION ? View.VISIBLE : View.GONE}"/>
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:onClick="@{(_) -> viewModel.onImageTabClick()}">
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintDimensionRatio="180:22"
-                            android:gravity="center"
-                            app:autoSizeTextType="uniform"
-                            app:autoSizeMaxTextSize="20sp"
-                            app:autoSizeMinTextSize="1sp"
-                            android:textColor="#FF5F2D"
-                            android:fontFamily="@font/rubik_regular"
-                            android:text="@string/your_image"
-                            android:visibility="@{viewModel.selectedTab == Tab.IMAGE ? View.GONE : View.VISIBLE}"/>
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintDimensionRatio="69.05:70"
-                            android:src="@drawable/ic_rocket"
-                            android:visibility="@{viewModel.selectedTab == Tab.IMAGE ? View.VISIBLE : View.GONE}"/>
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintDimensionRatio="180:30"
-                            android:gravity="center"
-                            app:autoSizeTextType="uniform"
-                            app:autoSizeMaxTextSize="24sp"
-                            app:autoSizeMinTextSize="1sp"
-                            android:textColor="#FF5F2D"
-                            android:fontFamily="@font/rubik_bold"
-                            android:text="@string/your_image"
-                            android:visibility="@{viewModel.selectedTab == Tab.IMAGE ? View.VISIBLE : View.GONE}"/>
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="1179:1139"
+                app:layout_constraintWidth_percent="3.275"
+                app:layout_constraintVertical_bias="0.98"
+                app:layout_constraintHorizontal_bias="0.456654"
+                android:src="@mipmap/img_bg_blur"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerAnimation"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:spanCount="2"
-                android:overScrollMode="never"
-                android:scrollbars="none"
-                adapter="@{viewModel.adapterAnimation}"
-                android:visibility="@{viewModel.selectedTab == Tab.ANIMATION ? View.VISIBLE : View.GONE}"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="@{viewModel.selectedTab == Tab.IMAGE ? View.VISIBLE : View.GONE}">
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="360:265"
+                    android:orientation="vertical">
 
-                <androidx.core.widget.NestedScrollView
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="52"/>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="37">
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/buttonMenu"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintDimensionRatio="1:1"
+                            app:layout_constraintHorizontal_bias="0.0619"
+                            android:src="@drawable/ic_menu"/>
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/buttonSettings"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintDimensionRatio="1:1"
+                            app:layout_constraintHorizontal_bias="0.9381"
+                            android:src="@drawable/ic_settings"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="50"/>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="51">
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/home_text"/>
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintDimensionRatio="33:51"
+                            app:layout_constraintHorizontal_bias="0.73"
+                            android:src="@mipmap/ic_fire"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="30"/>
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="45"
+                        android:orientation="horizontal"
+                        android:scrollbars="none"
+                        android:overScrollMode="never">
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent">
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintDimensionRatio="20:45"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:onClick="@{(_) -> viewModel.onAnimationTabClick()}"
+                                android:background="@{viewModel.selectedTab == Tab.ANIMATION ? @drawable/menu_tab_selected : @drawable/menu_tab_unselected}">
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent">
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintDimensionRatio="9:45"
+                                        tools:ignore="TooDeepLayout" />
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent">
+                                    <com.urbanlife.lifeurban.ui.custom.TrueAutoSizeTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="0dp"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHeight_percent="0.7777777"
+                                        android:gravity="center"
+                                        fontToHeightRatio="@{0.57f}"
+                                        android:textColor="@{viewModel.selectedTab == Tab.ANIMATION ? 0xFF21251F : 0xFFFFFFFF}"
+                                        android:fontFamily="@font/oswald_bold"
+                                        android:text="@string/animation"/>
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent">
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintDimensionRatio="9:45"
+                                        tools:ignore="TooDeepLayout" />
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent">
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintDimensionRatio="40:45"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:onClick="@{(_) -> viewModel.onImageTabClick()}"
+                                android:background="@{viewModel.selectedTab == Tab.IMAGE ? @drawable/menu_tab_selected : @drawable/menu_tab_unselected}">
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent">
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintDimensionRatio="9:45"
+                                        tools:ignore="TooDeepLayout" />
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent">
+                                    <com.urbanlife.lifeurban.ui.custom.TrueAutoSizeTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="0dp"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHeight_percent="0.7777777"
+                                        android:gravity="center"
+                                        fontToHeightRatio="@{0.57f}"
+                                        android:textColor="@{viewModel.selectedTab == Tab.IMAGE ? 0xFF21251F : 0xFFFFFFFF}"
+                                        android:fontFamily="@font/oswald_bold"
+                                        android:text="@string/your_image"/>
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent">
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintDimensionRatio="9:45"
+                                        tools:ignore="TooDeepLayout" />
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent">
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintDimensionRatio="20:45"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+                    </HorizontalScrollView>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerAnimation"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="2"
                     android:overScrollMode="never"
-                    android:scrollbars="none">
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                    android:scrollbars="none"
+                    adapter="@{viewModel.adapterAnimation}"
+                    android:visibility="@{viewModel.selectedTab == Tab.ANIMATION ? View.VISIBLE : View.GONE}"/>
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="@{viewModel.selectedTab == Tab.IMAGE ? View.VISIBLE : View.GONE}">
+
+                    <androidx.core.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:overScrollMode="never"
+                        android:scrollbars="none">
+                        <androidx.appcompat.widget.LinearLayoutCompat
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-                            <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
                                 android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintDimensionRatio="360:177"
+                                    android:src="@drawable/ic_add"
+                                    android:onClick="@{(_) -> viewModel.onAddClick()}"
+                                    tools:ignore="TooDeepLayout" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recyclerImage"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                                app:spanCount="2"
+                                android:overScrollMode="never"
+                                android:scrollbars="none"
+                                adapter="@{viewModel.adapterImage}"/>
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+                    </androidx.core.widget.NestedScrollView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/drawerContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#A321251F"
+            android:alpha="0"
+            android:visibility="gone">
+
+            <View
+                android:id="@+id/drawerHitBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/drawer"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintWidth_percent="1"
+                app:layout_constraintHeight_percent="1"
+                android:clipChildren="false">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/menuBG"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintWidth_percent="0.841666666"
+                    android:background="#21251F"
+                    android:clipChildren="true">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clipChildren="false">
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintDimensionRatio="303:777"
+                            app:layout_constraintHorizontal_bias="0"
+                            android:clipChildren="false">
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="0dp"
                                 android:layout_height="0dp"
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintDimensionRatio="360:186"
-                                android:orientation="vertical">
+                                app:layout_constraintDimensionRatio="1179:1139"
+                                app:layout_constraintWidth_percent="3.891089108910"
+                                app:layout_constraintHorizontal_bias="0.453"
+                                app:layout_constraintVertical_bias="0.787"
+                                android:src="@mipmap/img_bg_blur"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <Space
+                    android:id="@+id/marker"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:layout_constraintTop_toBottomOf="@id/backButtonContainer"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintVertical_bias="0.8"/>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/menu"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/backButtonContainer"
+                    app:layout_constraintBottom_toTopOf="@id/marker"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/menuBG"
+                    android:orientation="vertical"
+                    android:clipChildren="false">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="245"
+                        android:clipChildren="false">
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintDimensionRatio="303:245"
+                            android:clipChildren="false">
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintDimensionRatio="303:286"
+                                android:src="@mipmap/img_menu"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="51"/>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="64">
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:onClick="@{(_) -> viewModel.onTurnOnOffClick()}"
+                            android:visibility="@{viewModel.isAppOn ? View.GONE : View.VISIBLE}">
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="303:64"
+                                app:layout_constraintHorizontal_bias="0">
                                 <androidx.constraintlayout.widget.ConstraintLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="0dp"
-                                    android:layout_weight="85">
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintDimensionRatio="263:64">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintDimensionRatio="183:64"
+                                        android:gravity="center_vertical"
+                                        app:autoSizeTextType="uniform"
+                                        app:autoSizeMaxTextSize="20sp"
+                                        app:autoSizeMinTextSize="1sp"
+                                        android:textColor="#FFFFFF"
+                                        android:fontFamily="@font/oswald_bold"
+                                        android:text="@string/enable_charging_animation"/>
+
                                     <androidx.appcompat.widget.AppCompatImageView
-                                        android:layout_width="match_parent"
+                                        android:layout_width="0dp"
                                         android:layout_height="0dp"
                                         app:layout_constraintTop_toTopOf="parent"
                                         app:layout_constraintBottom_toBottomOf="parent"
-                                        app:layout_constraintDimensionRatio="360:185"
-                                        android:src="@mipmap/ic_add"
-                                        android:onClick="@{(_) -> viewModel.onAddClick()}"
-                                        tools:ignore="TooDeepLayout" />
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintDimensionRatio="1:1"
+                                        app:layout_constraintHeight_percent="0.9375"
+                                        android:src="@drawable/ic_bell"/>
+
                                 </androidx.constraintlayout.widget.ConstraintLayout>
-                                <Space
-                                    android:layout_width="match_parent"
-                                    android:layout_height="0dp"
-                                    android:layout_weight="1"/>
-                            </androidx.appcompat.widget.LinearLayoutCompat>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
                         </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/recyclerImage"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                            app:spanCount="2"
-                            android:overScrollMode="never"
-                            android:scrollbars="none"
-                            adapter="@{viewModel.adapterImage}"/>
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="39"/>
 
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-                </androidx.core.widget.NestedScrollView>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/buttonShare"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="40">
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintDimensionRatio="303:40"
+                            app:layout_constraintHorizontal_bias="0">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="1:1"
+                                app:layout_constraintHorizontal_bias="0.076"
+                                android:src="@drawable/ic_share"/>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="203:32"
+                                app:layout_constraintHeight_percent="0.8"
+                                app:layout_constraintHorizontal_bias="0.8"
+                                android:gravity="center_vertical"
+                                app:autoSizeTextType="uniform"
+                                app:autoSizeMaxTextSize="20sp"
+                                app:autoSizeMinTextSize="1sp"
+                                android:textColor="#FFFFFF"
+                                android:fontFamily="@font/oswald_bold"
+                                android:text="@string/share"/>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="18"/>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/buttonRateUs"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="40">
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintDimensionRatio="303:40"
+                            app:layout_constraintHorizontal_bias="0">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="3846:3677"
+                                app:layout_constraintHeight_percent="0.91925"
+                                app:layout_constraintHorizontal_bias="0.07866485"
+                                android:src="@drawable/ic_rate_us"/>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="203:32"
+                                app:layout_constraintHeight_percent="0.8"
+                                app:layout_constraintHorizontal_bias="0.8"
+                                android:gravity="center_vertical"
+                                app:autoSizeTextType="uniform"
+                                app:autoSizeMaxTextSize="20sp"
+                                app:autoSizeMinTextSize="1sp"
+                                android:textColor="#FFFFFF"
+                                android:fontFamily="@font/oswald_bold"
+                                android:text="@string/rate_us"/>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="15"
+                        tools:ignore="TooManyViews" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/buttonPrivacyPolicy"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="40"
+                        tools:ignore="TooManyViews">
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintDimensionRatio="303:40"
+                            app:layout_constraintHorizontal_bias="0">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="2477:3197"
+                                app:layout_constraintHeight_percent="0.79925"
+                                app:layout_constraintHorizontal_bias="0.097"
+                                android:src="@drawable/ic_privacy"/>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="203:32"
+                                app:layout_constraintHeight_percent="0.8"
+                                app:layout_constraintHorizontal_bias="0.8"
+                                android:gravity="center_vertical"
+                                app:autoSizeTextType="uniform"
+                                app:autoSizeMaxTextSize="20sp"
+                                app:autoSizeMinTextSize="1sp"
+                                android:textColor="#FFFFFF"
+                                android:fontFamily="@font/oswald_bold"
+                                android:text="@string/privacy_policy"/>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/backButtonContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintDimensionRatio="360:89">
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/buttonMenuBack"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintHeight_percent="0.41573"
+                        app:layout_constraintHorizontal_bias="0.0619"
+                        android:src="@drawable/ic_menu_back"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

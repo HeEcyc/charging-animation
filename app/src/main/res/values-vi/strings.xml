@@ -23,5 +23,8 @@
     <string name="animation_applied">Đã áp dụng hoạt ảnh</string>
     <string name="ok">Được</string>
     <string name="settings">Cài đặt</string>
+    <string name="share">Đăng lại</string>
+    <string name="rate_us">Đánh giá chúng tôi</string>
+    <string name="privacy_policy">Chính sách bảo mật</string>
 
 </resources>

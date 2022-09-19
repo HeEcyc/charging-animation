@@ -23,5 +23,8 @@
     <string name="animation_applied">Animação aplicada</string>
     <string name="ok">OK</string>
     <string name="settings">Definições</string>
+    <string name="share">Compartilhar</string>
+    <string name="rate_us">Nos avalie</string>
+    <string name="privacy_policy">Política de Privacidade</string>
 
 </resources>

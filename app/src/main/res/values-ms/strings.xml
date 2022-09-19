@@ -23,4 +23,7 @@
     <string name="animation_applied">Animasi digunakan</string>
     <string name="ok">Okey</string>
     <string name="settings">tetapan</string>
+    <string name="share">Kongsi</string>
+    <string name="rate_us">Nilaikan kami</string>
+    <string name="privacy_policy">Dasar privasi</string>
 </resources>

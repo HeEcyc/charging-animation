@@ -23,4 +23,7 @@
     <string name="animation_applied">تم تطبيق الرسوم المتحركة</string>
     <string name="ok">موافق</string>
     <string name="settings">إعدادات</string>
+    <string name="share">يشارك</string>
+    <string name="rate_us">قيمنا</string>
+    <string name="privacy_policy">سياسة الخصوصية</string>
 </resources>

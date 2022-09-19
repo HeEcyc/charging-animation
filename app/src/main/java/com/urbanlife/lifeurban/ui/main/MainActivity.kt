@@ -7,7 +7,6 @@ import android.os.Build
 import android.provider.Settings
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
-import androidx.fragment.app.commit
 import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.lifecycle.lifecycleScope
 import com.nguyenhoanglam.imagepicker.model.Image
@@ -20,12 +19,9 @@ import com.urbanlife.lifeurban.base.BaseActivity
 import com.urbanlife.lifeurban.databinding.MainActivityBinding
 import com.urbanlife.lifeurban.repository.background.display.ForegroundService
 import com.urbanlife.lifeurban.ui.animations.AnimationFragment
-import com.urbanlife.lifeurban.ui.home.HomeFragment
 import com.urbanlife.lifeurban.ui.onboarding.OnboardingActivity
-import com.urbanlife.lifeurban.ui.settings.SettingsFragment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.util.*
 import kotlin.coroutines.suspendCoroutine
 
 class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
@@ -105,16 +101,6 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
             startService(Intent(this, ForegroundService::class.java))
         if (!Settings.canDrawOverlays(this))
             startActivity(Intent(this, OnboardingActivity::class.java))
-
-        viewModel.showAnimation.observe(this) {
-            supportFragmentManager.commit { replace(R.id.fragmentContainer, AnimationFragment()) }
-        }
-        viewModel.showHome.observe(this) {
-            supportFragmentManager.commit { replace(R.id.fragmentContainer, HomeFragment()) }
-        }
-        viewModel.showSettings.observe(this) {
-            supportFragmentManager.commit { replace(R.id.fragmentContainer, SettingsFragment()) }
-        }
     }
 
     override fun onResume() {
@@ -128,5 +114,13 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
 //    private fun notSupportedBackgroundDevice() = Build.MANUFACTURER.lowercase(Locale.ENGLISH) in listOf(
 //        "xiaomi", "oppo", "vivo", "letv", "honor", "oneplus"
 //    )
+
+    override fun onBackPressed() {
+        supportFragmentManager
+            .fragments
+            .firstOrNull { it is AnimationFragment }
+            ?.let { it as AnimationFragment }
+            ?.onBackPressed()
+    }
 
 }

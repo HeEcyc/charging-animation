@@ -1,6 +1,7 @@
 package com.urbanlife.lifeurban.ui.animations
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.urbanlife.lifeurban.App
@@ -23,6 +24,7 @@ class AnimationAdapter(
     override fun createHolder(binding: ItemAnimationBinding) =
         object : BaseItem<Animation, ItemAnimationBinding>(binding) {
             override fun bind(t: Animation) {
+                binding.mark.visibility = if (bindingAdapterPosition == 0) View.VISIBLE else View.GONE
                 when (t) {
                     is PresetAnimation -> binding.image.setImageResource(t.previewPicRes)
                     is CustomAnimation -> Glide.with(App.instance).load(t.filePath).into(binding.image)

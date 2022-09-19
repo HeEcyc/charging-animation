@@ -23,5 +23,8 @@
     <string name="animation_applied">Animație aplicată</string>
     <string name="ok">O.K</string>
     <string name="settings">Setări</string>
+    <string name="share">Acțiune</string>
+    <string name="rate_us">Ne evalua</string>
+    <string name="privacy_policy">Politica de Confidențialitate</string>
 
 </resources>

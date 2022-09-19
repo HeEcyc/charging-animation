@@ -25,22 +25,36 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintWidth_percent="0.78055555"
+                app:layout_constraintWidth_percent="0.841666666"
                 app:cardBackgroundColor="@android:color/transparent"
                 app:cardElevation="0dp"
                 scaleType="@{ScaleType.BY_WIDTH}"
-                scalableCornerRadius="@{0.07874f}">
+                scalableCornerRadius="@{0.026402640264f}">
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#FFFFFF">
+                    android:layout_height="wrap_content"
+                    android:background="#21251F">
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="match_parent"
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
                         android:layout_height="0dp"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintDimensionRatio="281:344"
-                        android:src="@drawable/dialog_bg"/>
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintDimensionRatio="1179:654.4034"
+                            app:layout_constraintHeight_percent="1.4639897"
+                            app:layout_constraintVertical_bias="0.7867"
+                            app:layout_constraintHorizontal_bias="0.453"
+                            android:background="@mipmap/img_bg_blur"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <include
                         android:id="@+id/layout_permission"
@@ -60,7 +74,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintDimensionRatio="360:46">
+                        app:layout_constraintDimensionRatio="303:42">
                         <androidx.appcompat.widget.AppCompatImageView
                             android:id="@+id/buttonClose"
                             android:layout_width="0dp"
@@ -69,8 +83,8 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintDimensionRatio="1:1"
-                            app:layout_constraintWidth_percent="0.0854"
-                            app:layout_constraintHorizontal_bias="0.91439"
+                            app:layout_constraintHeight_percent="0.5238"
+                            app:layout_constraintHorizontal_bias="0.9395"
                             android:src="@drawable/ic_close"/>
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
