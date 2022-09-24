@@ -5,6 +5,7 @@
     <string name="allow">Permitir</string>
     <string name="if_your_device_does_not_have_this_permission_you_can_ignore_it">Si su dispositivo no tiene este permiso, puede ignorarlo</string>
     <string name="more_information">Más información</string>
+    <string name="lock_screen_display_instructions">Instrucciones de visualización de la pantalla de bloqueo</string>
     <string name="notifications">Notificaciones</string>
     <string name="flash">Destello</string>
     <string name="vibration">Vibración</string>
@@ -12,6 +13,7 @@
     <string name="working_in_background">Trabajan en segundo plano</string>
     <string name="your_device_is_fully_charged">Tu dispositivo está completamente cargado</string>
 
+    <string name="instruction_short">En la información de la aplicación > Permisos > Permitir mostrar en la pantalla de bloqueo/notificación de la pantalla de bloqueo</string>
     <string name="instruction_long">Encienda la pantalla de bloqueo, para que el dispositivo pueda mostrar la animación de carga normalmente cuando la pantalla está bloqueada, pero las rutas de configuración de varios dispositivos son diferentes, consulte la siguiente configuración\n\nRuta de configuración de Meizu: Configuración -> Aplicaciones -> Animación de carga -> Permisos -> Mostrar en la pantalla de bloqueo/Notificación de la pantalla de bloqueo\n\nRuta de configuración de Xiaomi: configuración -> Aplicaciones -> permisos -> Permisos -> Animación de carga -> Mostrar en la pantalla de bloqueo\n\nRuta de configuración de OPPO : Configuración -> Aplicaciones -> Animación de carga -> Administración de notificaciones -> Mostrar en la pantalla de bloqueo\n\nRuta de configuración de VIVO: i Manager -> Administración de software -> Administración de permisos -> Pantalla de bloqueo de pantalla -> Animación de carga -> Verificar abierto</string>
     <string name="animation">Animación</string>
     <string name="apply">Aplicar</string>
@@ -21,4 +23,13 @@
     <string name="share">Cuota</string>
     <string name="rate_us">Nos califica</string>
     <string name="privacy_policy">Política de privacidad</string>
+    <string name="bring_fun_to_your_phone_s_charging_screen">Trae DIVERSIÓN a la pantalla de carga de tu teléfono</string>
+    <string name="start">comienzo</string>
+    <string name="hello">¡Hola!</string>
+    <string name="find_the_charging_animation_as_you_wish">Encuentra la animación de carga como desees</string>
+    <string name="please">Por favor</string>
+    <string name="give_a_minute_to_some_important_points">Dedique un minuto a algunos puntos importantes.</string>
+    <string name="successful">¡Exitoso!</string>
+    <string name="animation_applied">Animación aplicada</string>
+    <string name="settings">Ajustes</string>
 </resources>

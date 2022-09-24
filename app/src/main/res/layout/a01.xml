@@ -6,13 +6,13 @@
     <data>
         <variable
             name="blHolder"
-            type="com.urbanlife.lifeurban.repository.background.display.BatteryLevelReceiver.BatteryLevelHolder" />
+            type="com.charful.cheerge.repository.background.display.BatteryLevelReceiver.BatteryLevelHolder" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#306363"
+        android:background="#71DEE2"
         android:clipChildren="false">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
@@ -32,24 +32,29 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.29545454"
-                app:layout_constraintWidth_percent="1"
+                app:layout_constraintVertical_bias="0.26388888888"
+                app:layout_constraintWidth_percent="1.4222"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
-                app:lottie_rawRes="@raw/a01bike" />
+                app:lottie_rawRes="@raw/a01man" />
 
-            <com.airbnb.lottie.LottieAnimationView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.86"
-                app:layout_constraintWidth_percent="0.56388888888"
-                app:lottie_autoPlay="true"
-                app:lottie_rawRes="@raw/a01battery" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="260:102"
+                app:layout_constraintWidth_percent="0.7222"
+                app:layout_constraintVertical_bias="0.8424"
+                android:gravity="center"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMaxTextSize="100sp"
+                app:autoSizeMinTextSize="1sp"
+                android:textColor="#BC6600"
+                android:fontFamily="@font/sf_pro_display_bold"
+                android:text="@{blHolder.batteryLevel}"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

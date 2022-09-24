@@ -5,6 +5,7 @@
     <string name="allow">อนุญาต</string>
     <string name="if_your_device_does_not_have_this_permission_you_can_ignore_it">หากอุปกรณ์ของคุณไม่ได้รับอนุญาต คุณสามารถเพิกเฉยได้</string>
     <string name="more_information">ข้อมูลมากกว่านี้</string>
+    <string name="lock_screen_display_instructions">คำแนะนำในการแสดงหน้าจอล็อก</string>
     <string name="notifications">การแจ้งเตือน</string>
     <string name="flash">แฟลช</string>
     <string name="vibration">การสั่นสะเทือน</string>
@@ -12,6 +13,7 @@
     <string name="working_in_background">ทำงานในพื้นหลัง</string>
     <string name="your_device_is_fully_charged">อุปกรณ์ของคุณชาร์จเต็มแล้ว</string>
 
+    <string name="instruction_short">ใน ข้อมูลแอป > สิทธิ์ > อนุญาตให้แสดงบนหน้าจอล็อก/การแจ้งเตือนหน้าจอล็อก</string>
     <string name="instruction_long">เปิดหน้าจอล็อกเพื่อให้อุปกรณ์สามารถแสดงภาพเคลื่อนไหวการชาร์จได้ตามปกติเมื่อหน้าจอล็อกอยู่ แต่เส้นทางการตั้งค่าของอุปกรณ์ต่างๆ จะแตกต่างกัน โปรดดูการตั้งค่าต่อไปนี้\n\nเส้นทางการตั้งค่า Meizu: การตั้งค่า -> แอป -> แอนิเมชั่นการชาร์จ -> สิทธิ์ -> แสดงบนหน้าจอล็อค/การแจ้งเตือนหน้าจอล็อก\n\nเส้นทางการตั้งค่า Xiaomi: การตั้งค่า -> แอป -> สิทธิ์ -> สิทธิ์ -> แอนิเมชั่นการชาร์จ -> แสดงบนหน้าจอล็อค\n\nเส้นทางการตั้งค่า OPPO : การตั้งค่า -> แอป -> แอนิเมชั่นการชาร์จ -> การจัดการการแจ้งเตือน -> แสดงบนหน้าจอล็อค\n\nเส้นทางการตั้งค่า VIVO: i Manager -> การจัดการซอฟต์แวร์ -> การจัดการสิทธิ์ -> การแสดงหน้าจอล็อก -> แอนิเมชั่นการชาร์จ -> ทำเครื่องหมายที่ เปิด</string>
     <string name="animation">แอนิเมชั่น</string>
     <string name="apply">นำมาใช้</string>
@@ -21,5 +23,14 @@
     <string name="share">แบ่งปัน</string>
     <string name="rate_us">ให้คะแนนเรา</string>
     <string name="privacy_policy">นโยบายความเป็นส่วนตัว</string>
+    <string name="bring_fun_to_your_phone_s_charging_screen">นำความสนุกมาสู่หน้าจอการชาร์จโทรศัพท์ของคุณ</string>
+    <string name="start">เริ่ม</string>
+    <string name="hello">สวัสดี!</string>
+    <string name="find_the_charging_animation_as_you_wish">ค้นหาแอนิเมชั่นการชาร์จตามที่คุณต้องการ</string>
+    <string name="please">โปรด</string>
+    <string name="give_a_minute_to_some_important_points">ให้เวลากับประเด็นสำคัญสักครู่</string>
+    <string name="successful">ประสบความสำเร็จ!</string>
+    <string name="animation_applied">ใช้แอนิเมชั่น</string>
+    <string name="settings">การตั้งค่า</string>
 
 </resources>

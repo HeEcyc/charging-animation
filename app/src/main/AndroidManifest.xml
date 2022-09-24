@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.urbanlife.lifeurban">
+    package="com.charful.cheerge">
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.ACTION_MANAGE_OVERLAY_PERMISSION" />
@@ -20,7 +20,7 @@
         tools:ignore="ScopedStorage" />
 
     <application
-        android:name="com.urbanlife.lifeurban.App"
+        android:name="com.charful.cheerge.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -72,7 +72,7 @@
 
 
         <activity
-            android:name="com.urbanlife.lifeurban.ui.main.MainActivity"
+            android:name="com.charful.cheerge.ui.main.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
@@ -84,7 +84,7 @@
         </activity>
 
         <activity
-            android:name="com.urbanlife.lifeurban.ui.animation.ChargingAnimationActivity"
+            android:name="com.charful.cheerge.ui.animation.ChargingAnimationActivity"
             android:exported="true"
             android:noHistory="true"
             android:screenOrientation="portrait"
@@ -92,24 +92,24 @@
             tools:ignore="LockedOrientationActivity"/>
 
         <activity
-            android:name="com.urbanlife.lifeurban.ui.onboarding.OnboardingActivity"
+            android:name="com.charful.cheerge.ui.onboarding.OnboardingActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
 
         <activity
-            android:name="com.urbanlife.lifeurban.ui.preview.PreviewActivity"
+            android:name="com.charful.cheerge.ui.preview.PreviewActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
 
         <activity
-            android:name="com.urbanlife.lifeurban.ui.settings.SettingsActivity"
+            android:name="com.charful.cheerge.ui.settings.SettingsActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
 
-        <service android:name="com.urbanlife.lifeurban.repository.background.display.ForegroundService"/>
+        <service android:name="com.charful.cheerge.repository.background.display.ForegroundService"/>
 
 <!--        <receiver-->
 <!--            android:name=".utils.hiding.HidingBroadcast"-->

@@ -10,16 +10,7 @@
             android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="303:464">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="303:166"
-                app:layout_constraintVertical_bias="0.2"
-                android:src="@mipmap/permission_instruction_text"/>
+            app:layout_constraintDimensionRatio="290:442">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="0dp"
@@ -28,18 +19,36 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="287:44"
-                app:layout_constraintWidth_percent="0.947194719471"
-                app:layout_constraintVertical_bias="0.6"
-                android:gravity="center"
+                app:layout_constraintDimensionRatio="246:126"
+                app:layout_constraintWidth_percent="0.848"
+                app:layout_constraintVertical_bias="0.1962"
+                android:gravity="center_vertical|start"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMaxTextSize="30sp"
+                app:autoSizeMinTextSize="1sp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/recoleta_bold"
+                android:text="@string/instruction_short"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="267:44"
+                app:layout_constraintWidth_percent="0.92"
+                app:layout_constraintVertical_bias="0.6005"
+                android:gravity="center_vertical|start"
                 app:autoSizeTextType="uniform"
                 app:autoSizeMaxTextSize="20sp"
                 app:autoSizeMinTextSize="1sp"
                 android:textColor="#FFFFFF"
-                android:fontFamily="@font/oswald_regular"
+                android:fontFamily="@font/sf_pro_display_regular"
                 android:text="@string/if_your_device_does_not_have_this_permission_you_can_ignore_it"/>
 
-            <com.urbanlife.lifeurban.ui.custom.ScalableCardView
+            <com.charful.cheerge.ui.custom.ScalableCardView
                 android:id="@+id/buttonMoreInfo"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -47,17 +56,17 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="192:45"
-                app:layout_constraintWidth_percent="0.633663366336"
-                app:layout_constraintVertical_bias="0.8568"
+                app:layout_constraintDimensionRatio="218:47"
+                app:layout_constraintWidth_percent="0.7517"
+                app:layout_constraintVertical_bias="0.8481"
                 app:cardBackgroundColor="@android:color/transparent"
                 app:cardElevation="0dp"
-                scaleType="@{com.urbanlife.lifeurban.ui.custom.ScalableCardView.ScaleType.BY_HEIGHT}"
-                scalableCornerRadius="@{0.2f}">
+                scaleType="@{com.charful.cheerge.ui.custom.ScalableCardView.ScaleType.BY_HEIGHT}"
+                scalableCornerRadius="@{0.1638f}">
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#BAE839">
+                    android:background="@drawable/button_grdient_bg">
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="0dp"
                         android:layout_height="0dp"
@@ -65,17 +74,17 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintDimensionRatio="178:35"
-                        app:layout_constraintHeight_percent="0.7777777"
+                        app:layout_constraintDimensionRatio="150:33"
+                        app:layout_constraintHeight_percent="0.7"
                         android:gravity="center"
                         app:autoSizeTextType="uniform"
-                        app:autoSizeMaxTextSize="20sp"
+                        app:autoSizeMaxTextSize="30sp"
                         app:autoSizeMinTextSize="1sp"
-                        android:textColor="#21251F"
-                        android:fontFamily="@font/oswald_bold"
+                        android:textColor="#FFFFFF"
+                        android:fontFamily="@font/sf_pro_display_bold"
                         android:text="@string/more_information"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
-            </com.urbanlife.lifeurban.ui.custom.ScalableCardView>
+            </com.charful.cheerge.ui.custom.ScalableCardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

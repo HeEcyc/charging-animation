@@ -5,6 +5,7 @@
     <string name="allow">Cho phép</string>
     <string name="if_your_device_does_not_have_this_permission_you_can_ignore_it">Nếu thiết bị của bạn không có quyền này, bạn có thể bỏ qua nó</string>
     <string name="more_information">Thêm thông tin</string>
+    <string name="lock_screen_display_instructions">Màn hình khóa hướng dẫn hiển thị</string>
     <string name="notifications">Thông báo</string>
     <string name="flash">Tốc biến</string>
     <string name="vibration">Rung động</string>
@@ -12,6 +13,7 @@
     <string name="working_in_background">Làm việc trong nền</string>
     <string name="your_device_is_fully_charged">Thiết bị của bạn đã được sạc đầy</string>
 
+    <string name="instruction_short">Trong Thông tin ứng dụng > Quyền > Cho phép Hiển thị trên màn hình khóa/Thông báo trên màn hình khóa</string>
     <string name="instruction_long">Bật hiển thị màn hình khóa để thiết bị có thể hiển thị hoạt ảnh sạc bình thường khi màn hình bị khóa, nhưng đường dẫn cài đặt của các thiết bị khác nhau, vui lòng tham khảo cài đặt sau\n\nĐường dẫn cài đặt của Meizu: Cài đặt -> Ứng dụng -> Hoạt ảnh đang sạc -> Quyền -> Hiển thị trên Màn hình khóa/Thông báo trên màn hình khóa\n\nĐường dẫn cài đặt Xiaomi: cài đặt -> Ứng dụng -> quyền -> Quyền -> Hoạt ảnh sạc -> Hiển thị trên Màn hình khóa\n\nĐường dẫn cài đặtOPPO : Cài đặt -> Ứng dụng -> Hoạt ảnh sạc -> Quản lý thông báo -> Hiển thị trên màn hình khóa\n\nVIVO đường dẫn cài đặt: i Trình quản lý -> Quản lý phần mềm -> Quản lý quyền -> Hiển thị màn hình khóa -> Hoạt ảnh sạc -> Chọn để mở</string>
     <string name="animation">Hoạt hình</string>
     <string name="apply">Nộp đơn</string>
@@ -21,5 +23,14 @@
     <string name="share">Đăng lại</string>
     <string name="rate_us">Đánh giá chúng tôi</string>
     <string name="privacy_policy">Chính sách bảo mật</string>
+    <string name="bring_fun_to_your_phone_s_charging_screen">Mang FUN đến màn hình sạc điện thoại của bạn</string>
+    <string name="start">Bắt đầu</string>
+    <string name="hello">Xin chào!</string>
+    <string name="find_the_charging_animation_as_you_wish">Tìm hoạt ảnh sạc như bạn muốn</string>
+    <string name="please">Xin vui lòng</string>
+    <string name="give_a_minute_to_some_important_points">Hãy dành một phút cho một số điểm quan trọng</string>
+    <string name="successful">Thành công!</string>
+    <string name="animation_applied">Đã áp dụng hoạt ảnh</string>
+    <string name="settings">Cài đặt</string>
 
 </resources>

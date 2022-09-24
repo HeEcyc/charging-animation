@@ -5,6 +5,7 @@
     <string name="allow">Payagan</string>
     <string name="if_your_device_does_not_have_this_permission_you_can_ignore_it">Kung walang ganitong pahintulot ang iyong device, maaari mo itong balewalain</string>
     <string name="more_information">Karagdagang informasiyon</string>
+    <string name="lock_screen_display_instructions">Mga tagubilin sa pagpapakita ng lock screen</string>
     <string name="notifications">Mga abiso</string>
     <string name="flash">Flash</string>
     <string name="vibration">Panginginig ng boses</string>
@@ -12,6 +13,7 @@
     <string name="working_in_background">Nagtatrabaho sa background</string>
     <string name="your_device_is_fully_charged">Ganap na naka-charge ang iyong device</string>
 
+    <string name="instruction_short">Sa App Info > Pahintulot > Payagan ang Ipakita sa Lock screen/Lock screen notification</string>
     <string name="instruction_long">I-on ang lock screen display, para maipakita ng device ang charging animation nang normal kapag naka-lock ang screen, ngunit iba ang setting path ng iba\'t ibang device, mangyaring sumangguni sa mga sumusunod na setting\n\nMeizu setting path: Mga Setting -> Apps -> Charging Animation -> Pahintulot -> Ipakita sa Lock screen/Lock screen notification\n\nXiaomi setting path: setting -> Apps -> permissions -> Pahintulot -> Charging Animation -> Ipakita sa Lock screen\n\nOPPO setting path : Mga Setting -> Apps -> Charging Animation -> Notification Management -> Display sa lock screen\n\nVIVO setting path: i Manager -> Software Management -> Permissions Management -> Lock Screen Display -> Charging Animation -> Lagyan ng check sa bukas</string>
     <string name="animation">Animasyon</string>
     <string name="apply">Mag-apply</string>
@@ -21,5 +23,14 @@
     <string name="share">Ibahagi</string>
     <string name="rate_us">I-rate kami</string>
     <string name="privacy_policy">Patakaran sa privacy</string>
+    <string name="bring_fun_to_your_phone_s_charging_screen">Magdala ng MASAYA sa charging screen ng iyong telepono</string>
+    <string name="start">Magsimula</string>
+    <string name="hello">Kamusta!</string>
+    <string name="find_the_charging_animation_as_you_wish">Hanapin ang Charging Animation ayon sa gusto mo</string>
+    <string name="please">Pakiusap</string>
+    <string name="give_a_minute_to_some_important_points">Bigyan ng isang minuto ang ilang mahahalagang punto</string>
+    <string name="successful">Matagumpay!</string>
+    <string name="animation_applied">Inilapat ang animation</string>
+    <string name="settings">Mga setting</string>
 
 </resources>

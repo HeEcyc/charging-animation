@@ -5,13 +5,13 @@
     <data>
         <variable
             name="blHolder"
-            type="com.urbanlife.lifeurban.repository.background.display.BatteryLevelReceiver.BatteryLevelHolder" />
+            type="com.charful.cheerge.repository.background.display.BatteryLevelReceiver.BatteryLevelHolder" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#8C8B8B"
+        android:background="#F6F7F8"
         android:clipChildren="false">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
@@ -26,35 +26,37 @@
             <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintDimensionRatio="380:161.94"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.17877"
-                app:layout_constraintWidth_percent="1.758333"
-                app:lottie_rawRes="@raw/a03banana"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.29621"
+                app:layout_constraintWidth_percent="1.055555"
+                app:lottie_rawRes="@raw/a03cat"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"/>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="435:422.82"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="1"
+                app:layout_constraintWidth_percent="1.208333"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/a03battery" />
+
+            <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="360:390"
-                android:clipChildren="false">
-                <com.airbnb.lottie.LottieAnimationView
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    app:layout_constraintDimensionRatio="1:1"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintWidth_percent="1.388888888"
-                    app:lottie_autoPlay="true"
-                    app:lottie_loop="true"
-                    app:lottie_rawRes="@raw/a03battery" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                app:layout_constraintDimensionRatio="360:151"
+                android:background="#F6F7F8"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
