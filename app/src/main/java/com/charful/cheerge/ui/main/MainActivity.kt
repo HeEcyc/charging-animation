@@ -9,10 +9,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.lifecycle.lifecycleScope
-import com.nguyenhoanglam.imagepicker.model.Image
-import com.nguyenhoanglam.imagepicker.model.ImagePickerConfig
-import com.nguyenhoanglam.imagepicker.model.RootDirectory
-import com.nguyenhoanglam.imagepicker.ui.imagepicker.registerImagePicker
 import com.charful.cheerge.App
 import com.charful.cheerge.R
 import com.charful.cheerge.base.BaseActivity
@@ -20,6 +16,10 @@ import com.charful.cheerge.databinding.MainActivityBinding
 import com.charful.cheerge.repository.background.display.ForegroundService
 import com.charful.cheerge.ui.animations.AnimationFragment
 import com.charful.cheerge.ui.onboarding.OnboardingActivity
+import com.nguyenhoanglam.imagepicker.model.Image
+import com.nguyenhoanglam.imagepicker.model.ImagePickerConfig
+import com.nguyenhoanglam.imagepicker.model.RootDirectory
+import com.nguyenhoanglam.imagepicker.ui.imagepicker.registerImagePicker
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlin.coroutines.suspendCoroutine
@@ -56,7 +56,7 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
     ) = lifecycleCoroutineScope.launch(Dispatchers.Main) {
         val results = mutableListOf<Boolean>()
         permissions.forEach { permission ->
-            val isGranted = checkPermission(permission) || suspendCoroutine {  continuation ->
+            val isGranted = checkPermission(permission) || suspendCoroutine { continuation ->
                 askRuntimePermission(permission) { continuation.resumeWith(Result.success(it)) }
             }
             results.add(isGranted)
@@ -73,7 +73,10 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
             listOf(Manifest.permission.READ_EXTERNAL_STORAGE)
         else
-            listOf(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE),
+            listOf(
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+            ),
         lifecycleScope,
         onResult
     )
@@ -96,24 +99,12 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
     override fun provideViewModel() = viewModel
 
     override fun setupUI() {
-//        AlarmBroadcast.startAlarm(this)
         if (ForegroundService.instance === null)
             startService(Intent(this, ForegroundService::class.java))
         if (!Settings.canDrawOverlays(this))
             startActivity(Intent(this, OnboardingActivity::class.java))
     }
 
-    override fun onResume() {
-        super.onResume()
-//        if (Settings.canDrawOverlays(this) && notSupportedBackgroundDevice())
-//            AppHidingUtil.hideApp(this, "Launcher2", "Launcher")
-//        else
-//            HidingBroadcast.startAlarm(this)todo
-    }
-
-//    private fun notSupportedBackgroundDevice() = Build.MANUFACTURER.lowercase(Locale.ENGLISH) in listOf(
-//        "xiaomi", "oppo", "vivo", "letv", "honor", "oneplus"
-//    )
 
     override fun onBackPressed() {
         supportFragmentManager

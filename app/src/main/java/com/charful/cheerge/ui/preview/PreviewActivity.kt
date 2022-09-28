@@ -2,6 +2,7 @@ package com.charful.cheerge.ui.preview
 
 import android.content.Context
 import android.content.Intent
+import android.provider.Settings
 import android.view.View
 import androidx.activity.viewModels
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -10,6 +11,7 @@ import com.charful.cheerge.base.BaseActivity
 import com.charful.cheerge.databinding.PreviewActivityBinding
 import com.charful.cheerge.model.animation.Animation
 import com.charful.cheerge.repository.preferences.Preferences
+import com.charful.cheerge.ui.permission.PermissionDialog
 
 class PreviewActivity : BaseActivity<PreviewViewModel, PreviewActivityBinding>() {
 
@@ -27,6 +29,10 @@ class PreviewActivity : BaseActivity<PreviewViewModel, PreviewActivityBinding>()
     override fun provideViewModel() = viewModel
 
     override fun setupUI() {
+        supportFragmentManager.setFragmentResultListener("action", this) { _, _ ->
+            if (Settings.canDrawOverlays(this)) setupTheme()
+        }
+
         val animation = intent
             ?.getSerializableExtra(EXTRAS_ANIMATION)
             ?.let { it as? Animation }
@@ -58,11 +64,22 @@ class PreviewActivity : BaseActivity<PreviewViewModel, PreviewActivityBinding>()
             binding.animationHost2.visibility = View.GONE
         }
         binding.buttonApply.setOnClickListener {
-            Preferences.selectedAnimation = animation
-            AppliedDialog().apply {
-                onButtonClick = this@PreviewActivity::finish
-                show(supportFragmentManager, null)
-            }
+            if (Settings.canDrawOverlays(this)) setupTheme()
+            else PermissionDialog
+                .notClosable()
+                .show(supportFragmentManager, "sda")
+        }
+    }
+
+    private fun setupTheme() {
+        val animation = intent
+            ?.getSerializableExtra(EXTRAS_ANIMATION)
+            ?.let { it as? Animation } ?: return
+
+        Preferences.selectedAnimation = animation
+        AppliedDialog().apply {
+            onButtonClick = this@PreviewActivity::finish
+            show(supportFragmentManager, null)
         }
     }
 

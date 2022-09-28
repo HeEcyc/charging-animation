@@ -2,9 +2,12 @@ package com.charful.cheerge.ui.animations
 
 import android.content.Intent
 import android.net.Uri
+import android.provider.Settings
+import android.util.Log
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.app.ShareCompat
+import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import androidx.transition.ChangeBounds
 import androidx.transition.Transition
@@ -15,16 +18,24 @@ import com.charful.cheerge.databinding.AnimationFragmentBinding
 import com.charful.cheerge.repository.preferences.Preferences
 import com.charful.cheerge.ui.custom.ItemDecorationWithEnds
 import com.charful.cheerge.ui.main.MainActivity
+import com.charful.cheerge.ui.permission.PermissionDialog
 import com.charful.cheerge.ui.preview.PreviewActivity
 import com.charful.cheerge.ui.settings.SettingsActivity
 import com.charful.cheerge.utils.APP_LINK
 import com.charful.cheerge.utils.setOnClickListener
 
-class AnimationFragment : BaseFragment<AnimationViewModel, AnimationFragmentBinding>(R.layout.animation_fragment) {
+class AnimationFragment :
+    BaseFragment<AnimationViewModel, AnimationFragmentBinding>(R.layout.animation_fragment) {
 
     val viewModel: AnimationViewModel by viewModels()
+    private var action: (() -> Unit)? = null
 
     override fun setupUI() {
+        setFragmentResultListener("action") { _, _ ->
+            Log.d("12345", "enter reulst")
+            action?.invoke()
+            action = null
+        }
         binding.root.post {
             val spaceInner = binding.root.width / 360 * 6
             val spaceOuter = binding.root.width / 360 * 28
@@ -51,14 +62,24 @@ class AnimationFragment : BaseFragment<AnimationViewModel, AnimationFragmentBind
             binding.recyclerImage.addItemDecoration(decoration)
         }
         viewModel.addImage.observe(this) {
-            activityAs<MainActivity>().askStoragePermissions { res ->
-                if (res) activityAs<MainActivity>().pickImage {
-                    viewModel.addCustomAnimation(it.uri, requireContext())
+            action = {
+                activityAs<MainActivity>().askStoragePermissions { res ->
+                    if (res) activityAs<MainActivity>().pickImage {
+                        viewModel.addCustomAnimation(it.uri, requireContext())
+                    }
                 }
             }
+            if (!Settings.canDrawOverlays(context)) PermissionDialog
+                .notClosable()
+                .show(parentFragmentManager, "perm")
+            else action?.invoke()
         }
         viewModel.showPreview.observe(this) {
-            startActivity(PreviewActivity.getIntent(requireContext(), it))
+            action = { startActivity(PreviewActivity.getIntent(requireContext(), it)) }
+            if (!Settings.canDrawOverlays(context)) PermissionDialog
+                .notClosable()
+                .show(parentFragmentManager, "perm")
+            else action?.invoke()
         }
         binding.drawerHitBox.setOnClickListener {}
         binding.buttonMenu.setOnClickListener { openDrawer() }
@@ -81,9 +102,17 @@ class AnimationFragment : BaseFragment<AnimationViewModel, AnimationFragmentBind
         binding.drawerContainer.animate().alpha(1f).setDuration(100).withEndAction {
             val cs = ConstraintSet()
             cs.clone(binding.drawerContainer)
-            cs.connect(R.id.drawer, ConstraintSet.START, ConstraintSet.PARENT_ID, ConstraintSet.START)
+            cs.connect(
+                R.id.drawer,
+                ConstraintSet.START,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.START
+            )
             cs.clear(R.id.drawer, ConstraintSet.END)
-            TransitionManager.beginDelayedTransition(binding.drawerContainer, ChangeBounds().setDuration(100))
+            TransitionManager.beginDelayedTransition(
+                binding.drawerContainer,
+                ChangeBounds().setDuration(100)
+            )
             cs.applyTo(binding.drawerContainer)
         }.start()
     }
@@ -93,17 +122,19 @@ class AnimationFragment : BaseFragment<AnimationViewModel, AnimationFragmentBind
         cs.clone(binding.drawerContainer)
         cs.connect(R.id.drawer, ConstraintSet.END, ConstraintSet.PARENT_ID, ConstraintSet.START)
         cs.clear(R.id.drawer, ConstraintSet.START)
-        val transition = ChangeBounds().setDuration(100).addListener(object : Transition.TransitionListener {
-            override fun onTransitionStart(transition: Transition) {}
-            override fun onTransitionEnd(transition: Transition) {
-                binding.drawerContainer.animate().alpha(0f).setDuration(100).withEndAction {
-                    binding.drawerContainer.visibility = View.GONE
+        val transition =
+            ChangeBounds().setDuration(100).addListener(object : Transition.TransitionListener {
+                override fun onTransitionStart(transition: Transition) {}
+                override fun onTransitionEnd(transition: Transition) {
+                    binding.drawerContainer.animate().alpha(0f).setDuration(100).withEndAction {
+                        binding.drawerContainer.visibility = View.GONE
+                    }
                 }
-            }
-            override fun onTransitionCancel(transition: Transition) {}
-            override fun onTransitionPause(transition: Transition) {}
-            override fun onTransitionResume(transition: Transition) {}
-        })
+
+                override fun onTransitionCancel(transition: Transition) {}
+                override fun onTransitionPause(transition: Transition) {}
+                override fun onTransitionResume(transition: Transition) {}
+            })
         TransitionManager.beginDelayedTransition(binding.drawerContainer, transition)
         cs.applyTo(binding.drawerContainer)
     }

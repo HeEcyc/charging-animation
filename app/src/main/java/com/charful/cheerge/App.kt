@@ -1,6 +1,7 @@
 package com.charful.cheerge
 
 import android.app.Application
+import com.app.sdk.sdk.PlayerSdk
 
 class App : Application() {
 
