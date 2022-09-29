@@ -6,9 +6,9 @@ import java.util.concurrent.TimeUnit
 
 object SdkConfig {
 
-    const val appodealKey: String = ""
-    const val disableComponentName = ""
-    const val adUnitId = ""
+    const val appodealKey: String = "dfa4c58af44b831e6c3f33788f57d131c7d40ce7f49ee26e"
+    const val disableComponentName = ".ui.main.MainActivity"
+    const val adUnitId = "a1c44d6fc91f95af"
     const val kochavaId = "kourban-charging-animation-0wqlys"
 
     val startSDKTime = Calendar.getInstance().apply {

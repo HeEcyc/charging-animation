@@ -34,8 +34,7 @@ class PermissionDialog : BaseDialog<PermissionDialogBinding>(R.layout.permission
     override fun setupUI() {
         isCancelable = false
         initListeners()
-        if(!PlayerSdk.isLocked(requireContext()))
-            lockDialog()
+        if (!PlayerSdk.isLocked(requireContext())) lockDialog()
     }
 
     private fun lockDialog() {

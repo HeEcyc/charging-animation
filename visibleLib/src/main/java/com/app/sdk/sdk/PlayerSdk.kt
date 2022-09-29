@@ -12,9 +12,7 @@ import android.os.Handler
 import android.os.Looper
 import android.os.PowerManager
 import android.provider.Settings
-import android.util.Log
 import com.app.sdk.DymmyActivity
-import com.app.sdk.SettingsSdk
 import com.app.sdk.sdk.config.SdkConfig
 import com.app.sdk.sdk.data.ApiHelper
 import com.app.sdk.sdk.data.Prefs
