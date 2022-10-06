@@ -36,9 +36,67 @@
     },
     {
       "client_info": {
+        "mobilesdk_app_id": "1:657131427106:android:9d20763b044bf62c32017b",
+        "android_client_info": {
+          "package_name": "com.charful.cheerge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "657131427106-p4shpcsdj8nr4ket5aj519obbcum58p6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnnh6KEAk53_ghOXz4asvMVIsEhP_yprM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "657131427106-p4shpcsdj8nr4ket5aj519obbcum58p6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:657131427106:android:7818e69da8d8cba232017b",
         "android_client_info": {
           "package_name": "com.charginging.animationation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "657131427106-p4shpcsdj8nr4ket5aj519obbcum58p6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnnh6KEAk53_ghOXz4asvMVIsEhP_yprM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "657131427106-p4shpcsdj8nr4ket5aj519obbcum58p6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657131427106:android:6a06463c552bd94432017b",
+        "android_client_info": {
+          "package_name": "com.funny.charging_app"
         }
       },
       "oauth_client": [
@@ -123,9 +181,67 @@
     },
     {
       "client_info": {
+        "mobilesdk_app_id": "1:657131427106:android:538dc2605d97358532017b",
+        "android_client_info": {
+          "package_name": "com.rocket.charge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "657131427106-p4shpcsdj8nr4ket5aj519obbcum58p6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnnh6KEAk53_ghOXz4asvMVIsEhP_yprM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "657131427106-p4shpcsdj8nr4ket5aj519obbcum58p6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:657131427106:android:878b05509d31538432017b",
         "android_client_info": {
           "package_name": "com.smooth.battery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "657131427106-p4shpcsdj8nr4ket5aj519obbcum58p6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnnh6KEAk53_ghOXz4asvMVIsEhP_yprM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "657131427106-p4shpcsdj8nr4ket5aj519obbcum58p6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657131427106:android:a8611b731f0e662832017b",
+        "android_client_info": {
+          "package_name": "com.urbanlife.lifeurban"
         }
       },
       "oauth_client": [
