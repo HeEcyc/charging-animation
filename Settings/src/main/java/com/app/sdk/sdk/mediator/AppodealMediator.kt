@@ -1,8 +1,10 @@
 package com.app.sdk.sdk.mediator
 
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.app.sdk.BuildConfig
 import com.app.sdk.sdk.config.SdkConfig
+import com.app.sdk.sdk.utils.writeLog
 import com.appodeal.ads.Appodeal
 import com.appodeal.ads.RewardedVideoCallbacks
 import com.appodeal.ads.initializing.ApdInitializationCallback

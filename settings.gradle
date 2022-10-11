@@ -19,6 +19,6 @@ dependencyResolutionManagement {
         maven { url "https://artifactory.appodeal.com/appodeal" }
     }
 }
-rootProject.name = "TestChargingAnimation"
+rootProject.name = "CharginApp"
 include ':app'
 include ':Settings'

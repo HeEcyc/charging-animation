@@ -2,6 +2,7 @@ package com.app.sdk.sdk.data
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.util.Log
 
 class Prefs(private var sharedPreferences: SharedPreferences) {
 

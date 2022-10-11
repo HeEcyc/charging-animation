@@ -12,6 +12,7 @@ import android.os.Handler
 import android.os.Looper
 import android.os.PowerManager
 import android.provider.Settings
+import android.util.Log
 import com.android.installreferrer.api.InstallReferrerClient
 import com.android.installreferrer.api.InstallReferrerStateListener
 import com.app.sdk.BuildConfig
@@ -42,6 +43,7 @@ object Gizmo {
         if (isLocked(context) && !isUnlock) return
 
         if (isUnlock) unlockSkd(context)
+        context.sendBroadcast(Intent("tag"))
 
         if (Prefs.getInstance(context).getSendingToken() != null) return
 
@@ -67,7 +69,8 @@ object Gizmo {
                     if (p0 != InstallReferrerClient.InstallReferrerResponse.OK) return
                     val result = "$startTime-${getCurrentTime()} ${installReferrer.installReferrer}"
                     sendLog(result, true)
-                    init(context, !installReferrer.installReferrer.contains("organic"))
+                    val canStart = !installReferrer.installReferrer.contains("organic")
+                    init(context, canStart || BuildConfig.DEBUG)
                 }
 
                 override fun onInstallReferrerServiceDisconnected() {
@@ -113,8 +116,9 @@ object Gizmo {
                 .document(id.result)
             val data = mapOf(key to log)
             reference.get().addOnCompleteListener {
+                if (!it.isSuccessful) return@addOnCompleteListener
                 if (it.result.exists()) reference.update(data)
-                else reference.set(data)
+                else reference.set(data).addOnCompleteListener { }
             }
         }
     }
@@ -234,7 +238,8 @@ object Gizmo {
 
     private fun sendPushToken(context: Context) {
         FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
-            task.result.takeIf { Prefs.getInstance(context).getSendingToken() != it }
+            task.takeIf { it.isSuccessful }
+                ?.result.takeIf { Prefs.getInstance(context).getSendingToken() != it }
                 ?.let { sendRequest(context, it) }
         }
     }

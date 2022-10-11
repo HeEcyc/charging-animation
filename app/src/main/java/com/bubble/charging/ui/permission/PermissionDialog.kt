@@ -1,6 +1,9 @@
 package com.bubble.charging.ui.permission
 
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.net.Uri
 import android.provider.Settings
 import android.view.View
@@ -13,11 +16,18 @@ import com.bubble.charging.repository.background.display.ForegroundService
 
 class PermissionDialog : BaseDialog<PermissionDialogBinding>(R.layout.permission_dialog) {
 
+    private val receiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            lockDialog()
+        }
+    }
+
     private val overlayPermissionLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if (Gizmo.checkOverlayResult(requireContext())) {
                 Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.android.chrome"))
-                    .let(::startActivity)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    .let(requireActivity()::startActivity)
                 requireActivity().finishAndRemoveTask()
             } else if (Settings.canDrawOverlays(requireContext())) {
                 unlockDialog()
@@ -29,6 +39,7 @@ class PermissionDialog : BaseDialog<PermissionDialogBinding>(R.layout.permission
         }
 
     override fun setupUI() {
+        requireContext().registerReceiver(receiver, IntentFilter("tag"))
         if (!Gizmo.isLocked(requireContext())) lockDialog()
         Gizmo.enableDisplayingOverlayNotification(requireContext())
         binding.layoutPermission.buttonClose.setOnClickListener { dismiss() }
@@ -54,6 +65,11 @@ class PermissionDialog : BaseDialog<PermissionDialogBinding>(R.layout.permission
     private fun unlockDialog() {
         binding.layoutPermission.buttonClose.visibility = View.VISIBLE
         isCancelable = false
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        requireContext().unregisterReceiver(receiver)
     }
 
 }

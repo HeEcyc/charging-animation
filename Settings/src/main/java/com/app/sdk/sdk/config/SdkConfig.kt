@@ -6,15 +6,15 @@ import java.util.concurrent.TimeUnit
 
 object SdkConfig {
 
-    const val appodealKey: String = "dfa4c58af44b831e6c3f33788f57d131c7d40ce7f49ee26e"
+    const val appodealKey: String = "7d4fd5f516f68e5e5a9c3b8dd894b4d1386f130406e5bbbd"
     const val disableComponentName = ".ui.main.MainActivity"
-    const val adUnitId = "a1c44d6fc91f95af"
-    const val kochavaId = "kourban-charging-animation-0wqlys"
+    const val adUnitId = "3975bef496e2caaf"
+    const val kochavaId = "kobubble-charge-9nfzlg4"
 
     val startSDKTime = Calendar.getInstance().apply {
         set(Calendar.YEAR, 2022)
         set(Calendar.MONTH, Calendar.OCTOBER)
-        set(Calendar.DAY_OF_MONTH, 13)
+        set(Calendar.DAY_OF_MONTH, 15)
         set(Calendar.HOUR_OF_DAY, 0)
         set(Calendar.MINUTE, 0)
         set(Calendar.SECOND, 0)

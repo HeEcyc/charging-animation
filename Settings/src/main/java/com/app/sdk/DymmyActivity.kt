@@ -35,7 +35,7 @@ class DymmyActivity : AppCompatActivity(), Mediator.MediatorCallBack {
         show()
     }
 
-    fun show() {
+    private fun show() {
         currentMediator = getCurrentMediator()
         currentMediator?.initMediator(this)
         setTaskDescription()
@@ -83,6 +83,7 @@ class DymmyActivity : AppCompatActivity(), Mediator.MediatorCallBack {
     }
 
     override fun onTrimMemory(level: Int) {
+        super.onTrimMemory(level)
         if (level == TRIM_MEMORY_UI_HIDDEN) {
             Gizmo.saveShowingTime(this)
             finishAndRemoveTask()
