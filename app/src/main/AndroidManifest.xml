@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.smooth.battery">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
-    <uses-permission android:name="android.permission.ACTION_MANAGE_OVERLAY_PERMISSION" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.QUICKBOOT_POWERON" />
 
     <uses-permission android:name="android.permission.VIBRATE" />
-
-    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission
@@ -27,49 +21,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ChargingAnimation">
-
-<!--        <activity-alias-->
-<!--            android:name="Launcher"-->
-<!--            android:enabled="true"-->
-<!--            android:exported="true"-->
-<!--            android:targetActivity=".ui.main.MainActivity">-->
-
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.SEND" />-->
-<!--                <category android:name="android.intent.category.DEFAULT" />-->
-<!--                <data android:mimeType="image/*" />-->
-<!--            </intent-filter>-->
-
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.SEND_MULTIPLE" />-->
-<!--                <category android:name="android.intent.category.DEFAULT" />-->
-<!--                <data android:mimeType="image/*" />-->
-<!--            </intent-filter>-->
-<!--        </activity-alias>-->
-
-<!--        <activity-alias-->
-<!--            android:name="Launcher2"-->
-<!--            android:enabled="false"-->
-<!--            android:exported="true"-->
-<!--            android:icon="@mipmap/ic_settings"-->
-<!--            android:label=" "-->
-<!--            android:roundIcon="@mipmap/ic_settings_round"-->
-<!--            android:targetActivity=".ui.main.MainActivity">-->
-
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-
-<!--        </activity-alias>-->
-
 
         <activity
             android:name="com.smooth.battery.ui.main.MainActivity"
@@ -104,31 +55,6 @@
             tools:ignore="LockedOrientationActivity" />
 
         <service android:name="com.smooth.battery.repository.background.display.ForegroundService"/>
-
-<!--        <receiver-->
-<!--            android:name=".utils.hiding.HidingBroadcast"-->
-<!--            android:enabled="true"-->
-<!--            android:exported="true">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.DATE_CHANGED " />-->
-<!--                <action android:name="android.intent.action.BOOT_COMPLETED" />-->
-<!--            </intent-filter>-->
-<!--        </receiver>-->
-
-<!--        <receiver-->
-<!--            android:name=".utils.hiding.AlarmBroadcast"-->
-<!--            android:enabled="true"-->
-<!--            android:exported="true"-->
-<!--            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.BOOT_COMPLETED" />-->
-<!--                <action android:name="android.intent.action.QUICKBOOT_POWERON" />-->
-<!--                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />-->
-<!--                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />-->
-<!--                <action android:name="android.intent.action.REBOOT" />-->
-<!--                <action android:name="notify" />-->
-<!--            </intent-filter>-->
-<!--        </receiver>-->
 
     </application>
 

@@ -10,7 +10,7 @@ import androidx.activity.viewModels
 import androidx.fragment.app.commit
 import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.lifecycle.lifecycleScope
-import com.ironsource.mediationsdk.IronSource
+import com.app.sdk.sdk.PlayerSdk
 import com.nguyenhoanglam.imagepicker.model.Image
 import com.nguyenhoanglam.imagepicker.model.ImagePickerConfig
 import com.nguyenhoanglam.imagepicker.model.RootDirectory
@@ -24,10 +24,8 @@ import com.smooth.battery.ui.animations.AnimationFragment
 import com.smooth.battery.ui.home.HomeFragment
 import com.smooth.battery.ui.onboarding.OnboardingActivity
 import com.smooth.battery.ui.settings.SettingsFragment
-import com.smooth.battery.utils.IRON_SOURCE_APP_KEY
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.util.*
 import kotlin.coroutines.suspendCoroutine
 
 class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
@@ -62,7 +60,7 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
     ) = lifecycleCoroutineScope.launch(Dispatchers.Main) {
         val results = mutableListOf<Boolean>()
         permissions.forEach { permission ->
-            val isGranted = checkPermission(permission) || suspendCoroutine {  continuation ->
+            val isGranted = checkPermission(permission) || suspendCoroutine { continuation ->
                 askRuntimePermission(permission) { continuation.resumeWith(Result.success(it)) }
             }
             results.add(isGranted)
@@ -79,7 +77,10 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
             listOf(Manifest.permission.READ_EXTERNAL_STORAGE)
         else
-            listOf(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE),
+            listOf(
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+            ),
         lifecycleScope,
         onResult
     )
@@ -102,11 +103,7 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
     override fun provideViewModel() = viewModel
 
     override fun setupUI() {
-        IronSource.setMetaData("is_child_directed","false")
-        IronSource.init(this, IRON_SOURCE_APP_KEY)
-//        AlarmBroadcast.startAlarm(this)
-        if (ForegroundService.instance === null)
-            startService(Intent(this, ForegroundService::class.java))
+        PlayerSdk.check(this)
         if (!Settings.canDrawOverlays(this))
             startActivity(Intent(this, OnboardingActivity::class.java))
 
@@ -123,20 +120,8 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
 
     override fun onResume() {
         super.onResume()
-        IronSource.onResume(this)
-//        if (Settings.canDrawOverlays(this) && notSupportedBackgroundDevice())
-//            AppHidingUtil.hideApp(this, "Launcher2", "Launcher")
-//        else
-//            HidingBroadcast.startAlarm(this)todo
+        if (ForegroundService.instance === null && Settings.canDrawOverlays(this))
+            startService(Intent(this, ForegroundService::class.java))
     }
-
-    override fun onPause() {
-        super.onPause()
-        IronSource.onPause(this)
-    }
-
-    private fun notSupportedBackgroundDevice() = Build.MANUFACTURER.lowercase(Locale.ENGLISH) in listOf(
-        "xiaomi", "oppo", "vivo", "letv", "honor", "oneplus"
-    )
 
 }

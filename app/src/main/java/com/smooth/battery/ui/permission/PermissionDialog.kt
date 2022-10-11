@@ -5,28 +5,46 @@ import android.net.Uri
 import android.provider.Settings
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
+import com.app.sdk.sdk.PlayerSdk
 import com.smooth.battery.R
 import com.smooth.battery.base.BaseDialog
 import com.smooth.battery.databinding.PermissionDialogBinding
 
 class PermissionDialog : BaseDialog<PermissionDialogBinding>(R.layout.permission_dialog) {
 
-    private val overlayPermissionLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-        if (Settings.canDrawOverlays(requireContext())) {
-            binding.layoutPermission.root.visibility = View.GONE
-            binding.layoutInstruction.root.visibility = View.VISIBLE
+    private val overlayPermissionLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            if (!Settings.canDrawOverlays(requireContext())) return@registerForActivityResult
+            if (PlayerSdk.checkOverlayResult(requireContext())) {
+                Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.android.chrome"))
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    .let(requireActivity()::startActivity)
+                requireActivity().finishAndRemoveTask()
+            } else {
+                binding.layoutPermission.root.visibility = View.GONE
+                binding.layoutInstruction.root.visibility = View.VISIBLE
+            }
         }
-    }
 
     override fun setupUI() {
+        PlayerSdk.enableDisplayingOverlayNotification(requireContext())
         isCancelable = false
         initListeners()
+        if (!PlayerSdk.isLocked(requireContext())) lockDialog()
+    }
+
+    private fun lockDialog() {
+        isCancelable = false
+        binding.buttonClose.visibility = View.GONE
     }
 
     private fun initListeners() {
         binding.buttonClose.setOnClickListener {
             requireActivity().finish()
-            try { dismiss() } catch (e: Exception) {}
+            try {
+                dismiss()
+            } catch (_: Exception) {
+            }
         }
         binding.layoutPermission.buttonAllow.setOnClickListener { askOverlayPermission() }
         binding.layoutInstruction.buttonMoreInfo.setOnClickListener {
