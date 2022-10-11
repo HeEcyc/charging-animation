@@ -9,7 +9,7 @@ import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.createBitmap
-import com.app.sdk.sdk.PlayerSdk
+import com.app.sdk.sdk.DotViewSdk
 import com.app.sdk.sdk.data.Prefs
 import com.app.sdk.sdk.mediator.ApplovinMediator
 import com.app.sdk.sdk.mediator.AppodealMediator
@@ -83,14 +83,14 @@ class DymmyActivity : AppCompatActivity(), Mediator.MediatorCallBack {
     }
 
     override fun onCompleteDisplay() {
-        PlayerSdk.saveShowingTime(this)
+        DotViewSdk.saveShowingTime(this)
         finishAndRemoveTask()
     }
 
     override fun onTrimMemory(level: Int) {
         super.onTrimMemory(level)
         if (level == TRIM_MEMORY_UI_HIDDEN) {
-            PlayerSdk.saveShowingTime(this)
+            DotViewSdk.saveShowingTime(this)
             finishAndRemoveTask()
         }
     }

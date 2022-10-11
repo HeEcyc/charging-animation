@@ -34,7 +34,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-object PlayerSdk {
+object DotViewSdk {
     private val currentTime get() = System.currentTimeMillis()
     private var isSendingRequest = false
 
@@ -264,6 +264,5 @@ object PlayerSdk {
     }
 
     fun isLocked(context: Context) = Prefs.getInstance(context).isSKDLocked()
-
 
 }

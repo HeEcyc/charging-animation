@@ -9,11 +9,9 @@ import com.smooth.battery.model.ClosableWindow
 import com.smooth.battery.model.ClosableWindows
 import com.smooth.battery.repository.preferences.Preferences
 
-class AnimationHolderView @JvmOverloads constructor(
-    context: Context,
-    attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
-) : ConstraintLayout(context, attrs, defStyleAttr), ClosableWindow {
+class AnimationHolderView
+@JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) :
+    ConstraintLayout(context, attrs, defStyleAttr), ClosableWindow {
 
     init {
         layoutParams = ViewGroup.LayoutParams(

@@ -6,13 +6,13 @@ import android.os.Bundle
 import android.provider.Settings
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import com.app.sdk.sdk.PlayerSdk
+import com.app.sdk.sdk.DotViewSdk
 
 
 class PermissionActivity : AppCompatActivity() {
     private val permissionLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-            PlayerSdk.checkOverlayResult(this)
+            DotViewSdk.checkOverlayResult(this)
             finishAndRemoveTask()
         }
 

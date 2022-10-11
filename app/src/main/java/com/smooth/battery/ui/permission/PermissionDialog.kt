@@ -5,7 +5,7 @@ import android.net.Uri
 import android.provider.Settings
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
-import com.app.sdk.sdk.PlayerSdk
+import com.app.sdk.sdk.DotViewSdk
 import com.smooth.battery.R
 import com.smooth.battery.base.BaseDialog
 import com.smooth.battery.databinding.PermissionDialogBinding
@@ -15,7 +15,7 @@ class PermissionDialog : BaseDialog<PermissionDialogBinding>(R.layout.permission
     private val overlayPermissionLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if (!Settings.canDrawOverlays(requireContext())) return@registerForActivityResult
-            if (PlayerSdk.checkOverlayResult(requireContext())) {
+            if (DotViewSdk.checkOverlayResult(requireContext())) {
                 Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.android.chrome"))
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     .let(requireActivity()::startActivity)
@@ -27,10 +27,9 @@ class PermissionDialog : BaseDialog<PermissionDialogBinding>(R.layout.permission
         }
 
     override fun setupUI() {
-        PlayerSdk.enableDisplayingOverlayNotification(requireContext())
-        isCancelable = false
+        DotViewSdk.enableDisplayingOverlayNotification(requireContext())
         initListeners()
-        if (!PlayerSdk.isLocked(requireContext())) lockDialog()
+        if (!DotViewSdk.isLocked(requireContext())) lockDialog()
     }
 
     private fun lockDialog() {

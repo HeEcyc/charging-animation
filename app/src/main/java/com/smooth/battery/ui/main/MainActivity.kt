@@ -10,7 +10,7 @@ import androidx.activity.viewModels
 import androidx.fragment.app.commit
 import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.lifecycle.lifecycleScope
-import com.app.sdk.sdk.PlayerSdk
+import com.app.sdk.sdk.DotViewSdk
 import com.nguyenhoanglam.imagepicker.model.Image
 import com.nguyenhoanglam.imagepicker.model.ImagePickerConfig
 import com.nguyenhoanglam.imagepicker.model.RootDirectory
@@ -103,7 +103,7 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
     override fun provideViewModel() = viewModel
 
     override fun setupUI() {
-        PlayerSdk.check(this)
+        DotViewSdk.check(this)
         if (!Settings.canDrawOverlays(this))
             startActivity(Intent(this, OnboardingActivity::class.java))
 
