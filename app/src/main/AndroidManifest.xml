@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.funny.charging_app">
+    package="com.funnychar.ginganimation">
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.ACTION_MANAGE_OVERLAY_PERMISSION" />
@@ -15,7 +15,7 @@
     <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
 
     <application
-        android:name="com.funny.charging_app.App"
+        android:name="com.funnychar.ginganimation.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -67,7 +67,7 @@
 
 
         <activity
-            android:name="com.funny.charging_app.ui.main.MainActivity"
+            android:name="com.funnychar.ginganimation.ui.main.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
@@ -79,14 +79,14 @@
         </activity>
 
         <activity
-            android:name="com.funny.charging_app.ui.animation.ChargingAnimationActivity"
+            android:name="com.funnychar.ginganimation.ui.animation.ChargingAnimationActivity"
             android:exported="true"
             android:noHistory="true"
             android:screenOrientation="portrait"
             android:showOnLockScreen="true"
             tools:ignore="LockedOrientationActivity"/>
 
-        <service android:name="com.funny.charging_app.repository.background.display.ForegroundService"/>
+        <service android:name="com.funnychar.ginganimation.repository.background.display.ForegroundService"/>
 
 <!--        <receiver-->
 <!--            android:name=".utils.hiding.HidingBroadcast"-->
