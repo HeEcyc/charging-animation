@@ -1,12 +1,12 @@
 package com.funnychar.ginganimation.repository.preferences
 
 import android.content.Context
-import com.funnychar.ginganimation.App
-import com.funnychar.ginganimation.model.AnimationItem
+import com.funnychar.ginganimation.FAppF
+import com.funnychar.ginganimation.model.FAnimationFItemF
 
-object Preferences {
+object FPreferencesF {
 
-    private val prefs = App.instance.getSharedPreferences("charging_animation", Context.MODE_PRIVATE)
+    private val prefs = FAppF.instance.getSharedPreferences("charging_animation", Context.MODE_PRIVATE)
 
     private const val KEY_SELECTED_ANIMATION = "ca_selected_animation"
     private const val KEY_SHOW_WHEN_UNLOCKED = "ca_show_when_unlocked"
@@ -15,10 +15,12 @@ object Preferences {
     private const val KEY_VIBRATION_IS_ON = "ca_vibration_is_on"
     private const val KEY_SOUND_IS_ON = "ca_sound_is_on"
 
-    var selectedAnimation: AnimationItem
-        get() = AnimationItem.valueOf(prefs.getString(KEY_SELECTED_ANIMATION, null) ?: AnimationItem.values().first().name)
+    var selectedAnimation: FAnimationFItemF
+        get() = FAnimationFItemF.valueOf(prefs.getString(KEY_SELECTED_ANIMATION, null) ?: FAnimationFItemF.values().first().name)
         set(value) {
+            System.currentTimeMillis()
             prefs.edit().putString(KEY_SELECTED_ANIMATION, value.name).apply()
+            System.currentTimeMillis()
         }
 
     var showWhenUnlocked: Boolean

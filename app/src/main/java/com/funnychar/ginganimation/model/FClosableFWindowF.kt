@@ -1,5 +1,5 @@
 package com.funnychar.ginganimation.model
 
-interface ClosableWindow {
+interface FClosableFWindowF {
     fun close()
 }

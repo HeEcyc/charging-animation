@@ -2,7 +2,7 @@ package com.funnychar.ginganimation.utils
 
 import android.content.Context
 import androidx.databinding.Observable
-import com.funnychar.ginganimation.base.BaseBroadcastReceiver
+import com.funnychar.ginganimation.base.FBaseFBroadcastFReceiverF
 
 fun Observable.addOnPropertyChangedCallback(
     callback: (Observable, Int) -> Unit
@@ -12,5 +12,5 @@ fun Observable.addOnPropertyChangedCallback(
             callback(sender, propertyId)
     }.also { addOnPropertyChangedCallback(it) }
 
-fun Context.registerReceiver(bbr: BaseBroadcastReceiver) =
+fun Context.registerReceiver(bbr: FBaseFBroadcastFReceiverF) =
     registerReceiver(bbr, bbr.provideIntentFilter())

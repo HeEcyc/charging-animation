@@ -9,9 +9,9 @@ import androidx.databinding.ViewDataBinding
 import com.funnychar.ginganimation.BR
 import com.funnychar.ginganimation.R
 import com.funnychar.ginganimation.databinding.*
-import com.funnychar.ginganimation.repository.background.display.BatteryLevelReceiver
+import com.funnychar.ginganimation.repository.background.display.FBatteryFLevelFReceiverF
 
-enum class AnimationItem(
+enum class FAnimationFItemF(
     val previewPicRes: Int,
     private val animationBindingClass: Class<out ViewDataBinding>
 ) {
@@ -36,12 +36,14 @@ enum class AnimationItem(
         .invoke(null, LayoutInflater.from(context), null, false)
         .let { it as ViewDataBinding }
         .apply {
+            System.currentTimeMillis()
             setVariable(BR.blHolder, BatteryLevelHolder())
+            System.currentTimeMillis()
         }
         .root
 
     class BatteryLevelHolder {
-        val batteryLevel: ObservableField<String> = BatteryLevelReceiver.batteryLevel
+        val batteryLevel: ObservableField<String> = FBatteryFLevelFReceiverF.batteryLevel
     }
 
 }

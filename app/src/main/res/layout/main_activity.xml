@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.funnychar.ginganimation.ui.main.MainViewModel" />
+            type="com.funnychar.ginganimation.ui.main.FMainFViewFModelF" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

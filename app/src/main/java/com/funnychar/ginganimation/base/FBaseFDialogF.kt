@@ -10,13 +10,16 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.DialogFragment
 
-abstract class BaseDialog<T : ViewDataBinding>(private val layout: Int) : DialogFragment() {
+abstract class FBaseFDialogF<T : ViewDataBinding>(private val layout: Int) : DialogFragment() {
 
     protected lateinit var binding: T
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        System.currentTimeMillis()
         super.onViewCreated(view, savedInstanceState)
+        System.currentTimeMillis()
         setupUI()
+        System.currentTimeMillis()
     }
 
     override fun onCreateView(
@@ -24,20 +27,28 @@ abstract class BaseDialog<T : ViewDataBinding>(private val layout: Int) : Dialog
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        System.currentTimeMillis()
         binding = DataBindingUtil.inflate(inflater, layout, container, false)!!
+        System.currentTimeMillis()
         return binding.root
     }
 
     abstract fun setupUI()
 
     override fun onStart() {
+        System.currentTimeMillis()
         super.onStart()
+        System.currentTimeMillis()
         val width = ViewGroup.LayoutParams.MATCH_PARENT
+        System.currentTimeMillis()
         val height = ViewGroup.LayoutParams.MATCH_PARENT
+        System.currentTimeMillis()
         dialog?.window?.setLayout(width, height)
+        System.currentTimeMillis()
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        System.currentTimeMillis()
     }
 
-    protected open fun provideViewModel(): BaseViewModel? = null
+    protected open fun provideViewModel(): FBaseFViewFModelF? = null
 
 }

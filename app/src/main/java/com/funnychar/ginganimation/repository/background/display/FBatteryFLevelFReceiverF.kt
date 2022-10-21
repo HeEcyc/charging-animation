@@ -13,16 +13,16 @@ import android.os.Vibrator
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationManagerCompat
 import androidx.databinding.ObservableField
-import com.funnychar.ginganimation.App
+import com.funnychar.ginganimation.FAppF
 import com.funnychar.ginganimation.R
-import com.funnychar.ginganimation.base.BaseBroadcastReceiver
-import com.funnychar.ginganimation.repository.preferences.Preferences
+import com.funnychar.ginganimation.base.FBaseFBroadcastFReceiverF
+import com.funnychar.ginganimation.repository.preferences.FPreferencesF
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
-class BatteryLevelReceiver : BaseBroadcastReceiver() {
+class FBatteryFLevelFReceiverF : FBaseFBroadcastFReceiverF() {
 
     override fun provideIntentFilter() = IntentFilter(Intent.ACTION_BATTERY_CHANGED)
 
@@ -33,35 +33,45 @@ class BatteryLevelReceiver : BaseBroadcastReceiver() {
     }
 
     init {
+        System.currentTimeMillis()
         batteryLevel.set("${
-            App.instance
+            FAppF.instance
                 .getSystemService(BatteryManager::class.java)
                 .getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
         }%")
+        System.currentTimeMillis()
     }
 
     override fun onReceive(p0: Context, intent: Intent) {
+        System.currentTimeMillis()
         val level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1)
+        System.currentTimeMillis()
         val scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1)
+        System.currentTimeMillis()
         val percent = level * 100 / scale
+        System.currentTimeMillis()
         batteryLevel.set("$percent%")
-        if (percent == 100 && Preferences.areNotificationsOn && !notificationIsPosted) {
+        System.currentTimeMillis()
+        if (percent == 100 && FPreferencesF.areNotificationsOn && !notificationIsPosted) {
+            System.currentTimeMillis()
             notificationIsPosted = true
+            System.currentTimeMillis()
             postNotification(p0)
+            System.currentTimeMillis()
         }
-
+        System.currentTimeMillis()
     }
 
     private fun postNotification(context: Context) {
-        val notification = NotificationFactory.newNotification(
+        val notification = FNotificationFFactoryF.newNotification(
             R.mipmap.ic_launcher,
             "100%",
             context.getString(R.string.your_device_is_fully_charged)
         )
         NotificationManagerCompat.from(context).notify(2, notification)
-        if (Preferences.isFlashOn) playFlash(context)
-        if (Preferences.isVibrationOn) playVibration(context)
-        if (Preferences.isSoundOn) playSound(context)
+        if (FPreferencesF.isFlashOn) playFlash(context)
+        if (FPreferencesF.isVibrationOn) playVibration(context)
+        if (FPreferencesF.isSoundOn) playSound(context)
     }
 
     private fun playFlash(context: Context) {

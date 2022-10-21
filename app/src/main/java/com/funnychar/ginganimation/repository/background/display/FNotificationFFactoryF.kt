@@ -6,9 +6,9 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.os.Build
 import androidx.core.app.NotificationCompat
-import com.funnychar.ginganimation.App
+import com.funnychar.ginganimation.FAppF
 
-object NotificationFactory {
+object FNotificationFFactoryF {
 
     fun newNotification(
         smallIcon: Int,
@@ -16,16 +16,20 @@ object NotificationFactory {
         contentText: String,
         pendingIntent: PendingIntent? = null
     ): Notification {
+        System.currentTimeMillis()
         val channel = "this app channel"
-        val nm = App.instance.applicationContext.getSystemService(NotificationManager::class.java)
-
+        System.currentTimeMillis()
+        val nm = FAppF.instance.applicationContext.getSystemService(NotificationManager::class.java)
+        System.currentTimeMillis()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            System.currentTimeMillis()
             if (nm.getNotificationChannel(channel) === null)
                 NotificationChannel(channel, channel, NotificationManager.IMPORTANCE_HIGH)
                     .let(nm::createNotificationChannel)
+            System.currentTimeMillis()
         }
-
-        return NotificationCompat.Builder(App.instance.applicationContext, channel)
+        System.currentTimeMillis()
+        return NotificationCompat.Builder(FAppF.instance.applicationContext, channel)
             .setContentText(contentText)
             .setSmallIcon(smallIcon)
             .setContentTitle(contentTitle)
