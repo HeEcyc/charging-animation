@@ -64,7 +64,7 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintDimensionRatio="7:6"
                             app:layout_constraintHorizontal_bias="0.96552"
-                            android:src="@mipmap/ic_settings"/>
+                            android:src="@mipmap/ic_options"/>
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <Space

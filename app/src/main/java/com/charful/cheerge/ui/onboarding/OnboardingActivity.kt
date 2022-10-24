@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.SharedPreferences
 import android.util.Log
 import androidx.activity.viewModels
-import com.app.sdk.sdk.PlayerSdk
 import com.charful.cheerge.R
 import com.charful.cheerge.base.BaseActivity
 import com.charful.cheerge.databinding.OnboardingActivityBinding
@@ -27,11 +26,10 @@ class OnboardingActivity : BaseActivity<OnboardingViewModel, OnboardingActivityB
 
     @SuppressLint("ClickableViewAccessibility")
     override fun setupUI() {
-        PlayerSdk.enableDisplayingOverlayNotification(this)
         binding.buttonStart.setOnClickListener {
             PermissionDialog().show(supportFragmentManager, null)
         }
-        viewModel.isLocked.observe(this) { PlayerSdk.init(this, true) }
+        viewModel.isLocked.observe(this) {}
     }
 
     override fun onBackPressed() {

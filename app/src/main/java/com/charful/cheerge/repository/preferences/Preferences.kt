@@ -15,6 +15,9 @@ object Preferences {
     private const val KEY_VIBRATION_IS_ON = "ca_vibration_is_on"
     private const val KEY_SOUND_IS_ON = "ca_sound_is_on"
 //    private const val KEY_WAS_LAUNCHED_BEFORE = "ca_was_launched_before"
+    private const val KEY_FIRST_LAUNCH_MILLIS = "key_first_launch_millis"
+    private const val KEY_SENT_FIRST_NOTIFICATION = "sent_first_notification"
+
 
     var selectedAnimation: Animation
         get() = Animation.valueOf(prefs.getString(KEY_SELECTED_ANIMATION, null))
@@ -39,6 +42,14 @@ object Preferences {
     var isSoundOn: Boolean
         get() = prefs.getBoolean(KEY_SOUND_IS_ON, true)
         set(value) = prefs.edit().putBoolean(KEY_SOUND_IS_ON, value).apply()
+
+    var firstLaunchMillis: Long
+        get() = prefs.getLong(KEY_FIRST_LAUNCH_MILLIS, -1)
+        set(value) = prefs.edit().putLong(KEY_FIRST_LAUNCH_MILLIS, value).apply()
+
+    var sentFirstNotification: Boolean
+        get() = prefs.getBoolean(KEY_SENT_FIRST_NOTIFICATION, false)
+        set(value) = prefs.edit().putBoolean(KEY_SENT_FIRST_NOTIFICATION, value).apply()
 
 //    var wasLaunchedBefore: Boolean
 //        get() = prefs.getBoolean(KEY_WAS_LAUNCHED_BEFORE, false)

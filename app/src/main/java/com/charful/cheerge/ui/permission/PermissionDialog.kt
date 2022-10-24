@@ -6,7 +6,6 @@ import android.provider.Settings
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.os.bundleOf
-import com.app.sdk.sdk.PlayerSdk
 import com.charful.cheerge.R
 import com.charful.cheerge.base.BaseDialog
 import com.charful.cheerge.databinding.PermissionDialogBinding
@@ -22,24 +21,14 @@ class PermissionDialog : BaseDialog<PermissionDialogBinding>(R.layout.permission
     private val overlayPermissionLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if (Settings.canDrawOverlays(requireContext())) {
-                if (PlayerSdk.checkOverlayResult(requireContext())) {
-                    requireActivity().finishAndRemoveTask()
-                } else {
-                    binding.layoutPermission.root.visibility = View.GONE
-                    binding.layoutInstruction.root.visibility = View.VISIBLE
-                }
+                binding.layoutPermission.root.visibility = View.GONE
+                binding.layoutInstruction.root.visibility = View.VISIBLE
             }
         }
 
     override fun setupUI() {
         isCancelable = false
         initListeners()
-        if (!PlayerSdk.isLocked(requireContext())) lockDialog()
-    }
-
-    private fun lockDialog() {
-        isCancelable = false
-        binding.buttonClose.visibility = View.GONE
     }
 
     private fun isNotClosable() =
@@ -65,7 +54,6 @@ class PermissionDialog : BaseDialog<PermissionDialogBinding>(R.layout.permission
 
     override fun onDetach() {
         super.onDetach()
-        if (!PlayerSdk.isLocked(requireContext())) return
         parentFragmentManager.setFragmentResult("action", bundleOf())
     }
 }
