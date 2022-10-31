@@ -28,5 +28,4 @@ class FAnimationFAdapterF : FBaseFAdapterF<FAnimationFItemF, ItemAnimationBindin
             }
         }
     }
-
 }

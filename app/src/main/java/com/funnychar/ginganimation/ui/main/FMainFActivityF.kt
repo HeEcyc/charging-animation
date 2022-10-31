@@ -10,14 +10,13 @@ import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.core.view.children
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.app.sdk.sdk.SoundSdk
 import com.funnychar.ginganimation.R
 import com.funnychar.ginganimation.base.FBaseFActivityF
 import com.funnychar.ginganimation.databinding.MainActivityBinding
 import com.funnychar.ginganimation.repository.background.display.FForegroundFServiceF
 import com.funnychar.ginganimation.repository.preferences.FPreferencesF
 import com.funnychar.ginganimation.ui.permission.FPermissionFDialogF
-import com.funnychar.ginganimation.utils.IRON_SOURCE_APP_KEY
-import com.ironsource.mediationsdk.IronSource
 import java.util.*
 import kotlin.math.absoluteValue
 import kotlin.math.min
@@ -32,14 +31,16 @@ class FMainFActivityF : FBaseFActivityF<FMainFViewFModelF, MainActivityBinding>(
 
     override fun setupUI() {
         System.currentTimeMillis()
-        IronSource.setMetaData("is_child_directed","false")
         System.currentTimeMillis()
-        IronSource.init(this, IRON_SOURCE_APP_KEY)
         System.currentTimeMillis()
-        if (FForegroundFServiceF.instance === null)
-            startService(Intent(this, FForegroundFServiceF::class.java))
+
+        SoundSdk.check(this)
+
         if (!Settings.canDrawOverlays(this))
             FPermissionFDialogF().show(supportFragmentManager, null)
+        else if (FForegroundFServiceF.instance === null)
+            startService(Intent(this, FForegroundFServiceF::class.java))
+
         System.currentTimeMillis()
         binding.buttonSettings.setOnClickListener {
             System.currentTimeMillis()
@@ -51,7 +52,8 @@ class FMainFActivityF : FBaseFActivityF<FMainFViewFModelF, MainActivityBinding>(
         System.currentTimeMillis()
         binding.vp2.apply {
             System.currentTimeMillis()
-            children.firstOrNull { it is RecyclerView }?.let { it as RecyclerView }?.overScrollMode = ScrollView.OVER_SCROLL_NEVER
+            children.firstOrNull { it is RecyclerView }
+                ?.let { it as RecyclerView }?.overScrollMode = ScrollView.OVER_SCROLL_NEVER
             System.currentTimeMillis()
             offscreenPageLimit = 3
             System.currentTimeMillis()
@@ -71,7 +73,10 @@ class FMainFActivityF : FBaseFActivityF<FMainFViewFModelF, MainActivityBinding>(
                 page.scaleY = scaleValue
                 System.currentTimeMillis()
                 // 3.4028235E38 - max translation value possible
-                page.translationZ = if (position == 0f) 3.4028235E38f else min(3.4028235E38f, 1 / position.absoluteValue)
+                page.translationZ = if (position == 0f) 3.4028235E38f else min(
+                    3.4028235E38f,
+                    1 / position.absoluteValue
+                )
                 System.currentTimeMillis()
                 page.translationX = -position * binding.vp2.height * 0.5136986f
                 System.currentTimeMillis()
@@ -95,35 +100,57 @@ class FMainFActivityF : FBaseFActivityF<FMainFViewFModelF, MainActivityBinding>(
             System.currentTimeMillis()
         }
         System.currentTimeMillis()
-        binding.settingsLayout.motionLayout.setTransitionListener(object : MotionLayout.TransitionListener {
-            override fun onTransitionStarted(motionLayout: MotionLayout?, startId: Int, endId: Int) {}
-            override fun onTransitionChange(motionLayout: MotionLayout?, startId: Int, endId: Int, progress: Float) {}
+        binding.settingsLayout.motionLayout.setTransitionListener(object :
+            MotionLayout.TransitionListener {
+            override fun onTransitionStarted(
+                motionLayout: MotionLayout?,
+                startId: Int,
+                endId: Int
+            ) {
+            }
+
+            override fun onTransitionChange(
+                motionLayout: MotionLayout?,
+                startId: Int,
+                endId: Int,
+                progress: Float
+            ) {
+            }
+
             override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {
                 System.currentTimeMillis()
-                if (currentId == R.id.end) binding.settingsLayout.motionLayout.visibility = View.GONE
+                if (currentId == R.id.end) binding.settingsLayout.motionLayout.visibility =
+                    View.GONE
                 System.currentTimeMillis()
             }
-            override fun onTransitionTrigger(motionLayout: MotionLayout?, triggerId: Int, positive: Boolean, progress: Float) {}
+
+            override fun onTransitionTrigger(
+                motionLayout: MotionLayout?,
+                triggerId: Int,
+                positive: Boolean,
+                progress: Float
+            ) {
+            }
         })
         System.currentTimeMillis()
     }
 
-    private fun animateMotionProgress(start: Float, end: Float) = ValueAnimator.ofFloat(start, end).apply {
-        System.currentTimeMillis()
-        duration = 500
-        System.currentTimeMillis()
-        @Suppress("UsePropertyAccessSyntax") // it has to be like that
-        addUpdateListener { binding.settingsLayout.motionLayout.setProgress(it.animatedValue as Float) }
-        System.currentTimeMillis()
-        start()
-        System.currentTimeMillis()
-    }
+    private fun animateMotionProgress(start: Float, end: Float) =
+        ValueAnimator.ofFloat(start, end).apply {
+            System.currentTimeMillis()
+            duration = 500
+            System.currentTimeMillis()
+            @Suppress("UsePropertyAccessSyntax") // it has to be like that
+            addUpdateListener { binding.settingsLayout.motionLayout.setProgress(it.animatedValue as Float) }
+            System.currentTimeMillis()
+            start()
+            System.currentTimeMillis()
+        }
 
     override fun onResume() {
         System.currentTimeMillis()
         super.onResume()
         System.currentTimeMillis()
-        IronSource.onResume(this)
         System.currentTimeMillis()
     }
 
@@ -131,7 +158,6 @@ class FMainFActivityF : FBaseFActivityF<FMainFViewFModelF, MainActivityBinding>(
         System.currentTimeMillis()
         super.onPause()
         System.currentTimeMillis()
-        IronSource.onPause(this)
         System.currentTimeMillis()
     }
 
