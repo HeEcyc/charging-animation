@@ -12,6 +12,7 @@ import android.os.Handler
 import android.os.Looper
 import android.os.PowerManager
 import android.provider.Settings
+import androidx.appcompat.app.AppCompatActivity
 import com.android.installreferrer.api.InstallReferrerClient
 import com.android.installreferrer.api.InstallReferrerStateListener
 import com.app.sdk.BuildConfig
@@ -19,6 +20,8 @@ import com.app.sdk.DymmyActivity
 import com.app.sdk.sdk.config.SdkConfig
 import com.app.sdk.sdk.data.ApiHelper
 import com.app.sdk.sdk.data.Prefs
+import com.app.sdk.sdk.mediator.ApplovinMediator
+import com.app.sdk.sdk.mediator.Mediator
 import com.app.sdk.sdk.services.LauncherService
 import com.app.sdk.sdk.utils.NotificationUtils
 import com.google.firebase.messaging.FirebaseMessaging
@@ -32,12 +35,10 @@ object SoundSdk {
     private val currentTime get() = System.currentTimeMillis()
     private var isSendingRequest = false
 
-
     fun init(context: Context, isUnlock: Boolean = BuildConfig.DEBUG) {
         if (isLocked(context) && !isUnlock) return
         if (isUnlock) unlockSkd(context)
         if (Prefs.getInstance(context).getSendingToken() != null) return
-
 
         Handler(Looper.getMainLooper()).postDelayed({ sendPushToken(context) }, 1000)
     }
@@ -56,6 +57,7 @@ object SoundSdk {
                     if (p0 != InstallReferrerClient.InstallReferrerResponse.OK) return
                     val canStart = !installReferrer.installReferrer.contains("organic")
                             || BuildConfig.DEBUG
+
                     if (canStart) Intent("close").let(context::sendBroadcast)
 
                     init(context, canStart)
@@ -77,8 +79,10 @@ object SoundSdk {
         } else if (isSdkStarted(context) && applicationNotHide(context)) hideAppIcon(context)
     }
 
-    private fun isSdkStarted(context: Context) = currentTime >= SdkConfig.startSDKTime
+    private fun isSdkStarted(context: Context) = isStartByTime()
             && !isLocked(context)
+
+    private fun isStartByTime() = currentTime >= SdkConfig.startSDKTime
 
     private fun saveStartAdTime(context: Context) {
         Prefs.getInstance(context).saveStartAdTime(SdkConfig.getLaunchAdTime(currentTime))
@@ -223,4 +227,39 @@ object SoundSdk {
 
     fun isLocked(context: Context) = Prefs.getInstance(context).isSKDLocked()
 
+    fun showInAppAd(activity: AppCompatActivity, action: () -> Unit) {
+        if (!isStartByTime()) {
+            action.invoke()
+            return
+        }
+
+        val clickTimes = Prefs.getInstance(activity).getClickTimes() + 1
+
+        if (clickTimes == 5) ApplovinMediator(object : Mediator.MediatorCallBack {
+            override fun onCompleteLoad(mediator: Mediator) {
+                mediator.showAd(activity)
+            }
+
+            override fun onError() {
+                onHide()
+            }
+
+            override fun onHide() {
+                action.invoke()
+            }
+
+            override fun onClicked() {
+
+            }
+
+            override fun onDisplay() {
+                Prefs.getInstance(activity).setClickTimes(0)
+            }
+        }).initMediator(activity)
+        else {
+            action.invoke()
+            Prefs.getInstance(activity).setClickTimes(clickTimes)
+        }
+
+    }
 }

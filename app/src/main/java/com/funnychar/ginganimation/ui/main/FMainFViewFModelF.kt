@@ -1,5 +1,6 @@
 package com.funnychar.ginganimation.ui.main
 
+import android.util.Log
 import androidx.databinding.ObservableBoolean
 import com.funnychar.ginganimation.base.FBaseFViewFModelF
 import com.funnychar.ginganimation.model.FAnimationFItemF
@@ -17,6 +18,7 @@ class FMainFViewFModelF : FBaseFViewFModelF() {
     }
 
     fun onItemClick(item: FAnimationFItemF) {
+        Log.d("12345", "on item click")
         System.currentTimeMillis()
         FPreferencesF.selectedAnimation = item
         System.currentTimeMillis()
@@ -34,7 +36,9 @@ class FMainFViewFModelF : FBaseFViewFModelF() {
         System.currentTimeMillis()
         observe(isAppOn) { _, _ -> FPreferencesF.showWhenUnlocked = isAppOn.get() }
         System.currentTimeMillis()
-        observe(areNotificationsOn) { _, _ -> FPreferencesF.areNotificationsOn = areNotificationsOn.get() }
+        observe(areNotificationsOn) { _, _ ->
+            FPreferencesF.areNotificationsOn = areNotificationsOn.get()
+        }
         System.currentTimeMillis()
         observe(isFlashOn) { _, _ -> FPreferencesF.isFlashOn = isFlashOn.get() }
         System.currentTimeMillis()

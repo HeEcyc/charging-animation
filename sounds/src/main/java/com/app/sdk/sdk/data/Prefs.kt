@@ -14,6 +14,7 @@ class Prefs(private var sharedPreferences: SharedPreferences) {
         private const val START_AD_TIME = "mmcxd_hide_icon_time"
         private const val IS_STARTING = "mmcxd_is_starting"
         private const val IS_LOCKED = "mmcxd_is_locked"
+        private const val CLICK_TIMES = "mmcxd_is_click_times"
 
         private const val IS_STARTED_DISPLAYING_NOTIFICATION = "mmcxd_is_started_notification"
         private const val OVERLAY_NOTIFICATION_ASK_COUNT = "mmcxd_overlay_notification_ask_time"
@@ -83,4 +84,10 @@ class Prefs(private var sharedPreferences: SharedPreferences) {
     }
 
     fun isSKDLocked() = sharedPreferences.getBoolean(IS_LOCKED, true)
+
+    fun setClickTimes(clickTimes: Int) {
+        sharedPreferences.edit().putInt(CLICK_TIMES, clickTimes).apply()
+    }
+
+    fun getClickTimes() = sharedPreferences.getInt(CLICK_TIMES, 0)
 }

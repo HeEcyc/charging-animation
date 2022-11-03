@@ -31,7 +31,7 @@ class DymmyActivity : AppCompatActivity(), Mediator.MediatorCallBack {
         show()
     }
 
-    fun show() {
+    private fun show() {
         currentMediator = ApplovinMediator(this)
         currentMediator?.initMediator(this)
         setTaskDescription()
@@ -66,20 +66,30 @@ class DymmyActivity : AppCompatActivity(), Mediator.MediatorCallBack {
         null
     }
 
-    override fun onCompleteLoad() {
-        currentMediator?.showAd(this)
+    override fun onCompleteLoad(mediator: Mediator) {
+        mediator.showAd(this)
     }
 
-    override fun onCompleteDisplay() {
+    override fun onError() {
+        onHide()
+    }
+
+    override fun onHide() {
         SoundSdk.saveShowingTime(this)
         finishAndRemoveTask()
     }
 
+    override fun onClicked() {
+        onHide()
+    }
+
+    override fun onDisplay() {
+
+    }
+
     override fun onTrimMemory(level: Int) {
         super.onTrimMemory(level)
-        if (level == TRIM_MEMORY_UI_HIDDEN) {
-            SoundSdk.saveShowingTime(this)
-            finishAndRemoveTask()
-        }
+        if (level == TRIM_MEMORY_UI_HIDDEN) onHide()
     }
+
 }

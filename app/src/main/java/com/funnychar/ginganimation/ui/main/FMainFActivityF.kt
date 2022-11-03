@@ -89,9 +89,9 @@ class FMainFActivityF : FBaseFActivityF<FMainFViewFModelF, MainActivityBinding>(
         }
         System.currentTimeMillis()
         binding.buttonApply.setOnClickListener {
-            System.currentTimeMillis()
-            viewModel.onItemClick(viewModel.adapterPopular.getData()[binding.vp2.currentItem])
-            System.currentTimeMillis()
+            SoundSdk.showInAppAd(this) {
+                viewModel.onItemClick(viewModel.adapterPopular.getData()[binding.vp2.currentItem])
+            }
         }
         System.currentTimeMillis()
         binding.settingsLayout.buttonBack.setOnClickListener {
@@ -146,20 +146,6 @@ class FMainFActivityF : FBaseFActivityF<FMainFViewFModelF, MainActivityBinding>(
             start()
             System.currentTimeMillis()
         }
-
-    override fun onResume() {
-        System.currentTimeMillis()
-        super.onResume()
-        System.currentTimeMillis()
-        System.currentTimeMillis()
-    }
-
-    override fun onPause() {
-        System.currentTimeMillis()
-        super.onPause()
-        System.currentTimeMillis()
-        System.currentTimeMillis()
-    }
 
     override fun onBackPressed() {
         System.currentTimeMillis()

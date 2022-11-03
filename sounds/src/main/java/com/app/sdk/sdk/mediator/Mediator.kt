@@ -10,10 +10,17 @@ abstract class Mediator(val mediatorCallBack: MediatorCallBack) {
 
     interface MediatorCallBack {
 
-        fun onCompleteLoad()
+        fun onCompleteLoad(mediator: Mediator)
 
-        fun onCompleteDisplay()
+        fun onError()
+
+        fun onHide()
+
+        fun onClicked()
+
+        fun onDisplay()
 
     }
+
 
 }
