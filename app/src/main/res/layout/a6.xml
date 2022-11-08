@@ -5,7 +5,7 @@
     <data>
         <variable
             name="blHolder"
-            type="com.funny.charging_app.model.AnimationItem.BatteryLevelHolder" />
+            type="com.darkky.ca.model.AnimationItem.BatteryLevelHolder" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
