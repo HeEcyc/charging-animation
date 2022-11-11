@@ -34,5 +34,7 @@
     <string name="give_permissions_so_that_the_application_can_work_properly">Oferiți permisiuni pentru ca aplicația să funcționeze corect</string>
     <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_of_the_application">Permite afișarea peste alte aplicații. Acest lucru este necesar pentru funcționarea corectă a aplicației</string>
     <string name="give_permission">Dați permisiunea</string>
+    <string name="enable_charging_animation">Activați animația de încărcare</string>
+    <string name="applied">Aplicat</string>
 
 </resources>

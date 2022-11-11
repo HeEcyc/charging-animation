@@ -34,5 +34,7 @@
     <string name="give_permissions_so_that_the_application_can_work_properly">Cấp quyền để ứng dụng có thể hoạt động bình thường</string>
     <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_of_the_application">Cho phép hiển thị trên các ứng dụng khác. Điều này là cần thiết cho công việc chính xác của ứng dụng</string>
     <string name="give_permission">Cho phép</string>
+    <string name="enable_charging_animation">Bật hoạt ảnh tính phí</string>
+    <string name="applied">Đã áp dụng</string>
 
 </resources>

@@ -34,5 +34,7 @@
     <string name="give_permissions_so_that_the_application_can_work_properly">Dê permissões para que o aplicativo funcione corretamente</string>
     <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_of_the_application">Permitir a exibição sobre outros aplicativos. Isso é necessário para o funcionamento correto do aplicativo</string>
     <string name="give_permission">Dar permissão</string>
+    <string name="enable_charging_animation">Ativar animação de carregamento</string>
+    <string name="applied">Aplicado</string>
 
 </resources>

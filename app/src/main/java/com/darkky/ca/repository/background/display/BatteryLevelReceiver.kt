@@ -95,4 +95,8 @@ class BatteryLevelReceiver : BaseBroadcastReceiver() {
         r.play()
     }
 
+    class BatteryLevelHolder {
+        val batteryLevel: ObservableField<String> = Companion.batteryLevel
+    }
+
 }

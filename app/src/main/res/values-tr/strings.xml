@@ -34,5 +34,7 @@
     <string name="give_permissions_so_that_the_application_can_work_properly">Uygulamanın düzgün çalışabilmesi için izinler verin</string>
     <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_of_the_application">Diğer uygulamalar üzerinde gösterilmesine izin verin. Bu, uygulamanın doğru çalışması için gereklidir</string>
     <string name="give_permission">izin ver</string>
+    <string name="enable_charging_animation">Şarj Animasyonunu Etkinleştir</string>
+    <string name="applied">Uygulamalı</string>
 
 </resources>

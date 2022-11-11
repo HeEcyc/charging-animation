@@ -2,7 +2,7 @@ package com.darkky.ca.repository.preferences
 
 import android.content.Context
 import com.darkky.ca.App
-import com.darkky.ca.model.AnimationItem
+import com.darkky.ca.model.animation.Animation
 
 object Preferences {
 
@@ -14,12 +14,11 @@ object Preferences {
     private const val KEY_FLASH_IS_ON = "ca_flash_is_on"
     private const val KEY_VIBRATION_IS_ON = "ca_vibration_is_on"
     private const val KEY_SOUND_IS_ON = "ca_sound_is_on"
+    private const val KEY_HAS_SHOWN_GREETING = "ca_has_shown_greeting"
 
-    var selectedAnimation: AnimationItem
-        get() = AnimationItem.valueOf(prefs.getString(KEY_SELECTED_ANIMATION, null) ?: AnimationItem.values().first().name)
-        set(value) {
-            prefs.edit().putString(KEY_SELECTED_ANIMATION, value.name).apply()
-        }
+    var selectedAnimation: Animation
+        get() = Animation.valueOf(prefs.getString(KEY_SELECTED_ANIMATION, null))
+        set(value) = prefs.edit().putString(KEY_SELECTED_ANIMATION, value.getPrefString()).apply()
 
     var showWhenUnlocked: Boolean
         get() = prefs.getBoolean(KEY_SHOW_WHEN_UNLOCKED, true)
@@ -40,5 +39,9 @@ object Preferences {
     var isSoundOn: Boolean
         get() = prefs.getBoolean(KEY_SOUND_IS_ON, true)
         set(value) = prefs.edit().putBoolean(KEY_SOUND_IS_ON, value).apply()
+
+    var hasShownGreeting: Boolean
+        get() = prefs.getBoolean(KEY_HAS_SHOWN_GREETING, false)
+        set(value) = prefs.edit().putBoolean(KEY_HAS_SHOWN_GREETING, value).apply()
 
 }

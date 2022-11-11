@@ -34,4 +34,6 @@
     <string name="give_permissions_so_that_the_application_can_work_properly">ផ្តល់ការអនុញ្ញាតដើម្បីឱ្យកម្មវិធីអាចដំណើរការបានត្រឹមត្រូវ។</string>
     <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_of_the_application">អនុញ្ញាតឱ្យបង្ហាញលើកម្មវិធីផ្សេងទៀត។ នេះគឺចាំបាច់សម្រាប់ការងារត្រឹមត្រូវនៃកម្មវិធី</string>
     <string name="give_permission">ផ្តល់ការអនុញ្ញាត</string>
+    <string name="enable_charging_animation">បើកដំណើរការចលនាសាក</string>
+    <string name="applied">បានអនុវត្ត</string>
 </resources>

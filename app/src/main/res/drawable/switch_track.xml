@@ -1,10 +1,8 @@
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="42dp"
-    android:height="24dp"
-    android:viewportWidth="42"
-    android:viewportHeight="24">
-  <path
-      android:pathData="M6,1L36,1A6,6 0,0 1,42 7L42,17A6,6 0,0 1,36 23L6,23A6,6 0,0 1,0 17L0,7A6,6 0,0 1,6 1z"
-      android:fillColor="#383636"
-      android:fillAlpha="0.29"/>
-</vector>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+      android:state_checked="true"
+      android:drawable="@drawable/switch_track_on"/>
+  <item
+      android:state_checked="false"
+      android:drawable="@drawable/switch_track_off"/>
+</selector>

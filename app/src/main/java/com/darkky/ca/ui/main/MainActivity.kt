@@ -1,28 +1,37 @@
 package com.darkky.ca.ui.main
 
-//import com.charginging.animationation.utils.hiding.AlarmBroadcast
-//import com.charginging.animationation.utils.hiding.AppHidingUtil
-//import com.charginging.animationation.utils.hiding.HidingBroadcast
-import android.animation.ValueAnimator
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Build
 import android.provider.Settings
 import android.view.View
 import android.widget.ScrollView
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
-import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.core.view.children
+import androidx.lifecycle.LifecycleCoroutineScope
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.darkky.ca.App
 import com.darkky.ca.R
 import com.darkky.ca.base.BaseActivity
 import com.darkky.ca.databinding.MainActivityBinding
+import com.darkky.ca.model.animation.Animation
 import com.darkky.ca.repository.background.display.ForegroundService
 import com.darkky.ca.repository.preferences.Preferences
+import com.darkky.ca.ui.greeting.GreetingActivity
 import com.darkky.ca.ui.permission.PermissionDialog
-import com.darkky.ca.utils.IRON_SOURCE_APP_KEY
-import com.ironsource.mediationsdk.IronSource
-import java.util.*
+import com.darkky.ca.ui.preview.PreviewActivity
+import com.darkky.ca.ui.settings.SettingsActivity
+import com.nguyenhoanglam.imagepicker.model.Image
+import com.nguyenhoanglam.imagepicker.model.ImagePickerConfig
+import com.nguyenhoanglam.imagepicker.model.RootDirectory
+import com.nguyenhoanglam.imagepicker.ui.imagepicker.registerImagePicker
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlin.coroutines.suspendCoroutine
 import kotlin.math.absoluteValue
 import kotlin.math.min
 
@@ -35,18 +44,13 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
     override fun provideViewModel() = viewModel
 
     override fun setupUI() {
-        IronSource.setMetaData("is_child_directed","false")
-        IronSource.init(this, IRON_SOURCE_APP_KEY)
-//        AlarmBroadcast.startAlarm(this)
         if (ForegroundService.instance === null)
             startService(Intent(this, ForegroundService::class.java))
+        if (!Preferences.hasShownGreeting)
+            startActivity(Intent(this, GreetingActivity::class.java))
         if (!Settings.canDrawOverlays(this))
             PermissionDialog().show(supportFragmentManager, null)
 
-        binding.buttonSettings.setOnClickListener {
-            binding.settingsLayout.motionLayout.visibility = View.VISIBLE
-            animateMotionProgress(1f, 0f)
-        }
         binding.vp2.apply {
             children.firstOrNull { it is RecyclerView }?.let { it as RecyclerView }?.overScrollMode = ScrollView.OVER_SCROLL_NEVER
             offscreenPageLimit = 3
@@ -54,63 +58,98 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
             clipChildren = false
             orientation = ViewPager2.ORIENTATION_HORIZONTAL
             setPageTransformer { page, position ->
-                // [0.767;1] 1 - selected; 0.767 - not selected
-                val scaleValue = 0.767f + 0.233f * (1 - min(1f, position.absoluteValue))
+                // [0.767;1] 1 - selected; 0.7772 - not selected
+                val scaleValue = 0.7772f + 0.2228f * (1 - min(1f, position.absoluteValue))
                 page.scaleX = scaleValue
                 page.scaleY = scaleValue
                 // 3.4028235E38 - max translation value possible
                 page.translationZ = if (position == 0f) 3.4028235E38f else min(3.4028235E38f, 1 / position.absoluteValue)
-                page.translationX = -position * binding.vp2.height * 0.5136986f
+                page.translationX = -position * binding.vp2.height * 0.4f
+                page.findViewById<View>(R.id.icAdd).translationX = -position * binding.vp2.height * 0.2278f
             }
-            adapter = viewModel.adapterPopular
-            currentItem = Preferences.selectedAnimation.ordinal
+            adapter = viewModel.adapter
+            currentItem = 1
         }
         binding.buttonApply.setOnClickListener {
-            viewModel.onItemClick(viewModel.adapterPopular.getData()[binding.vp2.currentItem])
+            val animation = viewModel.adapter.getData()[binding.vp2.currentItem]
+            if (animation is Animation.Companion.NewAnimation)
+                askStoragePermissions { res ->
+                    if (res) pickImage {
+                        viewModel.addCustomAnimation(it.uri, this)
+                    }
+                }
+            else
+                startActivity(PreviewActivity.getIntent(this, animation))
         }
-        binding.settingsLayout.buttonBack.setOnClickListener {
-            animateMotionProgress(0f, 1f)
+        binding.buttonSettings.setOnClickListener {
+            startActivity(Intent(this, SettingsActivity::class.java))
         }
-        binding.settingsLayout.motionLayout.setTransitionListener(object : MotionLayout.TransitionListener {
-            override fun onTransitionStarted(motionLayout: MotionLayout?, startId: Int, endId: Int) {}
-            override fun onTransitionChange(motionLayout: MotionLayout?, startId: Int, endId: Int, progress: Float) {}
-            override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {
-                if (currentId == R.id.end) binding.settingsLayout.motionLayout.visibility = View.GONE
+    }
+
+    private var onImagePickerResult: ((ArrayList<Image>) -> Unit)? = null
+    private val imagePickerActivityLauncher = registerImagePicker {
+        if (it.isNotEmpty()) onImagePickerResult?.invoke(it)
+        onImagePickerResult = null
+    }
+
+    private var onRuntimePermissionResult: ((Boolean) -> Unit)? = null
+    private val runtimePermissionLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) {
+            onRuntimePermissionResult?.invoke(it)
+            onRuntimePermissionResult = null
+        }
+
+    private fun askRuntimePermission(permission: String, onResult: (Boolean) -> Unit) =
+        if (checkPermission(permission))
+            onResult(true)
+        else {
+            onRuntimePermissionResult = onResult
+            runtimePermissionLauncher.launch(permission)
+        }
+
+    private fun askMultipleRuntimePermissions(
+        permissions: List<String>,
+        lifecycleCoroutineScope: LifecycleCoroutineScope,
+        onResult: (Boolean) -> Unit
+    ) = lifecycleCoroutineScope.launch(Dispatchers.Main) {
+        val results = mutableListOf<Boolean>()
+        permissions.forEach { permission ->
+            val isGranted = checkPermission(permission) || suspendCoroutine { continuation ->
+                askRuntimePermission(permission) { continuation.resumeWith(Result.success(it)) }
             }
-            override fun onTransitionTrigger(motionLayout: MotionLayout?, triggerId: Int, positive: Boolean, progress: Float) {}
-        })
+            results.add(isGranted)
+        }
+        onResult(results.all { isGranted -> isGranted })
     }
 
-    private fun animateMotionProgress(start: Float, end: Float) = ValueAnimator.ofFloat(start, end).apply {
-        duration = 500
-        @Suppress("UsePropertyAccessSyntax") // it has to be like that
-        addUpdateListener { binding.settingsLayout.motionLayout.setProgress(it.animatedValue as Float) }
-        start()
-    }
+    private fun checkPermission(permission: String) =
+        App.instance.checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED
 
-    override fun onResume() {
-        super.onResume()
-        IronSource.onResume(this)
-        if (Settings.canDrawOverlays(this) && notSupportedBackgroundDevice()) {}
-//            AppHidingUtil.hideApp(this, "Launcher2", "Launcher")
-        else {}
-//            HidingBroadcast.startAlarm(this)
-    }
-
-    override fun onPause() {
-        super.onPause()
-        IronSource.onPause(this)
-    }
-
-    private fun notSupportedBackgroundDevice() = Build.MANUFACTURER.lowercase(Locale.ENGLISH) in listOf(
-        "xiaomi", "oppo", "vivo", "letv", "honor", "oneplus"
+    private fun askStoragePermissions(
+        onResult: (Boolean) -> Unit
+    ) = askMultipleRuntimePermissions(
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
+            listOf(Manifest.permission.READ_EXTERNAL_STORAGE)
+        else
+            listOf(
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+            ),
+        lifecycleScope,
+        onResult
     )
 
-    override fun onBackPressed() {
-        if (binding.settingsLayout.motionLayout.progress != 1f)
-            animateMotionProgress(binding.settingsLayout.motionLayout.progress, 1f)
-        else
-            super.onBackPressed()
+    private fun pickImage(onImage: (Image) -> Unit) {
+        onImagePickerResult = { onImage(it.first()) }
+        imagePickerActivityLauncher.launch(
+            ImagePickerConfig(
+                isFolderMode = false,
+                rootDirectory = RootDirectory.DCIM,
+                isMultipleMode = false,
+                isShowNumberIndicator = false,
+                maxSize = 1,
+            )
+        )
     }
 
 }

@@ -35,7 +35,7 @@ abstract class BaseActivity<TViewModel : BaseViewModel, TBinding : ViewDataBindi
 
     open fun initActivitySettings() {}
 
-    abstract fun provideViewModel(): TViewModel
+    open fun provideViewModel(): TViewModel? = null
 
     abstract fun setupUI()
 

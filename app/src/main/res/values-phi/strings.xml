@@ -34,5 +34,7 @@
     <string name="give_permissions_so_that_the_application_can_work_properly">Magbigay ng mga pahintulot upang ang application ay gumana nang maayos</string>
     <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_of_the_application">Payagan ang pagpapakita sa iba pang mga app. Ito ay kinakailangan para sa tamang trabaho ng aplikasyon</string>
     <string name="give_permission">Magbigay ng pahintulot</string>
+    <string name="enable_charging_animation">I-enable ang Charging Animation</string>
+    <string name="applied">Inilapat</string>
 
 </resources>

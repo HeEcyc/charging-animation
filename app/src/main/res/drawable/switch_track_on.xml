@@ -1,0 +1,6 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+    android:drawable="@mipmap/switch_track_on"
+    android:width="66dp"
+    android:height="33dp"/>
+</layer-list>
