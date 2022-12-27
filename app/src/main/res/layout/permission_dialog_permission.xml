@@ -2,10 +2,10 @@
 <layout>
 
     <data>
-        <import type="com.darkky.ca.ui.custom.ScalableCardView.ScaleType"/>
+        <import type="com.dec.ces.ui.custom.ScalableCardView.ScaleType"/>
     </data>
 
-    <com.darkky.ca.ui.custom.ScalableCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    <com.dec.ces.ui.custom.ScalableCardView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
@@ -114,6 +114,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.darkky.ca.ui.custom.ScalableCardView>
+    </com.dec.ces.ui.custom.ScalableCardView>
 
 </layout>

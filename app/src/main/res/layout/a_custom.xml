@@ -4,7 +4,7 @@
     <data>
         <variable
             name="blHolder"
-            type="com.darkky.ca.repository.background.display.BatteryLevelReceiver.BatteryLevelHolder" />
+            type="com.dec.ces.repository.background.display.BatteryLevelReceiver.BatteryLevelHolder" />
     </data>
 
     <androidx.appcompat.widget.AppCompatImageView

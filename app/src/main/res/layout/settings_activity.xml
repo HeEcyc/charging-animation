@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.darkky.ca.ui.settings.SettingsViewModel" />
+            type="com.dec.ces.ui.settings.SettingsViewModel" />
     </data>
 
     <ScrollView

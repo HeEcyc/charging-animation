@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.darkky.ca.ui.main.MainViewModel" />
+            type="com.dec.ces.ui.main.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
