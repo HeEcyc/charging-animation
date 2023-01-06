@@ -1,119 +1,127 @@
-<?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <import type="com.dec.ces.ui.custom.ScalableCardView.ScaleType"/>
     </data>
 
-    <com.dec.ces.ui.custom.ScalableCardView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintDimensionRatio="295:547"
-        app:layout_constraintWidth_percent="0.8194444"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        app:cardElevation="0dp"
-        app:cardBackgroundColor="@android:color/transparent"
-        scaleType="@{ScaleType.BY_WIDTH}"
-        scalableCornerRadius="@{0.0949f}">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#1D212D">
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="328:414"
+            app:layout_constraintWidth_percent="0.9111">
+
+            <com.dec.ces.ui.custom.ScalableCardView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="328:390"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@android:color/transparent"
+                scaleType="@{ScaleType.BY_WIDTH}"
+                scalableCornerRadius="@{0.03f}">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/buttonClose"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintWidth_percent="0.073"
+                        app:layout_constraintVertical_bias="0.0437"
+                        app:layout_constraintHorizontal_bias="0.947"
+                        android:src="@drawable/ic_close"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintDimensionRatio="326:66"
+                        app:layout_constraintWidth_percent="0.9939"
+                        app:layout_constraintVertical_bias="0.478"
+                        android:gravity="center"
+                        app:autoSizeTextType="uniform"
+                        app:autoSizeMaxTextSize="20sp"
+                        app:autoSizeMinTextSize="1sp"
+                        android:textColor="#000000"
+                        android:fontFamily="@font/roboto_700"
+                        android:text="@string/instruction_short"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintDimensionRatio="274:36"
+                        app:layout_constraintWidth_percent="0.835"
+                        app:layout_constraintVertical_bias="0.68079"
+                        android:gravity="center"
+                        app:autoSizeTextType="uniform"
+                        app:autoSizeMaxTextSize="16sp"
+                        app:autoSizeMinTextSize="1sp"
+                        android:textColor="#000000"
+                        android:fontFamily="@font/roboto_400"
+                        android:text="@string/if_your_device_does_not_have_this_permission_you_can_ignore_it"/>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/buttonMoreInfo"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintDimensionRatio="160:41"
+                        app:layout_constraintWidth_percent="0.4878"
+                        app:layout_constraintVertical_bias="0.8825"
+                        android:background="@drawable/button_bg_160x41">
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintDimensionRatio="160:18"
+                            android:gravity="center"
+                            app:autoSizeTextType="uniform"
+                            app:autoSizeMaxTextSize="16sp"
+                            app:autoSizeMinTextSize="1sp"
+                            android:textColor="#C0C3CC"
+                            android:fontFamily="@font/roboto_400"
+                            android:text="@string/more_information"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.dec.ces.ui.custom.ScalableCardView>
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="0dp"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintWidth_percent="0.5118644"
-                app:layout_constraintVertical_bias="0.10101"
+                app:layout_constraintDimensionRatio="328:153"
                 android:src="@drawable/img_instruction"/>
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/buttonClose"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintWidth_percent="0.09"
-                app:layout_constraintVertical_bias="0.0288"
-                app:layout_constraintHorizontal_bias="0.944"
-                android:src="@drawable/ic_close"/>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="239:140"
-                app:layout_constraintWidth_percent="0.81"
-                app:layout_constraintVertical_bias="0.567567567"
-                android:gravity="center"
-                app:autoSizeTextType="uniform"
-                app:autoSizeMaxTextSize="26sp"
-                app:autoSizeMinTextSize="1sp"
-                android:textColor="#FFFFFF"
-                android:fontFamily="@font/gilroy_400"
-                android:text="@string/instruction_short"/>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="239:36"
-                app:layout_constraintWidth_percent="0.81"
-                app:layout_constraintVertical_bias="0.765"
-                android:gravity="center"
-                app:autoSizeTextType="uniform"
-                app:autoSizeMaxTextSize="16sp"
-                app:autoSizeMinTextSize="1sp"
-                android:textColor="#FFFFFF"
-                android:fontFamily="@font/gilroy_400"
-                android:text="@string/if_your_device_does_not_have_this_permission_you_can_ignore_it"/>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/buttonMoreInfo"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="240:60"
-                app:layout_constraintWidth_percent="0.8"
-                app:layout_constraintVertical_bias="0.9"
-                android:background="@drawable/button_bg_240x60">
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintDimensionRatio="240:28"
-                    android:gravity="center"
-                    app:autoSizeTextType="uniform"
-                    app:autoSizeMaxTextSize="26sp"
-                    app:autoSizeMinTextSize="1sp"
-                    android:textColor="#0BBB5C"
-                    android:fontFamily="@font/gilroy_400"
-                    android:text="@string/more_information"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.dec.ces.ui.custom.ScalableCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

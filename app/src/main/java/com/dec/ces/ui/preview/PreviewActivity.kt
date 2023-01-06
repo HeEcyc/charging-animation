@@ -30,7 +30,11 @@ class PreviewActivity : BaseActivity<BaseViewModel, PreviewActivityBinding>() {
         binding.buttonBack.setOnClickListener { finish() }
         val animation = animation
         if (animation === null) return
-        binding.animationContainer.addView(animation.inflateAnimationView(this))
+        binding.layoutBig.setOnClickListener {}
+        binding.animationContainerSmall.addView(animation.inflateAnimationView(this))
+        binding.animationContainerBig.addView(animation.inflateAnimationView(this))
+        binding.buttonExpand.setOnClickListener { binding.layoutBig.visibility = View.VISIBLE }
+        binding.buttonCollapse.setOnClickListener { binding.layoutBig.visibility = View.GONE }
         binding.buttonApply.setOnClickListener {
             Preferences.selectedAnimation = animation
             binding.applied.visibility = View.VISIBLE

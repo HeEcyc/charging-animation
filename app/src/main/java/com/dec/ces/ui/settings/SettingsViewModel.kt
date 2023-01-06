@@ -6,6 +6,7 @@ import com.dec.ces.repository.preferences.Preferences
 
 class SettingsViewModel : BaseViewModel() {
 
+    val isAnimationOn = ObservableBoolean(Preferences.showWhenUnlocked)
     val areNotificationsOn = ObservableBoolean(Preferences.areNotificationsOn)
     val isFlashOn = ObservableBoolean(Preferences.isFlashOn)
     val isVibrationOn = ObservableBoolean(Preferences.isVibrationOn)
@@ -16,6 +17,12 @@ class SettingsViewModel : BaseViewModel() {
         observe(isFlashOn) { _, _ -> Preferences.isFlashOn = isFlashOn.get() }
         observe(isVibrationOn) { _, _ -> Preferences.isVibrationOn = isVibrationOn.get() }
         observe(isSoundOn) { _, _ -> Preferences.isSoundOn = isSoundOn.get() }
+    }
+
+    fun onTurnOnOffClick() {
+        val newValue = !Preferences.showWhenUnlocked
+        Preferences.showWhenUnlocked = newValue
+        isAnimationOn.set(newValue)
     }
 
     fun onNotificationsClick() {

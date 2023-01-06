@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <declare-styleable name="FancySwitch">
-        <attr name="isChecked" format="boolean"/>
+    <declare-styleable name="ScalableCardView">
+        <attr name="scale_by" format="enum">
+            <enum name="byWidth" value="0"/>
+            <enum name="byHeight" value="1"/>
+        </attr>
+        <attr name="scalable_corner_radius" format="float"/>
     </declare-styleable>
 
 </resources>

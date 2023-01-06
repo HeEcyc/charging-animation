@@ -8,11 +8,6 @@ sealed interface Animation : Serializable {
 
     companion object {
 
-        object NewAnimation : Animation {
-            override fun inflateAnimationView(context: Context) = View(context)
-            override fun getPrefString() = "new animation"
-        }
-
         fun valueOf(s: String?) : Animation {
             return PresetAnimation.values().firstOrNull { it.name == s }
                 ?: CustomAnimation.values().firstOrNull { it.filePath == s }

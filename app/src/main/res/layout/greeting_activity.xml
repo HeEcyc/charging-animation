@@ -5,7 +5,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#1D212D">
+        android:background="#FFFFFF">
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.38333"
+            android:background="#F6F7F9"/>
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -16,11 +22,16 @@
             app:layout_constraintDimensionRatio="360:777">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintDimensionRatio="360:538"
-                android:src="@mipmap/img_greeting"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="328:466"
+                app:layout_constraintWidth_percent="0.9111"
+                app:layout_constraintVertical_bias="0.463"
+                android:src="@drawable/img_greeting"/>
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/buttonStart"
@@ -31,9 +42,9 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintWidth_percent="0.1666666"
-                app:layout_constraintHorizontal_bias="0.95"
-                app:layout_constraintVertical_bias="0.8884"
+                app:layout_constraintWidth_percent="0.194444"
+                app:layout_constraintHorizontal_bias="0.117"
+                app:layout_constraintVertical_bias="0.915"
                 android:src="@drawable/button_start"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
