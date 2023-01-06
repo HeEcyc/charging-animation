@@ -36,5 +36,7 @@
     <string name="give_permission">Dați permisiunea</string>
     <string name="enable_charging_animation">Activați animația de încărcare</string>
     <string name="applied">Aplicat</string>
+    <string name="collection">Colectie</string>
+    <string name="cancel">Anulare</string>
 
 </resources>

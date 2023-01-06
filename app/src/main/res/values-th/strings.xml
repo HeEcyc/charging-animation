@@ -36,5 +36,7 @@
     <string name="give_permission">อนุญาต</string>
     <string name="enable_charging_animation">เปิดใช้งานการชาร์จแอนิเมชั่น</string>
     <string name="applied">สมัครแล้ว</string>
+    <string name="collection">ของสะสม</string>
+    <string name="cancel">ยกเลิก</string>
 
 </resources>

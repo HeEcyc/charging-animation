@@ -36,5 +36,7 @@
     <string name="give_permission">izin ver</string>
     <string name="enable_charging_animation">Şarj Animasyonunu Etkinleştir</string>
     <string name="applied">Uygulamalı</string>
+    <string name="collection">Toplamak</string>
+    <string name="cancel">İptal</string>
 
 </resources>

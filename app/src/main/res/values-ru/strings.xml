@@ -36,5 +36,7 @@
     <string name="give_permission">Дайте разрешение</string>
     <string name="enable_charging_animation">Включить анимацию зарядки</string>
     <string name="applied">Готово</string>
+    <string name="collection">Коллекция</string>
+    <string name="cancel">Отмена</string>
 
 </resources>

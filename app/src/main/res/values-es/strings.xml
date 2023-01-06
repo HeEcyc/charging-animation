@@ -36,4 +36,6 @@
     <string name="give_permission">Dar permiso</string>
     <string name="enable_charging_animation">Habilitar animación de carga</string>
     <string name="applied">Aplicado</string>
+    <string name="collection">Recopilación</string>
+    <string name="cancel">Cancelar</string>
 </resources>

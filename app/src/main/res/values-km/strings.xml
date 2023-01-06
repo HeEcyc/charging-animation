@@ -36,4 +36,6 @@
     <string name="give_permission">ផ្តល់ការអនុញ្ញាត</string>
     <string name="enable_charging_animation">បើកដំណើរការចលនាសាក</string>
     <string name="applied">បានអនុវត្ត</string>
+    <string name="collection">ការប្រមូល</string>
+    <string name="cancel">បោះបង់</string>
 </resources>

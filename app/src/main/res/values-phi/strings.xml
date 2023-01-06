@@ -36,5 +36,7 @@
     <string name="give_permission">Magbigay ng pahintulot</string>
     <string name="enable_charging_animation">I-enable ang Charging Animation</string>
     <string name="applied">Inilapat</string>
+    <string name="collection">Koleksyon</string>
+    <string name="cancel">Kanselahin</string>
 
 </resources>

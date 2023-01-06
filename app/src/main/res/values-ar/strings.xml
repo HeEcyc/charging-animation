@@ -36,4 +36,6 @@
     <string name="give_permission">إعطاء إذن</string>
     <string name="enable_charging_animation">تفعيل الرسوم المتحركة للشحن</string>
     <string name="applied">مُطبَّق</string>
+    <string name="collection">مجموعة</string>
+    <string name="cancel">يلغي</string>
 </resources>

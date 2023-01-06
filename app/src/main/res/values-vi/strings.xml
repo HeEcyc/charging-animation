@@ -36,5 +36,7 @@
     <string name="give_permission">Cho phép</string>
     <string name="enable_charging_animation">Bật hoạt ảnh tính phí</string>
     <string name="applied">Đã áp dụng</string>
+    <string name="collection">Bộ sưu tập</string>
+    <string name="cancel">Hủy bỏ</string>
 
 </resources>
