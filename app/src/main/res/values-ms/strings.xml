@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="charging_animation">Animasi Mengecas</string>
-    <string name="allow">benarkan</string>
-    <string name="setting_instructions">Menetapkan arahan</string>
     <string name="if_your_device_does_not_have_this_permission_you_can_ignore_it">Jika peranti anda tidak mempunyai kebenaran ini, anda boleh mengabaikannya</string>
     <string name="more_information">Maklumat lanjut</string>
     <string name="lock_screen_display_instructions">Arahan paparan skrin kunci</string>
@@ -10,30 +8,15 @@
     <string name="flash">Kilat</string>
     <string name="vibration">Getaran</string>
     <string name="sound">Bunyi</string>
-    <string name="share">Kongsi</string>
-    <string name="rate_us">Nilaikan kami</string>
-    <string name="privacy_policy">Dasar Privasi</string>
     <string name="working_in_background">Bekerja di latar belakang</string>
     <string name="your_device_is_fully_charged">Peranti anda dicas sepenuhnya</string>
-    <string name="show_on_unlocked_screen">Tunjukkan pada skrin tidak berkunci</string>
 
     <string name="instruction_short">Dalam Maklumat Apl > Kebenaran > Benarkan Tunjukkan pada skrin Kunci/Pemberitahuan skrin kunci</string>
     <string name="instruction_long">Hidupkan paparan skrin kunci, supaya peranti boleh memaparkan animasi pengecasan seperti biasa apabila skrin dikunci, tetapi laluan tetapan pelbagai peranti berbeza, sila rujuk tetapan berikut\n\nLaluan tetapan Meizu: Tetapan -> Apl -> Animasi Mengecas -> Kebenaran -> Tunjukkan pada skrin Kunci/Pemberitahuan skrin kunci\n\nLaluan tetapan Xiaomi: tetapan -> Apl -> kebenaran -> Kebenaran -> Animasi Pengecasan -> Tunjukkan pada skrin Kunci\n\nLaluan tetapan OPPO : Tetapan -> Apl -> Animasi Pengecasan -> Pengurusan Pemberitahuan -> Paparan pada skrin kunci\n\nLaluan tetapan VIVO: i Pengurus -> Pengurusan Perisian -> Pengurusan Kebenaran -> Paparan Skrin Kunci -> Animasi Pengecasan -> Semak ke buka</string>
-    <string name="apply">Mohon</string>
     <string name="settings">tetapan</string>
-    <string name="popular">Popular</string>
-    <string name="other">Lain-lain</string>
-    <string name="get_permissions">Dapatkan kebenaran</string>
-    <string name="allow_display_over_other_apps">Benarkan paparan di atas apl lain</string>
-    <string name="not_now">Bukan sekarang</string>
     <string name="ok">okey</string>
-    <string name="main">Utama</string>
-    <string name="social">sosial</string>
-    <string name="interesting_fact">Fakta menarik</string>
-    <string name="you_can_swipe_to_see_more_pictures">Anda boleh leret untuk melihat lebih banyak gambar</string>
     <string name="give_permissions_so_that_the_application_can_work_properly">Beri kebenaran supaya aplikasi dapat berfungsi dengan baik</string>
     <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_of_the_application">Benarkan dipaparkan di atas apl lain. Ini adalah perlu untuk kerja aplikasi yang betul</string>
-    <string name="give_permission">Memberi keizinan</string>
     <string name="enable_charging_animation">Dayakan Animasi Pengecasan</string>
     <string name="applied">Digunakan</string>
     <string name="collection">famoriam-bola</string>

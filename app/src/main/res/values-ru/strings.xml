@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="charging_animation">Анимация Зарядки</string>
-    <string name="allow">Дайте разрешение</string>
-    <string name="setting_instructions">Инструкции по настройке</string>
     <string name="if_your_device_does_not_have_this_permission_you_can_ignore_it">Если важе устройство не поддерживает эти разрешения, игнорируйте их</string>
     <string name="more_information">Подробнее</string>
     <string name="lock_screen_display_instructions">Инструкции для отображения на экране блокировки</string>
@@ -10,30 +8,15 @@
     <string name="flash">Вспышка</string>
     <string name="vibration">Вибрация</string>
     <string name="sound">Звук</string>
-    <string name="share">Поделиться</string>
-    <string name="rate_us">Оцените нас</string>
-    <string name="privacy_policy">Политика конфиденциальности</string>
     <string name="working_in_background">Работа в фоновом режиме</string>
     <string name="your_device_is_fully_charged">Ваше устройство полностью заряжено</string>
-    <string name="show_on_unlocked_screen">Показывать на экране блокировки</string>
 
     <string name="instruction_short">Информация о приложении > Разрешения > Разрешить отображение на экране блокировки/уведомления на экране блокировки</string>
     <string name="instruction_long">Включите отображение на экране блокировки, чтобы устройство могло нормально отображать анимацию зарядки, когда экран заблокирован. Но путь до настроек различается на разных устройствах. Пожалуйста, обратитесь к следующим настройкам\n\nMeizu: Настройки -> Приложения -> Charging Animation -> Разрешения -> Показывать на экране блокировки/Уведомления на экране блокировки\n\nXiaomi: Настройки -> Приложения -> разрешения -> Разрешения -> Charging Animation -> Показывать на экране блокировки\n\nOPPO: Настройки -> Приложения -> Charging Animation -> Управление уведомлениями -> Отображать на экране блокировки\n\nVIVO : i Manager -> Управление программным обеспечением -> Управление разрешениями -> Отображение на экране блокировки -> Charging Animation -> Нажмите, чтобы открыть</string>
-    <string name="apply">Применить</string>
     <string name="settings">Настройки</string>
-    <string name="popular">Популярные</string>
-    <string name="other">Другие</string>
-    <string name="get_permissions">Дайте разрешения</string>
-    <string name="allow_display_over_other_apps">Разрешите отображение поверх других приложений</string>
-    <string name="not_now">Не Сейчас</string>
     <string name="ok">ОК</string>
-    <string name="main">Главное</string>
-    <string name="social">Социальные</string>
-    <string name="interesting_fact">Интресный факт</string>
-    <string name="you_can_swipe_to_see_more_pictures">Вы можете свайпать, чтобы увидеть больше</string>
     <string name="give_permissions_so_that_the_application_can_work_properly">Дайте разрешения, чтобы приложение могло работать правильно</string>
     <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_of_the_application">Разрешить отображение поверх других приложений. Это необходимо для корректной работы приложения</string>
-    <string name="give_permission">Дайте разрешение</string>
     <string name="enable_charging_animation">Включить анимацию зарядки</string>
     <string name="applied">Готово</string>
     <string name="collection">Коллекция</string>

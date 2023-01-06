@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="charging_animation">Şarj Animasyonu</string>
-    <string name="allow">İzin vermek</string>
-    <string name="setting_instructions">Ayar talimatları</string>
     <string name="if_your_device_does_not_have_this_permission_you_can_ignore_it">Cihazınız bu izne sahip değilse, yok sayabilirsiniz.</string>
     <string name="more_information">Daha fazla bilgi</string>
     <string name="lock_screen_display_instructions">Kilit ekranı talimatları</string>
@@ -10,30 +8,15 @@
     <string name="flash">flaş</string>
     <string name="vibration">Titreşim</string>
     <string name="sound">Ses</string>
-    <string name="share">Paylaş</string>
-    <string name="rate_us">Bizi değerlendirin</string>
-    <string name="privacy_policy">Gizlilik Politikası</string>
     <string name="working_in_background">Arka planda çalışmak</string>
     <string name="your_device_is_fully_charged">Cihazınız tamamen şarj oldu</string>
-    <string name="show_on_unlocked_screen">Kilidi açık ekranda göster</string>
 
     <string name="instruction_short">Uygulama Bilgisi > İzinler > Kilitli Ekranda Gösterime İzin Ver/Kilit ekranı bildiriminde</string>
     <string name="instruction_long">Ekran kilitliyken cihazın şarj animasyonunu normal şekilde gösterebilmesi için kilit ekranı görüntüsünü açın, ancak çeşitli cihazların ayar yolları farklıdır, lütfen aşağıdaki ayarlara bakın\n\nMeizu ayar yolu: Ayarlar -> Uygulamalar -> Şarj Etme Animasyonu -> İzinler -> Kilit ekranında göster/Kilit ekranı bildiriminde göster\n\nXiaomi ayar yolu: ayar -> Uygulamalar -> izinler -> İzinler -> Şarj Etme Animasyonu -> Kilit ekranında göster\n\nOPPO ayar yolu : Ayarlar -> Uygulamalar -> Şarj Etme Animasyonu -> Bildirim Yönetimi -> Kilit ekranında göster\n\nVIVO ayar yolu: i Yönetici -> Yazılım Yönetimi -> İzin Yönetimi -> Ekranı Kilitle -> Şarj Etme Animasyonu -> Kontrol Et açık</string>
-    <string name="apply">Uygulamak</string>
     <string name="settings">Ayarlar</string>
-    <string name="popular">Popüler</string>
-    <string name="other">Diğer</string>
-    <string name="get_permissions">İzinleri alın</string>
-    <string name="allow_display_over_other_apps">Diğer uygulamalar üzerinde görüntülemeye izin ver</string>
-    <string name="not_now">Şimdi değil</string>
     <string name="ok">Tamam</string>
-    <string name="main">Ana</string>
-    <string name="social">Sosyal</string>
-    <string name="interesting_fact">İlginç gerçek</string>
-    <string name="you_can_swipe_to_see_more_pictures">Daha fazla resim görmek için kaydırabilirsiniz</string>
     <string name="give_permissions_so_that_the_application_can_work_properly">Uygulamanın düzgün çalışabilmesi için izinler verin</string>
     <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_of_the_application">Diğer uygulamalar üzerinde gösterilmesine izin verin. Bu, uygulamanın doğru çalışması için gereklidir</string>
-    <string name="give_permission">izin ver</string>
     <string name="enable_charging_animation">Şarj Animasyonunu Etkinleştir</string>
     <string name="applied">Uygulamalı</string>
     <string name="collection">Toplamak</string>
