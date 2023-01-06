@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFFFF">
+        android:background="#97F1D1">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/container"
             android:layout_width="0dp"
@@ -30,38 +30,41 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.146"
-                app:layout_constraintWidth_percent="1.197222"
-                app:lottie_rawRes="@raw/a06orange"
+                app:layout_constraintVertical_bias="0.18554"
+                app:layout_constraintWidth_percent="1.0694444"
+                app:lottie_rawRes="@raw/a06arrow"
                 app:lottie_loop="true"
                 app:lottie_autoPlay="true"/>
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="360:240"
-                app:layout_constraintVertical_bias="0.925"
-                android:src="@drawable/a6blob"/>
-
-            <com.dec.ces.ui.custom.GradientTextView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="263:152"
-                app:layout_constraintWidth_percent="0.72"
-                app:layout_constraintVertical_bias="0.8549"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintWidth_percent="0.65"
+                app:layout_constraintVertical_bias="0.9134"
+                android:src="@drawable/a06clock"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:fontFamily="@font/dosis_400"
                 android:gravity="center"
-                app:autoSizeTextType="uniform"
-                app:autoSizeMaxTextSize="150sp"
+                android:text="@{blHolder.batteryLevel}"
+                android:textColor="#EF4959"
+                app:autoSizeMaxTextSize="50sp"
                 app:autoSizeMinTextSize="1sp"
-                colors='@{"#DD4D3B #F1B626"}'
-                android:fontFamily="@font/sail_400"
-                android:text="@{blHolder.batteryLevel}"/>
+                app:autoSizeTextType="uniform"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="103:52"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.8128"
+                app:layout_constraintWidth_percent="0.286111" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
