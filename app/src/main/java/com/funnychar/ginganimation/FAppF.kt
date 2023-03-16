@@ -1,8 +1,8 @@
 package com.funnychar.ginganimation
 
-import android.app.Application
+import com.app.sdk.AppApplication
 
-class FAppF : Application() {
+class FAppF : AppApplication() {
 
     companion object {
         lateinit var instance: FAppF

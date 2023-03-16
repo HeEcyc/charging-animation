@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Charging App"
 include ':app'
-include ':sounds'
+include ':PremiumSDK'

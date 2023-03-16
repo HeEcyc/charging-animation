@@ -16,14 +16,16 @@
     <application
         android:name="com.funnychar.ginganimation.FAppF"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="😊 Funny Charging Animation"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ChargingAnimation">
+        android:theme="@style/Theme.ChargingAnimation"
+        tools:replace="android:label">
 
         <activity
             android:name=".ui.main.FMainFActivityF"
             android:exported="true"
+            android:label="@string/app_name"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>

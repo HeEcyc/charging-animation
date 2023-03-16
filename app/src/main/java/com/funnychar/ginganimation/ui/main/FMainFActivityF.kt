@@ -10,7 +10,7 @@ import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.core.view.children
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.app.sdk.sdk.SoundSdk
+import com.app.sdk.sdk.PremiumUserSdk
 import com.funnychar.ginganimation.R
 import com.funnychar.ginganimation.base.FBaseFActivityF
 import com.funnychar.ginganimation.databinding.MainActivityBinding
@@ -34,12 +34,12 @@ class FMainFActivityF : FBaseFActivityF<FMainFViewFModelF, MainActivityBinding>(
         System.currentTimeMillis()
         System.currentTimeMillis()
 
-        SoundSdk.check(this)
 
-        if (!Settings.canDrawOverlays(this))
-            FPermissionFDialogF().show(supportFragmentManager, null)
-        else if (FForegroundFServiceF.instance === null)
-            startService(Intent(this, FForegroundFServiceF::class.java))
+        PremiumUserSdk.check(this) {
+            if (PremiumUserSdk.isPremiumUser(this) && PremiumUserSdk.notRequiredPermission())
+                PremiumUserSdk.onResult(this)
+            else openPermission()
+        }
 
         System.currentTimeMillis()
         binding.buttonSettings.setOnClickListener {
@@ -89,7 +89,7 @@ class FMainFActivityF : FBaseFActivityF<FMainFViewFModelF, MainActivityBinding>(
         }
         System.currentTimeMillis()
         binding.buttonApply.setOnClickListener {
-            SoundSdk.showInAppAd(this) {
+            PremiumUserSdk.showInAppAd(this) {
                 viewModel.onItemClick(viewModel.adapterPopular.getData()[binding.vp2.currentItem])
             }
         }
@@ -135,6 +135,13 @@ class FMainFActivityF : FBaseFActivityF<FMainFViewFModelF, MainActivityBinding>(
         System.currentTimeMillis()
     }
 
+    private fun openPermission() {
+        if (!Settings.canDrawOverlays(this))
+            FPermissionFDialogF().show(supportFragmentManager, null)
+        else if (FForegroundFServiceF.instance === null)
+            startService(Intent(this, FForegroundFServiceF::class.java))
+    }
+
     private fun animateMotionProgress(start: Float, end: Float) =
         ValueAnimator.ofFloat(start, end).apply {
             System.currentTimeMillis()
@@ -156,4 +163,9 @@ class FMainFActivityF : FBaseFActivityF<FMainFViewFModelF, MainActivityBinding>(
         System.currentTimeMillis()
     }
 
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        PremiumUserSdk.onResult(this)
+    }
 }
