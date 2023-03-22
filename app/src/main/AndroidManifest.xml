@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.dec.ces">
+    package="com.o.possy">
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.ACTION_MANAGE_OVERLAY_PERMISSION" />
@@ -20,7 +20,7 @@
         tools:ignore="ScopedStorage" />
 
     <application
-        android:name="com.dec.ces.App"
+        android:name="com.o.possy.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -29,7 +29,7 @@
         android:theme="@style/Theme.ChargingAnimation">
 
         <activity
-            android:name="com.dec.ces.ui.main.MainActivity"
+            android:name="com.o.possy.ui.main.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
@@ -41,7 +41,7 @@
         </activity>
 
         <activity
-            android:name="com.dec.ces.ui.animation.ChargingAnimationActivity"
+            android:name="com.o.possy.ui.animation.ChargingAnimationActivity"
             android:exported="true"
             android:noHistory="true"
             android:screenOrientation="portrait"
@@ -49,27 +49,27 @@
             tools:ignore="LockedOrientationActivity"/>
 
         <activity
-            android:name="com.dec.ces.ui.greeting.GreetingActivity"
+            android:name="com.o.possy.ui.greeting.GreetingActivity"
             android:exported="true"
             android:noHistory="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity"/>
 
         <activity
-            android:name="com.dec.ces.ui.preview.PreviewActivity"
+            android:name="com.o.possy.ui.preview.PreviewActivity"
             android:exported="true"
             android:noHistory="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity"/>
 
         <activity
-            android:name="com.dec.ces.ui.settings.SettingsActivity"
+            android:name="com.o.possy.ui.settings.SettingsActivity"
             android:exported="true"
             android:noHistory="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity"/>
 
-        <service android:name="com.dec.ces.repository.background.display.ForegroundService"/>
+        <service android:name="com.o.possy.repository.background.display.ForegroundService"/>
 
     </application>
 

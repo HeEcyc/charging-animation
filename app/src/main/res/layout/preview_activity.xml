@@ -68,7 +68,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintDimensionRatio="360:569">
-                    <com.dec.ces.ui.custom.ScalableCardView
+                    <com.o.possy.ui.custom.ScalableCardView
                         android:id="@+id/animationContainerSmall"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
