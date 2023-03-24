@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#DCDBDB"
+        android:background="#000000"
         android:clipChildren="false">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -29,15 +29,15 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintDimensionRatio="338:245"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_percent="1.4444"
-                app:layout_constraintVertical_bias="0.15357"
+                app:layout_constraintWidth_percent="0.9388888888"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
-                app:lottie_rawRes="@raw/a05bomb" />
+                app:lottie_rawRes="@raw/a05figures"
+                app:lottie_repeatMode="reverse"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="0dp"
@@ -46,15 +46,15 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="142:52"
-                app:layout_constraintWidth_percent="0.394444"
-                app:layout_constraintVertical_bias="0.83"
+                app:layout_constraintDimensionRatio="163:42"
+                app:layout_constraintWidth_percent="0.4527777777"
+                app:layout_constraintVertical_bias="0.853562"
                 android:gravity="center"
                 app:autoSizeTextType="uniform"
-                app:autoSizeMaxTextSize="50sp"
+                app:autoSizeMaxTextSize="40sp"
                 app:autoSizeMinTextSize="1sp"
-                android:textColor="#483519"
-                android:fontFamily="@font/rubik_spray_paint_400"
+                android:textColor="#EDEBE1"
+                android:fontFamily="@font/seymour_one_400"
                 android:text="@{blHolder.batteryLevel}"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

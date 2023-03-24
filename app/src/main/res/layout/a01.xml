@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#EDF8FF"
+        android:background="#4D0C42"
         android:clipChildren="false">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
@@ -30,30 +30,11 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintWidth_percent="1.17858333"
-                app:layout_constraintVertical_bias="0.221867"
-                app:lottie_rawRes="@raw/a01bear"
+                app:layout_constraintDimensionRatio="360:404"
+                app:layout_constraintWidth_percent="1"
+                app:lottie_rawRes="@raw/a01heart"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"/>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="174:52"
-                app:layout_constraintWidth_percent="0.48333"
-                app:layout_constraintVertical_bias="0.8168"
-                android:gravity="center"
-                app:autoSizeTextType="uniform"
-                app:autoSizeMaxTextSize="50sp"
-                app:autoSizeMinTextSize="1sp"
-                android:textColor="#DC2527"
-                android:fontFamily="@font/unbounded_400"
-                android:text="@{blHolder.batteryLevel}"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
