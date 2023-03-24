@@ -17,4 +17,13 @@
     <string name="give_permissions_so_that_the_application_can_work_properly">ផ្តល់ការអនុញ្ញាតដើម្បីឱ្យកម្មវិធីអាចដំណើរការបានត្រឹមត្រូវ។</string>
     <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_of_the_application">អនុញ្ញាតឱ្យបង្ហាញលើកម្មវិធីផ្សេងទៀត។ នេះគឺចាំបាច់សម្រាប់ការងារត្រឹមត្រូវនៃកម្មវិធី</string>
     <string name="enable_charging_animation">បើកដំណើរការចលនាសាក</string>
+    <string name="welcome">សូមស្វាគមន៍!</string>
+    <string name="this_app_is_the_simplest_way_to_transform_your_charge_screen_into_a_fun_animation">កម្មវិធីនេះគឺជាវិធីសាមញ្ញបំផុតក្នុងការបំប្លែងអេក្រង់សាករបស់អ្នកទៅជាចលនាសប្បាយ</string>
+    <string name="start_now">ចាប់ផ្តើមឥឡូវនេះ</string>
+    <string name="hello">សួស្តី!</string>
+    <string name="let_s_look_for_a_new_charging_animations">តោះរកមើលចលនាសាកថ្មថ្មី។</string>
+    <string name="animations">ចលនា</string>
+    <string name="preview">មើលជាមុន</string>
+    <string name="apply">អនុវត្ត</string>
+    <string name="allow">អនុញ្ញាត</string>
 </resources>

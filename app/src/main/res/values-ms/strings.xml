@@ -17,4 +17,13 @@
     <string name="give_permissions_so_that_the_application_can_work_properly">Beri kebenaran supaya aplikasi dapat berfungsi dengan baik</string>
     <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_of_the_application">Benarkan dipaparkan di atas apl lain. Ini adalah perlu untuk kerja aplikasi yang betul</string>
     <string name="enable_charging_animation">Dayakan Animasi Pengecasan</string>
+    <string name="welcome">Selamat datang!</string>
+    <string name="this_app_is_the_simplest_way_to_transform_your_charge_screen_into_a_fun_animation">Aplikasi ini ialah cara paling mudah untuk mengubah skrin caj anda menjadi animasi yang menyeronokkan</string>
+    <string name="start_now">Mula sekarang</string>
+    <string name="hello">helo!</string>
+    <string name="let_s_look_for_a_new_charging_animations">Mari Cari Animasi Pengecasan Baharu</string>
+    <string name="animations">Animasi</string>
+    <string name="preview">Pratonton</string>
+    <string name="apply">Mohon</string>
+    <string name="allow">benarkan</string>
 </resources>

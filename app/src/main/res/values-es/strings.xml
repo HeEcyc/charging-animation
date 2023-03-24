@@ -17,4 +17,13 @@
     <string name="give_permissions_so_that_the_application_can_work_properly">Dar permisos para que la aplicación pueda funcionar correctamente</string>
     <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_of_the_application">Permitir que se muestre sobre otras aplicaciones. Esto es necesario para el correcto funcionamiento de la aplicación.</string>
     <string name="enable_charging_animation">Habilitar animación de carga</string>
+    <string name="welcome">¡Bienvenido!</string>
+    <string name="this_app_is_the_simplest_way_to_transform_your_charge_screen_into_a_fun_animation">Esta aplicación es la forma más sencilla de transformar tu pantalla de carga en una animación divertida.</string>
+    <string name="start_now">Empezar ahora</string>
+    <string name="hello">¡Hola!</string>
+    <string name="let_s_look_for_a_new_charging_animations">Busquemos nuevas animaciones de carga</string>
+    <string name="animations">animaciones</string>
+    <string name="preview">Avance</string>
+    <string name="apply">Aplicar</string>
+    <string name="allow">Permitir</string>
 </resources>

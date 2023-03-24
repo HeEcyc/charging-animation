@@ -17,4 +17,13 @@
     <string name="give_permissions_so_that_the_application_can_work_properly">Magbigay ng mga pahintulot upang ang application ay gumana nang maayos</string>
     <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_of_the_application">Payagan ang pagpapakita sa iba pang mga app. Ito ay kinakailangan para sa tamang trabaho ng aplikasyon</string>
     <string name="enable_charging_animation">I-enable ang Charging Animation</string>
+    <string name="welcome">Maligayang pagdating!</string>
+    <string name="this_app_is_the_simplest_way_to_transform_your_charge_screen_into_a_fun_animation">Ang app na ito ay ang pinakasimpleng paraan upang gawing masayang animation ang iyong screen ng pagsingil</string>
+    <string name="start_now">Magsimula na</string>
+    <string name="hello">Kamusta!</string>
+    <string name="let_s_look_for_a_new_charging_animations">Maghanap Tayo ng Mga Bagong Charging Animation</string>
+    <string name="animations">Mga animation</string>
+    <string name="preview">Silipin</string>
+    <string name="apply">Mag-apply</string>
+    <string name="allow">Payagan</string>
 </resources>

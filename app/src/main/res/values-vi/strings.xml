@@ -17,4 +17,13 @@
     <string name="give_permissions_so_that_the_application_can_work_properly">Cấp quyền để ứng dụng có thể hoạt động bình thường</string>
     <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_of_the_application">Cho phép hiển thị trên các ứng dụng khác. Điều này là cần thiết cho công việc chính xác của ứng dụng</string>
     <string name="enable_charging_animation">Bật hoạt ảnh tính phí</string>
+    <string name="welcome">Chào mừng!</string>
+    <string name="this_app_is_the_simplest_way_to_transform_your_charge_screen_into_a_fun_animation">Ứng dụng này là cách đơn giản nhất để biến màn hình sạc của bạn thành một hình ảnh động vui nhộn</string>
+    <string name="start_now">Bắt đầu bây giờ</string>
+    <string name="hello">Xin chào!</string>
+    <string name="let_s_look_for_a_new_charging_animations">Hãy tìm hoạt ảnh sạc mới</string>
+    <string name="animations">Ảnh động</string>
+    <string name="preview">Xem trước</string>
+    <string name="apply">Áp dụng</string>
+    <string name="allow">Cho phép</string>
 </resources>

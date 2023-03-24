@@ -17,4 +17,13 @@
     <string name="give_permissions_so_that_the_application_can_work_properly">Uygulamanın düzgün çalışabilmesi için izinler verin</string>
     <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_of_the_application">Diğer uygulamalar üzerinde gösterilmesine izin verin. Bu, uygulamanın doğru çalışması için gereklidir</string>
     <string name="enable_charging_animation">Şarj Animasyonunu Etkinleştir</string>
+    <string name="welcome">Hoş geldin!</string>
+    <string name="this_app_is_the_simplest_way_to_transform_your_charge_screen_into_a_fun_animation">Bu uygulama, şarj ekranınızı eğlenceli bir animasyona dönüştürmenin en basit yoludur.</string>
+    <string name="start_now">Şimdi başla</string>
+    <string name="hello">Merhaba!</string>
+    <string name="let_s_look_for_a_new_charging_animations">Yeni Şarj Animasyonları Arayalım</string>
+    <string name="animations">animasyonlar</string>
+    <string name="preview">Ön izleme</string>
+    <string name="apply">Uygula</string>
+    <string name="allow">İzin vermek</string>
 </resources>

@@ -17,4 +17,13 @@
     <string name="give_permissions_so_that_the_application_can_work_properly">Oferiți permisiuni pentru ca aplicația să funcționeze corect</string>
     <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_of_the_application">Permite afișarea peste alte aplicații. Acest lucru este necesar pentru funcționarea corectă a aplicației</string>
     <string name="enable_charging_animation">Activați animația de încărcare</string>
+    <string name="welcome">Bine ati venit!</string>
+    <string name="this_app_is_the_simplest_way_to_transform_your_charge_screen_into_a_fun_animation">Această aplicație este cea mai simplă modalitate de a vă transforma ecranul de încărcare într-o animație distractivă</string>
+    <string name="start_now">Începe acum</string>
+    <string name="hello">Buna ziua!</string>
+    <string name="let_s_look_for_a_new_charging_animations">Să căutăm noi animații de încărcare</string>
+    <string name="animations">Animații</string>
+    <string name="preview">previzualizare</string>
+    <string name="apply">aplica</string>
+    <string name="allow">Permite</string>
 </resources>
