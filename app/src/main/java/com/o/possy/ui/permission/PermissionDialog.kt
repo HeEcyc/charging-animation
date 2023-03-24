@@ -24,7 +24,6 @@ class PermissionDialog : BaseDialog<PermissionDialogBinding>(R.layout.permission
             binding.layoutInstruction.root.visibility = View.GONE
             binding.layoutInfo.root.visibility = View.VISIBLE
         }
-        binding.layoutPermission.buttonCancel.setOnClickListener { dismiss() }
         binding.layoutPermission.buttonClose.setOnClickListener { dismiss() }
         binding.layoutInstruction.buttonClose.setOnClickListener { dismiss() }
         binding.layoutInfo.buttonClose.setOnClickListener { dismiss() }

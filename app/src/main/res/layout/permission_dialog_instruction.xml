@@ -9,118 +9,123 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.o.possy.ui.custom.ScalableCardView
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintDimensionRatio="328:414"
-            app:layout_constraintWidth_percent="0.9111">
-
-            <com.o.possy.ui.custom.ScalableCardView
+            app:layout_constraintDimensionRatio="328:506"
+            app:layout_constraintWidth_percent="0.9111"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            scaleType="@{ScaleType.BY_WIDTH}"
+            scalableCornerRadius="@{0.03f}">
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="328:390"
-                app:cardElevation="0dp"
-                app:cardBackgroundColor="@android:color/transparent"
-                scaleType="@{ScaleType.BY_WIDTH}"
-                scalableCornerRadius="@{0.03f}">
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/white">
+                android:layout_height="match_parent"
+                android:background="#F1F5FE">
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/buttonClose"
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintDimensionRatio="1:1"
-                        app:layout_constraintWidth_percent="0.073"
-                        app:layout_constraintVertical_bias="0.0437"
-                        app:layout_constraintHorizontal_bias="0.947"
-                        android:src="@drawable/ic_close"/>
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/buttonClose"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintWidth_percent="0.073"
+                    app:layout_constraintVertical_bias="0.033"
+                    app:layout_constraintHorizontal_bias="0.947"
+                    android:src="@drawable/ic_close"/>
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintDimensionRatio="326:66"
-                        app:layout_constraintWidth_percent="0.9939"
-                        app:layout_constraintVertical_bias="0.478"
-                        android:gravity="center"
-                        app:autoSizeTextType="uniform"
-                        app:autoSizeMaxTextSize="20sp"
-                        app:autoSizeMinTextSize="1sp"
-                        android:textColor="#000000"
-                        android:fontFamily="@font/roboto_700"
-                        android:text="@string/instruction_short"/>
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintWidth_percent="0.777"
+                    app:layout_constraintVertical_bias="0.05577689"
+                    android:src="@mipmap/img_instructions"/>
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintDimensionRatio="274:36"
-                        app:layout_constraintWidth_percent="0.835"
-                        app:layout_constraintVertical_bias="0.68079"
-                        android:gravity="center"
-                        app:autoSizeTextType="uniform"
-                        app:autoSizeMaxTextSize="16sp"
-                        app:autoSizeMinTextSize="1sp"
-                        android:textColor="#000000"
-                        android:fontFamily="@font/roboto_400"
-                        android:text="@string/if_your_device_does_not_have_this_permission_you_can_ignore_it"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintDimensionRatio="290:60"
+                    app:layout_constraintWidth_percent="0.844"
+                    app:layout_constraintVertical_bias="0.573991"
+                    android:gravity="center"
+                    app:autoSizeTextType="uniform"
+                    app:autoSizeMaxTextSize="18sp"
+                    app:autoSizeMinTextSize="1sp"
+                    android:textColor="#110875"
+                    android:fontFamily="@font/roboto_700"
+                    android:text="@string/instruction_short"/>
 
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintDimensionRatio="290:32"
+                    app:layout_constraintWidth_percent="0.844"
+                    app:layout_constraintVertical_bias="0.7299"
+                    android:gravity="center"
+                    app:autoSizeTextType="uniform"
+                    app:autoSizeMaxTextSize="14sp"
+                    app:autoSizeMinTextSize="1sp"
+                    android:textColor="#110875"
+                    android:fontFamily="@font/roboto_100"
+                    android:text="@string/if_your_device_does_not_have_this_permission_you_can_ignore_it"/>
+
+                <com.o.possy.ui.custom.ScalableCardView
+                    android:id="@+id/buttonMoreInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintDimensionRatio="250:58"
+                    app:layout_constraintWidth_percent="0.762"
+                    app:layout_constraintVertical_bias="0.91"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:scale_by="byHeight"
+                    app:scalable_corner_radius="0.5">
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/buttonMoreInfo"
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintDimensionRatio="160:41"
-                        app:layout_constraintWidth_percent="0.4878"
-                        app:layout_constraintVertical_bias="0.8825"
-                        android:background="@drawable/button_bg_160x41">
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#4244E6">
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintDimensionRatio="160:18"
+                            app:layout_constraintDimensionRatio="250:20"
                             android:gravity="center"
                             app:autoSizeTextType="uniform"
-                            app:autoSizeMaxTextSize="16sp"
+                            app:autoSizeMaxTextSize="18sp"
                             app:autoSizeMinTextSize="1sp"
-                            android:textColor="#C0C3CC"
-                            android:fontFamily="@font/roboto_400"
+                            android:textColor="#FFFFFF"
+                            android:fontFamily="@font/roboto_700"
                             android:text="@string/more_information"/>
                     </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.o.possy.ui.custom.ScalableCardView>
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </com.o.possy.ui.custom.ScalableCardView>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintDimensionRatio="328:153"
-                android:src="@drawable/img_instruction"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.o.possy.ui.custom.ScalableCardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

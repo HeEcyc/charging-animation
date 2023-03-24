@@ -41,6 +41,12 @@
         </activity>
 
         <activity
+            android:name=".ui.catalog.CatalogActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
+
+        <activity
             android:name="com.o.possy.ui.animation.ChargingAnimationActivity"
             android:exported="true"
             android:noHistory="true"

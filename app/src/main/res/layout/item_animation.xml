@@ -20,7 +20,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintDimensionRatio="156:289"
+            app:layout_constraintDimensionRatio="156:219"
             app:cardElevation="0dp"
             app:cardBackgroundColor="@android:color/transparent"
             scaleType="@{ScaleType.BY_WIDTH}"
@@ -34,17 +34,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"/>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#80FCEDF0"
-                    android:visibility="@{item.isSelected ? View.VISIBLE : View.GONE}">
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/ic_selected"/>
-                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.o.possy.ui.custom.ScalableCardView>

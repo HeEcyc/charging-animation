@@ -21,5 +21,14 @@
     <string name="applied">Animation Applied</string>
     <string name="collection">Collection</string>
     <string name="cancel">Cancel</string>
+    <string name="welcome">Welcome!</string>
+    <string name="this_app_is_the_simplest_way_to_transform_your_charge_screen_into_a_fun_animation">This app is the simplest way to transform your charge screen into a fun animation</string>
+    <string name="start_now">Start Now</string>
+    <string name="hello">Hello!</string>
+    <string name="let_s_look_for_a_new_charging_animations">Let\'s Look For New Charging Animations</string>
+    <string name="animations">Animations</string>
+    <string name="preview">Preview</string>
+    <string name="apply">Apply</string>
+    <string name="allow">Allow</string>
 
 </resources>

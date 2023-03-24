@@ -17,7 +17,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintDimensionRatio="328:658"
+            app:layout_constraintDimensionRatio="328:495"
             app:layout_constraintWidth_percent="0.9111"
             app:cardElevation="0dp"
             app:cardBackgroundColor="@android:color/transparent"
@@ -26,7 +26,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@android:color/white">
+                android:background="#F1F5FE">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="0dp"
@@ -35,8 +35,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintDimensionRatio="274:658"
-                    app:layout_constraintWidth_percent="0.81"
+                    app:layout_constraintDimensionRatio="290:495"
                     android:orientation="vertical">
 
                     <Space
@@ -47,36 +46,36 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="44"
+                        android:layout_weight="20"
                         android:gravity="center"
                         app:autoSizeTextType="uniform"
-                        app:autoSizeMaxTextSize="20sp"
+                        app:autoSizeMaxTextSize="18sp"
                         app:autoSizeMinTextSize="1sp"
-                        android:textColor="#000000"
+                        android:textColor="#110875"
                         android:fontFamily="@font/roboto_700"
                         android:text="@string/lock_screen_display_instructions"/>
 
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="20"/>
+                        android:layout_weight="30"/>
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="504"
-                        android:gravity="start"
+                        android:layout_weight="352"
+                        android:gravity="center"
                         app:autoSizeTextType="uniform"
-                        app:autoSizeMaxTextSize="16sp"
+                        app:autoSizeMaxTextSize="14sp"
                         app:autoSizeMinTextSize="1sp"
-                        android:textColor="#000000"
-                        android:fontFamily="@font/roboto_400"
+                        android:textColor="#110875"
+                        android:fontFamily="@font/roboto_100"
                         android:text="@string/instruction_long"/>
 
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="40"/>
+                        android:layout_weight="43"/>
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -90,7 +89,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintDimensionRatio="1:1"
                     app:layout_constraintWidth_percent="0.073"
-                    app:layout_constraintVertical_bias="0.025"
+                    app:layout_constraintVertical_bias="0.03397"
                     app:layout_constraintHorizontal_bias="0.947"
                     android:src="@drawable/ic_close"/>
 

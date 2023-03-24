@@ -28,13 +28,13 @@ class PreviewActivity : BaseActivity<BaseViewModel, PreviewActivityBinding>() {
 
     override fun setupUI() {
         binding.buttonBack.setOnClickListener { finish() }
+        binding.buttonClose.setOnClickListener { finish() }
         val animation = animation
         if (animation === null) return
-        binding.layoutBig.setOnClickListener {}
         binding.animationContainerSmall.addView(animation.inflateAnimationView(this))
         binding.animationContainerBig.addView(animation.inflateAnimationView(this))
-        binding.buttonExpand.setOnClickListener { binding.layoutBig.visibility = View.VISIBLE }
-        binding.buttonCollapse.setOnClickListener { binding.layoutBig.visibility = View.GONE }
+        binding.animationContainerSmall.setOnClickListener { binding.animationContainerBig.visibility = View.VISIBLE }
+        binding.animationContainerBig.setOnClickListener { binding.animationContainerBig.visibility = View.GONE }
         binding.buttonApply.setOnClickListener {
             Preferences.selectedAnimation = animation
             binding.applied.visibility = View.VISIBLE

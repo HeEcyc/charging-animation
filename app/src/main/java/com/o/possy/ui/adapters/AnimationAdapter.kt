@@ -3,7 +3,6 @@ package com.o.possy.ui.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.databinding.ObservableBoolean
 import com.bumptech.glide.Glide
 import com.o.possy.base.BaseAdapter
 import com.o.possy.databinding.ItemAnimationBinding
@@ -35,8 +34,6 @@ class AnimationAdapter(
         }
     }
 
-    class AnimationViewModel(val animation: Animation) {
-        val isSelected = ObservableBoolean(false)
-    }
+    class AnimationViewModel(val animation: Animation)
 
 }
