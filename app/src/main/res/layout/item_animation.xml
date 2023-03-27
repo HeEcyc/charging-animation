@@ -3,17 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-        <import type="com.o.possy.ui.custom.ScalableCardView.ScaleType"/>
+        <import type="com.juno.ca.ui.custom.ScalableCardView.ScaleType"/>
         <import type="android.view.View"/>
         <variable
             name="item"
-            type="com.o.possy.ui.adapters.AnimationAdapter.AnimationViewModel" />
+            type="com.juno.ca.ui.adapters.AnimationAdapter.AnimationViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <com.o.possy.ui.custom.ScalableCardView
+        <com.juno.ca.ui.custom.ScalableCardView
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="parent"
@@ -36,7 +36,7 @@
                     android:scaleType="centerCrop"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.o.possy.ui.custom.ScalableCardView>
+        </com.juno.ca.ui.custom.ScalableCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

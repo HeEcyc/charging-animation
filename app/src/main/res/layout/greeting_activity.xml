@@ -63,7 +63,7 @@
                 android:fontFamily="@font/roboto_100"
                 android:text="@string/this_app_is_the_simplest_way_to_transform_your_charge_screen_into_a_fun_animation"/>
 
-            <com.o.possy.ui.custom.ScalableCardView
+            <com.juno.ca.ui.custom.ScalableCardView
                 android:id="@+id/buttonStart"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -96,7 +96,7 @@
                         android:fontFamily="@font/roboto_700"
                         android:text="@string/start_now"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
-            </com.o.possy.ui.custom.ScalableCardView>
+            </com.juno.ca.ui.custom.ScalableCardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

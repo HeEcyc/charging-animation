@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.o.possy.ui.settings.SettingsViewModel" />
+            type="com.juno.ca.ui.settings.SettingsViewModel" />
     </data>
 
     <ScrollView
@@ -33,7 +33,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="27"/>
 
-                <com.o.possy.ui.custom.ScalableCardView
+                <com.juno.ca.ui.custom.ScalableCardView
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="81"
@@ -74,7 +74,7 @@
                             android:fontFamily="@font/roboto_700"
                             android:text="@string/settings"/>
                     </androidx.constraintlayout.widget.ConstraintLayout>
-                </com.o.possy.ui.custom.ScalableCardView>
+                </com.juno.ca.ui.custom.ScalableCardView>
 
                 <Space
                     android:layout_width="match_parent"

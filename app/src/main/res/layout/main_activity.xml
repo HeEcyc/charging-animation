@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.o.possy.ui.main.MainViewModel" />
+            type="com.juno.ca.ui.main.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -66,7 +66,7 @@
                     app:layout_constraintVertical_bias="0.4"
                     android:src="@drawable/img_main"/>
 
-                <com.o.possy.ui.custom.ScalableCardView
+                <com.juno.ca.ui.custom.ScalableCardView
                     android:id="@+id/buttonAnimations"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -105,9 +105,9 @@
                             android:fontFamily="@font/roboto_700"
                             android:text="@string/animations"/>
                     </androidx.constraintlayout.widget.ConstraintLayout>
-                </com.o.possy.ui.custom.ScalableCardView>
+                </com.juno.ca.ui.custom.ScalableCardView>
 
-                <com.o.possy.ui.custom.ScalableCardView
+                <com.juno.ca.ui.custom.ScalableCardView
                     android:id="@+id/buttonSettings"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -146,7 +146,7 @@
                             android:fontFamily="@font/roboto_700"
                             android:text="@string/settings"/>
                     </androidx.constraintlayout.widget.ConstraintLayout>
-                </com.o.possy.ui.custom.ScalableCardView>
+                </com.juno.ca.ui.custom.ScalableCardView>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>

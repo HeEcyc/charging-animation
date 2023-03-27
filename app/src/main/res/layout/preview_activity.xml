@@ -22,7 +22,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintDimensionRatio="360:108">
 
-                    <com.o.possy.ui.custom.ScalableCardView
+                    <com.juno.ca.ui.custom.ScalableCardView
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -67,7 +67,7 @@
                                 android:fontFamily="@font/roboto_700"
                                 android:text="@string/preview"/>
                         </androidx.constraintlayout.widget.ConstraintLayout>
-                    </com.o.possy.ui.custom.ScalableCardView>
+                    </com.juno.ca.ui.custom.ScalableCardView>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -84,7 +84,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintDimensionRatio="360:561">
-                    <com.o.possy.ui.custom.ScalableCardView
+                    <com.juno.ca.ui.custom.ScalableCardView
                         android:id="@+id/animationContainerSmall"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
@@ -109,7 +109,7 @@
                     android:layout_height="0dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintDimensionRatio="360:108">
-                    <com.o.possy.ui.custom.ScalableCardView
+                    <com.juno.ca.ui.custom.ScalableCardView
                         android:id="@+id/buttonApply"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
@@ -141,7 +141,7 @@
                                 android:fontFamily="@font/roboto_700"
                                 android:text="@string/apply"/>
                         </androidx.constraintlayout.widget.ConstraintLayout>
-                    </com.o.possy.ui.custom.ScalableCardView>
+                    </com.juno.ca.ui.custom.ScalableCardView>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
