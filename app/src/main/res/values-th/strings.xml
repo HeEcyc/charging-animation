@@ -26,4 +26,7 @@
     <string name="preview">ดูตัวอย่าง</string>
     <string name="apply">นำมาใช้</string>
     <string name="allow">อนุญาต</string>
+    <string name="find_your_favorite_charging_animation">ค้นหาภาพเคลื่อนไหวการชาร์จที่คุณชื่นชอบ</string>
+    <string name="look_for_an_incredible_charging_screen">มองหาหน้าจอการชาร์จที่น่าทึ่ง</string>
+    <string name="make_your_application_personal">ทำให้ใบสมัครของคุณเป็นแบบส่วนตัว</string>
 </resources>
