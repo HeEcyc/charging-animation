@@ -20,7 +20,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintDimensionRatio="156:219"
+            app:layout_constraintDimensionRatio="156:244"
             app:cardElevation="0dp"
             app:cardBackgroundColor="@android:color/transparent"
             scaleType="@{ScaleType.BY_WIDTH}"

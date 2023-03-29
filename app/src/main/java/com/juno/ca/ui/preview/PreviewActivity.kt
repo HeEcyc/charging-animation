@@ -28,7 +28,6 @@ class PreviewActivity : BaseActivity<BaseViewModel, PreviewActivityBinding>() {
 
     override fun setupUI() {
         binding.buttonBack.setOnClickListener { finish() }
-        binding.buttonClose.setOnClickListener { finish() }
         val animation = animation
         if (animation === null) return
         binding.animationContainerSmall.addView(animation.inflateAnimationView(this))

@@ -17,16 +17,16 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintDimensionRatio="328:495"
+            app:layout_constraintDimensionRatio="328:542"
             app:layout_constraintWidth_percent="0.9111"
             app:cardElevation="0dp"
             app:cardBackgroundColor="@android:color/transparent"
             scaleType="@{ScaleType.BY_WIDTH}"
-            scalableCornerRadius="@{0.03f}">
+            scalableCornerRadius="@{0.06f}">
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#F1F5FE">
+                android:background="#EFF9FF">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="0dp"
@@ -35,7 +35,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintDimensionRatio="290:495"
+                    app:layout_constraintDimensionRatio="288:542"
                     android:orientation="vertical">
 
                     <Space
@@ -46,13 +46,13 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="20"
+                        android:layout_weight="44"
                         android:gravity="center"
                         app:autoSizeTextType="uniform"
-                        app:autoSizeMaxTextSize="18sp"
+                        app:autoSizeMaxTextSize="20sp"
                         app:autoSizeMinTextSize="1sp"
-                        android:textColor="#110875"
-                        android:fontFamily="@font/roboto_700"
+                        android:textColor="#516379"
+                        android:fontFamily="@font/ubuntu_700"
                         android:text="@string/lock_screen_display_instructions"/>
 
                     <Space
@@ -63,19 +63,19 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="352"
-                        android:gravity="center"
+                        android:layout_weight="368"
+                        android:gravity="center_vertical"
                         app:autoSizeTextType="uniform"
                         app:autoSizeMaxTextSize="14sp"
                         app:autoSizeMinTextSize="1sp"
-                        android:textColor="#110875"
-                        android:fontFamily="@font/roboto_100"
+                        android:textColor="#516379"
+                        android:fontFamily="@font/ubuntu_400"
                         android:text="@string/instruction_long"/>
 
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="43"/>
+                        android:layout_weight="50"/>
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -88,9 +88,9 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintDimensionRatio="1:1"
-                    app:layout_constraintWidth_percent="0.073"
-                    app:layout_constraintVertical_bias="0.03397"
-                    app:layout_constraintHorizontal_bias="0.947"
+                    app:layout_constraintWidth_percent="0.09756"
+                    app:layout_constraintVertical_bias="0.0392"
+                    app:layout_constraintHorizontal_bias="0.93243"
                     android:src="@drawable/ic_close"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
