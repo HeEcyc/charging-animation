@@ -12,7 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FEEFD8"
+        android:background="#A781B9"
         android:clipChildren="false">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
@@ -32,8 +32,9 @@
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintWidth_percent="1.388888888"
-                app:lottie_rawRes="@raw/a04circle"
+                app:layout_constraintWidth_percent="1.41666666"
+                app:layout_constraintVertical_bias="0.19655"
+                app:lottie_rawRes="@raw/a04dog"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
                 app:lottie_repeatMode="reverse"/>
@@ -41,20 +42,20 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:fontFamily="@font/roboto_700"
+                android:fontFamily="@font/dosis_600"
                 android:gravity="center"
                 android:text="@{blHolder.batteryLevel}"
-                android:textColor="#51535A"
-                app:autoSizeMaxTextSize="50sp"
+                android:textColor="#FFF2E9"
+                app:autoSizeMaxTextSize="70sp"
                 app:autoSizeMinTextSize="1sp"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="127:52"
+                app:layout_constraintDimensionRatio="151:72"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.875668"
-                app:layout_constraintWidth_percent="0.3527777777" />
+                app:layout_constraintVertical_bias="0.866758"
+                app:layout_constraintWidth_percent="0.4194444" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

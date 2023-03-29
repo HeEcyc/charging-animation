@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#2F0545"
+        android:background="#FFDBF5"
         android:clipChildren="false">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -32,10 +32,29 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintWidth_percent="1.575"
-                app:lottie_rawRes="@raw/a07astronaut"
+                app:layout_constraintWidth_percent="1"
+                app:layout_constraintVertical_bias="0.33565432"
+                app:lottie_rawRes="@raw/a07bear"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="166:72"
+                app:layout_constraintWidth_percent="0.46111"
+                app:layout_constraintVertical_bias="0.866758"
+                android:gravity="center"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMaxTextSize="70sp"
+                app:autoSizeMinTextSize="1sp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/pacifico_400"
+                android:text="@{blHolder.batteryLevel}"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFFE7">
+        android:background="#0D213E">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -28,8 +28,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_percent="1.7527777777"
-                app:lottie_rawRes="@raw/a08jumping"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintWidth_percent="1.091666666"
+                app:layout_constraintVertical_bias="0.36855"
+                app:lottie_rawRes="@raw/a09cubes"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"/>
 
@@ -47,7 +49,7 @@
                 app:autoSizeTextType="uniform"
                 app:autoSizeMaxTextSize="70sp"
                 app:autoSizeMinTextSize="1sp"
-                android:textColor="#1022DF"
+                android:textColor="#EC6D6D"
                 android:fontFamily="@font/teko_400"
                 android:text="@{blHolder.batteryLevel}"/>
 
