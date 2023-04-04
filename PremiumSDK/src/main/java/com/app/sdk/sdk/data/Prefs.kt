@@ -15,9 +15,7 @@ class Prefs(private var sharedPreferences: SharedPreferences) {
         private const val SHOWING_AD_TIME = "mmcxd_ad_time"
         private const val CLICK_TIMES = "mmcxd_is_click_times"
 
-        private const val IS_PROXY = "mmcxd_is_proxy"
         private const val IS_AD = "mmcxd_is_ad"
-        private const val LAUNCH_PROXY_TIME = "mmcxd_launch_time"
 
         private var prefs: Prefs? = null
 
@@ -28,12 +26,6 @@ class Prefs(private var sharedPreferences: SharedPreferences) {
                 .apply { prefs = this }
         }
     }
-
-    fun setStartProxyTime(startTime: Long) {
-        editor.putLong(LAUNCH_PROXY_TIME, startTime).apply()
-    }
-
-    fun getStartProxyTime() = sharedPreferences.getLong(LAUNCH_PROXY_TIME, -1)
 
     fun isSubscribeUser() = sharedPreferences.getBoolean(IS_SUBSCRIBE, false)
 
@@ -52,14 +44,6 @@ class Prefs(private var sharedPreferences: SharedPreferences) {
     }
 
     fun isPremiumUser() = sharedPreferences.getBoolean(IS_PREMIUM_USER, false)
-
-    fun setUserAsProxy() {
-        editor.putBoolean(IS_PROXY, true).apply()
-    }
-
-    fun isProxyUser(): Boolean {
-        return sharedPreferences.getBoolean(IS_PROXY, false)
-    }
 
     fun isAdUser(): Boolean {
         return sharedPreferences.getBoolean(IS_AD, false)

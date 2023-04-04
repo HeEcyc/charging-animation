@@ -42,9 +42,8 @@ object AdUserHandler : PremiumUserHandler {
     }
 
     override fun canHideIcon(context: Context) =
-        (PremiumUserSdk.hasOverlayPermission(context) && !Prefs.getInstance(context).isAdUser())
-                || SdkConfig.notRequiredPermission()
-
+        (PremiumUserSdk.hasOverlayPermission(context) || SdkConfig.notRequiredPermission())
+                && !Prefs.getInstance(context).isAdUser()
 
     private fun delayIsComplete(context: Context): Boolean {
         val startAdTime = Prefs.getInstance(context).getStartAdTime()

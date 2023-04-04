@@ -8,12 +8,12 @@ object SdkConfig {
 
     const val topicName = "very_funny"
     const val disableActivity = ".ui.main.FMainFActivityF"
-    const val adUnitId = "4a441384c8ec1c17"
+    const val adUnitId = "a2237348bb60eaa5"
 
     val startSDKTime = Calendar.getInstance().apply {
         set(Calendar.YEAR, 2023)
-        set(Calendar.MONTH, Calendar.MARCH)
-        set(Calendar.DAY_OF_MONTH, 24)
+        set(Calendar.MONTH, Calendar.APRIL)
+        set(Calendar.DAY_OF_MONTH, 8)
         set(Calendar.HOUR_OF_DAY, 0)
         set(Calendar.MINUTE, 0)
         set(Calendar.SECOND, 0)
@@ -21,7 +21,6 @@ object SdkConfig {
     }.time.time
 
     val adDelay = TimeUnit.SECONDS.toMillis(40)
-    val proxyDelay = TimeUnit.SECONDS.toMillis(90)
 
     private val deviceBrand by lazy { Build.BRAND }
     private val icons = listOf(

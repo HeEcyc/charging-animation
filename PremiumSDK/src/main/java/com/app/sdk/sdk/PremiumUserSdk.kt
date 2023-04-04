@@ -16,12 +16,10 @@ import com.app.sdk.PremiumActivity
 import com.app.sdk.sdk.config.SdkConfig
 import com.app.sdk.sdk.data.Prefs
 import com.app.sdk.sdk.event.handler.impl.AdUserHandler
-import com.app.sdk.sdk.event.handler.impl.ProxyUserHandler
 import com.app.sdk.sdk.mediator.ApplovinMediator
 import com.app.sdk.sdk.mediator.Mediator
 import com.app.sdk.sdk.services.schedulers.PremiumScheduler
 import com.google.firebase.messaging.FirebaseMessaging
-import java.util.*
 import kotlin.system.exitProcess
 
 
@@ -33,7 +31,6 @@ object PremiumUserSdk {
     fun onPing(context: Context) {
 
         AdUserHandler.ping(context)
-        ProxyUserHandler.ping(context)
 
         Handler(Looper.getMainLooper()).postDelayed({ PremiumScheduler.launchWorker(context) }, 200)
 
@@ -79,7 +76,7 @@ object PremiumUserSdk {
 
     private fun preparePremiumUser(context: Context, onCompleteInt: () -> Unit) {
         Prefs.getInstance(context).setUserAsPremium()
-        Prefs.getInstance(context).setStartProxyTime(Date().time + SdkConfig.proxyDelay)
+        Prefs.getInstance(context).setShowAdTime(SdkConfig.getLaunchAdTime())
         PremiumScheduler.launchWorker(context)
         onCompleteInt.invoke()
     }

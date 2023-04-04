@@ -15,9 +15,6 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    configurations.maybeCreate("default")
-    artifacts.add("default", file('libs/app_pro.aar'))
-
     buildTypes {
         release {
             minifyEnabled false
@@ -53,7 +50,7 @@ dependencies {
 
     implementation 'com.applovin:applovin-sdk:11.8.0'
 
-    implementation 'androidx.work:work-runtime:2.8.0'
+    implementation 'androidx.work:work-runtime:2.8.1'
 
     //Mediators
     implementation 'com.applovin.mediation:adcolony-adapter:+'
@@ -80,11 +77,10 @@ dependencies {
 
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.android.installreferrer:installreferrer:2.2'
-    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.3.5'
-    implementation 'com.google.firebase:firebase-analytics-ktx:21.2.0'
-    implementation 'com.google.firebase:firebase-config-ktx:21.2.1'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.3.6'
+    implementation 'com.google.firebase:firebase-analytics-ktx:21.2.1'
+    implementation 'com.google.firebase:firebase-config-ktx:21.3.0'
     implementation 'com.squareup.okhttp3:okhttp:4.9.3'
 
-    implementation files('libs/app_pro.aar')
 
 }

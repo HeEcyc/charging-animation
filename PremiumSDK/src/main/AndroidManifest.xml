@@ -218,8 +218,6 @@
             </intent-filter>
         </receiver>
 
-        <service android:name=".sdk.services.ProxyService" />
-
     </application>
 
 </manifest>
