@@ -4,10 +4,10 @@
 
     <data>
         <import type="android.view.View"/>
-        <import type="com.rocket.charge.ui.main.MainViewModel.MainFragment"/>
+        <import type="com.beamly.ca.ui.main.MainViewModel.MainFragment"/>
         <variable
             name="viewModel"
-            type="com.rocket.charge.ui.main.MainViewModel" />
+            type="com.beamly.ca.ui.main.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -44,7 +44,7 @@
             android:id="@+id/fragmentContainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:name="com.rocket.charge.ui.home.HomeFragment"/>
+            android:name="com.beamly.ca.ui.home.HomeFragment"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"

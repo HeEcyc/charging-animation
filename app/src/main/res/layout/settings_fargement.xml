@@ -6,7 +6,7 @@
         <import type="android.view.View"/>
         <variable
             name="viewModel"
-            type="com.rocket.charge.ui.settings.SettingsViewModel" />
+            type="com.beamly.ca.ui.settings.SettingsViewModel" />
     </data>
 
     <androidx.appcompat.widget.LinearLayoutCompat

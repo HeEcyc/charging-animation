@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.rocket.charge.ui.onboarding.OnboardingViewModel" />
+            type="com.beamly.ca.ui.onboarding.OnboardingViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

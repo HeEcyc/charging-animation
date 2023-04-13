@@ -2,43 +2,27 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'com.google.gms.google-services'
-    id 'com.google.firebase.crashlytics'
+//    id 'com.google.gms.google-services'
+//    id 'com.google.firebase.crashlytics' todo
 }
 
 android {
-//    signingConfigs {
-//        debug {
-//            storeFile file('C:\\Users\\irina\\AndroidStudioProjects\\TestChargingAnimation\\key\\charging.keystore')
-//            storePassword 'charging'
-//            keyAlias 'charging'
-//            keyPassword 'charging'
-//        }
-//        release {
-//            storeFile file('C:\\Users\\irina\\AndroidStudioProjects\\TestChargingAnimation\\key\\charging.keystore')
-//            storePassword 'charging'
-//            keyAlias 'charging'
-//            keyPassword 'charging'
-//        }
-//    } todo
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.rocket.charge"
+        applicationId "com.beamly.ca"
         minSdk 23
         targetSdk 31
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-//        signingConfig signingConfigs.release todo
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-//            signingConfig signingConfigs.release todo
         }
     }
     compileOptions {
@@ -65,7 +49,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     // UI
-    implementation 'com.airbnb.android:lottie:5.0.1'
+    implementation 'com.airbnb.android:lottie:5.1.1'
     implementation 'com.github.nguyenhoanglam:ImagePicker:1.5.1'
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'

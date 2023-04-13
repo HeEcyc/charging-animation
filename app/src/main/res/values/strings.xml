@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Rocket charge</string>
+    <string name="app_name" translatable="false">Beamly Charging Animation</string>
     <string name="charging_animation">Charging Animation</string>
     <string name="allow_showing_over_other_apps_this_is_necessary_for_correct_work_application">Allow showing over other apps. This is necessary for correct work of the application</string>
     <string name="allow">Allow</string>

@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="com.rocket.charge.ui.custom.ScalableCardView.ScaleType"/>
+        <import type="com.beamly.ca.ui.custom.ScalableCardView.ScaleType"/>
         <variable
             name="viewModel"
-            type="com.rocket.charge.ui.home.HomeViewModel" />
+            type="com.beamly.ca.ui.home.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
