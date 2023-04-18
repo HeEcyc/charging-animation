@@ -23,4 +23,7 @@
     <string name="animation_applied">تم تطبيق الرسوم المتحركة</string>
     <string name="ok">موافق</string>
     <string name="settings">إعدادات</string>
+    <string name="hello">مرحبًا!</string>
+    <string name="welcome_to">مرحبا بك في</string>
+    <string name="collection_of_animations">مجموعة من الرسوم المتحركة</string>
 </resources>

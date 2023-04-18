@@ -23,4 +23,7 @@
     <string name="animation_applied">Animasi digunakan</string>
     <string name="ok">Okey</string>
     <string name="settings">tetapan</string>
+    <string name="hello">helo!</string>
+    <string name="welcome_to">Selamat datang ke</string>
+    <string name="collection_of_animations">Koleksi Animasi</string>
 </resources>

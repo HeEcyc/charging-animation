@@ -6,7 +6,6 @@ import com.beamly.ca.R
 import com.beamly.ca.base.BaseFragment
 import com.beamly.ca.databinding.AnimationFragmentBinding
 import com.beamly.ca.ui.custom.ItemDecorationWithEnds
-import com.beamly.ca.ui.main.MainActivity
 import com.beamly.ca.ui.preview.PreviewActivity
 
 class AnimationFragment : BaseFragment<AnimationViewModel, AnimationFragmentBinding>(R.layout.animation_fragment) {
@@ -15,8 +14,8 @@ class AnimationFragment : BaseFragment<AnimationViewModel, AnimationFragmentBind
 
     override fun setupUI() {
         binding.root.post {
-            val spaceInner = binding.root.width / 360 * 10
-            val spaceOuter = binding.root.width / 360 * 30
+            val spaceInner = binding.root.width / 360 * 8
+            val spaceOuter = binding.root.width / 360 * 16
             val isLTR = binding.root.layoutDirection == View.LAYOUT_DIRECTION_LTR
             var decoration = ItemDecorationWithEnds(
                 leftFirst = if (isLTR) spaceOuter else spaceInner,
@@ -27,26 +26,14 @@ class AnimationFragment : BaseFragment<AnimationViewModel, AnimationFragmentBind
                 lastPredicate = { pos, _ -> pos % 2 == 1 }
             )
             binding.recyclerAnimation.addItemDecoration(decoration)
-            binding.recyclerImage.addItemDecoration(decoration)
-            val spaceVertical = binding.root.width / 360 * 20
-            val spaceVerticaLast = binding.root.width / 360 * 150
+            val spaceVertical = binding.root.width / 360 * 16
+            val spaceVerticaLast = binding.root.width / 360 * 80
             decoration = ItemDecorationWithEnds(
                 bottom = spaceVertical,
                 bottomLast = spaceVerticaLast,
                 lastPredicate = { pos, count -> if (count % 2 == 0) pos == count - 1 || pos == count - 2 else pos == count - 1 }
             )
             binding.recyclerAnimation.addItemDecoration(decoration)
-            binding.recyclerImage.addItemDecoration(decoration)
-        }
-        binding.buttonBack.setOnClickListener {
-            activityAs<MainActivity>().viewModel.onHomeClick()
-        }
-        viewModel.addImage.observe(this) {
-            activityAs<MainActivity>().askStoragePermissions { res ->
-                if (res) activityAs<MainActivity>().pickImage {
-                    viewModel.addCustomAnimation(it.uri, requireContext())
-                }
-            }
         }
         viewModel.showPreview.observe(this) {
             startActivity(PreviewActivity.getIntent(requireContext(), it))

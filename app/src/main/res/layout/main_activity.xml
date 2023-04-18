@@ -14,31 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#FEFEFE"
+        android:background="#FFE277"
         android:clipChildren="false">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintDimensionRatio="360:777"
-            android:clipChildren="false">
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="590:1016"
-                app:layout_constraintWidth_percent="1.6388888888"
-                app:layout_constraintVertical_bias="0.4979"
-                app:layout_constraintHorizontal_bias="0.313"
-                android:src="@drawable/app_bg"/>
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainer"
@@ -46,97 +23,35 @@
             android:layout_height="match_parent"
             android:name="com.beamly.ca.ui.home.HomeFragment"/>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="0dp"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintDimensionRatio="360:777"
-            app:layout_constraintVertical_bias="1">
-            <androidx.appcompat.widget.LinearLayoutCompat
+            app:layout_constraintDimensionRatio="360:70"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="360:130"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@{viewModel.selectedFragment == MainFragment.ANIMATION ? @drawable/ic_animation_selected : @drawable/ic_animation}"
+                android:onClick="@{(_) -> viewModel.onAnimationClick()}"/>
 
-                <Space
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="7.5"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@{viewModel.selectedFragment == MainFragment.HOME ? @drawable/ic_home_selected : @drawable/ic_home}"
+                android:onClick="@{(_) -> viewModel.onHomeClick()}"/>
 
-                <FrameLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="110"
-                    android:onClick="@{(_) -> viewModel.onAnimationClick()}">
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@mipmap/ic_animation"
-                        android:visibility="@{viewModel.selectedFragment == MainFragment.ANIMATION ? View.GONE : View.VISIBLE}"/>
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@mipmap/ic_animation_selected"
-                        android:visibility="@{viewModel.selectedFragment == MainFragment.ANIMATION ? View.VISIBLE : View.GONE}"/>
-                </FrameLayout>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@{viewModel.selectedFragment == MainFragment.SETTINGS ? @drawable/ic_options_selected : @drawable/ic_options}"
+                android:onClick="@{(_) -> viewModel.onSettingsClick()}"/>
 
-                <Space
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="7.5"/>
-
-                <FrameLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="110"
-                    android:onClick="@{(_) -> viewModel.onHomeClick()}">
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@mipmap/ic_home"
-                        android:visibility="@{viewModel.selectedFragment == MainFragment.HOME ? View.GONE : View.VISIBLE}"/>
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@mipmap/ic_home_selected"
-                        android:visibility="@{viewModel.selectedFragment == MainFragment.HOME ? View.VISIBLE : View.GONE}"/>
-                </FrameLayout>
-
-                <Space
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="7.5"/>
-
-                <FrameLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="110"
-                    android:onClick="@{(_) -> viewModel.onSettingsClick()}">
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@mipmap/ic_options"
-                        android:visibility="@{viewModel.selectedFragment == MainFragment.SETTINGS ? View.GONE : View.VISIBLE}"/>
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@mipmap/ic_options_selected"
-                        android:visibility="@{viewModel.selectedFragment == MainFragment.SETTINGS ? View.VISIBLE : View.GONE}"/>
-                </FrameLayout>
-
-                <Space
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="7.5"/>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

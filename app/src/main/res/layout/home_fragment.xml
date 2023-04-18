@@ -13,7 +13,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipChildren="false">
+
+        <Space
+            android:id="@+id/marker"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintTop_toTopOf="@id/content"
+            app:layout_constraintBottom_toBottomOf="@id/content"
+            app:layout_constraintVertical_bias="0.709"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="@id/marker"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="#FF6855"/>
+
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/content"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="parent"
@@ -23,24 +40,73 @@
             app:layout_constraintDimensionRatio="360:777"
             android:clipChildren="false">
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/marker"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.412"/>
-
-            <androidx.appcompat.widget.AppCompatImageView
+            <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@id/marker"
-                app:layout_constraintEnd_toEndOf="@id/marker"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintWidth_percent="1.06297222"
-                app:layout_constraintVertical_bias="0.01521568"
-                android:src="@mipmap/img_rocket"/>
+                app:layout_constraintWidth_percent="0.808333"
+                app:layout_constraintVertical_bias="0.055555"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/animation_menu"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="318:52"
+                app:layout_constraintWidth_percent="0.88333"
+                app:layout_constraintVertical_bias="0.43"
+                android:gravity="center"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMaxTextSize="50sp"
+                app:autoSizeMinTextSize="1sp"
+                android:textColor="#014242"
+                android:fontFamily="@font/gilroy_1000"
+                android:text="@string/hello"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="318:22"
+                app:layout_constraintWidth_percent="0.88333"
+                app:layout_constraintVertical_bias="0.49"
+                android:gravity="center"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMaxTextSize="20sp"
+                app:autoSizeMinTextSize="1sp"
+                android:textColor="#014242"
+                android:fontFamily="@font/gilroy_400"
+                android:text="@string/welcome_to"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="318:22"
+                app:layout_constraintWidth_percent="0.88333"
+                app:layout_constraintVertical_bias="0.53"
+                android:gravity="center"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMaxTextSize="20sp"
+                app:autoSizeMinTextSize="1sp"
+                android:textColor="#014242"
+                android:fontFamily="@font/gilroy_700"
+                android:text="@string/app_name"/>
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="0dp"
@@ -49,47 +115,40 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="414.12:412.74"
-                app:layout_constraintWidth_percent="1.150333"
-                app:layout_constraintVertical_bias="0.44199"
-                app:layout_constraintHorizontal_bias="0.49889"
-                android:src="@mipmap/img_battery_home"/>
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintWidth_percent="0.384"
+                app:layout_constraintVertical_bias="0.7544"
+                android:src="@drawable/img_home"/>
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
+            <com.beamly.ca.ui.custom.CircleProgressView
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="360:54"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintWidth_percent="0.5527777777"
                 app:layout_constraintVertical_bias="0.78"
-                android:orientation="vertical">
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="22"
-                    android:gravity="center"
-                    app:autoSizeTextType="uniform"
-                    app:autoSizeMaxTextSize="20sp"
-                    app:autoSizeMinTextSize="1sp"
-                    android:textColor="#09248F"
-                    android:fontFamily="@font/rubik_bold"
-                    android:text="@{viewModel.date}"/>
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="10"/>
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="22"
-                    android:gravity="center"
-                    app:autoSizeTextType="uniform"
-                    app:autoSizeMaxTextSize="20sp"
-                    app:autoSizeMinTextSize="1sp"
-                    android:textColor="#44EBFF"
-                    android:fontFamily="@font/rubik_bold"
-                    android:text="@{viewModel.time}"/>
-            </androidx.appcompat.widget.LinearLayoutCompat>
+                progress="@{viewModel.percent}"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="13831:3200"
+                app:layout_constraintWidth_percent="0.384"
+                app:layout_constraintVertical_bias="0.75973"
+                android:gravity="center"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMaxTextSize="30sp"
+                app:autoSizeMinTextSize="1sp"
+                android:textColor="#014242"
+                android:fontFamily="@font/gilroy_700"
+                android:text="@{viewModel.percent}"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

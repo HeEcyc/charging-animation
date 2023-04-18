@@ -23,5 +23,8 @@
     <string name="animation_applied">Animație aplicată</string>
     <string name="ok">O.K</string>
     <string name="settings">Setări</string>
+    <string name="hello">Buna ziua!</string>
+    <string name="welcome_to">Bun venit la</string>
+    <string name="collection_of_animations">Colecție de animații</string>
 
 </resources>

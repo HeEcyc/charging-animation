@@ -23,5 +23,8 @@
     <string name="animation_applied">Đã áp dụng hoạt ảnh</string>
     <string name="ok">Được</string>
     <string name="settings">Cài đặt</string>
+    <string name="hello">Xin chào!</string>
+    <string name="welcome_to">Chào mừng bạn đến</string>
+    <string name="collection_of_animations">Tuyển Tập Hoạt Hình</string>
 
 </resources>

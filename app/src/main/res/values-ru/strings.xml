@@ -23,5 +23,8 @@
     <string name="animation_applied">Анимация применена</string>
     <string name="ok">Ок</string>
     <string name="settings">Настройки</string>
+    <string name="hello">Привет!</string>
+    <string name="welcome_to">Добро пожаловать в</string>
+    <string name="collection_of_animations">Сборник Анимаций</string>
 
 </resources>

@@ -14,7 +14,6 @@ object Preferences {
     private const val KEY_FLASH_IS_ON = "ca_flash_is_on"
     private const val KEY_VIBRATION_IS_ON = "ca_vibration_is_on"
     private const val KEY_SOUND_IS_ON = "ca_sound_is_on"
-//    private const val KEY_WAS_LAUNCHED_BEFORE = "ca_was_launched_before"
 
     var selectedAnimation: Animation
         get() = Animation.valueOf(prefs.getString(KEY_SELECTED_ANIMATION, null))
@@ -39,9 +38,5 @@ object Preferences {
     var isSoundOn: Boolean
         get() = prefs.getBoolean(KEY_SOUND_IS_ON, true)
         set(value) = prefs.edit().putBoolean(KEY_SOUND_IS_ON, value).apply()
-
-//    var wasLaunchedBefore: Boolean
-//        get() = prefs.getBoolean(KEY_WAS_LAUNCHED_BEFORE, false)
-//        set(value) = prefs.edit().putBoolean(KEY_WAS_LAUNCHED_BEFORE, value).apply()
 
 }

@@ -23,4 +23,7 @@
     <string name="animation_applied">បានអនុវត្តចលនា</string>
     <string name="ok">យល់ព្រម</string>
     <string name="settings">ការកំណត់</string>
+    <string name="hello">សួស្តី!</string>
+    <string name="welcome_to">ស្វាគមន៍​មកកាន់</string>
+    <string name="collection_of_animations">ការប្រមូលគំនូរជីវចល។</string>
 </resources>

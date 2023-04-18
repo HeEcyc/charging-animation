@@ -1,6 +1,9 @@
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-  <item
-    android:drawable="@mipmap/switch_track_on"
-    android:width="60dp"
-    android:height="30dp"/>
-</layer-list>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="36dp"
+    android:height="18dp"
+    android:viewportWidth="36"
+    android:viewportHeight="18">
+  <path
+      android:pathData="M10,4.5L26,4.5A4.5,4.5 0,0 1,30.5 9L30.5,9A4.5,4.5 0,0 1,26 13.5L10,13.5A4.5,4.5 0,0 1,5.5 9L5.5,9A4.5,4.5 0,0 1,10 4.5z"
+      android:fillColor="#00DDB3"/>
+</vector>

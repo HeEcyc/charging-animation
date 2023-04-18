@@ -23,5 +23,8 @@
     <string name="animation_applied">ใช้แอนิเมชั่น</string>
     <string name="ok">ตกลง</string>
     <string name="settings">การตั้งค่า</string>
+    <string name="hello">สวัสดี!</string>
+    <string name="welcome_to">ยินดีต้อนรับสู่</string>
+    <string name="collection_of_animations">คอลเลกชันของแอนิเมชั่น</string>
 
 </resources>

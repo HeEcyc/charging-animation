@@ -51,7 +51,7 @@ class PreviewActivity : BaseActivity<PreviewViewModel, PreviewActivityBinding>()
             binding.buttonShow.visibility = View.VISIBLE
             binding.animationHost2.visibility = View.VISIBLE
         }
-        binding.root.setOnClickListener {
+        binding.buttonShow.setOnClickListener {
             binding.buttonBack.visibility = View.VISIBLE
             binding.buttonHide.visibility = View.VISIBLE
             binding.buttonShow.visibility = View.GONE

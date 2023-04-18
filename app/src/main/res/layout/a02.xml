@@ -10,8 +10,64 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/a02gradient">
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/marker1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="360:720"/>
+
+        <View
+            android:id="@+id/marker2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="360:720"/>
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="marker1,marker2"
+            app:barrierDirection="top"/>
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="marker1,marker2"
+            app:barrierDirection="bottom"/>
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="marker1,marker2"
+            app:barrierDirection="start"/>
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="marker1,marker2"
+            app:barrierDirection="end"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="@id/top"
+            app:layout_constraintBottom_toBottomOf="@id/bottom"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintDimensionRatio="360:720"
+            app:lottie_rawRes="@raw/a02flag"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true"/>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -22,43 +78,27 @@
             app:layout_constraintDimensionRatio="360:800"
             android:clipChildren="false">
 
-            <com.airbnb.lottie.LottieAnimationView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintTop_toTopOf="parent"
-                app:lottie_autoPlay="true"
-                app:lottie_rawRes="@raw/a02hi"/>
-
-            <com.airbnb.lottie.LottieAnimationView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="1:1"
-                app:lottie_rawRes="@raw/a02loop"
-                app:lottie_loop="true"
-                app:lottie_autoPlay="true"/>
-
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="164:72"
-                app:layout_constraintWidth_percent="0.455555"
-                app:layout_constraintVertical_bias="0.9162"
+                android:fontFamily="@font/exo_2_700"
                 android:gravity="center"
-                app:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@{blHolder.batteryLevel}"
+                android:textColor="#00FFCD"
                 app:autoSizeMaxTextSize="70sp"
                 app:autoSizeMinTextSize="1sp"
-                android:textColor="#131313"
-                android:fontFamily="@font/permanent_marker_regular"
-                android:text="@{blHolder.batteryLevel}"/>
+                app:autoSizeTextType="uniform"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="183:72"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_percent="0.508333"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.853" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

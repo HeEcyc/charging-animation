@@ -23,5 +23,8 @@
     <string name="animation_applied">Animação aplicada</string>
     <string name="ok">OK</string>
     <string name="settings">Definições</string>
+    <string name="hello">Olá!</string>
+    <string name="welcome_to">Bem-vindo ao</string>
+    <string name="collection_of_animations">Coleção De Animações</string>
 
 </resources>

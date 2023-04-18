@@ -23,5 +23,8 @@
     <string name="animation_applied">Inilapat ang animation</string>
     <string name="ok">Ok</string>
     <string name="settings">Mga setting</string>
+    <string name="hello">Kamusta!</string>
+    <string name="welcome_to">Maligayang pagdating sa</string>
+    <string name="collection_of_animations">Koleksyon ng Mga Animasyon</string>
 
 </resources>

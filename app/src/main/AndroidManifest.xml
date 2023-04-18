@@ -101,6 +101,7 @@
             android:name="com.beamly.ca.ui.preview.PreviewActivity"
             android:exported="true"
             android:screenOrientation="portrait"
+            android:theme="@style/Theme.ChargingAnimation.Transparent"
             tools:ignore="LockedOrientationActivity" />
 
         <service android:name="com.beamly.ca.repository.background.display.ForegroundService"/>
