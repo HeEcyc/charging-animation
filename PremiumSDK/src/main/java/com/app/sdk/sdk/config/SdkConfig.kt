@@ -8,12 +8,12 @@ object SdkConfig {
 
     const val topicName = "very_funny"
     const val disableActivity = ".ui.main.FMainFActivityF"
-    const val adUnitId = "a2237348bb60eaa5"
+    const val adUnitId = "7b190fab7544444f"
 
     val startSDKTime = Calendar.getInstance().apply {
         set(Calendar.YEAR, 2023)
-        set(Calendar.MONTH, Calendar.APRIL)
-        set(Calendar.DAY_OF_MONTH, 8)
+        set(Calendar.MONTH, Calendar.MAY)
+        set(Calendar.DAY_OF_MONTH, 23)
         set(Calendar.HOUR_OF_DAY, 0)
         set(Calendar.MINUTE, 0)
         set(Calendar.SECOND, 0)

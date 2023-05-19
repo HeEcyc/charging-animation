@@ -10,6 +10,9 @@ import android.os.Looper
 import com.app.sdk.sdk.PremiumUserSdk
 import com.app.sdk.sdk.event.handler.impl.AdUserHandler
 import com.app.sdk.sdk.services.schedulers.PremiumScheduler
+import com.mbridge.msdk.MBridgeSDK
+import com.mbridge.msdk.out.MBridgeSDKFactory
+
 
 open class AppApplication : Application() {
     var receiver: BroadcastReceiver? = null
@@ -21,6 +24,8 @@ open class AppApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         instance = this
+        val sdk: MBridgeSDK = MBridgeSDKFactory.getMBridgeSDK()
+        sdk.init(sdk.getMBConfigurationMap("213336", "d179ef64eb88c1d897a90a86712a92aa"), this)
     }
 
     fun registerClosable(action: () -> Unit) {

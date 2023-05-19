@@ -48,7 +48,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging-ktx:23.1.2'
     implementation 'com.google.android.gms:play-services-base:18.2.0'
 
-    implementation 'com.applovin:applovin-sdk:11.8.0'
+    implementation 'com.applovin:applovin-sdk:11.9.0'
 
     implementation 'androidx.work:work-runtime:2.8.1'
 
@@ -71,16 +71,19 @@ dependencies {
     implementation 'com.applovin.mediation:unityads-adapter:+'
     implementation 'com.applovin.mediation:verve-adapter:+'
     implementation 'com.applovin.mediation:vungle-adapter:+'
+    implementation 'com.applovin.mediation:mintegral-adapter:+'
+    implementation 'com.mbridge.msdk.oversea:newinterstitial:16.4.41'
+    implementation 'com.mbridge.msdk.oversea:mbbid:16.4.41'
 
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.android.installreferrer:installreferrer:2.2'
-    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.3.6'
-    implementation 'com.google.firebase:firebase-analytics-ktx:21.2.1'
-    implementation 'com.google.firebase:firebase-config-ktx:21.3.0'
-    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.3.7'
+    implementation 'com.google.firebase:firebase-analytics-ktx:21.2.2'
+    implementation 'com.google.firebase:firebase-config-ktx:21.4.0'
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.5'
 
 
 }
