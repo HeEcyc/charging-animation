@@ -5,8 +5,8 @@
     <data>
         <variable
             name="viewModel"
-            type="com.beamly.ca.ui.preview.PreviewViewModel" />
-        <import type="com.beamly.ca.ui.custom.ScalableCardView.ScaleType"/>
+            type="com.kapi.ca.ui.preview.PreviewViewModel" />
+        <import type="com.kapi.ca.ui.custom.ScalableCardView.ScaleType"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -48,7 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1">
-                <com.beamly.ca.ui.custom.ScalableCardView
+                <com.kapi.ca.ui.custom.ScalableCardView
                     android:id="@+id/buttonHide"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -63,7 +63,7 @@
                         android:id="@+id/animationHost1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"/>
-                </com.beamly.ca.ui.custom.ScalableCardView>
+                </com.kapi.ca.ui.custom.ScalableCardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -75,7 +75,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintDimensionRatio="360:112">
-                    <com.beamly.ca.ui.custom.ScalableCardView
+                    <com.kapi.ca.ui.custom.ScalableCardView
                         android:id="@+id/buttonApply"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
@@ -108,7 +108,7 @@
                                 android:fontFamily="@font/gilroy_700"
                                 android:text="@string/apply"/>
                         </androidx.constraintlayout.widget.ConstraintLayout>
-                    </com.beamly.ca.ui.custom.ScalableCardView>
+                    </com.kapi.ca.ui.custom.ScalableCardView>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 

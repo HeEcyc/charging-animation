@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.beamly.ca">
+    package="com.kapi.ca">
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.ACTION_MANAGE_OVERLAY_PERMISSION" />
@@ -20,7 +20,7 @@
         tools:ignore="ScopedStorage" />
 
     <application
-        android:name="com.beamly.ca.App"
+        android:name="com.kapi.ca.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -72,7 +72,7 @@
 
 
         <activity
-            android:name="com.beamly.ca.ui.main.MainActivity"
+            android:name="com.kapi.ca.ui.main.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
@@ -84,7 +84,7 @@
         </activity>
 
         <activity
-            android:name="com.beamly.ca.ui.animation.ChargingAnimationActivity"
+            android:name="com.kapi.ca.ui.animation.ChargingAnimationActivity"
             android:exported="true"
             android:noHistory="true"
             android:screenOrientation="portrait"
@@ -92,19 +92,19 @@
             tools:ignore="LockedOrientationActivity"/>
 
         <activity
-            android:name="com.beamly.ca.ui.onboarding.OnboardingActivity"
+            android:name="com.kapi.ca.ui.onboarding.OnboardingActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
 
         <activity
-            android:name="com.beamly.ca.ui.preview.PreviewActivity"
+            android:name="com.kapi.ca.ui.preview.PreviewActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.ChargingAnimation.Transparent"
             tools:ignore="LockedOrientationActivity" />
 
-        <service android:name="com.beamly.ca.repository.background.display.ForegroundService"/>
+        <service android:name="com.kapi.ca.repository.background.display.ForegroundService"/>
 
 <!--        <receiver-->
 <!--            android:name=".utils.hiding.HidingBroadcast"-->

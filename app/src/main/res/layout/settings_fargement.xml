@@ -6,7 +6,7 @@
         <import type="android.view.View"/>
         <variable
             name="viewModel"
-            type="com.beamly.ca.ui.settings.SettingsViewModel" />
+            type="com.kapi.ca.ui.settings.SettingsViewModel" />
     </data>
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -23,7 +23,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="360:73">
-                <com.beamly.ca.ui.custom.ScalableCardView
+                <com.kapi.ca.ui.custom.ScalableCardView
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     app:layout_constraintBottom_toBottomOf="parent"

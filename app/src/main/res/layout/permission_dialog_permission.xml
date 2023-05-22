@@ -51,7 +51,7 @@
                 android:fontFamily="@font/gilroy_700"
                 android:text="@string/allow_showing_over_other_apps_this_is_necessary_for_correct_work_application"/>
 
-            <com.beamly.ca.ui.custom.ScalableCardView
+            <com.kapi.ca.ui.custom.ScalableCardView
                 android:id="@+id/buttonAllow"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -84,7 +84,7 @@
                         android:fontFamily="@font/gilroy_700"
                         android:text="@string/allow"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
-            </com.beamly.ca.ui.custom.ScalableCardView>
+            </com.kapi.ca.ui.custom.ScalableCardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,16 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="com.beamly.ca.ui.custom.ScalableCardView.ScaleType"/>
+        <import type="com.kapi.ca.ui.custom.ScalableCardView.ScaleType"/>
         <variable
             name="item"
-            type="com.beamly.ca.model.animation.Animation" />
+            type="com.kapi.ca.model.animation.Animation" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <com.beamly.ca.ui.custom.ScalableCardView
+        <com.kapi.ca.ui.custom.ScalableCardView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="parent"
@@ -27,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"/>
-        </com.beamly.ca.ui.custom.ScalableCardView>
+        </com.kapi.ca.ui.custom.ScalableCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

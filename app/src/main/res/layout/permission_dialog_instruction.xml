@@ -70,7 +70,7 @@
                 android:fontFamily="@font/gilroy_400"
                 android:text="@string/if_your_device_does_not_have_this_permission_you_can_ignore_it"/>
 
-            <com.beamly.ca.ui.custom.ScalableCardView
+            <com.kapi.ca.ui.custom.ScalableCardView
                 android:id="@+id/buttonMoreInfo"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -103,7 +103,7 @@
                         android:fontFamily="@font/gilroy_700"
                         android:text="@string/more_information"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
-            </com.beamly.ca.ui.custom.ScalableCardView>
+            </com.kapi.ca.ui.custom.ScalableCardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

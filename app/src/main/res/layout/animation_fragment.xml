@@ -7,7 +7,7 @@
         <import type="android.view.View"/>
         <variable
             name="viewModel"
-            type="com.beamly.ca.ui.animations.AnimationViewModel" />
+            type="com.kapi.ca.ui.animations.AnimationViewModel" />
     </data>
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -30,7 +30,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="130">
-                    <com.beamly.ca.ui.custom.ScalableCardView
+                    <com.kapi.ca.ui.custom.ScalableCardView
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         app:layout_constraintTop_toTopOf="parent"
