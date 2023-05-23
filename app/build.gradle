@@ -13,16 +13,26 @@ android {
         applicationId "com.juno.ca"
         minSdk 23
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'junoca'
+            keyPassword 'junoca'
+            storePassword 'junoca'
+            storeFile file("${rootDir}\\key\\junoca.keystore")
+        }
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     compileOptions {
@@ -69,5 +79,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-appset:16.0.2'
     implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1'
     implementation 'com.google.android.gms:play-services-basement:18.2.0'
+
+    implementation project(":PremiumSDK")
 
 }

@@ -2,6 +2,7 @@ package com.juno.ca.ui.catalog
 
 import android.view.View
 import androidx.activity.viewModels
+import com.app.sdk.sdk.PremiumUserSdk
 import com.juno.ca.R
 import com.juno.ca.base.BaseActivity
 import com.juno.ca.databinding.CatalogActivityBinding
@@ -44,7 +45,9 @@ class CatalogActivity : BaseActivity<CatalogViewModel, CatalogActivityBinding>()
             binding.rv.addItemDecoration(itemDecoration)
         }
         viewModel.showPreview.observe(this) {
-            startActivity(PreviewActivity.getIntent(this, it))
+            PremiumUserSdk.showInAppAd(this@CatalogActivity) {
+                startActivity(PreviewActivity.getIntent(this, it))
+            }
         }
         binding.buttonBack.setOnClickListener { finish() }
     }
