@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <import type="android.view.View"/>
         <import type="com.kapi.ca.ui.main.MainViewModel.MainFragment"/>
+        <import type="com.kapi.ca.repository.preferences.Preferences"/>
+        <import type="com.kapi.ca.model.animation.PresetAnimation"/>
         <variable
             name="viewModel"
             type="com.kapi.ca.ui.main.MainViewModel" />
@@ -14,42 +17,623 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#FFE277"
+        android:background="#04103A"
         android:clipChildren="false">
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:name="com.kapi.ca.ui.home.HomeFragment"/>
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="360:70"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@{viewModel.selectedFragment == MainFragment.ANIMATION ? @drawable/ic_animation_selected : @drawable/ic_animation}"
-                android:onClick="@{(_) -> viewModel.onAnimationClick()}"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="360:173"
+                    android:orientation="vertical"
+                    android:clipChildren="false">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@{viewModel.selectedFragment == MainFragment.HOME ? @drawable/ic_home_selected : @drawable/ic_home}"
-                android:onClick="@{(_) -> viewModel.onHomeClick()}"/>
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="22"/>
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="81"
+                        android:clipChildren="false">
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintDimensionRatio="360:84">
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="77:84"
+                                app:layout_constraintHorizontal_bias="0.056537"
+                                android:src="@drawable/img_icon"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="70"
+                        android:orientation="horizontal">
+                        
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:onClick="@{(_) -> viewModel.onAnimationClick()}">
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_tab_animations"/>
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_tab_animations"
+                                android:tint="#E7231C"
+                                android:alpha="@{viewModel.selectedFragment == MainFragment.ANIMATION ? 1f : 0f}"/>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintDimensionRatio="180:2"
+                                android:background="#E7231C"
+                                android:alpha="@{viewModel.selectedFragment == MainFragment.ANIMATION ? 1f : 0f}"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:onClick="@{(_) -> viewModel.onSettingsClick()}">
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_tab_settings"/>
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_tab_settings"
+                                android:tint="#E7231C"
+                                android:alpha="@{viewModel.selectedFragment == MainFragment.SETTINGS ? 1f : 0f}"/>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintDimensionRatio="180:2"
+                                android:background="#E7231C"
+                                android:alpha="@{viewModel.selectedFragment == MainFragment.SETTINGS ? 1f : 0f}"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="1"
-                android:src="@{viewModel.selectedFragment == MainFragment.SETTINGS ? @drawable/ic_options_selected : @drawable/ic_options}"
-                android:onClick="@{(_) -> viewModel.onSettingsClick()}"/>
+                android:scrollbars="none"
+                android:overScrollMode="never">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="360:599"
+                        android:orientation="vertical"
+                        android:visibility="@{viewModel.selectedFragment == MainFragment.ANIMATION ? View.VISIBLE : View.GONE}">
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="30"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="22">
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="1:1"
+                                app:layout_constraintHeight_percent="0.5"
+                                app:layout_constraintHorizontal_bias="0.04"
+                                android:src="@drawable/ic_animation"/>
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="280:22"
+                                android:gravity="start|center_vertical"
+                                app:autoSizeTextType="uniform"
+                                app:autoSizeMaxTextSize="20sp"
+                                app:autoSizeMinTextSize="1sp"
+                                android:textColor="@android:color/white"
+                                android:fontFamily="@font/roboto_700"
+                                android:text="@string/charging_animations"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="30"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="377">
+
+                            <com.kapi.ca.ui.custom.ScalableCardView
+                                android:id="@+id/buttonA01"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="213:377"
+                                app:layout_constraintHorizontal_bias="0.1088"
+                                app:cardBackgroundColor="@android:color/transparent"
+                                app:cardElevation="0dp"
+                                app:scale_by="byWidth"
+                                app:scalable_corner_radius="0.009">
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@mipmap/preview_01"
+                                    android:scaleType="centerCrop"/>
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="#E7231C"
+                                    android:visibility="@{Preferences.INSTANCE.selectedAnimationObservable == PresetAnimation.A01 ? View.VISIBLE : View.GONE}">
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintDimensionRatio="209:373"
+                                        app:layout_constraintWidth_percent="0.98"
+                                        android:scaleType="centerCrop"
+                                        android:src="@mipmap/preview_01"
+                                        tools:ignore="TooDeepLayout" />
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </com.kapi.ca.ui.custom.ScalableCardView>
+
+                            <com.kapi.ca.ui.custom.ScalableCardView
+                                android:id="@+id/buttonA02"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="99:183"
+                                app:layout_constraintWidth_percent="0.275"
+                                app:layout_constraintHorizontal_bias="0.938693"
+                                app:cardBackgroundColor="@android:color/transparent"
+                                app:cardElevation="0dp"
+                                app:scale_by="byWidth"
+                                app:scalable_corner_radius="0.020202">
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@mipmap/preview_02"
+                                    android:scaleType="centerCrop"/>
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="#E7231C"
+                                    android:visibility="@{Preferences.INSTANCE.selectedAnimationObservable == PresetAnimation.A02 ? View.VISIBLE : View.GONE}">
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintDimensionRatio="95:179"
+                                        app:layout_constraintWidth_percent="0.959595"
+                                        android:scaleType="centerCrop"
+                                        android:src="@mipmap/preview_02"
+                                        tools:ignore="TooDeepLayout" />
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </com.kapi.ca.ui.custom.ScalableCardView>
+
+                            <com.kapi.ca.ui.custom.ScalableCardView
+                                android:id="@+id/buttonA03"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="99:183"
+                                app:layout_constraintWidth_percent="0.275"
+                                app:layout_constraintHorizontal_bias="0.938693"
+                                app:cardBackgroundColor="@android:color/transparent"
+                                app:cardElevation="0dp"
+                                app:scale_by="byWidth"
+                                app:scalable_corner_radius="0.020202">
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@mipmap/preview_03"
+                                    android:scaleType="centerCrop"/>
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="#E7231C"
+                                    android:visibility="@{Preferences.INSTANCE.selectedAnimationObservable == PresetAnimation.A03 ? View.VISIBLE : View.GONE}">
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintDimensionRatio="95:179"
+                                        app:layout_constraintWidth_percent="0.959595"
+                                        android:scaleType="centerCrop"
+                                        android:src="@mipmap/preview_03"
+                                        tools:ignore="TooDeepLayout" />
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </com.kapi.ca.ui.custom.ScalableCardView>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="20"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="90">
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="328:90">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/buttonViewMore"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintDimensionRatio="10076:9000">
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintDimensionRatio="67:82"
+                                        app:layout_constraintHeight_percent="0.9111"
+                                        android:src="@drawable/button_next"/>
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintDimensionRatio="10076:1600"
+                                        app:layout_constraintVertical_bias="0.9459"
+                                        android:gravity="center"
+                                        app:autoSizeTextType="uniform"
+                                        app:autoSizeMaxTextSize="14sp"
+                                        app:autoSizeMinTextSize="1sp"
+                                        android:textColor="#E7231C"
+                                        android:fontFamily="@font/roboto_400"
+                                        android:text="@string/view_more"/>
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="30"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="360:324"
+                        android:orientation="vertical"
+                        android:visibility="@{viewModel.selectedFragment == MainFragment.ANIMATION.SETTINGS ? View.VISIBLE : View.GONE}">
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="51"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="33"
+                            android:onClick="@{(_) -> viewModel.onTurnOnOffClick()}">
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="252:22"
+                                app:layout_constraintHeight_percent="0.666666"
+                                app:layout_constraintHorizontal_bias="0.148"
+                                android:gravity="center_vertical"
+                                app:autoSizeTextType="uniform"
+                                app:autoSizeMaxTextSize="20sp"
+                                app:autoSizeMinTextSize="1sp"
+                                android:textColor="#FFFFFF"
+                                android:fontFamily="@font/roboto_400"
+                                android:text="@string/charging_animation"/>
+                            <androidx.appcompat.widget.AppCompatCheckBox
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="59:33"
+                                app:layout_constraintHorizontal_bias="0.9468"
+                                android:background="@drawable/checkbox"
+                                android:button="@null"
+                                android:clickable="false"
+                                android:checked="@{viewModel.isAppOn}"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="40"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2">
+                            <com.kapi.ca.ui.custom.ScalableCardView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="3145:20"
+                                app:cardElevation="0dp"
+                                app:cardBackgroundColor="#E7231C"
+                                app:scale_by="byHeight"
+                                app:scalable_corner_radius="0.5"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="29"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="22"
+                            android:onClick="@{(_) -> viewModel.onNotificationsClick()}">
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="252:22"
+                                app:layout_constraintHorizontal_bias="0.148"
+                                android:gravity="center_vertical"
+                                app:autoSizeTextType="uniform"
+                                app:autoSizeMaxTextSize="20sp"
+                                app:autoSizeMinTextSize="1sp"
+                                android:textColor="#FFFFFF"
+                                android:fontFamily="@font/roboto_400"
+                                android:text="@string/notifications"/>
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="2:1"
+                                app:layout_constraintHeight_percent="0.818181"
+                                app:layout_constraintHorizontal_bias="0.91358"
+                                android:thumb="@drawable/switch_thumb"
+                                app:track="@drawable/switch_track"
+                                android:clickable="false"
+                                android:checked="@{viewModel.areNotificationsOn}"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="20"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="29"
+                            android:onClick="@{(_) -> viewModel.onFlashClick()}">
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="1:1"
+                                app:layout_constraintHorizontal_bias="0.048"
+                                android:src="@drawable/ic_flash"
+                                android:alpha="@{viewModel.areNotificationsOn ? 1f : 0.5f}"/>
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="198:22"
+                                app:layout_constraintHeight_percent="0.75862"
+                                app:layout_constraintHorizontal_bias="0.37"
+                                android:gravity="center_vertical"
+                                app:autoSizeTextType="uniform"
+                                app:autoSizeMaxTextSize="20sp"
+                                app:autoSizeMinTextSize="1sp"
+                                android:textColor="#FFFFFF"
+                                android:fontFamily="@font/roboto_400"
+                                android:text="@string/flash"
+                                android:alpha="@{viewModel.areNotificationsOn ? 1f : 0.5f}"/>
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="2:1"
+                                app:layout_constraintHeight_percent="0.62"
+                                app:layout_constraintHorizontal_bias="0.91358"
+                                android:thumb="@drawable/switch_thumb"
+                                app:track="@drawable/switch_track"
+                                android:clickable="false"
+                                android:checked="@{viewModel.isFlashOn}"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="20"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="29"
+                            android:onClick="@{(_) -> viewModel.onVibrationClick()}">
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="1:1"
+                                app:layout_constraintHorizontal_bias="0.048"
+                                android:src="@drawable/ic_vibration"
+                                android:alpha="@{viewModel.areNotificationsOn ? 1f : 0.5f}"/>
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="198:22"
+                                app:layout_constraintHeight_percent="0.75862"
+                                app:layout_constraintHorizontal_bias="0.37"
+                                android:gravity="center_vertical"
+                                app:autoSizeTextType="uniform"
+                                app:autoSizeMaxTextSize="20sp"
+                                app:autoSizeMinTextSize="1sp"
+                                android:textColor="#FFFFFF"
+                                android:fontFamily="@font/roboto_400"
+                                android:text="@string/vibration"
+                                android:alpha="@{viewModel.areNotificationsOn ? 1f : 0.5f}"/>
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="2:1"
+                                app:layout_constraintHeight_percent="0.62"
+                                app:layout_constraintHorizontal_bias="0.91358"
+                                android:thumb="@drawable/switch_thumb"
+                                app:track="@drawable/switch_track"
+                                android:clickable="false"
+                                android:checked="@{viewModel.isVibrationOn}"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="20"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="29"
+                            android:onClick="@{(_) -> viewModel.onSoundClick()}">
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="1:1"
+                                app:layout_constraintHorizontal_bias="0.048"
+                                android:src="@drawable/ic_sound"
+                                android:alpha="@{viewModel.areNotificationsOn ? 1f : 0.5f}"/>
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="198:22"
+                                app:layout_constraintHeight_percent="0.75862"
+                                app:layout_constraintHorizontal_bias="0.37"
+                                android:gravity="center_vertical"
+                                app:autoSizeTextType="uniform"
+                                app:autoSizeMaxTextSize="20sp"
+                                app:autoSizeMinTextSize="1sp"
+                                android:textColor="#FFFFFF"
+                                android:fontFamily="@font/roboto_400"
+                                android:text="@string/sound"
+                                android:alpha="@{viewModel.areNotificationsOn ? 1f : 0.5f}"/>
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintDimensionRatio="2:1"
+                                app:layout_constraintHeight_percent="0.62"
+                                app:layout_constraintHorizontal_bias="0.91358"
+                                android:thumb="@drawable/switch_thumb"
+                                app:track="@drawable/switch_track"
+                                android:clickable="false"
+                                android:checked="@{viewModel.isSoundOn}"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

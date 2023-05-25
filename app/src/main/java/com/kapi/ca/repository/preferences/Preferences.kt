@@ -1,6 +1,7 @@
 package com.kapi.ca.repository.preferences
 
 import android.content.Context
+import androidx.databinding.ObservableField
 import com.kapi.ca.App
 import com.kapi.ca.model.animation.Animation
 
@@ -17,7 +18,11 @@ object Preferences {
 
     var selectedAnimation: Animation
         get() = Animation.valueOf(prefs.getString(KEY_SELECTED_ANIMATION, null))
-        set(value) = prefs.edit().putString(KEY_SELECTED_ANIMATION, value.getPrefString()).apply()
+        set(value) {
+            prefs.edit().putString(KEY_SELECTED_ANIMATION, value.getPrefString()).apply()
+            selectedAnimationObservable.set(value)
+        }
+    val selectedAnimationObservable = ObservableField(selectedAnimation)
 
     var showWhenUnlocked: Boolean
         get() = prefs.getBoolean(KEY_SHOW_WHEN_UNLOCKED, true)

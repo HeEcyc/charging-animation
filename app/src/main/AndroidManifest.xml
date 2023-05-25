@@ -104,6 +104,13 @@
             android:theme="@style/Theme.ChargingAnimation.Transparent"
             tools:ignore="LockedOrientationActivity" />
 
+        <activity
+            android:name="com.kapi.ca.ui.animations.AnimationsActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ChargingAnimation.Transparent"
+            tools:ignore="LockedOrientationActivity" />
+
         <service android:name="com.kapi.ca.repository.background.display.ForegroundService"/>
 
 <!--        <receiver-->

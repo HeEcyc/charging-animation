@@ -1,99 +1,20 @@
 package com.kapi.ca.ui.main
 
-import android.Manifest
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.os.Build
 import android.provider.Settings
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
-import androidx.fragment.app.commit
-import androidx.lifecycle.LifecycleCoroutineScope
-import androidx.lifecycle.lifecycleScope
-import com.nguyenhoanglam.imagepicker.model.Image
-import com.nguyenhoanglam.imagepicker.model.ImagePickerConfig
-import com.nguyenhoanglam.imagepicker.model.RootDirectory
-import com.nguyenhoanglam.imagepicker.ui.imagepicker.registerImagePicker
-import com.kapi.ca.App
 import com.kapi.ca.R
 import com.kapi.ca.base.BaseActivity
 import com.kapi.ca.databinding.MainActivityBinding
+import com.kapi.ca.model.animation.PresetAnimation
 import com.kapi.ca.repository.background.display.ForegroundService
-import com.kapi.ca.ui.animations.AnimationFragment
-import com.kapi.ca.ui.home.HomeFragment
+import com.kapi.ca.ui.animations.AnimationsActivity
 import com.kapi.ca.ui.onboarding.OnboardingActivity
-import com.kapi.ca.ui.settings.SettingsFragment
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import java.util.*
-import kotlin.coroutines.suspendCoroutine
+import com.kapi.ca.ui.preview.PreviewActivity
 
 class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
 
     val viewModel: MainViewModel by viewModels()
-
-    private var onImagePickerResult: ((ArrayList<Image>) -> Unit)? = null
-    private val imagePickerActivityLauncher = registerImagePicker {
-        if (it.isNotEmpty()) onImagePickerResult?.invoke(it)
-        onImagePickerResult = null
-    }
-
-    private var onRuntimePermissionResult: ((Boolean) -> Unit)? = null
-    private val runtimePermissionLauncher =
-        registerForActivityResult(ActivityResultContracts.RequestPermission()) {
-            onRuntimePermissionResult?.invoke(it)
-            onRuntimePermissionResult = null
-        }
-
-    private fun askRuntimePermission(permission: String, onResult: (Boolean) -> Unit) =
-        if (checkPermission(permission))
-            onResult(true)
-        else {
-            onRuntimePermissionResult = onResult
-            runtimePermissionLauncher.launch(permission)
-        }
-
-    private fun askMultipleRuntimePermissions(
-        permissions: List<String>,
-        lifecycleCoroutineScope: LifecycleCoroutineScope,
-        onResult: (Boolean) -> Unit
-    ) = lifecycleCoroutineScope.launch(Dispatchers.Main) {
-        val results = mutableListOf<Boolean>()
-        permissions.forEach { permission ->
-            val isGranted = checkPermission(permission) || suspendCoroutine {  continuation ->
-                askRuntimePermission(permission) { continuation.resumeWith(Result.success(it)) }
-            }
-            results.add(isGranted)
-        }
-        onResult(results.all { isGranted -> isGranted })
-    }
-
-    private fun checkPermission(permission: String) =
-        App.instance.checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED
-
-    fun askStoragePermissions(
-        onResult: (Boolean) -> Unit
-    ) = askMultipleRuntimePermissions(
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
-            listOf(Manifest.permission.READ_EXTERNAL_STORAGE)
-        else
-            listOf(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE),
-        lifecycleScope,
-        onResult
-    )
-
-    fun pickImage(onImage: (Image) -> Unit) {
-        onImagePickerResult = { onImage(it.first()) }
-        imagePickerActivityLauncher.launch(
-            ImagePickerConfig(
-                isFolderMode = false,
-                rootDirectory = RootDirectory.DCIM,
-                isMultipleMode = false,
-                isShowNumberIndicator = false,
-                maxSize = 1,
-            )
-        )
-    }
 
     override fun provideLayoutId() = R.layout.main_activity
 
@@ -106,14 +27,17 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
         if (!Settings.canDrawOverlays(this))
             startActivity(Intent(this, OnboardingActivity::class.java))
 
-        viewModel.showAnimation.observe(this) {
-            supportFragmentManager.commit { replace(R.id.fragmentContainer, AnimationFragment()) }
+        binding.buttonA01.setOnClickListener {
+            startActivity(PreviewActivity.getIntent(this, PresetAnimation.A01))
         }
-        viewModel.showHome.observe(this) {
-            supportFragmentManager.commit { replace(R.id.fragmentContainer, HomeFragment()) }
+        binding.buttonA02.setOnClickListener {
+            startActivity(PreviewActivity.getIntent(this, PresetAnimation.A02))
         }
-        viewModel.showSettings.observe(this) {
-            supportFragmentManager.commit { replace(R.id.fragmentContainer, SettingsFragment()) }
+        binding.buttonA03.setOnClickListener {
+            startActivity(PreviewActivity.getIntent(this, PresetAnimation.A03))
+        }
+        binding.buttonViewMore.setOnClickListener {
+            startActivity(Intent(this, AnimationsActivity::class.java))
         }
     }
 

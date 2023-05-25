@@ -11,7 +11,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clipChildren="false">
+        android:clipChildren="false"
+        android:background="#04103A">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="match_parent"
@@ -30,13 +31,17 @@
             android:clipChildren="false">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="360:160"
-                android:src="@drawable/onboarding_text"/>
+                app:layout_constraintDimensionRatio="174:189"
+                app:layout_constraintWidth_percent="0.48333"
+                app:layout_constraintVertical_bias="0.98"
+                app:layout_constraintHorizontal_bias="0.94"
+                android:src="@drawable/img_icon"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

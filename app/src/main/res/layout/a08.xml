@@ -11,7 +11,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/a08gradient">
+        android:background="#F8EDEB"
+        android:clipChildren="false">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -19,7 +20,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintDimensionRatio="360:800">
+            app:layout_constraintDimensionRatio="360:800"
+            android:clipChildren="false">
 
             <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="0dp"
@@ -30,29 +32,29 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.2076"
-                app:layout_constraintWidth_percent="1.4194444"
+                app:layout_constraintWidth_percent="1.6"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
-                app:lottie_rawRes="@raw/a08emoji" />
+                app:lottie_rawRes="@raw/a08duck" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:fontFamily="@font/exo_2_700"
+                android:fontFamily="@font/rubik_pixels_400"
                 android:gravity="center"
                 android:lines="1"
                 android:text="@{blHolder.batteryLevel}"
-                android:textColor="#E23648"
+                android:textColor="#853A59"
                 app:autoSizeMaxTextSize="70sp"
                 app:autoSizeMinTextSize="1sp"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="183:72"
+                app:layout_constraintDimensionRatio="199:72"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintWidth_percent="0.508333"
+                app:layout_constraintHeight_percent="0.09"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.853" />
+                app:layout_constraintVertical_bias="0.876" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

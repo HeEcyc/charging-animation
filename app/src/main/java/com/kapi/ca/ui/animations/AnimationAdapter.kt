@@ -24,8 +24,14 @@ class AnimationAdapter(
         object : BaseItem<Animation, ItemAnimationBinding>(binding) {
             override fun bind(t: Animation) {
                 when (t) {
-                    is PresetAnimation -> binding.image.setImageResource(t.previewPicRes)
-                    is CustomAnimation -> Glide.with(App.instance).load(t.filePath).into(binding.image)
+                    is PresetAnimation -> {
+                        binding.image1.setImageResource(t.previewPicRes)
+                        binding.image2.setImageResource(t.previewPicRes)
+                    }
+                    is CustomAnimation -> {
+                        Glide.with(App.instance).load(t.filePath).into(binding.image1)
+                        Glide.with(App.instance).load(t.filePath).into(binding.image2)
+                    }
                 }
             }
         }

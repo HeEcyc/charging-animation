@@ -12,8 +12,12 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#87151515"
         android:clipChildren="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/animationHost"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -27,44 +31,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintDimensionRatio="360:94">
+                    app:layout_constraintDimensionRatio="360:47">
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/buttonBack"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
-                        app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintDimensionRatio="1:1"
-                        app:layout_constraintHeight_percent="0.5"
+                        app:layout_constraintHeight_percent="0.53"
                         app:layout_constraintVertical_bias="0.574468"
-                        app:layout_constraintHorizontal_bias="0.05"
-                        android:src="@drawable/ic_back"/>
+                        app:layout_constraintHorizontal_bias="0.04776"
+                        android:src="@drawable/button_back"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <Space
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1">
-                <com.kapi.ca.ui.custom.ScalableCardView
-                    android:id="@+id/buttonHide"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintDimensionRatio="328:571"
-                    app:cardElevation="0dp"
-                    app:cardBackgroundColor="@android:color/white"
-                    scaleType="@{ScaleType.BY_WIDTH}"
-                    scalableCornerRadius="@{0.03f}">
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/animationHost1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
-                </com.kapi.ca.ui.custom.ScalableCardView>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_weight="1"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -74,38 +60,36 @@
                     android:layout_height="0dp"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintDimensionRatio="360:112">
+                    app:layout_constraintDimensionRatio="360:107">
                     <com.kapi.ca.ui.custom.ScalableCardView
                         android:id="@+id/buttonApply"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintDimensionRatio="156:42"
-                        app:layout_constraintHeight_percent="0.375"
-                        app:layout_constraintVertical_bias="0.2857"
+                        app:layout_constraintDimensionRatio="207:57"
+                        app:layout_constraintHeight_percent="0.53271"
                         app:cardElevation="0dp"
                         app:cardBackgroundColor="@android:color/transparent"
                         app:scale_by="byHeight"
-                        app:scalable_corner_radius="0.5">
+                        app:scalable_corner_radius="0.14">
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="#00DDB3">
+                            android:background="#04103A">
                             <androidx.appcompat.widget.AppCompatTextView
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintDimensionRatio="156:22"
+                                app:layout_constraintDimensionRatio="207:22"
                                 android:gravity="center"
                                 app:autoSizeTextType="uniform"
                                 app:autoSizeMaxTextSize="20sp"
                                 app:autoSizeMinTextSize="1sp"
-                                android:textColor="#014242"
-                                android:fontFamily="@font/gilroy_700"
+                                android:textColor="#E7231C"
+                                android:fontFamily="@font/roboto_700"
                                 android:text="@string/apply"/>
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </com.kapi.ca.ui.custom.ScalableCardView>
@@ -113,18 +97,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/buttonShow"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone">
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/animationHost2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/white" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
