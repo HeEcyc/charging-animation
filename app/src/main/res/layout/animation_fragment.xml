@@ -5,11 +5,11 @@
 
     <data>
         <import type="android.view.View"/>
-        <import type="com.charful.cheerge.ui.animations.AnimationViewModel.Tab"/>
-        <import type="com.charful.cheerge.R"/>
+        <import type="com.sti.ilo.ui.animations.AnimationViewModel.Tab"/>
+        <import type="com.sti.ilo.R"/>
         <variable
             name="viewModel"
-            type="com.charful.cheerge.ui.animations.AnimationViewModel" />
+            type="com.sti.ilo.ui.animations.AnimationViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -163,7 +163,7 @@
                                 <androidx.constraintlayout.widget.ConstraintLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent">
-                                    <com.charful.cheerge.ui.custom.TrueAutoSizeTextView
+                                    <com.sti.ilo.ui.custom.TrueAutoSizeTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="0dp"
                                         app:layout_constraintTop_toTopOf="parent"
@@ -222,7 +222,7 @@
                                 <androidx.constraintlayout.widget.ConstraintLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent">
-                                    <com.charful.cheerge.ui.custom.TrueAutoSizeTextView
+                                    <com.sti.ilo.ui.custom.TrueAutoSizeTextView
                                         android:padding="0dp"
                                         android:layout_width="wrap_content"
                                         android:layout_height="0dp"

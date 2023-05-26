@@ -4,7 +4,7 @@
     <data>
         <variable
             name="blHolder"
-            type="com.charful.cheerge.repository.background.display.BatteryLevelReceiver.BatteryLevelHolder" />
+            type="com.sti.ilo.repository.background.display.BatteryLevelReceiver.BatteryLevelHolder" />
     </data>
 
     <androidx.appcompat.widget.AppCompatImageView

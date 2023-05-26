@@ -4,13 +4,13 @@
     <data>
         <variable
             name="viewModel"
-            type="com.charful.cheerge.ui.main.MainViewModel" />
+            type="com.sti.ilo.ui.main.MainViewModel" />
     </data>
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="com.charful.cheerge.ui.animations.AnimationFragment"/>
+        android:name="com.sti.ilo.ui.animations.AnimationFragment"/>
 
 </layout>

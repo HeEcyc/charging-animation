@@ -2,15 +2,15 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'com.google.gms.google-services'
-    id 'com.google.firebase.crashlytics'
+//    id 'com.google.gms.google-services'
+//    id 'com.google.firebase.crashlytics' todo
 }
 
 android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.charful.cheerge"
+        applicationId "com.sti.ilo"
         minSdk 23
         targetSdk 32
         versionCode 1

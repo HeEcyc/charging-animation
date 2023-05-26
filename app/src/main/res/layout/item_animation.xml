@@ -3,16 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="com.charful.cheerge.ui.custom.ScalableCardView.ScaleType"/>
+        <import type="com.sti.ilo.ui.custom.ScalableCardView.ScaleType"/>
         <variable
             name="item"
-            type="com.charful.cheerge.model.animation.Animation" />
+            type="com.sti.ilo.model.animation.Animation" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <com.charful.cheerge.ui.custom.ScalableCardView
+        <com.sti.ilo.ui.custom.ScalableCardView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="parent"
@@ -27,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/white">
-                <com.charful.cheerge.ui.custom.ScalableCardView
+                <com.sti.ilo.ui.custom.ScalableCardView
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     app:layout_constraintTop_toTopOf="parent"
@@ -64,7 +64,7 @@
                             android:src="@drawable/ic_selected"/>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
-                </com.charful.cheerge.ui.custom.ScalableCardView>
+                </com.sti.ilo.ui.custom.ScalableCardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -73,7 +73,7 @@
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"/>
 
-        </com.charful.cheerge.ui.custom.ScalableCardView>
+        </com.sti.ilo.ui.custom.ScalableCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

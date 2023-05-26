@@ -5,8 +5,8 @@
     <data>
         <variable
             name="viewModel"
-            type="com.charful.cheerge.ui.preview.PreviewViewModel" />
-        <import type="com.charful.cheerge.ui.custom.ScalableCardView.ScaleType"/>
+            type="com.sti.ilo.ui.preview.PreviewViewModel" />
+        <import type="com.sti.ilo.ui.custom.ScalableCardView.ScaleType"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -54,7 +54,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="546">
-                        <com.charful.cheerge.ui.custom.ScalableCardView
+                        <com.sti.ilo.ui.custom.ScalableCardView
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -62,13 +62,13 @@
                             app:layout_constraintDimensionRatio="340:546"
                             app:cardBackgroundColor="@android:color/transparent"
                             app:cardElevation="0dp"
-                            scaleType="@{com.charful.cheerge.ui.custom.ScalableCardView.ScaleType.BY_WIDTH}"
+                            scaleType="@{com.sti.ilo.ui.custom.ScalableCardView.ScaleType.BY_WIDTH}"
                             scalableCornerRadius="@{0.0294f}">
                             <androidx.constraintlayout.widget.ConstraintLayout
                                 android:id="@+id/animationHost1"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"/>
-                        </com.charful.cheerge.ui.custom.ScalableCardView>
+                        </com.sti.ilo.ui.custom.ScalableCardView>
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <Space
@@ -80,7 +80,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="47">
-                        <com.charful.cheerge.ui.custom.ScalableCardView
+                        <com.sti.ilo.ui.custom.ScalableCardView
                             android:id="@+id/buttonApply"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
@@ -89,7 +89,7 @@
                             app:layout_constraintDimensionRatio="164:47"
                             app:cardElevation="0dp"
                             app:cardBackgroundColor="@android:color/transparent"
-                            scaleType="@{com.charful.cheerge.ui.custom.ScalableCardView.ScaleType.BY_HEIGHT}"
+                            scaleType="@{com.sti.ilo.ui.custom.ScalableCardView.ScaleType.BY_HEIGHT}"
                             scalableCornerRadius="@{0.1638f}">
                             <androidx.constraintlayout.widget.ConstraintLayout
                                 android:layout_width="match_parent"
@@ -112,7 +112,7 @@
                                     android:fontFamily="@font/sf_pro_display_bold"
                                     android:text="@string/apply"/>
                             </androidx.constraintlayout.widget.ConstraintLayout>
-                        </com.charful.cheerge.ui.custom.ScalableCardView>
+                        </com.sti.ilo.ui.custom.ScalableCardView>
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <Space

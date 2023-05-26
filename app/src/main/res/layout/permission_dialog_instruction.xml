@@ -48,7 +48,7 @@
                 android:fontFamily="@font/sf_pro_display_regular"
                 android:text="@string/if_your_device_does_not_have_this_permission_you_can_ignore_it"/>
 
-            <com.charful.cheerge.ui.custom.ScalableCardView
+            <com.sti.ilo.ui.custom.ScalableCardView
                 android:id="@+id/buttonMoreInfo"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -61,7 +61,7 @@
                 app:layout_constraintVertical_bias="0.8481"
                 app:cardBackgroundColor="@android:color/transparent"
                 app:cardElevation="0dp"
-                scaleType="@{com.charful.cheerge.ui.custom.ScalableCardView.ScaleType.BY_HEIGHT}"
+                scaleType="@{com.sti.ilo.ui.custom.ScalableCardView.ScaleType.BY_HEIGHT}"
                 scalableCornerRadius="@{0.1638f}">
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -84,7 +84,7 @@
                         android:fontFamily="@font/sf_pro_display_bold"
                         android:text="@string/more_information"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
-            </com.charful.cheerge.ui.custom.ScalableCardView>
+            </com.sti.ilo.ui.custom.ScalableCardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.charful.cheerge.ui.onboarding.OnboardingViewModel" />
+            type="com.sti.ilo.ui.onboarding.OnboardingViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -49,7 +49,7 @@
                 android:fontFamily="@font/recoleta_bold"
                 android:text="@string/bring_fun_to_your_phone_s_charging_screen"/>
 
-            <com.charful.cheerge.ui.custom.ScalableCardView
+            <com.sti.ilo.ui.custom.ScalableCardView
                 android:id="@+id/buttonStart"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -62,7 +62,7 @@
                 app:layout_constraintVertical_bias="0.863"
                 app:cardElevation="0dp"
                 app:cardBackgroundColor="@android:color/transparent"
-                scaleType="@{com.charful.cheerge.ui.custom.ScalableCardView.ScaleType.BY_HEIGHT}"
+                scaleType="@{com.sti.ilo.ui.custom.ScalableCardView.ScaleType.BY_HEIGHT}"
                 scalableCornerRadius="@{0.1639f}">
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -85,7 +85,7 @@
                         android:fontFamily="@font/sf_pro_display_bold"
                         android:text="@string/start"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
-            </com.charful.cheerge.ui.custom.ScalableCardView>
+            </com.sti.ilo.ui.custom.ScalableCardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
