@@ -2,16 +2,13 @@ package com.sti.ilo.base
 
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Bundle
 import android.os.StrictMode
 import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ShareCompat
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.sti.ilo.BR
-import com.sti.ilo.utils.APP_LINK
 
 abstract class BaseActivity<TViewModel : BaseViewModel, TBinding : ViewDataBinding> : AppCompatActivity() {
 
@@ -56,19 +53,6 @@ abstract class BaseActivity<TViewModel : BaseViewModel, TBinding : ViewDataBindi
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         onPermission?.let { it(!grantResults.contains(PackageManager.PERMISSION_DENIED)) }
         onPermission = null
-    }
-
-    fun openLink(link: String) {
-        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(link)))
-    }
-
-    fun showSharedIntent() {
-        ShareCompat.IntentBuilder
-            .from(this)
-            .setType("text/plain")
-            .setText("Install me\n$APP_LINK")
-            .createChooserIntent()
-            .let(::startActivity)
     }
 
 }

@@ -11,7 +11,6 @@ import com.sti.ilo.base.BaseActivity
 import com.sti.ilo.databinding.PreviewActivityBinding
 import com.sti.ilo.model.animation.Animation
 import com.sti.ilo.repository.preferences.Preferences
-import com.sti.ilo.ui.permission.PermissionDialog
 
 class PreviewActivity : BaseActivity<PreviewViewModel, PreviewActivityBinding>() {
 
@@ -64,10 +63,7 @@ class PreviewActivity : BaseActivity<PreviewViewModel, PreviewActivityBinding>()
             binding.animationHost2.visibility = View.GONE
         }
         binding.buttonApply.setOnClickListener {
-            if (Settings.canDrawOverlays(this)) setupTheme()
-            else PermissionDialog
-                .notClosable()
-                .show(supportFragmentManager, "sda")
+            setupTheme()
         }
     }
 
@@ -77,10 +73,7 @@ class PreviewActivity : BaseActivity<PreviewViewModel, PreviewActivityBinding>()
             ?.let { it as? Animation } ?: return
 
         Preferences.selectedAnimation = animation
-        AppliedDialog().apply {
-            onButtonClick = this@PreviewActivity::finish
-            show(supportFragmentManager, null)
-        }
+        AppliedDialog().show(supportFragmentManager, null)
     }
 
 }

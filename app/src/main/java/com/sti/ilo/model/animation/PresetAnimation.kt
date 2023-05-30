@@ -21,8 +21,7 @@ enum class PresetAnimation(
     A04(R.mipmap.preview_04, A04Binding::class.java),
     A05(R.mipmap.preview_05, A05Binding::class.java),
     A06(R.mipmap.preview_06, A06Binding::class.java),
-    A07(R.mipmap.preview_07, A07Binding::class.java),
-    A08(R.mipmap.preview_08, A08Binding::class.java);
+    A07(R.mipmap.preview_07, A07Binding::class.java);
 
     override fun inflateAnimationView(context: Context): View = animationBindingClass
         .getMethod(

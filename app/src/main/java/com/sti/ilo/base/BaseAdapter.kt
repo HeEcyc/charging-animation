@@ -71,7 +71,7 @@ abstract class BaseAdapter<T, V : ViewDataBinding>(private val onItemClick: ((T)
         RecyclerView.ViewHolder(binding.root) {
 
         open fun setVariable(t: T) {
-            binding.setVariable(BR.item, t)
+//            binding.setVariable(BR.item, t) todo
             binding.executePendingBindings()
         }
 

@@ -12,12 +12,6 @@ import com.sti.ilo.databinding.PermissionDialogBinding
 
 class PermissionDialog : BaseDialog<PermissionDialogBinding>(R.layout.permission_dialog) {
 
-    companion object {
-        fun notClosable() = PermissionDialog().apply {
-            arguments = bundleOf("not_closable" to true)
-        }
-    }
-
     private val overlayPermissionLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if (Settings.canDrawOverlays(requireContext())) {
@@ -31,14 +25,9 @@ class PermissionDialog : BaseDialog<PermissionDialogBinding>(R.layout.permission
         initListeners()
     }
 
-    private fun isNotClosable() =
-        arguments?.getBoolean("not_closable") ?: false
-
-
     private fun initListeners() {
         binding.buttonClose.setOnClickListener {
-            if (isNotClosable()) dismiss()
-            else requireActivity().finish()
+            requireActivity().finish()
         }
         binding.layoutPermission.buttonAllow.setOnClickListener { askOverlayPermission() }
         binding.layoutInstruction.buttonMoreInfo.setOnClickListener {
@@ -52,8 +41,4 @@ class PermissionDialog : BaseDialog<PermissionDialogBinding>(R.layout.permission
             .setData(Uri.fromParts("package", requireContext().packageName, null))
     )
 
-    override fun onDetach() {
-        super.onDetach()
-        parentFragmentManager.setFragmentResult("action", bundleOf())
-    }
 }

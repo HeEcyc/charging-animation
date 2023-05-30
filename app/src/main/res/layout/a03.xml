@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F6F7F8"
+        android:background="#A1EEFF"
         android:clipChildren="false">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
@@ -26,37 +26,34 @@
             <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="380:161.94"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintVertical_bias="0.29621"
-                app:layout_constraintWidth_percent="1.055555"
-                app:lottie_rawRes="@raw/a03cat"
+                app:layout_constraintWidth_percent="1.3"
+                app:lottie_rawRes="@raw/a03bike"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"/>
 
-            <com.airbnb.lottie.LottieAnimationView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintDimensionRatio="435:422.82"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintVertical_bias="1"
-                app:layout_constraintWidth_percent="1.208333"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true"
-                app:lottie_rawRes="@raw/a03battery" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="360:151"
-                android:background="#F6F7F8"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="186:72"
+                app:layout_constraintWidth_percent="0.51666666"
+                app:layout_constraintVertical_bias="0.8475"
+                android:gravity="center"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMaxTextSize="70sp"
+                app:autoSizeMinTextSize="1sp"
+                android:textColor="#73BDFF"
+                android:fontFamily="@font/poiret_one_400"
+                android:text="@{blHolder.batteryLevel}"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
