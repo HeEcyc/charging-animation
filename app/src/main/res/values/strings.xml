@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Decces Charging Animation</string>
+    <string name="app_name" translatable="false">Bioiq Charging Animations</string>
     <string name="charging_animation">Animations</string>
     <string name="if_your_device_does_not_have_this_permission_you_can_ignore_it">If your device does not have this permission, you can ignore it</string>
     <string name="more_information">More Information</string>

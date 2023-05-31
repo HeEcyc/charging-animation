@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.dec.ces.ui.settings.SettingsViewModel" />
+            type="com.bio.oiq.ui.settings.SettingsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

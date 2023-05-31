@@ -3,17 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-        <import type="com.dec.ces.ui.custom.ScalableCardView.ScaleType"/>
+        <import type="com.bio.oiq.ui.custom.ScalableCardView.ScaleType"/>
         <import type="android.view.View"/>
         <variable
             name="item"
-            type="com.dec.ces.ui.adapters.AnimationAdapter.AnimationViewModel" />
+            type="com.bio.oiq.ui.adapters.AnimationAdapter.AnimationViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <com.dec.ces.ui.custom.ScalableCardView
+        <com.bio.oiq.ui.custom.ScalableCardView
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="parent"
@@ -47,7 +47,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.dec.ces.ui.custom.ScalableCardView>
+        </com.bio.oiq.ui.custom.ScalableCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

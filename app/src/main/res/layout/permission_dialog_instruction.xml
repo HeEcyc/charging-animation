@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="com.dec.ces.ui.custom.ScalableCardView.ScaleType"/>
+        <import type="com.bio.oiq.ui.custom.ScalableCardView.ScaleType"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,7 +19,7 @@
             app:layout_constraintDimensionRatio="328:414"
             app:layout_constraintWidth_percent="0.9111">
 
-            <com.dec.ces.ui.custom.ScalableCardView
+            <com.bio.oiq.ui.custom.ScalableCardView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -111,7 +111,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
-            </com.dec.ces.ui.custom.ScalableCardView>
+            </com.bio.oiq.ui.custom.ScalableCardView>
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="match_parent"
