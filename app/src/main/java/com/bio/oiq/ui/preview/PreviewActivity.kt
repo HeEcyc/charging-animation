@@ -1,44 +1,34 @@
 package com.bio.oiq.ui.preview
 
-import android.content.Context
-import android.content.Intent
 import android.view.View
 import androidx.core.view.postDelayed
 import com.bio.oiq.R
-import com.bio.oiq.base.BaseActivity
-import com.bio.oiq.base.BaseViewModel
+import com.bio.oiq.base.BaseDialog
 import com.bio.oiq.databinding.PreviewActivityBinding
 import com.bio.oiq.model.animation.Animation
+import com.bio.oiq.model.animation.CustomAnimation
+import com.bio.oiq.model.animation.PresetAnimation
 import com.bio.oiq.repository.preferences.Preferences
+import com.bumptech.glide.Glide
 
-class PreviewActivity : BaseActivity<BaseViewModel, PreviewActivityBinding>() {
+class PreviewActivity : BaseDialog<PreviewActivityBinding>(R.layout.preview_activity) {
 
-    private val animation: Animation? by lazy { intent?.getSerializableExtra(EXTRAS_ANIMATION) as? Animation }
-
-    companion object {
-        private const val EXTRAS_ANIMATION = "extras_animation"
-
-        fun getIntent(context: Context, animation: Animation) =
-            Intent(context, PreviewActivity::class.java).apply {
-                putExtra(EXTRAS_ANIMATION, animation)
-            }
-    }
-
-    override fun provideLayoutId() = R.layout.preview_activity
+    var animation: Animation? = null
 
     override fun setupUI() {
-        binding.buttonBack.setOnClickListener { finish() }
+        binding.buttonBack.setOnClickListener { dismiss() }
         val animation = animation
         if (animation === null) return
-        binding.layoutBig.setOnClickListener {}
-        binding.animationContainerSmall.addView(animation.inflateAnimationView(this))
-        binding.animationContainerBig.addView(animation.inflateAnimationView(this))
-        binding.buttonExpand.setOnClickListener { binding.layoutBig.visibility = View.VISIBLE }
-        binding.buttonCollapse.setOnClickListener { binding.layoutBig.visibility = View.GONE }
+        if (animation is PresetAnimation) {
+            binding.preview.setImageResource(animation.previewPicRes)
+        } else if (animation is CustomAnimation) {
+            Glide.with(binding.preview).load(animation.filePath).into(binding.preview)
+        }
+        binding.animationContainerSmall.addView(animation.inflateAnimationView(requireContext()))
         binding.buttonApply.setOnClickListener {
             Preferences.selectedAnimation = animation
             binding.applied.visibility = View.VISIBLE
-            it.postDelayed(2000, ::finish)
+            it.postDelayed(2000, ::dismiss)
         }
     }
 

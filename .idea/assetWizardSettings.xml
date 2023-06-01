@@ -308,8 +308,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="a09bg" />
-                            <entry key="sourceFile" value="C:\Users\user\Downloads\earth.svg" />
+                            <entry key="outputName" value="button_menu_back" />
+                            <entry key="sourceFile" value="C:\Users\user\Downloads\settings back.svg" />
                           </map>
                         </option>
                       </PersistentState>

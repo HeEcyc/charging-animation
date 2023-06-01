@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#EDF8FF"
+        android:background="#300A53"
         android:clipChildren="false">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
@@ -31,9 +31,9 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintWidth_percent="1.17858333"
-                app:layout_constraintVertical_bias="0.221867"
-                app:lottie_rawRes="@raw/a01bear"
+                app:layout_constraintWidth_percent="0.9388888888"
+                app:layout_constraintVertical_bias="0.266"
+                app:lottie_rawRes="@raw/a01dino"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"/>
 
@@ -44,15 +44,15 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="174:52"
-                app:layout_constraintWidth_percent="0.48333"
-                app:layout_constraintVertical_bias="0.8168"
+                app:layout_constraintDimensionRatio="184:72"
+                app:layout_constraintHeight_percent="0.09"
+                app:layout_constraintVertical_bias="0.78434"
                 android:gravity="center"
                 app:autoSizeTextType="uniform"
-                app:autoSizeMaxTextSize="50sp"
+                app:autoSizeMaxTextSize="70sp"
                 app:autoSizeMinTextSize="1sp"
-                android:textColor="#DC2527"
-                android:fontFamily="@font/unbounded_400"
+                android:textColor="#7034A8"
+                android:fontFamily="@font/cherry_bomb_one_400"
                 android:text="@{blHolder.batteryLevel}"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

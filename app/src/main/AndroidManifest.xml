@@ -55,20 +55,6 @@
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity"/>
 
-        <activity
-            android:name="com.bio.oiq.ui.preview.PreviewActivity"
-            android:exported="true"
-            android:noHistory="true"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
-
-        <activity
-            android:name="com.bio.oiq.ui.settings.SettingsActivity"
-            android:exported="true"
-            android:noHistory="true"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
-
         <service android:name="com.bio.oiq.repository.background.display.ForegroundService"/>
 
     </application>

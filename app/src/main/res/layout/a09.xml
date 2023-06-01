@@ -10,16 +10,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintDimensionRatio="1:1"
-            android:src="@drawable/a09gradient"/>
-
+        android:layout_height="match_parent"
+        android:background="#DEE2E6"
+        android:clipChildren="false">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -27,20 +20,22 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintDimensionRatio="360:800">
+            app:layout_constraintDimensionRatio="360:800"
+            android:clipChildren="false">
 
             <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_percent="1.325"
-                app:lottie_autoPlay="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintWidth_percent="0.9388888888"
+                app:layout_constraintVertical_bias="0.266"
+                app:lottie_rawRes="@raw/a09circles"
                 app:lottie_loop="true"
-                app:lottie_rawRes="@raw/a09earth" />
+                app:lottie_autoPlay="true"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="0dp"
@@ -49,16 +44,17 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="131:52"
-                app:layout_constraintWidth_percent="0.36388888888"
-                app:layout_constraintVertical_bias="0.86497"
+                app:layout_constraintDimensionRatio="151:72"
+                app:layout_constraintHeight_percent="0.09"
+                app:layout_constraintVertical_bias="0.78434"
                 android:gravity="center"
                 app:autoSizeTextType="uniform"
-                app:autoSizeMaxTextSize="50sp"
-                android:textColor="#ECECEB"
-                android:fontFamily="@font/russo_one_400"
+                app:autoSizeMaxTextSize="70sp"
+                app:autoSizeMinTextSize="1sp"
+                android:textColor="#000000"
+                android:fontFamily="@font/rajdhani_700"
                 android:text="@{blHolder.batteryLevel}"/>
-            
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

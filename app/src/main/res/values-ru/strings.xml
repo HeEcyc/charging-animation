@@ -21,5 +21,6 @@
     <string name="applied">Готово</string>
     <string name="collection">Коллекция</string>
     <string name="cancel">Отмена</string>
+    <string name="apply">Принять</string>
 
 </resources>

@@ -2,8 +2,12 @@ package com.bio.oiq.ui.main
 
 import android.content.Intent
 import android.provider.Settings
+import android.transition.ChangeBounds
+import android.transition.Transition
+import android.transition.TransitionManager
 import android.view.View
 import androidx.activity.viewModels
+import androidx.constraintlayout.widget.ConstraintSet
 import com.bio.oiq.R
 import com.bio.oiq.base.BaseActivity
 import com.bio.oiq.databinding.MainActivityBinding
@@ -13,7 +17,6 @@ import com.bio.oiq.ui.custom.ItemDecorationWithEnds
 import com.bio.oiq.ui.greeting.GreetingActivity
 import com.bio.oiq.ui.permission.PermissionDialog
 import com.bio.oiq.ui.preview.PreviewActivity
-import com.bio.oiq.ui.settings.SettingsActivity
 
 class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
 
@@ -34,14 +37,7 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
         binding.rv.post {
             val baseLengthUnit = binding.rv.width / 360
             var itemDecoration = ItemDecorationWithEnds(
-                topFirst = baseLengthUnit * 42,
-                top = 0,
-                topLast = 0,
-                bottomFirst = baseLengthUnit * 20,
-                bottom = baseLengthUnit * 20,
-                bottomLast = baseLengthUnit * 130,
-                firstPredicate = { i -> i in 0..1 },
-                lastPredicate = { i, c -> if (c % 2 == 0) i in (c - 2) until c else i == c - 1 }
+                bottom = baseLengthUnit * 16
             )
             binding.rv.addItemDecoration(itemDecoration)
             val isLTR = binding.root.layoutDirection == View.LAYOUT_DIRECTION_LTR
@@ -58,11 +54,72 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
             binding.rv.addItemDecoration(itemDecoration)
         }
         viewModel.showPreview.observe(this) {
-            startActivity(PreviewActivity.getIntent(this, it))
+            PreviewActivity().apply {
+                animation = it
+                show(supportFragmentManager, null)
+            }
         }
         binding.buttonSettings.setOnClickListener {
-            startActivity(Intent(this, SettingsActivity::class.java))
+            openDrawer()
+        }
+        binding.buttonMenuBack.setOnClickListener {
+            closeDrawer()
         }
     }
+
+    override fun onResume() {
+        viewModel.isAppOn.set(Preferences.showWhenUnlocked)
+        super.onResume()
+    }
+
+    private fun openDrawer() {
+        binding.drawerContainer.visibility = View.VISIBLE
+        binding.drawerContainer.animate().alpha(1f).setDuration(100).withEndAction {
+            val cs = ConstraintSet()
+            cs.clone(binding.drawerContainer)
+            cs.connect(
+                R.id.drawer,
+                ConstraintSet.END,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.END
+            )
+            cs.clear(R.id.drawer, ConstraintSet.START)
+            TransitionManager.beginDelayedTransition(
+                binding.drawerContainer,
+                ChangeBounds().setDuration(100)
+            )
+            cs.applyTo(binding.drawerContainer)
+        }.start()
+    }
+
+    private fun closeDrawer() {
+        val cs = ConstraintSet()
+        cs.clone(binding.drawerContainer)
+        cs.connect(R.id.drawer, ConstraintSet.START, ConstraintSet.PARENT_ID, ConstraintSet.END)
+        cs.clear(R.id.drawer, ConstraintSet.END)
+        val transition =
+            ChangeBounds().setDuration(100).addListener(object : Transition.TransitionListener {
+                override fun onTransitionStart(transition: Transition) {}
+                override fun onTransitionEnd(transition: Transition) {
+                    binding.drawerContainer.animate().alpha(0f).setDuration(100).withEndAction {
+                        binding.drawerContainer.visibility = View.GONE
+                    }
+                }
+
+                override fun onTransitionCancel(transition: Transition) {}
+                override fun onTransitionPause(transition: Transition) {}
+                override fun onTransitionResume(transition: Transition) {}
+            })
+        TransitionManager.beginDelayedTransition(binding.drawerContainer, transition)
+        cs.applyTo(binding.drawerContainer)
+    }
+
+    override fun onBackPressed() {
+        if (binding.drawerContainer.visibility == View.VISIBLE)
+            closeDrawer()
+        else
+            finish()
+    }
+
 
 }

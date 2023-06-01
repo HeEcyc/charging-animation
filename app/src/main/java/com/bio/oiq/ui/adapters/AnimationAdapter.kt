@@ -27,10 +27,17 @@ class AnimationAdapter(
                 super.bind(t)
                 binding.root.setOnClickListener { onClick(t) }
                 when (t.animation) {
-                    is PresetAnimation -> binding.preview.setImageResource(t.animation.previewPicRes)
-                    is CustomAnimation -> Glide.with(binding.preview).load(t.animation.filePath).into(binding.preview)
+                    is PresetAnimation -> {
+                        binding.preview1.setImageResource(t.animation.previewPicRes)
+                        binding.preview2.setImageResource(t.animation.previewPicRes)
+                    }
+                    is CustomAnimation -> {
+                        Glide.with(binding.preview1).load(t.animation.filePath).into(binding.preview1)
+                        Glide.with(binding.preview2).load(t.animation.filePath).into(binding.preview2)
+                    }
                 }
-                binding.preview.scaleType = ImageView.ScaleType.CENTER_CROP
+                binding.preview1.scaleType = ImageView.ScaleType.CENTER_CROP
+                binding.preview2.scaleType = ImageView.ScaleType.CENTER_CROP
             }
         }
     }
