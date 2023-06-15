@@ -2,6 +2,7 @@ package com.kapi.ca.ui.animations
 
 import android.view.View
 import androidx.activity.viewModels
+import com.app.sdk.sdk.PremiumUserSdk
 import com.kapi.ca.R
 import com.kapi.ca.base.BaseActivity
 import com.kapi.ca.databinding.AnimationsActivityBinding
@@ -36,7 +37,9 @@ class AnimationsActivity : BaseActivity<AnimationViewModel, AnimationsActivityBi
             binding.recyclerAnimation.addItemDecoration(decoration)
         }
         viewModel.showPreview.observe(this) {
-            startActivity(PreviewActivity.getIntent(this, it))
+            PremiumUserSdk.showInAppAd(this) {
+                startActivity(PreviewActivity.getIntent(this, it))
+            }
         }
         binding.buttonBack.setOnClickListener { finish() }
     }

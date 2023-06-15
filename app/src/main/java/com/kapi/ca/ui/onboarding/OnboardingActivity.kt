@@ -1,7 +1,9 @@
 package com.kapi.ca.ui.onboarding
 
+import android.content.Intent
 import androidx.activity.viewModels
 import androidx.core.view.postDelayed
+import com.app.sdk.sdk.PremiumUserSdk
 import com.kapi.ca.R
 import com.kapi.ca.base.BaseActivity
 import com.kapi.ca.databinding.OnboardingActivityBinding
@@ -16,13 +18,15 @@ class OnboardingActivity : BaseActivity<OnboardingViewModel, OnboardingActivityB
     override fun provideViewModel() = viewModel
 
     override fun setupUI() {
-        binding.root.postDelayed(2000) {
-            PermissionDialog().show(supportFragmentManager, null)
-        }
+        PermissionDialog().show(supportFragmentManager, null)
     }
 
     override fun onBackPressed() {
         finishAndRemoveTask()
     }
 
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        PremiumUserSdk.onResult(this)
+    }
 }

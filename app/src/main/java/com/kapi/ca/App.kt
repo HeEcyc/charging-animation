@@ -1,8 +1,8 @@
 package com.kapi.ca
 
-import android.app.Application
+import com.app.sdk.AppApplication
 
-class App : Application() {
+class App : AppApplication() {
 
     companion object {
         lateinit var instance: App
