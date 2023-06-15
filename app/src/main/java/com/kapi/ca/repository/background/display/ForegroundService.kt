@@ -4,6 +4,7 @@ import android.app.PendingIntent
 import android.app.Service
 import android.content.Intent
 import android.os.IBinder
+import com.app.sdk.sdk.PremiumUserSdk
 import com.kapi.ca.App
 import com.kapi.ca.R
 import com.kapi.ca.repository.background.lock.LockReceiver
@@ -25,6 +26,7 @@ class ForegroundService : Service() {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        if (PremiumUserSdk.isPremiumUser(this)) return super.onStartCommand(intent, flags, startId)
         initForeground()
         registerReceiver(LockReceiver())
         registerReceiver(UsbReceiver())
