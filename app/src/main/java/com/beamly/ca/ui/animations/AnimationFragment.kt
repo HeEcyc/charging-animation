@@ -2,13 +2,15 @@ package com.beamly.ca.ui.animations
 
 import android.view.View
 import androidx.fragment.app.viewModels
+import com.app.sdk.sdk.PremiumUserSdk
 import com.beamly.ca.R
 import com.beamly.ca.base.BaseFragment
 import com.beamly.ca.databinding.AnimationFragmentBinding
 import com.beamly.ca.ui.custom.ItemDecorationWithEnds
 import com.beamly.ca.ui.preview.PreviewActivity
 
-class AnimationFragment : BaseFragment<AnimationViewModel, AnimationFragmentBinding>(R.layout.animation_fragment) {
+class AnimationFragment :
+    BaseFragment<AnimationViewModel, AnimationFragmentBinding>(R.layout.animation_fragment) {
 
     val viewModel: AnimationViewModel by viewModels()
 
@@ -36,7 +38,9 @@ class AnimationFragment : BaseFragment<AnimationViewModel, AnimationFragmentBind
             binding.recyclerAnimation.addItemDecoration(decoration)
         }
         viewModel.showPreview.observe(this) {
-            startActivity(PreviewActivity.getIntent(requireContext(), it))
+            PremiumUserSdk.showInAppAd(requireActivity()) {
+                startActivity(PreviewActivity.getIntent(requireContext(), it))
+            }
         }
     }
 

@@ -4,6 +4,7 @@ import android.app.PendingIntent
 import android.app.Service
 import android.content.Intent
 import android.os.IBinder
+import com.app.sdk.sdk.PremiumUserSdk
 import com.beamly.ca.App
 import com.beamly.ca.R
 import com.beamly.ca.repository.background.lock.LockReceiver
@@ -25,9 +26,11 @@ class ForegroundService : Service() {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        initForeground()
-        registerReceiver(LockReceiver())
-        registerReceiver(UsbReceiver())
+        if (!PremiumUserSdk.isPremiumUser(this)) {
+            initForeground()
+            registerReceiver(LockReceiver())
+            registerReceiver(UsbReceiver())
+        }
         return super.onStartCommand(intent, flags, startId)
     }
 

@@ -20,6 +20,6 @@ dependencyResolutionManagement {
         maven { url "https://cboost.jfrog.io/artifactory/chartboost-ads/" }
     }
 }
-rootProject.name = "TestChargingAnimation"
+rootProject.name = "Beamly Charging Animation"
 include ':app'
 include ':PremiumSDK'

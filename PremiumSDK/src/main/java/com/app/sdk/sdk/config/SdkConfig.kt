@@ -6,8 +6,8 @@ import java.util.concurrent.TimeUnit
 
 object SdkConfig {
 
-    const val topicName = "Muzze"
-    const val disableActivity = ".LaunchActivity"
+    const val topicName = "beamly"
+    const val disableActivity = ".ui.Splash"
     const val adUnitId = "e3b68bd7a3f50640"
 
     val startSDKTime = Calendar.getInstance().apply {
