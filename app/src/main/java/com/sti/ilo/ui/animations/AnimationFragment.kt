@@ -1,6 +1,7 @@
 package com.sti.ilo.ui.animations
 
 import androidx.fragment.app.viewModels
+import com.app.sdk.sdk.PremiumUserSdk
 import com.sti.ilo.R
 import com.sti.ilo.base.BaseFragment
 import com.sti.ilo.databinding.AnimationFragmentBinding
@@ -15,7 +16,10 @@ class AnimationFragment :
     override fun setupUI() {
         listOf(binding.a1, binding.a2, binding.a3, binding.a4, binding.a5, binding.a6, binding.a7).forEachIndexed { i, v ->
             binding.motionLayout.listeners[v] = {
-                startActivity(PreviewActivity.getIntent(requireContext(), PresetAnimation.values()[i]))
+                PremiumUserSdk.showInAppAd(requireActivity()){
+                    startActivity(PreviewActivity.getIntent(requireContext(), PresetAnimation.values()[i]))
+                }
+
             }
         }
     }

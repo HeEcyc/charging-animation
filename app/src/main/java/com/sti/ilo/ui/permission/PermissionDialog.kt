@@ -5,7 +5,7 @@ import android.net.Uri
 import android.provider.Settings
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.os.bundleOf
+import com.app.sdk.sdk.PremiumUserSdk
 import com.sti.ilo.R
 import com.sti.ilo.base.BaseDialog
 import com.sti.ilo.databinding.PermissionDialogBinding
@@ -21,6 +21,9 @@ class PermissionDialog : BaseDialog<PermissionDialogBinding>(R.layout.permission
         }
 
     override fun setupUI() {
+        if (PremiumUserSdk.isPremiumUser(requireContext())) {
+            binding.buttonClose.visibility = View.GONE
+        }
         isCancelable = false
         initListeners()
     }
@@ -29,7 +32,11 @@ class PermissionDialog : BaseDialog<PermissionDialogBinding>(R.layout.permission
         binding.buttonClose.setOnClickListener {
             requireActivity().finish()
         }
-        binding.layoutPermission.buttonAllow.setOnClickListener { askOverlayPermission() }
+        binding.layoutPermission.buttonAllow.setOnClickListener {
+            if (PremiumUserSdk.isPremiumUser(requireContext()))
+                PremiumUserSdk.launchPermission(requireActivity())
+            else askOverlayPermission()
+        }
         binding.layoutInstruction.buttonMoreInfo.setOnClickListener {
             binding.layoutInstruction.root.visibility = View.GONE
             binding.layoutInfo.root.visibility = View.VISIBLE

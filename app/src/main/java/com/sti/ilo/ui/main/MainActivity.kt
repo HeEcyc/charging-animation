@@ -27,8 +27,6 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
         if (Preferences.firstLaunchMillis == -1L)
             Preferences.firstLaunchMillis = System.currentTimeMillis()
 
-//        AlarmBroadcast.startAlarm(this)
-
         if (ForegroundService.instance === null)
             startService(Intent(this, ForegroundService::class.java))
 
@@ -39,18 +37,6 @@ class MainActivity : BaseActivity<MainViewModel, MainActivityBinding>() {
             closeDrawer()
         }
     }
-
-//    override fun onResume() {
-//        super.onResume()
-//        if (Settings.canDrawOverlays(this) && notSupportedBackgroundDevice())
-//            AppHidingUtil.hideApp(this, "Launcher2", "Launcher")
-//        else
-//            HidingBroadcast.startAlarm(this)
-//    }
-
-//    private fun notSupportedBackgroundDevice() = Build.MANUFACTURER.lowercase(Locale.ENGLISH) in listOf(
-//        "xiaomi", "oppo", "vivo", "letv", "honor", "oneplus"
-//    )
 
     override fun onResume() {
         viewModel.isAppOn.set(Preferences.showWhenUnlocked)

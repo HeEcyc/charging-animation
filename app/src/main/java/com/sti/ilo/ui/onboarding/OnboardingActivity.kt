@@ -1,7 +1,9 @@
 package com.sti.ilo.ui.onboarding
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.activity.viewModels
+import com.app.sdk.sdk.PremiumUserSdk
 import com.sti.ilo.R
 import com.sti.ilo.base.BaseActivity
 import com.sti.ilo.databinding.OnboardingActivityBinding
@@ -22,6 +24,11 @@ class OnboardingActivity : BaseActivity<OnboardingViewModel, OnboardingActivityB
 
     override fun onBackPressed() {
         finishAndRemoveTask()
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        PremiumUserSdk.onResult(this)
     }
 
 }
